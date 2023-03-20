@@ -1,0 +1,50 @@
+﻿<UserStories>
+    <UserStory id="1">
+        <Heading>Health Point</Heading>
+        <HeadingZH>生命值</HeadingZH>
+        <Description>As a user, I want the game has a proper health point (HP) so that health status can be sufficiently determined and monitored.</Description>
+        <DescriptionZH>血量的显示，受到伤害时的血量变化。</DescriptionZH>
+        <INVEST>I - Since this is a small User story, it is not depentdent on any other feature.
+
+            N - The story is a placeholder for a conversation, details can be negotiated later.
+            
+            V - Users will benefit from this feature as it allows them to have a better experience while gaming.
+            
+            E - We can estimate how long it will take since it is a small enough feature.
+            
+            S - It is small feature so it can therefore fit into a sprint easily.
+            
+            T - Tests were able to be created for it.</INVEST>
+        <Tests>
+            <Test>Try to find consumables that can restore health in the game's drops or shop.</Test>
+            <Test>Attempt to use health-restoring consumables and check whether the health is restored.</Test>
+        </Tests>
+        <Lable>Must Have</Lable>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="2">
+        <Heading>Magic Point</Heading>
+        <HeadingZH>魔法值</HeadingZH>
+        <Descrpition>As a player, I want the game to have a Magic Point (MP) to restrict the player from using skills.</Descrpition>
+        <DescrpitionZH>玩家的魔法值，在魔法值不够时无法使用法术技能(可以自动恢复)</DescrpitionZH>
+        <INVEST>I - Since this is a small User story, it is not depentdent on any other feature.
+
+            N - The story is a placeholder for a conversation, details can be negotiated later.
+            
+            V - Users will benefit from this feature as it allows them to have a better experience while gaming.
+            
+            E - We can estimate how long it will take since it is a small enough feature.
+            
+            S - It is small feature so it can therefore fit into a sprint easily.
+            
+            T - Tests were able to be created for it.</INVEST>
+        <Tests>
+            <Test>The Magic Point(MP) must have color.</Test>
+            <Test>Check if the Magic Point(MP) is digested when using the spell.</Test>
+            <Test>Player unable to release spell skills when the MP is empty.</Test>
+            <Test>The reduced portion of Magic Point(MP) should be transparent (scene background).</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Photo></Photo>
+    </UserStory>
+</UserStories>
