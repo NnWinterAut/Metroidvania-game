@@ -2,12 +2,14 @@
     <UserStory id="1" heading="Health Point" headingZH="生命值">
         <Description>As a user, I want the game has a proper health point (HP) so that health status can be sufficiently determined and monitored.</Description>
         <DescriptionZH>血量的显示，受到伤害时的血量变化。</DescriptionZH>
-        <INVEST>I - Yes. It doesn't concern other features, even though it depends on how player performs.
+        <INVEST>
+            I - Yes. It doesn't concern other features, even though it depends on how player performs.
             N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
             V - Yes. Users will be beneficial by knowing the status of the health point and make an appropriate step to save life if needs be. The player will have better in-game experience.
             E - Yes. It can be estimated how long it will take since it is a small feature.
             S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes. It can be tested and verified by playing the game.</INVEST>
+            T - Yes. It can be tested and verified by playing the game.
+        </INVEST>
         <Tests>
             <Test>Health Point (HP) must have color.</Test>
             <Test>Check the value of damage taken by the player is deducted from the Health Point (HP).</Test>
@@ -19,17 +21,14 @@
     <UserStory id="2" heading="Magic Point" headingZH="魔法值">
         <Descrpition>As a player, I want the game to have a Magic Point (MP) to restrict the player from using skills.</Descrpition>
         <DescrpitionZH>玩家的魔法值，在魔法值不够时无法使用法术技能(可以自动恢复)</DescrpitionZH>
-        <INVEST>I - Since this is a small User story, it is not depentdent on any other feature.
-
-            N - The story is a placeholder for a conversation, details can be negotiated later.
-            
-            V - Users will benefit from this feature as it allows them to have a better experience while gaming.
-            
-            E - We can estimate how long it will take since it is a small enough feature.
-            
-            S - It is small feature so it can therefore fit into a sprint easily.
-            
-            T - Tests were able to be created for it.</INVEST>
+        <INVEST>
+            I - Yes. Since this is a small User story, it is not depentdent on any other feature.
+            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
+            V - Yes. Users will benefit from this feature as it allows them to have a better experience while gaming.
+            E - Yes. We can estimate how long it will take since it is a small enough feature.
+            S - Yes. It is small feature so it can therefore fit into a sprint easily.
+            T - Yes. Tests were able to be created for it.
+        </INVEST>
         <Tests>
             <Test>The Magic Point(MP) must have color.</Test>
             <Test>Check if the Magic Point(MP) is digested when using the spell.</Test>
@@ -37,31 +36,51 @@
             <Test>The reduced portion of Magic Point(MP) should be transparent (scene background).</Test>
         </Tests>
         <Label>Must Have</Label>
-        <Photo></Photo>
+        <Photos></Photos>
     </UserStory>
     <UserStory id="3" heading="Health Potion" headingZH="生命药剂">
         <Description>As a player, I want the game to have some props in the game that can restore Health Potion (HP) to improve the Player's playability.</Description>
         <DescriptionZH>可以恢复血量的生命药剂，拾取后恢复血量的道具</DescriptionZH>
-        <INVEST>I - Since this is a small User story, it is not depentdent on any other feature.
-
-            N - The story is a placeholder for a conversation, details can be negotiated later.
-            
-            V - Users will benefit from this feature as it allows them to have a better experience while gaming.
-            
-            E - We can estimate how long it will take since it is a small enough feature.
-            
-            S - It is small feature so it can therefore fit into a sprint easily.
-            
-            T - Tests were able to be created for it.</INVEST>
+        <INVEST>
+            I - No. This feature depend on the 'Health Point' feature.
+            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
+            V - Yes. Users will benefit from this feature as it allows them to have a better experience while gaming.
+            E - Yes. We can estimate how long it will take since it is a small enough feature.
+            S - Yes. It is small feature so it can therefore fit into a sprint easily.
+            T - Yes. Tests were able to be created for it.
+        </INVEST>
         <Tests>
             <Test>Try to find consumables that can restore health in the game's drops or shop.</Test>
             <Test>Attempt to use health-restoring consumables and check whether the health is restored.</Test>
         </Tests>
         <Label>Should Have</Label>
-        <Photo></Photo>
+        <Photos></Photos>
     </UserStory>
     <UserStory id="4" heading="Magic Potion" headingZH="魔法药剂">
         <Description>As a player, I want the game to have some props in the game that can restore Mana to improve the Player's playability.</Description>
         <DescriptionZH>可以恢复魔法值的药剂，拾取后恢复法力值的道具</DescriptionZH>
+        <INVEST>
+            I - No. This feature depend on the 'Magic Point' feature.
+            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
+            V - Yes. Users will benefit from this feature as it allows them to have a better experience while gaming.
+            E - Yes. We can estimate how long it will take since it is a small enough feature.
+            S - Yes. It is small feature so it can therefore fit into a sprint easily.
+            T - Yes. Tests were able to be created for it.
+        </INVEST>
+        <Tests>
+            <Test>Try to find consumables that can restore mana in the game's loot drops or in the shop.</Test>
+            <Test>Use the mana-restoring consumables and check whether the mana points have been restored.</Test>
+        </Tests>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="5" heading="" headingZH="火焰魔法">
+        <Description>As a user, I want the game has some kind of weapons such as a fire magic which helps continue damage on enemy.</Description>
+        <DescriptionZH>火焰魔法，消耗魔法值对敌人持续造成火焰伤害。会被冰冻魔法熄灭火焰。</DescriptionZH>
+    </UserStory>
+    <UserStory id="6" heading="" headingZH="冰冻魔法">
+
+    </UserStory>
+    <UserStory id="7" heading="" headingZH="雷电魔法">
+
     </UserStory>
 </UserStories>
