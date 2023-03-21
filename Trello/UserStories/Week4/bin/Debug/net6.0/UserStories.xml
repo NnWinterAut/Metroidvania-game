@@ -581,7 +581,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="25" heading="Cooldown" headingZH="冷却">
-        <Description>As a player, I would like there to be a Cooldown between skills so that it can prevent the character's attack frequency from being too rapid.</Description>
+        <Description>As a player, I would like there to be a Cooldown between skills, so that it can prevent the character's attack frequency from being too rapid.</Description>
         <DescriptionZH>使用技能时有冷却时间，防止攻击频率过快，也包括使用物品的间隔时间</DescriptionZH>
         <INVEST>
             Independent - Yes, the Cooldown feature can be designed and implemented as a standalone feature, separate from other game features and systems.
@@ -604,16 +604,103 @@
         <Url>https://trello.com/c/DqfEkXbx</Url>
         <Photos></Photos>
     </UserStory>
+    <UserStory id="26" heading="Clearance Timer" headingZH="通关时间">
+        <Description>As a player, I would like to have a Clearance Timer, so that I can challenge others or myself.</Description>
+        <DescriptionZH>记录关卡的通关时间</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Clearance Timer feature can be designed and implemented as a standalone feature, separate from other game features and systems.
 
+            Negotiable - Yes, the specifics of the Clearance Timer feature, such as the duration, effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
 
+            Valuable - Yes, the Clearance Timer feature can add a layer of urgency and challenge to gameplay, as players must complete certain actions or objectives before the timer runs out.
 
+            Estimable - Yes, the development effort required for the Clearance Timer feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
 
+            Small - Yes, the Clearance Timer feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
 
+            Testable - Yes, the Clearance Timer feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Clearance Timer interacts correctly with other game features, such as player abilities or enemy AI.
+        </INVEST>
+        <Tests>
+            <Test>Upon entering the level, verify if there is a prompt indicating the time for timing.</Test>
+            <Test>After passing the checkpoint, verify if the clearance time can be correctly recorded.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/BRwJD48f</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="27" heading="Clearance Score" headingZH="通关分数">
+        <Description>As a player, I would like to have a Clearance Score, so that I can challenge others or myself.</Description>
+        <DescriptionZH>通关的分数通常是由获得的积分道具和通关时间组合而成，可以参考超级马里奥</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Clearance Score feature can be designed and implemented as a standalone feature, separate from other game features and systems.
 
+            Negotiable - Yes, the specifics of the Clearance Score feature, such as the scoring system, conditions for earning points, and any associated rewards or penalties, can be negotiated and adjusted based on the needs of the team and the game.
 
+            Valuable - Yes, the Clearance Score feature can add an additional layer of challenge and motivation to gameplay, as players can strive to earn higher scores and unlock rewards.
 
+            Estimable - Yes, the development effort required for the Clearance Score feature can be estimated, as it involves designing and implementing specific scoring rules and associated visual and gameplay elements.
 
+            Small - Yes, the Clearance Score feature can be broken down into smaller sub-tasks for development, such as designing and implementing the scoring system or adding the visual elements that indicate a player's score.
 
+            Testable - Yes, the Clearance Score feature can be tested to ensure that it works as intended, including testing the scoring rules, reward system, and any associated visual or gameplay elements. Testing can also include checking that the Clearance Score feature interacts correctly with other game features, such as player abilities or enemy AI.
+        </INVEST>
+        <Tests>
+            <Test>After the player clears the level, the clearance score will be displayed.</Test>
+            <Test>The player's accumulated clearance score will be displayed on the game start interface.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/GxhEvknH</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="28" heading="Flying Enemies" headingZH="飞行敌人">
+        <Description>As a player, I would like to see flying enemies, so that the vertical gaps are not too empty.</Description>
+        <DescriptionZH>有飞行的小怪可以让玩家在空中进行攻击，充分利用垂直空间，不然只有平面会比较无聊</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Flying Enemies feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Flying Enemies feature, such as the types of flying enemies, their abilities and behaviors, and how they interact with other game elements, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Flying Enemies feature can add an additional layer of challenge and variety to gameplay, as players must adapt their strategies and abilities to fight enemies with different movement patterns and attack abilities.
+
+            Estimable - Yes, the development effort required for the Flying Enemies feature can be estimated, as it involves designing and implementing specific enemy behaviors and interactions, as well as any associated visual and gameplay elements.
+
+            Small - Yes, the Flying Enemies feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual enemy behaviors or adding the visual elements that indicate a flying enemy's presence.
+
+            Testable - Yes, the Flying Enemies feature can be tested to ensure that it works as intended, including testing enemy behaviors and interactions with other game features, such as player abilities or terrain obstacles. Testing can also include checking for any performance issues that may arise from the addition of flying enemies.
+        </INVEST>
+        <Tests>
+            <Test>Try to find flying enemies at the game level.</Test>
+            <Test>Attempt to interact with flying enemies by attacking or other means, and check if the interaction can be carried out smoothly.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/UvgshZqQ</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="29" heading="Bonus Level" headingZH="奖励关卡">
+        <Description>As a player, I hope this game has Bonus Levels, so that I can relax after fightings.</Description>
+        <DescriptionZH>通过关卡后的独立奖励关，让玩家在限定时间内可以获取奖励</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Bonus Level feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Bonus Level feature, such as the objectives, difficulty level, and visual and audio design, can be negotiated and adjusted based on the needs of the team and the game.
+            
+            Valuable - Yes, the Bonus Level feature can provide additional content and replay value for players, as well as a sense of accomplishment for completing a challenging level.
+            
+            Estimable - Yes, the development effort required for the Bonus Level feature can be estimated, as it involves designing and implementing specific level objectives, visual and audio elements, and testing.
+            
+            Small - Yes, the Bonus Level feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual level objectives or adding the visual and audio elements that make up the level.
+            
+            Testable - Yes, the Bonus Level feature can be tested to ensure that it works as intended, including testing level objectives and mechanics, visual and audio elements, and difficulty level. Testing can also include checking for any performance issues that may arise from the addition of the Bonus Level.
+        </INVEST>
+        <Tests>
+            <Test>Try to enter the bonus level during gameplay.</Test>
+            <Test>Try to obtain rewards in the bonus level.</Test>
+            <Test>Analyze whether the rewards in the bonus level are within a reasonable range.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/F74J3A6V</Url>
+        <Photos></Photos>
+    </UserStory>
     <UserStory id="30" heading="Volume Control" headingZH="音量控制">
         <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
         <DescriptionZH>游戏内的音量控制，包括音效和背景乐</DescriptionZH>
