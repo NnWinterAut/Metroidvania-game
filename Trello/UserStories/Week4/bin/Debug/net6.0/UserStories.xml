@@ -341,7 +341,31 @@
         <Url>https://trello.com/c/1S2Ka4Od</Url>
         <Photos></Photos>
     </UserStory>
-    <UserStory id="15" heading="Coins" headingZH="金币">
+    <UserStory id="15" heading="Pickup" headingZH="装备拾取">
+        <Description>As a player, I wish to be able to pickup items, so that I can pickup potions or gears.</Description>
+        <DescriptionZH>使用某个按键来拾取地图中的掉落物（金币应当是自动拾取，其它的需要手动)</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the "Pickup" feature can be developed and implemented independently of other systems or features in the game.
+
+            Negotiable - Yes, because the specifics of the "Pickup" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Pickup" feature can provide valuable items or resources to the player, which can be used to progress in the game or achieve certain goals.
+
+            Estimable - Yes, because the "Pickup" feature can be estimated and planned for, based on the number and types of items that can be picked up throughout the game.
+
+            Small - Yes, because the "Pickup" feature can be implemented in small increments, such as allowing the player to pick up a single item at a time.
+
+            Testable - Yes, because the "Pickup" feature can be tested to ensure that the player is able to pick up items as intended, and that the items are added to the player's inventory or used in the game as intended.
+        </INVEST>
+        <Tests>
+            <Test>Use the pick-up button on the object you want to pick up, and verify if there is any item change.</Test>
+            <Test>To compare the damage or defense after changing equipment, try attacking or defending to see if there is any additional benefit.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/U6JMQwbS</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="16" heading="Coins" headingZH="金币">
         <Description>As a player, I wish to have coins, so that I can buy equipments in the game.</Description>
         <DescriptionZH>用于购买游戏内的商品</DescriptionZH>
         <INVEST>
@@ -365,7 +389,7 @@
         <Url>https://trello.com/c/WUQ6oeI9</Url>
         <Photos></Photos>
     </UserStory>
-
+    
 
 
 
