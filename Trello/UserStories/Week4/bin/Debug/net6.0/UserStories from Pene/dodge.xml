@@ -1,19 +1,24 @@
 <UserStory id="38" heading="Dodge" headingZH="闪躲">
-        <Description>As a player, I want the game character to be able to do the movement of dodge.</Description>
-        <DescriptionZH>玩家可以躲避攻击</DescriptionZH>
-        <INVEST>
-            I - Yes. Since this is a small User story, it is not dependent on any other feature
-            N - Yes. The story is a placeholder for a conversation
-            V - Yes. The user will benefit from the feature as it allows they have more choice on their roles.
-            E - Yes. We can estimate how long it will take since it is a small enough feature
-            S - Yes. It is small feature so it can therefore fit into a sprint easily
-            T - Yes. Tests were able to be created for it
-        </INVEST>
-        <Tests>
-            <Test>Check whether the game character successfully attacks the enemy or successfully avoids enemy attack.</Test>
-            <Test>Press the attack button on the keyboard to check whether the game character can attack. Press the dodge button to check whether the can successfully dodge the enemy's attacks.</Test>
-        </Tests>
-        <Label>Should Have</Label>
-        <Url>https://trello.com/c/W0ZrOoCF</Url>
-        <Photos></Photos>
-    </UserStory>
+    <Description>As a player, I want to have a Dodge feature, so that I can dodge the enemy attacks.</Description>
+    <DescriptionZH>玩家可以躲避攻击</DescriptionZH>
+    <INVEST>
+        Independent: Yes, because the "Dodge" feature can be implemented as a standalone system that is not dependent on other game features or systems.
+
+        Negotiable: Yes, because the specifics of how the "Dodge" feature works (e.g. how fast the player moves, how many times they can dodge in a row, etc.) can be adjusted based on the team's resources and priorities.
+
+        Valuable: Yes, because the "Dodge" feature can enhance the player's ability to avoid obstacles or enemy attacks, making the game more engaging and rewarding.
+
+        Estimable: Yes, because the level of effort required to implement the "Dodge" feature can be estimated based on the complexity of the desired mechanics and the resources available to the team.
+
+        Small: Yes, because the "Dodge" feature can be implemented as a relatively isolated and straightforward system that is not overly complex.
+
+        Testable: Yes, because the team can create test cases to ensure that the "Dodge" feature functions correctly and is balanced with the rest of the game mechanics.
+    </INVEST>
+    <Tests>
+        <Test>Press the corresponding key for Dodge and check if the player performs a dodge.</Test>
+        <Test>Perform a dodge during enemy attacks and check if the attack is avoided.</Test>
+    </Tests>
+    <Label>Should Have</Label>
+    <Url>https://trello.com/c/W0ZrOoCF</Url>
+    <Photos></Photos>
+</UserStory>
