@@ -3,12 +3,17 @@
         <Description>As a user, I want the game has a proper health point (HP) so that health status can be sufficiently determined and monitored.</Description>
         <DescriptionZH>血量的显示，受到伤害时的血量变化</DescriptionZH>
         <INVEST>
-            I - Yes. It doesn't concern other features, even though it depends on how player performs.
-            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
-            V - Yes. Users will be beneficial by knowing the status of the health point and make an appropriate step to save life if needs be. The player will have better in-game experience.
-            E - Yes. It can be estimated how long it will take since it is a small feature.
-            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes. It can be tested and verified by playing the game.
+            Independent - Yes, because this user story does not rely on other features or systems in the game to function, although it does depend on the player's performance.
+
+            Negotiable - Yes, because this user story is open to negotiation and can be adjusted based on stakeholder feedback or changes in project goals.
+
+            Valuable - Yes, because this feature provides valuable information to the player about their character's health status, which enhances their in-game experience and allows them to make informed decisions.
+
+            Estimable - Yes, because the time and effort required to implement this feature can be estimated by the development team, since it is a small and focused feature.
+
+            Small - Yes, because this is a small feature that can be completed within a single iteration or sprint.
+
+            Testable - Yes, because this feature can be tested and verified through gameplay to ensure that it functions correctly and provides accurate information to the player.
         </INVEST>
         <Tests>
             <Test>Health Point (HP) must have color.</Test>
@@ -23,12 +28,17 @@
         <Descrpition>As a player, I want the game to have a Magic Point (MP) to restrict the player from using skills.</Descrpition>
         <DescrpitionZH>玩家的魔法值，在魔法值不够时无法使用法术技能(可以自动恢复)</DescrpitionZH>
         <INVEST>
-            I - Yes. Since this is a small User story, it is not depentdent on any other feature.
-            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
-            V - Yes. Users will benefit from this feature as it allows them to have a better experience while gaming.
-            E - Yes. We can estimate how long it will take since it is a small enough feature.
-            S - Yes. It is small feature so it can therefore fit into a sprint easily.
-            T - Yes. Tests were able to be created for it.
+            Independent - Yes, since this is a small user story that does not depend on any other features or systems in the game to function.
+
+            Negotiable - Yes, because this user story is a placeholder for a conversation and specific details can be negotiated and confirmed later.
+
+            Valuable - Yes, because users will benefit from this feature, as it enhances their overall gaming experience.
+
+            Estimable - Yes, because the time and effort required to implement this feature can be estimated by the development team, since it is a small feature.
+
+            Small - Yes, because this is a small feature that can be easily implemented and completed within a single sprint.
+
+            Testable - Yes, because tests were created for this feature to ensure that it functions correctly and provides the intended user experience.
         </INVEST>
         <Tests>
             <Test>The Magic Point(MP) must have color.</Test>
@@ -44,12 +54,17 @@
         <Description>As a player, I want the game to have some props in the game that can restore Health Potion (HP) to improve the Player's playability.</Description>
         <DescriptionZH>可以恢复血量的生命药剂，拾取后恢复血量的道具</DescriptionZH>
         <INVEST>
-            I - No. This feature depend on the 'Health Point' feature.
-            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
-            V - Yes. Users will benefit from this feature as it allows them to have a better experience while gaming.
-            E - Yes. We can estimate how long it will take since it is a small enough feature.
-            S - Yes. It is small feature so it can therefore fit into a sprint easily.
-            T - Yes. Tests were able to be created for it.
+            Independent - No, the health potion feature depends on the player's health system and how it is implemented in the game.
+
+            Negotiable - Yes, the details of how the health potion restores health, the visual effects and animation, and the cost or availability of the potion can be negotiated.
+
+            Valuable - Yes, the health potion is valuable to players as it provides a means to recover from damage taken during gameplay and allows for a smoother and less frustrating experience.
+
+            Estimable - Yes, the effort required to implement the health potion feature can be estimated based on the complexity of the health system, the visuals, and the overall design of the game.
+
+            Small - Yes, the health potion feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the health potion feature can be tested to ensure it functions as intended, restores the appropriate amount of health, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
             <Test>Try to find consumables that can restore health in the game's drops or shop.</Test>
@@ -63,12 +78,17 @@
         <Description>As a player, I want the game to have a Magic Potion so that I can restore mana during gameplay.</Description>
         <DescriptionZH>可以恢复魔法值的药剂，拾取后恢复法力值的道具</DescriptionZH>
         <INVEST>
-            I - No. This feature depend on the 'Magic Point' feature.
-            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
-            V - Yes. Users will benefit from this feature as it allows them to have a better experience while gaming.
-            E - Yes. We can estimate how long it will take since it is a small enough feature.
-            S - Yes. It is small feature so it can therefore fit into a sprint easily.
-            T - Yes. Tests were able to be created for it.
+            Independent - No, the magic potion feature depends on the player's magic system and how it is implemented in the game.
+
+            Negotiable - Yes, the details of how the magic potion restores magic power, the visual effects and animation, and the cost or availability of the potion can be negotiated.
+
+            Valuable - Yes, the magic potion is valuable to players as it provides a means to recover from depletion of magic power during gameplay and allows for a smoother and less frustrating experience.
+
+            Estimable - Yes, the effort required to implement the magic potion feature can be estimated based on the complexity of the magic system, the visuals, and the overall design of the game.
+
+            Small - Yes, the magic potion feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the magic potion feature can be tested to ensure it functions as intended, restores the appropriate amount of magic power, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
             <Test>Try to find consumables that can restore mana in the game's loot drops or in the shop.</Test>
@@ -82,12 +102,17 @@
         <Description>As a player, I want to have Fire Magic so that I can inflict sustained damage on enemies.</Description>
         <DescriptionZH>火焰魔法，消耗魔法值对敌人持续造成火焰伤害。会被冰冻魔法熄灭火焰</DescriptionZH>
         <INVEST>
-            I - Yes. It doesn't concern other features.
-            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
-            V - Yes. The player will have better in-game experience.
-            E - Yes. It can be estimated how long it will take since it is a small feature.
-            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes. It can be tested and verified by playing the game.
+            Independent - No, the fire magic feature depends on the player's magic system and the game's combat mechanics.
+
+            Negotiable - Yes, the details of how fire magic is learned, the visual effects and animation, and the damage dealt can be negotiated.
+
+            Valuable - Yes, the fire magic feature is valuable to players as it provides a means to deal damage to enemies and defeat them more efficiently, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the fire magic feature can be estimated based on the complexity of the magic system, the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the fire magic feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the fire magic feature can be tested to ensure it functions as intended, deals appropriate damage, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
             <Test>Test if the player can switch to fire magic.</Test>
@@ -102,12 +127,17 @@
         <Description>As a user, I want the game to have a Frozen Magic so that I can slow down enemy.</Description>
         <DescriptionZH>冰冻魔法，消耗魔法值对敌人造成冰冻伤害，降低敌人移动和攻击速度。会被火焰魔法消除冰冻效果</DescriptionZH>
         <INVEST>
-            I - Yes. It doesn't concern other features.
-            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
-            V - Yes. The player will have better in-game experience.
-            E - Yes. It can be estimated how long it will take since it is a small feature.
-            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes. It can be tested and verified by playing the game.
+            Independent - No, the frozen magic feature depends on the player's magic system and the game's combat mechanics.
+
+            Negotiable - Yes, the details of how frozen magic is learned, the visual effects and animation, the duration of the freeze, and the cooldown period can be negotiated.
+
+            Valuable - Yes, the frozen magic feature is valuable to players as it provides a means to temporarily immobilize enemies and create strategic opportunities during combat, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the frozen magic feature can be estimated based on the complexity of the magic system, the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the frozen magic feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the frozen magic feature can be tested to ensure it functions as intended, freezes enemies for the appropriate duration, has a reasonable cooldown period, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
             <Test>Test if the player can switch to frozen magic.</Test>
@@ -122,12 +152,17 @@
         <Description>As a user, I want the game to have Lightning Magic so that I can attack multiple enemies.</Description>
         <DescriptionZH>雷电魔法，可以连锁攻击多个相邻敌人，如果敌人处于冰冻状态可以增加连击范围和次数</DescriptionZH>
         <INVEST>
-            I - Yes. It doesn't concern other features.
-            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
-            V - Yes. The player will have better in-game experience.
-            E - Yes. It can be estimated how long it will take since it is a small feature.
-            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes. It can be tested and verified by playing the game.
+            Independent - No, the lightning magic feature depends on the player's magic system and the game's combat mechanics.
+
+            Negotiable - Yes, the details of how lightning magic is learned, the visual effects and animation, the area-of-effect radius, and the damage dealt can be negotiated.
+
+            Valuable - Yes, the lightning magic feature is valuable to players as it provides a means to deal area-of-effect damage to multiple enemies and defeat them more efficiently, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the lightning magic feature can be estimated based on the complexity of the magic system, the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the lightning magic feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the lightning magic feature can be tested to ensure it functions as intended, deals appropriate area-of-effect damage, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
             <Test>Test if the player can switch to lightning magic.</Test>
@@ -139,15 +174,20 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="8" heading="Charge Attack" headingZH="蓄力攻击">
-        <Description>As a player, I want my character to use Charge Attack to enhance gameplay.</Description>
+        <Description>As a player, I want my character to use Charge Attack so that I can have more ways to attack.</Description>
         <DescriptionZH>蓄力攻击，可以通过蓄力的方式在释放时进行更强力的攻击，可以用于破甲，攻击精英怪等</DescriptionZH>
         <INVEST>
-            I - Yes. This user story can be implemented independently of other stories, as it does not depend on any other feature or functionality.
-            N - Yes. The details of how the charge attack work that can be further discussed and refined with the development team.
-            V - Yes. The addition of a charge attack provides the player with more attack options and enhances the gameplay experience, adding value to the game.
-            E - Yes. The implementation of a charge attack can be estimated by the development team based on the complexity and required effort.
-            S - Yes. The scope of this user story is small enough to be completed within a single sprint.
-            T - Yes. The implementation of the charge attack can be tested through playtesting to ensure that it works as intended and enhances the gameplay experience.
+            Independent - Yes, the charge attack feature is independent of other game mechanics and does not rely on any other features to function.
+
+            Negotiable - Yes, the details of the charge attack animation, the amount of damage dealt, and the length of time required to charge the attack can be negotiated.
+
+            Valuable - Yes, the charge attack feature is valuable to players as it provides a means to deal increased damage to enemies and adds depth and strategy to combat gameplay.
+
+            Estimable - Yes, the effort required to implement the charge attack feature can be estimated based on the complexity of the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the charge attack feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the charge attack feature can be tested to ensure it functions as intended, deals increased damage, has a reasonable charge time, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
             <Test>Try holding down the attack button or using certain charged attack moves, to see if player can successfully perform the charged attack.</Test>
@@ -158,15 +198,20 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="9" heading="Double Jump" headingZH="二段跳">
-        <Description>As a player, I want to be able to Double Jump off walls to add variety to the gameplay.</Description>
+        <Description>As a player, I want to be able to Double Jump off walls so that I can reach higher places.</Description>
         <DescriptionZH>二段跳可以让玩家在接触墙面时进行二次跳跃，每次落地时重置</DescriptionZH>
         <INVEST>
-            I - No. It depends on the jump feature.
-            N - Yes. The details of how the double jump off walls work that can be further discussed and refined with the development team.
-            V - Yes. The addition of the ability to double jump off walls provides the player with more movement options, enhances the gameplay experience, and adds to the fun factor of the game.
-            E - Yes. The implementation of the ability to double jump off walls can be estimated by the development team based on the complexity and required effort.
-            S - Yes. The scope of this user story is about one or two sprint period.
-            T - Yes. The implementation of the double jump off walls can be tested through playtesting to ensure that it works as intended, adds variety to the player's actions, enhances gameplay, and increases the fun factor.
+            Independent - No, the double jump feature depends on the jump feature to function.
+
+            Negotiable - Yes, the details of the double jump animation, the height and distance of the second jump, and the timing required to perform the double jump can be negotiated.
+
+            Valuable - Yes, the double jump feature is valuable to players as it provides a means to reach higher platforms and navigate through the game world more efficiently, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the double jump feature can be estimated based on the complexity of the jump mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the double jump feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the double jump feature can be tested to ensure it functions as intended, allows the player to reach higher platforms, has a reasonable timing for the double jump, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
             <Test>Try to approach and touch the wall after jumping, then press the jump key again to trigger a double jump.</Test>
