@@ -94,7 +94,7 @@
             <Test>Test if the player can cast fire magic.</Test>
             <Test>After casting the spell, check if it inflict sustained damage on the enemy as expected.</Test>
         </Tests>
-        <Label>Could Have</Label>
+        <Label>Could have</Label>
         <Url>https://trello.com/c/jGFK3JBC</Url>
         <Photos></Photos>
     </UserStory>
@@ -114,7 +114,7 @@
             <Test>Test if the player can cast frozen magic.</Test>
             <Test>After casting the spell, check whether it slowed down the enemy as expected.</Test>
         </Tests>
-        <Label>Could Have</Label>
+        <Label>Could have</Label>
         <Url>https://trello.com/c/7c4BxDIO</Url>
         <Photos></Photos>
     </UserStory>
@@ -134,7 +134,7 @@
             <Test>Test if the player can cast lightning magic.</Test>
             <Test>After casting the spell, checked if it attacked multiple enemies in a chain.</Test>
         </Tests>
-        <Label>Could Have</Label>
+        <Label>Could have</Label>
         <Url>https://trello.com/c/Uos684py</Url>
         <Photos></Photos>
     </UserStory>
@@ -153,8 +153,27 @@
             <Test>Try holding down the attack button or using certain charged attack moves, to see if player can successfully perform the charged attack.</Test>
             <Test>Compare the normal attack and charged attack, and determine if the charged attack has any damage or attribute improvements.</Test>
         </Tests>
-        <Label>Could Have</Label>
+        <Label>Could have</Label>
         <Url>https://trello.com/c/QnmHeyxr</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="9" heading="Double Jump" headingZH="二段跳">
+        <Description>As a player, I want to be able to Double Jump off walls to add variety to the gameplay.</Description>
+        <DescriptionZH>二段跳可以让玩家在接触墙面时进行二次跳跃，每次落地时重置</DescriptionZH>
+        <INVEST>
+            I - No. It depends on the jump feature.
+            N - Yes. The details of how the double jump off walls work that can be further discussed and refined with the development team.
+            V - Yes. The addition of the ability to double jump off walls provides the player with more movement options, enhances the gameplay experience, and adds to the fun factor of the game.
+            E - Yes. The implementation of the ability to double jump off walls can be estimated by the development team based on the complexity and required effort.
+            S - Yes. The scope of this user story is about one or two sprint period.
+            T - Yes. The implementation of the double jump off walls can be tested through playtesting to ensure that it works as intended, adds variety to the player's actions, enhances gameplay, and increases the fun factor.
+        </INVEST>
+        <Tests>
+            <Test>Try to approach and touch the wall after jumping, then press the jump key again to trigger a double jump.</Test>
+            <Test>Analyze whether the height of the double jump is reasonable and whether it affects the game's balance.</Test>
+        </Tests>
+        <Label>Could have</Label>
+        <Url>https://trello.com/c/AbsfAqXN</Url>
         <Photos></Photos>
     </UserStory>
 </UserStories>
