@@ -16,6 +16,7 @@
             <Test>The reduced Health Point (HP) is transparent(scene background).</Test>
         </Tests>
         <Lable>Must Have</Lable>
+        <Url>https://trello.com/c/azzQ6C8M</Url>
         <Photos></Photos>
     </UserStory>
     <UserStory id="2" heading="Magic Point" headingZH="魔法值">
@@ -36,6 +37,7 @@
             <Test>The reduced portion of Magic Point(MP) should be transparent (scene background).</Test>
         </Tests>
         <Label>Must Have</Label>
+        <Url>https://trello.com/c/IV9NNeem</Url>
         <Photos></Photos>
     </UserStory>
     <UserStory id="3" heading="Health Potion" headingZH="生命药剂">
@@ -54,10 +56,11 @@
             <Test>Attempt to use health-restoring consumables and check whether the health is restored.</Test>
         </Tests>
         <Label>Should Have</Label>
+        <Url>https://trello.com/c/JJ4N4b5L</Url>
         <Photos></Photos>
     </UserStory>
     <UserStory id="4" heading="Magic Potion" headingZH="魔法药剂">
-        <Description>As a player, I want the game to have some props in the game that can restore Mana to improve the Player's playability.</Description>
+        <Description>As a player, I want the game to have a Magic Potion so that I can restore mana during gameplay.</Description>
         <DescriptionZH>可以恢复魔法值的药剂，拾取后恢复法力值的道具</DescriptionZH>
         <INVEST>
             I - No. This feature depend on the 'Magic Point' feature.
@@ -72,10 +75,11 @@
             <Test>Use the mana-restoring consumables and check whether the mana points have been restored.</Test>
         </Tests>
         <Label>Should Have</Label>
+        <Url>https://trello.com/c/OU6r66yU</Url>
         <Photos></Photos>
     </UserStory>
     <UserStory id="5" heading="Fire Magic" headingZH="火焰魔法">
-        <Description>I want to have fire magic so that I can continue to inflict sustained damage on the enemy.</Description>
+        <Description>As a player, I want to have Fire Magic so that I can inflict sustained damage on enemies.</Description>
         <DescriptionZH>火焰魔法，消耗魔法值对敌人持续造成火焰伤害。会被冰冻魔法熄灭火焰</DescriptionZH>
         <INVEST>
             I - Yes. It doesn't concern other features.
@@ -91,10 +95,11 @@
             <Test>After casting the spell, check if it inflict sustained damage on the enemy as expected.</Test>
         </Tests>
         <Label>Could Have</Label>
+        <Url>https://trello.com/c/jGFK3JBC</Url>
         <Photos></Photos>
     </UserStory>
     <UserStory id="6" heading="Frozen Magic" headingZH="冰冻魔法">
-        <Description>As a user, I want the game to have a frozen magic so that I can slow down enemy.</Description>
+        <Description>As a user, I want the game to have a Frozen Magic so that I can slow down enemy.</Description>
         <DescriptionZH>冰冻魔法，消耗魔法值对敌人造成冰冻伤害，降低敌人移动和攻击速度。会被火焰魔法消除冰冻效果</DescriptionZH>
         <INVEST>
             I - Yes. It doesn't concern other features.
@@ -110,10 +115,11 @@
             <Test>After casting the spell, check whether it slowed down the enemy as expected.</Test>
         </Tests>
         <Label>Could Have</Label>
+        <Url>https://trello.com/c/7c4BxDIO</Url>
         <Photos></Photos>
     </UserStory>
-    <UserStory id="7" heading="Lightning magic" headingZH="雷电魔法">
-        <Description>As a user, I want the game to have lightning magic so that I can attack multiple enemies.</Description>
+    <UserStory id="7" heading="Lightning Magic" headingZH="雷电魔法">
+        <Description>As a user, I want the game to have Lightning Magic so that I can attack multiple enemies.</Description>
         <DescriptionZH>雷电魔法，可以连锁攻击多个相邻敌人，如果敌人处于冰冻状态可以增加连击范围和次数</DescriptionZH>
         <INVEST>
             I - Yes. It doesn't concern other features.
@@ -129,6 +135,26 @@
             <Test>After casting the spell, checked if it attacked multiple enemies in a chain.</Test>
         </Tests>
         <Label>Could Have</Label>
+        <Url>https://trello.com/c/Uos684py</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="8" heading="Charge Attack" headingZH="蓄力攻击">
+        <Description>As a player, I want my character to use Charge Attack to enhance gameplay.</Description>
+        <DescriptionZH>蓄力攻击，可以通过蓄力的方式在释放时进行更强力的攻击，可以用于破甲，攻击精英怪等</DescriptionZH>
+        <INVEST>
+            I - Yes. This user story can be implemented independently of other stories, as it does not depend on any other feature or functionality.
+            N - Yes. The details of how the charge attack work that can be further discussed and refined with the development team.
+            V - Yes. The addition of a charge attack provides the player with more attack options and enhances the gameplay experience, adding value to the game.
+            E - Yes. The implementation of a charge attack can be estimated by the development team based on the complexity and required effort.
+            S - Yes. The scope of this user story is small enough to be completed within a single sprint.
+            T - Yes. The implementation of the charge attack can be tested through playtesting to ensure that it works as intended and enhances the gameplay experience.
+        </INVEST>
+        <Tests>
+            <Test>Try holding down the attack button or using certain charged attack moves, to see if player can successfully perform the charged attack.</Test>
+            <Test>Compare the normal attack and charged attack, and determine if the charged attack has any damage or attribute improvements.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/QnmHeyxr</Url>
         <Photos></Photos>
     </UserStory>
 </UserStories>
