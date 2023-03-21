@@ -1,7 +1,7 @@
 ﻿<UserStories>
     <UserStory id="1" heading="Health Point" headingZH="生命值">
         <Description>As a user, I want the game has a proper health point (HP) so that health status can be sufficiently determined and monitored.</Description>
-        <DescriptionZH>血量的显示，受到伤害时的血量变化。</DescriptionZH>
+        <DescriptionZH>血量的显示，受到伤害时的血量变化</DescriptionZH>
         <INVEST>
             I - Yes. It doesn't concern other features, even though it depends on how player performs.
             N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
@@ -71,16 +71,64 @@
             <Test>Try to find consumables that can restore mana in the game's loot drops or in the shop.</Test>
             <Test>Use the mana-restoring consumables and check whether the mana points have been restored.</Test>
         </Tests>
+        <Label>Should Have</Label>
         <Photos></Photos>
     </UserStory>
-    <UserStory id="5" heading="" headingZH="火焰魔法">
-        <Description>As a user, I want the game has some kind of weapons such as a fire magic which helps continue damage on enemy.</Description>
-        <DescriptionZH>火焰魔法，消耗魔法值对敌人持续造成火焰伤害。会被冰冻魔法熄灭火焰。</DescriptionZH>
+    <UserStory id="5" heading="Fire Magic" headingZH="火焰魔法">
+        <Description>I want to have fire magic so that I can continue to inflict sustained damage on the enemy.</Description>
+        <DescriptionZH>火焰魔法，消耗魔法值对敌人持续造成火焰伤害。会被冰冻魔法熄灭火焰</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The player will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes. It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Test if the player can switch to fire magic.</Test>
+            <Test>Test if the player can cast fire magic.</Test>
+            <Test>After casting the spell, check if it inflict sustained damage on the enemy as expected.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Photos></Photos>
     </UserStory>
-    <UserStory id="6" heading="" headingZH="冰冻魔法">
-
+    <UserStory id="6" heading="Frozen Magic" headingZH="冰冻魔法">
+        <Description>As a user, I want the game to have a frozen magic so that I can slow down enemy.</Description>
+        <DescriptionZH>冰冻魔法，消耗魔法值对敌人造成冰冻伤害，降低敌人移动和攻击速度。会被火焰魔法消除冰冻效果</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The player will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes. It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Test if the player can switch to frozen magic.</Test>
+            <Test>Test if the player can cast frozen magic.</Test>
+            <Test>After casting the spell, check whether it slowed down the enemy as expected.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Photos></Photos>
     </UserStory>
-    <UserStory id="7" heading="" headingZH="雷电魔法">
-
+    <UserStory id="7" heading="Lightning magic" headingZH="雷电魔法">
+        <Description>As a user, I want the game to have lightning magic so that I can attack multiple enemies.</Description>
+        <DescriptionZH>雷电魔法，可以连锁攻击多个相邻敌人，如果敌人处于冰冻状态可以增加连击范围和次数</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The player will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes. It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Test if the player can switch to lightning magic.</Test>
+            <Test>Test if the player can cast lightning magic.</Test>
+            <Test>After casting the spell, checked if it attacked multiple enemies in a chain.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Photos></Photos>
     </UserStory>
 </UserStories>
