@@ -342,7 +342,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="15" heading="Pickup" headingZH="装备拾取">
-        <Description>As a player, I wish to be able to pickup items, so that I can pickup potions or gears.</Description>
+        <Description>As a player, I wish to be able to Pickup items, so that I can pickup potions or gears.</Description>
         <DescriptionZH>使用某个按键来拾取地图中的掉落物（金币应当是自动拾取，其它的需要手动)</DescriptionZH>
         <INVEST>
             Independent - Yes, because the "Pickup" feature can be developed and implemented independently of other systems or features in the game.
@@ -366,8 +366,8 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="16" heading="Coins" headingZH="金币">
-        <Description>As a player, I wish to have coins, so that I can buy equipments in the game.</Description>
-        <DescriptionZH>用于购买游戏内的商品</DescriptionZH>
+        <Description>As a player, I wish to have Coins, so that I can buy equipments in the game.</Description>
+        <DescriptionZH>用于购买游戏内的商品的金币</DescriptionZH>
         <INVEST>
             Independent - Yes, because the "Coins" feature can be developed and implemented independently of other systems or features in the game.
 
@@ -389,11 +389,106 @@
         <Url>https://trello.com/c/WUQ6oeI9</Url>
         <Photos></Photos>
     </UserStory>
-    
+    <UserStory id="17" heading="Shop" headingZH="商城">
+        <Description>As a player, I hope there is a Shop system, so that I can buy equipments in the game.</Description>
+        <DescriptionZH>在商城可以购买游戏道具如 血药 蓝药 武器升级 等</DescriptionZH>
+        <INVEST>
+            Independent - Yes, a shop feature can be developed and implemented independently of other features or systems in the game.
+
+            Negotiable - Yes, the details of the shop, such as what items are available, pricing, and the user interface can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, a shop feature can provide players with a way to spend in-game currency or real money to obtain items or upgrades, which can increase engagement and retention.
+
+            Estimable - Yes, the development effort required for a shop feature can be estimated based on the desired functionality and the technology used to implement it.
+
+            Small - No, the size of a shop feature may vary depending on the desired functionality and complexity. However, it is recommended to break down the feature into smaller, more manageable sub-tasks for development.
+
+            Testable - Yes, a shop feature can be tested to ensure it functions correctly, such as checking that items are properly added to a player's inventory and that the correct amount of currency is deducted.
+        </INVEST>
+        <Tests>
+            <Test>The player interacts with the shop, displaying various recovery items and some equipments.</Test>
+            <Test>After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/IueQzHao</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="18" heading="Upgrade" headingZH="升级">
+        <Description>As a player, I want there a Upgrade system, so that I can level up and fight stronger enemies.</Description>
+        <DescriptionZH>允许玩家或装备进行升级，可以对角色的属性进行提高，如血量上限，也可以是武器的等级(伤害)</DescriptionZH>
+        <INVEST>
+            Independent - No, because upgrades often rely on other features or systems in the game to function. For example, upgrading a weapon requires the weapon to exist and be functioning properly.
+
+            Negotiable - Yes, the details of the upgrade, such as what attributes it affects, the cost, and the level of improvement can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, an upgrade feature can provide players with a way to improve their in-game performance, which can increase engagement and retention.
+
+            Estimable - Yes, the development effort required for an upgrade feature can be estimated based on the desired functionality and the technology used to implement it.
+
+            Small - Yes, an upgrade feature can be broken down into smaller, more manageable sub-tasks for development, such as defining the different types of upgrades, implementing the upgrade UI, and creating the logic for applying the upgrades.
+
+            Testable - Yes, an upgrade feature can be tested to ensure it functions correctly, such as checking that the upgrade applies the correct attribute changes and that the cost of the upgrade is deducted properly from the player's currency.
+        </INVEST>
+        <Tests>
+            <Test>Check whether the game's equipment has a level system.</Test>
+            <Test>Approach higher-level equipment of the same type to see if it can replace lower-level equipment.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/0R2zj3Nl</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="19" heading="Skill Effect Combinations" headingZH="技能效果组合">
+        <Description>As a player, I desire varied Skill Effect Combinations so that I am motivated to utilize different skills rather than repeatedly relying on the same one.</Description>
+        <DescriptionZH>技能的效果会被其它技能影响，比如冰冻的敌人可以增加雷电的打击和跳跃范围，冰冻魔法可以熄灭火焰，火焰魔法可以解除冰冻等</DescriptionZH>
+        <INVEST>
+            Independent - No, because Skill Effect Combinations rely on other features or systems in the game, such as the skills themselves and their effects.
+
+            Negotiable - Yes, the details of the skill effect combinations, such as which skills can be combined, how they interact with each other, and the resulting effects can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, a Skill Effect Combinations feature can provide players with a way to create unique and powerful abilities that can enhance their gameplay experience, which can increase engagement and retention.
+
+            Estimable - Yes, the development effort required for a Skill Effect Combinations feature can be estimated based on the desired functionality and the technology used to implement it.
+
+            Small - Yes, a Skill Effect Combinations feature can be broken down into smaller, more manageable sub-tasks for development, such as defining the different combinations of skills and their resulting effects, implementing the skill combination UI, and creating the logic for applying the combinations.
+
+            Testable - Yes, a Skill Effect Combinations feature can be tested to ensure it functions correctly, such as checking that the correct effects are applied when skills are combined, and that the combinations do not cause any unexpected behavior or bugs in the game.
+        </INVEST>
+        <Tests>
+            <Test>Lighting magic and freezing maigc hitting the same monster will trigger the electric shock effect.</Test>
+            <Test>Fire magic hitting frozen monsters will unfreeze the monsters.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/z50RmdbJ</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="20" heading="Difficulty Design" headingZH="难度设计">
+        <Description>As a player, I desire diverse Difficulty Designs so that I can choose between enjoying the story or facing challenges.</Description>
+        <DescriptionZH>对不同的游戏难度等级设计不同难度的关卡和敌人属性，让玩家可以体验到不同难度下的游玩过程</DescriptionZH>
+        <INVEST>
+            Independent - No, because difficulty settings often affect other features or systems in the game, such as enemy behavior, player damage, and AI intelligence.
+
+            Negotiable - Yes, the details of the difficulty settings, such as the number of difficulty levels, what changes in each level, and how difficulty is presented to the player can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, a Difficulty feature can provide players with a way to adjust the challenge level of the game to their liking, which can increase engagement and retention.
+
+            Estimable - No, it may be difficult to estimate the development effort required for a Difficulty feature, as it can involve changes to many different systems in the game.
+
+            Small - No, a Difficulty feature can be a large and complex feature, involving changes to various systems in the game, and cannot be easily broken down into smaller, more manageable sub-tasks for development.
+
+            Testable - Yes, a Difficulty feature can be tested to ensure that the changes in difficulty levels are working as intended, such as enemy health and behavior changes, and the increase or decrease in difficulty feels balanced and reasonable.
+        </INVEST>
+        <Tests>
+            <Test>Try playing the game with different difficulty levels, to compare if there are differences in game difficulty.</Test>
+            <Test>Try playing the game with different standards, to determine if the difficulty setting is reasonable.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/Cp2CTzri</Url>
+        <Photos></Photos>
+    </UserStory>
 
 
 
-    <UserStory id="30" heading="VolumeControl" headingZH="音量控制">
+    <UserStory id="30" heading="Volume Control" headingZH="音量控制">
         <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
         <DescriptionZH>游戏内的音量控制，包括音效和背景乐</DescriptionZH>
         <INVEST>
@@ -706,7 +801,7 @@
         <Url>https://trello.com/c/VTSFJgFh</Url>
         <Photos></Photos>
     </UserStory>
-    <UserStory id="43" heading="BonusLevels" headingZH="奖励关卡">
+    <UserStory id="43" heading="Bonus Levels" headingZH="奖励关卡">
         <Description>As a player, I would like there to be bonus levels in the game, so that I can relax after completing levels.</Description>
         <DescriptionZH>奖励关卡，在指定时间内可以获取额外的奖励</DescriptionZH>
         <INVEST>
@@ -731,7 +826,7 @@
         <Url>https://trello.com/c/F74J3A6V</Url>
         <Photos></Photos>
     </UserStory>
-    <UserStory id="44" heading="OnewayPlatform" headingZH="单向平台">
+    <UserStory id="44" heading="Oneway Platform" headingZH="单向平台">
         <Description>As a player, I would like to see the addition of One-way Platforms, so that I can jump on it to quickly reach higher areas.</Description>
         <DescriptionZH>单向可跳跃平台，可以从下方穿过该平台以便快速到达上方</DescriptionZH>
         <INVEST>
@@ -779,7 +874,7 @@
         <Url>https://trello.com/c/c7hARgrt</Url>
         <Photos></Photos>
     </UserStory>
-    <UserStory id="46" heading="GameSaves" headingZH="存档">
+    <UserStory id="46" heading="Game Saves" headingZH="存档">
         <Description>As a player, I would like the game to have a Save feature, so that I can keep my progress even after quitting the game.</Description>
         <DescriptionZH>游戏可以进行存档，在重新进入游戏时不会丢失进度</DescriptionZH>
         <INVEST>
