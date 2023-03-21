@@ -1111,4 +1111,52 @@
         <Url>https://trello.com/c/SwVk78Bu</Url>
         <Photos></Photos>
     </UserStory>
+    <UserStory id="47" heading="Move" headingZH="移动">
+        <Description>As a player, I want the player to be able to Move, so that the game is playable.</Description>
+        <DescriptionZH>玩家可以进行移动</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Move feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Move feature, such as the types of moves available to the player, the control scheme, and the animations and effects, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Move feature is a fundamental aspect of gameplay, allowing players to navigate the game world, avoid obstacles, and engage in combat or other challenges.
+
+            Estimable - Yes, the development effort required for the Move feature can be estimated, as it involves designing and implementing specific move types, animations, control schemes, and testing.
+
+            Small - Yes, the Move feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual move types or refining the control scheme.
+
+            Testable - Yes, the Move feature can be tested to ensure that it works as intended, including testing move types, animations, control scheme, and any interactions with other game features or systems. Testing can also include checking for any performance issues that may arise from the addition of the Move feature.
+        </INVEST>
+        <Tests>
+            <Test>Press the movement key in the game to see if the character can move in all directions.</Test>
+            <Test>Release the movement key in the game to see if the character stops moving.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/b/YCY0DmnL</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="48" heading="Main Menu" headingZH="主菜单">
+        <Description>As a player, I want the game to have a Main Menu, so that I can choose when to start the game.</Description>
+        <DescriptionZH>进入游戏时的主菜单，新游戏，加载存档，设置</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Main Menu feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Main Menu feature, such as the layout, design, and functionality, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Main Menu feature is an essential aspect of the game as it provides players with a way to start or continue their game, access options, settings, and game modes.
+
+            Estimable - Yes, the development effort required for the Main Menu feature can be estimated, as it involves designing and implementing a user interface, creating buttons and menus, and integrating it with the game's functionality.
+
+            Small - Yes, the Main Menu feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual menu items, refining the layout or improving the user experience.
+
+            Testable - Yes, the Main Menu feature can be tested to ensure that it works as intended, including testing menu items, button functionality, and any interactions with other game features or systems. Testing can also include checking for any performance issues that may arise from the addition of the Main Menu feature.
+        </INVEST>
+        <Tests>
+            <Test>Enter the game and check if you have entered the main menu.</Test>
+            <Test>Test if you can pause and return to the main menu.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/XJ1b2tVL</Url>
+        <Photos></Photos>
+    </UserStory>
 </UserStories>
