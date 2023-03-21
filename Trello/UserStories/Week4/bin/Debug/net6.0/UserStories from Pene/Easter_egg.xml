@@ -1,0 +1,19 @@
+<UserStory id="34" heading="Easter Egg" headingZH="彩蛋">
+        <Description>As a player, I would like to see some Easter egg content in the game to make the exploration process more engaging and interesting.</Description>
+        <DescriptionZH>比较搞怪的才当-比如强制让玩家选择 yes no 时无法选择 no</DescriptionZH>
+        <INVEST>
+            I - Yes. It’s unique feature.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. Yes. The player will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes. It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Try to find Easter eggs in the game.</Test>
+            <Test>Try to tigger the Easter eggs.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/kmUSi6fa</Url>
+        <Photos></Photos>
+    </UserStory>

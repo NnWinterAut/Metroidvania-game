@@ -1,0 +1,19 @@
+<UserStory id="30" heading="Sound" headingZH="音量控制">
+        <Description>As a player, I want to be able to control the volume in-game.</Description>
+        <DescriptionZH>一个控制背景音乐的滑块</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
+            V - Yes. Users will get a better experience in sound.
+            E - Yes. We can estimate how long it will take since it is a small enough feature.
+            S - Yes. It is small feature so it can therefore fit into a sprint easily.
+            T - Yes. Tests were able to be created for it.
+        </INVEST>
+        <Tests>
+            <Test>Check if the volume bar can be displayed correctly in the options menu.</Test>
+            <Test>Attemp to adjust the volume and determine if the volume has changed.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/s14F0BNM</Url>
+        <Photos></Photos>
+    </UserStory>

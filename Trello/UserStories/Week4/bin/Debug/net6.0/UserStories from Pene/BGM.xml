@@ -1,0 +1,19 @@
+<UserStory id="41" heading="BGM" headingZH="BGM">
+        <Description>As a user, I want this game to have background music, So that I can enjoy music during play time.</Description>
+        <DescriptionZH>有游戏背景音乐</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. Yes. The story is a placeholder for a conversation
+            V - Yes. The user will benefit from the feature as they can have more fun to have a nice background music.
+            E - Yes. We can estimate how long it will take, because it is not a big feature
+            S - Yes. It is small feature so it can therefore fit into a sprint easily
+            T - Yes. Tests were able to be created for it
+        </INVEST>
+        <Tests>
+            <Test>When the user starts the game, the background music is automatically turned on. </Test>
+            <Test>Add a music button. Given that user on the main screen when user press to the music button, system will turn on and off the background music.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/mXgZkXqz</Url>
+        <Photos></Photos>
+    </UserStory>

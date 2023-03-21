@@ -1,0 +1,21 @@
+<UserStory id="42" heading="SFX" headingZH="音效">
+        <Description>As a player, I want the game to have different sound effects when player operate game functions so that players can have a better experience in terms of sound.</Description>
+        <DescriptionZH>玩家操作游戏时有不同音效</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
+            V - Yes. Users will get a better experience in sound.
+            E - Yes. We can estimate how long it will take since it is a small enough feature.
+            S - Yes. It is small feature so it can therefore fit into a sprint easily.
+            T - Yes. Tests were able to be created for it.
+        </INVEST>
+        <Tests>
+            <Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
+            <Test>test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>
+            <Test>Attempt to make the character move and evaluate whether sound effects such as footsteps are playing correctly.</Test>
+            <Test>Test the corresponding sound when the character opens the game store.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/VTSFJgFh</Url>
+        <Photos></Photos>
+    </UserStory>

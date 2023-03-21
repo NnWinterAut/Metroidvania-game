@@ -1,0 +1,18 @@
+<UserStory id="39" heading="Different Selection Interface" headingZH="游戏难度">
+        <Description>As a player, I would like the game to offer more than one (perhaps three) difficulty levels so that it can be suitable for different types of players.</Description>
+        <DescriptionZH>游戏能提供不止一种（或许三种）难度级别</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. Users will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes.  It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Increase the game difficulty option in the game start interface.</Test>
+            <Test>The difficulty of the game is Easy, Normal and Hard.</Test>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/uYbzhjJK</Url>
+        <Photos></Photos>
+    </UserStory>

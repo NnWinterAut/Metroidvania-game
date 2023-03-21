@@ -1,0 +1,19 @@
+<UserStory id="35" heading="Tutorial" headingZH="教程">
+        <Description>As a player, I want this game to include a tutorial level to help me become familiar with the game.</Description>
+        <DescriptionZH>新手关卡</DescriptionZH>
+        <INVEST>
+            I - No，It depends on the action feature.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The players will have a better understanding and experience of the game
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes.  It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Run the game and check whether the game starts with a tutorial or not.</Test>
+            <Test>Check whether the player can successfully pass the game tutorial.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/0SA4aVkU</Url>
+        <Photos></Photos>
+    </UserStory>

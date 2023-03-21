@@ -1,0 +1,19 @@
+<UserStory id="37" heading="Jump" headingZH="跳跃">
+        <Description>As a player, I'd like to have jumping so I can improve my mobility.</Description>
+        <DescriptionZH>能够跳跃障碍物</DescriptionZH>
+        <INVEST>
+            I - Yes. It’s unique feature.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The player will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes.  It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>After entering the game, try pressing the spint key while jump to check if your movement are correct.</Test>
+            <Test>After moving of left and right. try pressing the spint key to check for any conflicts with the jump. Note that pressing the print key after moving may trigger no action.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/7OSeK3IK</Url>
+        <Photos></Photos>
+    </UserStory>

@@ -1,0 +1,19 @@
+<UserStory id="36" heading="Attack" headingZH="攻击">
+        <Description>As a player, I want to be able to attack enemies so that I can pass the levels.</Description>
+        <DescriptionZH>够攻击敌人</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The user will benefit from the feature as it allows they have more choice on their roles.
+            E - Yes. We can estimate how long it will take since it is a small enough feature
+            S - Yes. It is small feature so it can therefore fit into a sprint easily
+            T - Yes. Tests were able to be created for it
+        </INVEST>
+        <Tests>
+            <Test>Press the attack key to see if the player can attack normally.</Test>
+            <Test>Verify if the attack can cause damage to the enemy.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/CvXop06V</Url>
+        <Photos></Photos>
+    </UserStory>

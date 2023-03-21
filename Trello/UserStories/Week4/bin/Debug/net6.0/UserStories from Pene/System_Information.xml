@@ -1,0 +1,19 @@
+<UserStory id="32" heading="System Information" headingZH="信息提示">
+        <Description>As a player, I would like to receive information about any newly acquired items, such as weapons, armor, and items.</Description>
+        <DescriptionZH>获得物品弹出提示</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The player will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes. It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes. It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Try to obtain an item and check if there is a prompt indicating that the item has been obtained.</Test>
+            <Test>Check the content of the prompt to confirm whether it matches the obtained item.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/AUxBHgsQ</Url>
+        <Photos></Photos>
+    </UserStory>

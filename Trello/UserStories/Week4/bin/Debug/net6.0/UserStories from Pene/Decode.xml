@@ -1,0 +1,20 @@
+<UserStory id="31" heading="Decode" headingZH="解密">
+        <Description>As a player, I would like the game to include puzzle elements that could reward me with various items or bonuses, which would add additional content to the game beyond combat and enrich the overall gameplay experience.</Description>
+        <DescriptionZH>比如给一个简单谜题，选对了给奖励</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. Users will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes.  It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Find content with puzzle-solving elements in the game.</Test>
+            <Test>Attempt to solve the puzzle and determine if it can be completed.</Test>
+            <Test>Analyze if the difficulty of the puzzle is reasonable.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/aiVIuJMf</Url>
+        <Photos></Photos>
+    </UserStory>

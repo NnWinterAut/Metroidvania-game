@@ -1,0 +1,19 @@
+<UserStory id="33" heading="Achievement" headingZH="成就系统">
+        <Description>As a player, I would like to see an achievement system added to the game that could provide me with a sense of satisfaction upon completing certain objectives.</Description>
+        <DescriptionZH>比如在指定时间通关，或者死亡过多次</DescriptionZH>
+        <INVEST>
+            I - Yes. It doesn't concern other features.
+            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
+            V - Yes. The player will have better in-game experience.
+            E - Yes. It can be estimated how long it will take since it is a small feature.
+            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
+            T - Yes.  It can be tested and verified by playing the game.
+        </INVEST>
+        <Tests>
+            <Test>Try to check game's achievement system and verify if it can display properly.</Test>
+            <Test>Try to accomplish the achievement conditions and check if the achievement can be completed normally.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/9FxcUIkk</Url>
+        <Photos></Photos>
+    </UserStory>
