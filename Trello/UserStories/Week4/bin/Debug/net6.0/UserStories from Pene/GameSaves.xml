@@ -1,20 +1,24 @@
-<UserStory id="46" heading="Game Archieve" headingZH="存档">
-        <Description>As a player, I would like the game to have a save feature that allows me to keep my progress even after quitting the game.</Description>
-        <DescriptionZH>能够跳跃障碍物</DescriptionZH>
-        <INVEST>
-            I - Yes. It doesn't concern other features.
-            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
-            V - Yes. The player will have better in-game experience.
-            E - Yes. It can be estimated how long it will take since it is a small feature.
-            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes.  It can be tested and verified by playing the game.
-        </INVEST>
-        <Tests>
-            <Test>Try tosave the game duin gameplay and ceckif the save can be saved normally.</Test>
-            <Test>Try to load te save file and check if the gameprogress can be loaded normally.</Test>
-            <Test>Exit and re enter the game, check if the save file can be loaded normally.</Test>
-        </Tests>
-        <Label>Must Have</Label>
-        <Url>https://trello.com/c/SwVk78Bu</Url>
-        <Photos></Photos>
-    </UserStory>
+<UserStory id="46" heading="GameSaves" headingZH="存档">
+    <Description>As a player, I would like the game to have a save feature, so that I can keep my progress even after quitting the game.</Description>
+    <DescriptionZH>游戏可以进行存档，在重新进入游戏时不会丢失进度</DescriptionZH>
+    <INVEST>
+        Independent: No, because the implementation of game saves requires integration with other game systems such as save/load functionality, storage management, and potentially network connectivity.
+
+        Negotiable: Yes, because the specific save/load functionality can be adjusted based on the team's resources and priorities. For example, the team can choose to implement manual save points or an automatic checkpoint system.
+
+        Valuable: Yes, because the ability to save and continue the game progress later is essential for many players, especially those who cannot complete the game in one session.
+
+        Estimable: No, because the level of effort required to implement game saves depends on the complexity of the game and the desired save/load functionality. It can be difficult to estimate without detailed planning and design.
+
+        Small: No, because implementing game saves can require a significant effort in terms of planning, design, and development, especially for larger games.
+
+        Testable: Yes, because the team can create test cases to ensure that the save/load functionality works correctly and does not result in any data loss or corruption.
+    </INVEST>
+    <Tests>
+        <Test>Save the game and check if a game content archive is generated.</Test>
+        <Test>Load the game and check if all content is loaded correctly.</Test>
+    </Tests>
+    <Label>Must Have</Label>
+    <Url>https://trello.com/c/SwVk78Bu</Url>
+    <Photos></Photos>
+</UserStory>

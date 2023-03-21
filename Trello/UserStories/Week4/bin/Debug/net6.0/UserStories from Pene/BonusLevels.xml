@@ -1,0 +1,25 @@
+<UserStory id="43" heading="BonusLevels" headingZH="奖励关卡">
+    <Description>As a player, I would like there to be bonus levels in the game, so that I can relax after completing levels.</Description>
+    <DescriptionZH>奖励关卡，在指定时间内可以获取额外的奖励</DescriptionZH>
+    <INVEST>
+        Independent: Yes, because bonus levels can typically be implemented as a self-contained feature that does not rely on other game systems or mechanics.
+
+        Negotiable: Yes, because the specifics of the bonus levels can be adjusted based on the team's resources and priorities. For example, the team can choose to implement bonus levels with different themes or difficulty levels.
+
+        Valuable: Yes, because bonus levels can add replay value to the game, providing additional content for players to explore and enjoy.
+
+        Estimable: Yes, because the level of effort required to implement bonus levels can be estimated based on the desired number and complexity of the levels, as well as the resources available to the team.
+
+        Small: Yes, because implementing bonus levels can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
+
+        Testable: Yes, because the team can create test cases to ensure that the bonus levels work correctly, are enjoyable, and do not result in unintended consequences such as crashes or broken game mechanics.
+    </INVEST>
+    <Tests>
+        <Test>Try to enter bonus level during gameplay.</Test>
+        <Test>Try to obtain rewards in the bonus level.</Test>
+        <Test>Analyze whether the rewards in the bonus level are within a reasonable range.</Test>
+    </Tests>
+    <Label>Could Have</Label>
+    <Url>https://trello.com/c/F74J3A6V</Url>
+    <Photos></Photos>
+</UserStory>
