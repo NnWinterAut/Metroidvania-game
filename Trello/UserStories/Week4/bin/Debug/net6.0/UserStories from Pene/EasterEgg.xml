@@ -1,24 +1,24 @@
 <UserStory id="34" heading="EasterEgg" headingZH="彩蛋">
-        <Description>As a player, I want there to be some Easter Eggs in the game, so that the process of exploring the game is more interesting.</Description>
-        <DescriptionZH>彩蛋，比如强制让玩家选择 yes no 时无法选择 no</DescriptionZH>
-        <INVEST>
-            Independent: Yes, because an Easter Egg is typically an optional hidden feature that is not required for the main gameplay experience.
+    <Description>As a player, I want there to be some Easter Eggs in the game, so that the process of exploring the game is more interesting.</Description>
+    <DescriptionZH>彩蛋，比如强制让玩家选择 yes no 时无法选择 no</DescriptionZH>
+    <INVEST>
+        Independent: Yes, because an Easter Egg is typically an optional hidden feature that is not required for the main gameplay experience.
 
-            Negotiable: Yes, because the specific Easter Egg(s) implemented in the game can be adjusted based on the team's resources and priorities.
+        Negotiable: Yes, because the specific Easter Egg(s) implemented in the game can be adjusted based on the team's resources and priorities.
 
-            Valuable: Yes, because Easter Eggs can add an extra layer of fun and surprise to the game, increasing player engagement and potentially generating positive word-of-mouth.
+        Valuable: Yes, because Easter Eggs can add an extra layer of fun and surprise to the game, increasing player engagement and potentially generating positive word-of-mouth.
 
-            Estimable: Yes, because the level of effort required to implement the Easter Egg(s) can be estimated based on their complexity and the resources available to the team.
+        Estimable: Yes, because the level of effort required to implement the Easter Egg(s) can be estimated based on their complexity and the resources available to the team.
 
-            Small: Yes, because the Easter Egg(s) can be implemented as a relatively isolated and straightforward feature that does not have a significant impact on the rest of the game.
+        Small: Yes, because the Easter Egg(s) can be implemented as a relatively isolated and straightforward feature that does not have a significant impact on the rest of the game.
 
-            Testable: Yes, because the team can create test cases to ensure that the Easter Egg(s) can be triggered correctly and do not interfere with the main gameplay experience.
-        </INVEST>
-        <Tests>
-            <Test>Try to find Easter eggs in the game.</Test>
-            <Test>Try to tigger the Easter eggs.</Test>
-        </Tests>
-        <Label>Could Have</Label>
-        <Url>https://trello.com/c/kmUSi6fa</Url>
-        <Photos></Photos>
-    </UserStory>
+        Testable: Yes, because the team can create test cases to ensure that the Easter Egg(s) can be triggered correctly and do not interfere with the main gameplay experience.
+    </INVEST>
+    <Tests>
+        <Test>Try to find Easter eggs in the game.</Test>
+        <Test>Try to tigger the Easter eggs.</Test>
+    </Tests>
+    <Label>Could Have</Label>
+    <Url>https://trello.com/c/kmUSi6fa</Url>
+    <Photos></Photos>
+</UserStory>
