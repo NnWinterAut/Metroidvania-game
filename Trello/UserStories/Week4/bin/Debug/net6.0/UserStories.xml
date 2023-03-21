@@ -1,6 +1,6 @@
 ﻿<UserStories>
     <UserStory id="1" heading="Health Point" headingZH="生命值">
-        <Description>As a user, I want the game has a proper health point (HP) so that health status can be sufficiently determined and monitored.</Description>
+        <Description>As a user, I want the game has a proper health point (HP), so that health status can be sufficiently determined and monitored.</Description>
         <DescriptionZH>血量的显示，受到伤害时的血量变化</DescriptionZH>
         <INVEST>
             Independent - Yes, because this user story does not rely on other features or systems in the game to function, although it does depend on the player's performance.
@@ -25,7 +25,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="2" heading="Magic Point" headingZH="魔法值">
-        <Descrpition>As a player, I want the game to have a Magic Point (MP) to restrict the player from using skills.</Descrpition>
+        <Descrpition>As a player, I want the game to have a Magic Point (MP), so that the usage of magic is conditioned.</Descrpition>
         <DescrpitionZH>玩家的魔法值，在魔法值不够时无法使用法术技能(可以自动恢复)</DescrpitionZH>
         <INVEST>
             Independent - Yes, since this is a small user story that does not depend on any other features or systems in the game to function.
@@ -51,7 +51,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="3" heading="Health Potion" headingZH="生命药剂">
-        <Description>As a player, I want the game to have some props in the game that can restore Health Potion (HP) to improve the Player's playability.</Description>
+        <Description>As a player, I want the game to have Health Potion, so that I can restore health point(HP).</Description>
         <DescriptionZH>可以恢复血量的生命药剂，拾取后恢复血量的道具</DescriptionZH>
         <INVEST>
             Independent - No, the health potion feature depends on the player's health system and how it is implemented in the game.
@@ -75,7 +75,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="4" heading="Magic Potion" headingZH="魔法药剂">
-        <Description>As a player, I want the game to have a Magic Potion so that I can restore mana during gameplay.</Description>
+        <Description>As a player, I want the game to have a Magic Potion, so that I can restore mana(MP) during gameplay.</Description>
         <DescriptionZH>可以恢复魔法值的药剂，拾取后恢复法力值的道具</DescriptionZH>
         <INVEST>
             Independent - No, the magic potion feature depends on the player's magic system and how it is implemented in the game.
@@ -99,7 +99,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="5" heading="Fire Magic" headingZH="火焰魔法">
-        <Description>As a player, I want to have Fire Magic so that I can inflict sustained damage on enemies.</Description>
+        <Description>As a player, I want to have Fire Magic, so that I can inflict sustained damage on enemies.</Description>
         <DescriptionZH>火焰魔法，消耗魔法值对敌人持续造成火焰伤害。会被冰冻魔法熄灭火焰</DescriptionZH>
         <INVEST>
             Independent - No, the fire magic feature depends on the player's magic system and the game's combat mechanics.
@@ -124,7 +124,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="6" heading="Frozen Magic" headingZH="冰冻魔法">
-        <Description>As a user, I want the game to have a Frozen Magic so that I can slow down enemy.</Description>
+        <Description>As a user, I want the game to have a Frozen Magic, so that I can slow down enemy.</Description>
         <DescriptionZH>冰冻魔法，消耗魔法值对敌人造成冰冻伤害，降低敌人移动和攻击速度。会被火焰魔法消除冰冻效果</DescriptionZH>
         <INVEST>
             Independent - No, the frozen magic feature depends on the player's magic system and the game's combat mechanics.
@@ -149,7 +149,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="7" heading="Lightning Magic" headingZH="雷电魔法">
-        <Description>As a user, I want the game to have Lightning Magic so that I can attack multiple enemies.</Description>
+        <Description>As a user, I want the game to have Lightning Magic, so that I can attack multiple enemies.</Description>
         <DescriptionZH>雷电魔法，可以连锁攻击多个相邻敌人，如果敌人处于冰冻状态可以增加连击范围和次数</DescriptionZH>
         <INVEST>
             Independent - No, the lightning magic feature depends on the player's magic system and the game's combat mechanics.
@@ -174,7 +174,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="8" heading="Charge Attack" headingZH="蓄力攻击">
-        <Description>As a player, I want my character to use Charge Attack so that I can have more ways to attack.</Description>
+        <Description>As a player, I want my character to use Charge Attack, so that I can have more ways to attack.</Description>
         <DescriptionZH>蓄力攻击，可以通过蓄力的方式在释放时进行更强力的攻击，可以用于破甲，攻击精英怪等</DescriptionZH>
         <INVEST>
             Independent - Yes, the charge attack feature is independent of other game mechanics and does not rely on any other features to function.
@@ -198,7 +198,7 @@
         <Photos></Photos>
     </UserStory>
     <UserStory id="9" heading="Double Jump" headingZH="二段跳">
-        <Description>As a player, I want to be able to Double Jump off walls so that I can reach higher places.</Description>
+        <Description>As a player, I want to be able to Double Jump off walls, so that I can reach higher places.</Description>
         <DescriptionZH>二段跳可以让玩家在接触墙面时进行二次跳跃，每次落地时重置</DescriptionZH>
         <INVEST>
             Independent - No, the double jump feature depends on the jump feature to function.
