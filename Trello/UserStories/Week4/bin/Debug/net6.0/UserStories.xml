@@ -221,8 +221,153 @@
         <Url>https://trello.com/c/AbsfAqXN</Url>
         <Photos></Photos>
     </UserStory>
+    <UserStory id="10" heading="Armor" headingZH="护甲">
+        <Description>As a player, I want the game to have Armor, so that I can take less damage from enemies.</Description>
+        <DescriptionZH>护甲可以用来降低敌方造成的伤害，如盔甲，斗篷等</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the implementation of armor should not rely on other features or systems in the game to function properly.
 
-    
+            Negotiable - Yes, because the specific details of the armor can be adjusted or changed based on feedback or changing design requirements.
+
+            Valuable - Yes, because armor can be a valuable feature in games to increase the player's survivability and add a layer of strategy to gameplay.
+
+            Estimable - Yes, because it is possible to estimate the time and effort required to implement armor in the game.
+
+            Small - Yes, because the implementation of armor can be broken down into smaller, manageable tasks that can be completed in a reasonable amount of time.
+
+            Testable - Yes, because it is possible to test the functionality of armor in the game, such as testing its effectiveness against different types of enemies or in different scenarios.
+        </INVEST>
+        <Tests>
+            <Test>When playing, try to find equipment such as armor in dropped items or in the shop that can improve the defence.</Test>
+            <Test>Compare the difference in defense before and after equipping the armor.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/hrxlYClT</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="11" heading="Buff" headingZH="Buff">
+        <Description>As a player, I would like the game to include buffs for both enemies and players, so that there can be more effects in combat.</Description>
+        <DescriptionZH>Buff是各种加成，如增加伤害，降低伤害，减速等</DescriptionZH>
+        <INVEST>
+            Independent - No, because buffs often rely on other features or systems in the game to determine their effectiveness. For example, a "damage buff" would depend on the damage calculation system in the game.
+
+            Negotiable - Yes, because the specifics of the buff can be adjusted to fit the needs of the game and its players.
+
+            Valuable - Yes, because buffs can add depth and strategy to gameplay, as well as provide a sense of progression and reward for the player.
+
+            Estimable - No, because the complexity and impact of a buff can vary greatly depending on the game and its mechanics.
+
+            Small - No, because buffs can have a significant impact on gameplay and may require substantial development effort.
+
+            Testable - Yes, because the effectiveness of a buff can be measured and verified through playtesting and balancing.
+        </INVEST>
+        <Tests>
+            <Test>Try to use items or attacks that can increase Buff in the game to see if the Buff appears.</Test>
+            <Test>Compare the differences between having Buff and not having Buff, and determine whether the Buff has been successfully applied.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/Z9b1tPQl</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="12" heading="BuffIcon" headingZH="Buff标识">
+        <Description>As a player, I would like the buffs to be displayed as icons, so that I can decide my way of combat.</Description>
+        <DescriptionZH>Buff的标识，可以是小图标，也可以是颜色等，用于显示当前玩家或敌人所拥有的 buff</DescriptionZH>
+        <INVEST>
+            Independent - No, because the implementation of the "Buff Icon" feature might be dependent on other game systems such as the ability to apply buffs, or the rules around when buffs can be used.
+
+            Negotiable - Yes, because there may be multiple ways to implement the feature, such as where the buff icon appears on the screen, how it's designed, and what buffs are included.
+
+            Valuable - Yes, because a buff icon can provide players with important information about the status of their character or game progress, which can improve their gameplay experience.
+
+            Estimable - No, because the complexity of implementing the feature might vary based on how the game engine is built and the resources available to the development team.
+
+            Small - No, because the feature may require significant development effort, depending on the complexity of the buff system and how the icon is displayed.
+
+            Testable - Yes, because the feature can be tested to ensure that it displays correctly and provides accurate information to the player.
+        </INVEST>
+        <Tests>
+            <Test>Check whether the buff icon can be displayed properly after the buff is in effect for the character.</Test>
+            <Test>Check whether the icon disappears after the buff expires.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/K4hDK7ld</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="13" heading="Status" headingZH="角色状态">
+        <Description>As a player, I wish I could view the Status of my character, so that I can understand my current situration.</Description>
+        <DescriptionZH>用于显示角色状态的面板，比如玩家的血量，伤害，等数值</DescriptionZH>
+        <INVEST>
+            Independent - No, because the "Status" feature may rely on other systems or features in the game, such as character attributes or quests, to determine the current status.
+
+            Negotiable - Yes, because the specifics of the "Status" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Status" feature can provide valuable information to the player about their progress and accomplishments within the game.
+
+            Estimable - No, because the "Status" feature may be difficult to estimate without more detailed requirements or specifications.
+
+            Small - Yes, because the "Status" feature can be implemented in small increments, such as showing the player's health or level.
+
+            Testable - Yes, because the "Status" feature can be tested to ensure that it is functioning properly and providing accurate information to the player.
+        </INVEST>
+        <Tests>
+            <Test>Press a specific key to open the character attribute panel.</Test>
+            <Test>Character attribute panel display hp, mp, damage, ect.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/wazyas4m</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="14" heading="Durability" headingZH="耐久度">
+        <Description>As a player, I wish to add Durability to equipments, so that I can pay more attention to my equipments.</Description>
+        <DescriptionZH>装备的耐久度在为0时使装备损坏</DescriptionZH>
+        <INVEST>
+            Independent - No, because the "Durability" feature may rely on other systems or features in the game, such as combat mechanics or item durability, to determine the current durability of an object or character.
+
+            Negotiable - Yes, because the specifics of the "Durability" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Durability" feature can provide valuable information to the player about the health or lifespan of an object or character within the game, and can add an element of strategy to the gameplay.
+
+            Estimable - No, because the "Durability" feature may be difficult to estimate without more detailed requirements or specifications.
+
+            Small - Yes, because the "Durability" feature can be implemented in small increments, such as adding durability to individual objects or items in the game.
+
+            Testable - Yes, because the "Durability" feature can be tested to ensure that it is functioning properly and providing accurate information to the player. Testing can involve measuring how long an object or character lasts before it breaks or loses durability.
+        </INVEST>
+        <Tests>
+            <Test>Equipment durability is displayed.</Test>
+            <Test>Equipment breaks when it has no durability.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/1S2Ka4Od</Url>
+        <Photos></Photos>
+    </UserStory>
+    <UserStory id="15" heading="Coins" headingZH="金币">
+        <Description>As a player, I wish to have coins, so that I can buy equipments in the game.</Description>
+        <DescriptionZH>用于购买游戏内的商品</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the "Coins" feature can be developed and implemented independently of other systems or features in the game.
+
+            Negotiable - Yes, because the specifics of the "Coins" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Coins" feature can provide valuable in-game currency to the player, which can be used to purchase items, upgrades, or other features within the game.
+
+            Estimable - Yes, because the "Coins" feature can be estimated and planned for, based on the number of coins needed to purchase various items or upgrades within the game.
+
+            Small - Yes, because the "Coins" feature can be implemented in small increments, such as adding a small number of coins as a reward for completing a task or mission.
+
+            Testable - Yes, because the "Coins" feature can be tested to ensure that the player is able to collect and spend the coins as intended, and that the currency system is functioning properly within the game.
+        </INVEST>
+        <Tests>
+            <Test>After attempting to defeat multiple enemies, check if any gold coins have been dropped.</Test>
+            <Test>Attempt to pick up gold coins and verify if your total amount of gold coins increases.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/WUQ6oeI9</Url>
+        <Photos></Photos>
+    </UserStory>
+
+
+
 
     <UserStory id="30" heading="VolumeControl" headingZH="音量控制">
         <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
