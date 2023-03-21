@@ -1,21 +1,24 @@
 <UserStory id="42" heading="SFX" headingZH="音效">
-        <Description>As a player, I want the game to have different sound effects when player operate game functions so that players can have a better experience in terms of sound.</Description>
-        <DescriptionZH>玩家操作游戏时有不同音效</DescriptionZH>
-        <INVEST>
-            I - Yes. It doesn't concern other features.
-            N - Yes. The story is a placeholder for a conversation, details can be negotiated later.
-            V - Yes. Users will get a better experience in sound.
-            E - Yes. We can estimate how long it will take since it is a small enough feature.
-            S - Yes. It is small feature so it can therefore fit into a sprint easily.
-            T - Yes. Tests were able to be created for it.
-        </INVEST>
-        <Tests>
-            <Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
-            <Test>test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>
-            <Test>Attempt to make the character move and evaluate whether sound effects such as footsteps are playing correctly.</Test>
-            <Test>Test the corresponding sound when the character opens the game store.</Test>
-        </Tests>
-        <Label>Should Have</Label>
-        <Url>https://trello.com/c/VTSFJgFh</Url>
-        <Photos></Photos>
-    </UserStory>
+    <Description>As a player, I want the game to have Sound Effects when player operate game functions, so that I can have a better experience in terms of sound.</Description>
+    <DescriptionZH>玩家操作游戏时有不同音效</DescriptionZH>
+    <INVEST>
+        Independent: No, because the "SFX" feature is likely to depend on other features in the game, such as animations or events, to trigger the appropriate sound effects.
+
+        Negotiable: Yes, because the specifics of which sound effects to include and how they are implemented can be adjusted based on the team's resources and priorities.
+
+        Valuable: Yes, because sound effects can enhance the player's experience by providing feedback on actions or events, adding immersion to the game world, and creating a more polished game overall.
+
+        Estimable: No, because the level of effort required to implement the "SFX" feature is difficult to estimate without knowing the specific sounds required and how they are implemented.
+
+        Small: Yes, because the "SFX" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing sound assets and mechanics.
+
+        Testable: Yes, because the team can create test cases to ensure that the sound effects are playing as intended and enhancing the overall gameplay experience.
+    </INVEST>
+    <Tests>
+        <Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
+        <Test>test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>
+    </Tests>
+    <Label>Must Have</Label>
+    <Url>https://trello.com/c/VTSFJgFh</Url>
+    <Photos></Photos>
+</UserStory>

@@ -1,19 +1,24 @@
 <UserStory id="45" heading="Run" headingZH="跑步">
-        <Description>As a player, I want to have a run feature so that I can move faster.</Description>
-        <DescriptionZH>快速跑</DescriptionZH>
-        <INVEST>
-            I - No. it depends on basic movements.
-            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
-            V - Yes. The player will have better in-game experience.
-            E - Yes. It can be estimated how long it will take since it is a small feature.
-            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes.  It can be tested and verified by playing the game.
-        </INVEST>
-        <Tests>
-            <Test>After entering the game, try pressing the spint key while moving left and right to check if your movement speed has increased.</Test>
-            <Test>After jumping, try pressing the sprint key to check for any conflicts with the jump. Note that pressing the sprint key after jumping may trigger air spint or no operation instead of acceleration.</Test>
-        </Tests>
-        <Label>Must Have</Label>
-        <Url>https://trello.com/c/c7hARgrt</Url>
-        <Photos></Photos>
-    </UserStory>
+    <Description>As a player, I want to have a Run feature, so that I can move faster.</Description>
+    <DescriptionZH>快速跑，其实就是在行走的基础上提高动画速度和移动速度</DescriptionZH>
+    <INVEST>
+        Independent: No, because the "Run" feature likely relies on other game mechanics and systems, such as character movement and animation.
+
+        Negotiable: Yes, because the specifics of how the "Run" feature is implemented can be adjusted based on the team's resources and priorities.
+
+        Valuable: Yes, because the "Run" feature can provide players with a faster way to traverse the game world, enhancing the overall gameplay experience.
+
+        Estimable: Yes, because the level of effort required to implement the "Run" feature can be estimated based on factors such as the desired speed and animation, as well as the resources available to the team.
+
+        Small: Yes, because the "Run" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing assets and mechanics.
+
+        Testable: Yes, because the team can create test cases to ensure that the "Run" feature works correctly, does not result in unintended consequences, and enhances the overall gameplay experience.
+    </INVEST>
+    <Tests>
+        <Test>After entering the game, try pressing the spint key while moving left and right to check if your movement speed has increased.</Test>
+        <Test>After jumping, try pressing the sprint key to check for any conflicts with the jump. Note that pressing the sprint key after jumping may trigger air spint or no operation instead of acceleration.</Test>
+    </Tests>
+    <Label>Must Have</Label>
+    <Url>https://trello.com/c/c7hARgrt</Url>
+    <Photos></Photos>
+</UserStory>

@@ -1,19 +1,24 @@
 <UserStory id="40" heading="Portals" headingZH="传送门">
-        <Description>As a player, I would like the game to include portals that allow me to quickly access certain areas which would make the gameplay less monotonous and enhance the overall experience.</Description>
-        <DescriptionZH>如同一张地图的解密</DescriptionZH>
-        <INVEST>
-            I - Yes. It doesn't concern other features.
-            N - Yes. The story is a placeholder for a conversation. Confirmation of specific details can be negotiated.
-            V - Yes. The player will have better in-game experience.
-            E - Yes. It can be estimated how long it will take since it is a small feature.
-            S - Yes.  It is small feature so it can therefore completed in one iteration or Sprint.
-            T - Yes.  It can be tested and verified by playing the game.
-        </INVEST>
-        <Tests>
-            <Test>Try to find portals in the game.</Test>
-            <Test>Arrempt to use the portals to teleport to the corresponding location.</Test>
-        </Tests>
-        <Label>Could Have</Label>
-        <Url>https://trello.com/c/qTAMjKqn</Url>
-        <Photos></Photos>
-    </UserStory>
+    <Description>As a player, I would like the game to include Portals, so that I can quickly access certain areas.</Description>
+    <DescriptionZH>传送门，能让玩家从一个地点快速到达另一个地点</DescriptionZH>
+    <INVEST>
+        Independent: Yes, because portals can typically be implemented as a self-contained feature that does not rely on other game systems or mechanics.
+
+        Negotiable: Yes, because the specifics of the portal mechanic can be adjusted based on the team's resources and priorities. For example, the team can choose to implement different types of portals that transport players to different locations or time periods.
+
+        Valuable: Yes, because portals can add depth and complexity to the game, providing players with new ways to navigate the game world and solve puzzles.
+
+        Estimable: Yes, because the level of effort required to implement portals can be estimated based on the desired number and complexity of the portals, as well as the resources available to the team.
+
+        Small: Yes, because implementing portals can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
+
+        Testable: Yes, because the team can create test cases to ensure that the portal mechanic works correctly, is reliable, and does not result in unintended consequences such as getting stuck or breaking the game.
+    </INVEST>
+    <Tests>
+        <Test>Try to find portals in the game.</Test>
+        <Test>Arrempt to use the portals to teleport to the corresponding location.</Test>
+    </Tests>
+    <Label>Could Have</Label>
+    <Url>https://trello.com/c/qTAMjKqn</Url>
+    <Photos></Photos>
+</UserStory>
