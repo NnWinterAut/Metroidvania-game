@@ -1,0 +1,13 @@
+<PockerPoints>
+    <Pocker id="1" heading="Health Point">
+        <Points name="Jiahao" point="13"></Points>
+        <Points name="Minqi" point="13"></Points>
+        <Points name="Penelope" point="13">The increase and decreaseof blood stripes may change according to external factors, such as the difficulty of armor game level which requires some calculation.</Points>
+        <Points name="Chenhao" point="13"></Points>
+        <Points name="Winter" point="13"></Points>
+        <Photo>Images/Photo 1-1.png</Photo>
+    </Pocker>
+    <Pocker id="20" heading="Difficulty Design">
+        <Photo>Images/Photo 20-1.png</Photo>
+    </Pocker>
+</PockerPoints>
