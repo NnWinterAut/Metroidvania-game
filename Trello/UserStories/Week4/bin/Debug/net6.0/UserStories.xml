@@ -22,7 +22,6 @@
         </Tests>
         <Lable>Must Have</Lable>
         <Url>https://trello.com/c/azzQ6C8M</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="2" heading="Magic Point" headingZH="魔法值">
         <Descrpition>As a player, I want the game to have a Magic Point (MP), so that the usage of magic is conditioned.</Descrpition>
@@ -48,7 +47,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/IV9NNeem</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="3" heading="Health Potion" headingZH="生命药剂">
         <Description>As a player, I want the game to have Health Potion, so that I can restore health point(HP).</Description>
@@ -72,7 +70,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/JJ4N4b5L</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="4" heading="Magic Potion" headingZH="魔法药剂">
         <Description>As a player, I want the game to have a Magic Potion, so that I can restore mana(MP) during gameplay.</Description>
@@ -96,7 +93,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/OU6r66yU</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="5" heading="Fire Magic" headingZH="火焰魔法">
         <Description>As a player, I want to have Fire Magic, so that I can inflict sustained damage on enemies.</Description>
@@ -121,7 +117,6 @@
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/jGFK3JBC</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="6" heading="Frozen Magic" headingZH="冰冻魔法">
         <Description>As a user, I want the game to have a Frozen Magic, so that I can slow down enemy.</Description>
@@ -146,7 +141,6 @@
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/7c4BxDIO</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="7" heading="Lightning Magic" headingZH="雷电魔法">
         <Description>As a user, I want the game to have Lightning Magic, so that I can attack multiple enemies.</Description>
@@ -171,7 +165,6 @@
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/Uos684py</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="8" heading="Charge Attack" headingZH="蓄力攻击">
         <Description>As a player, I want my character to use Charge Attack, so that I can have more ways to attack.</Description>
@@ -195,7 +188,6 @@
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/QnmHeyxr</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="9" heading="Double Jump" headingZH="二段跳">
         <Description>As a player, I want to be able to Double Jump off walls, so that I can reach higher places.</Description>
@@ -219,7 +211,6 @@
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/AbsfAqXN</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="10" heading="Armor" headingZH="护甲">
         <Description>As a player, I want the game to have Armor, so that I can take less damage from enemies.</Description>
@@ -243,7 +234,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/hrxlYClT</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="11" heading="Buff" headingZH="Buff">
         <Description>As a player, I would like the game to include buffs for both enemies and players, so that there can be more effects in combat.</Description>
@@ -267,7 +257,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/Z9b1tPQl</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="12" heading="BuffIcon" headingZH="Buff标识">
         <Description>As a player, I would like the buffs to be displayed as icons, so that I can decide my way of combat.</Description>
@@ -291,7 +280,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/K4hDK7ld</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="13" heading="Status" headingZH="角色状态">
         <Description>As a player, I wish I could view the Status of my character, so that I can understand my current situration.</Description>
@@ -315,7 +303,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/wazyas4m</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="14" heading="Durability" headingZH="耐久度">
         <Description>As a player, I wish to add Durability to equipments, so that I can pay more attention to my equipments.</Description>
@@ -339,7 +326,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/1S2Ka4Od</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="15" heading="Pickup" headingZH="装备拾取">
         <Description>As a player, I wish to be able to Pickup items, so that I can pickup potions or gears.</Description>
@@ -363,7 +349,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/U6JMQwbS</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="16" heading="Coins" headingZH="金币">
         <Description>As a player, I wish to have Coins, so that I can buy equipments in the game.</Description>
@@ -387,7 +372,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/WUQ6oeI9</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="17" heading="Shop" headingZH="商城">
         <Description>As a player, I hope there is a Shop system, so that I can buy equipments in the game.</Description>
@@ -411,7 +395,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/IueQzHao</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="18" heading="Upgrade" headingZH="升级">
         <Description>As a player, I want there a Upgrade system, so that I can level up and fight stronger enemies.</Description>
@@ -435,7 +418,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/0R2zj3Nl</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="19" heading="Skill Effect Combinations" headingZH="技能效果组合">
         <Description>As a player, I desire varied Skill Effect Combinations so that I am motivated to utilize different skills rather than repeatedly relying on the same one.</Description>
@@ -459,7 +441,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/z50RmdbJ</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="20" heading="Difficulty Design" headingZH="难度设计">
         <Description>As a player, I desire diverse Difficulty Designs so that I can choose between enjoying the story or facing challenges.</Description>
@@ -483,7 +464,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/Cp2CTzri</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="21" heading="Boss" headingZH="Boss">
         <Description>As a player, I desire an exhilarating BOSS battle, so that I can experience a sense of accomplishment by defeating seemingly invincible opponents.</Description>
@@ -507,7 +487,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/CqKeS9yD</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="22" heading="Elite Enemies" headingZH="精英敌人">
         <Description>As a player, I desire to confront Elite Enemies so that the game provides a greater level of challenge.</Description>
@@ -531,7 +510,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/w7pMKAxL</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="23" heading="Jump Attack" headingZH="跳跃攻击">
         <Description>As a player, I want Jump Attack, so that I can attack enemies above me.</Description>
@@ -555,7 +533,6 @@
         </Tests>
         <Label>Sould Have</Label>
         <Url>https://trello.com/c/pMVLpWXC</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="24" heading="Stunned State" headingZH="僵直状态">
         <Description>As a player, I desire for the enemy to enter a Stunned State upon taking damage, so that I can prevent them from inflicting continuous damage on me.</Description>
@@ -578,7 +555,6 @@
         </Tests>
         <Label>Sould Have</Label>
         <Url>https://trello.com/c/PcEerpRo</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="25" heading="Cooldown" headingZH="冷却">
         <Description>As a player, I would like there to be a Cooldown between skills, so that it can prevent the character's attack frequency from being too rapid.</Description>
@@ -602,7 +578,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/DqfEkXbx</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="26" heading="Clearance Timer" headingZH="通关时间">
         <Description>As a player, I would like to have a Clearance Timer, so that I can challenge others or myself.</Description>
@@ -626,7 +601,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/BRwJD48f</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="27" heading="Clearance Score" headingZH="通关分数">
         <Description>As a player, I would like to have a Clearance Score, so that I can challenge others or myself.</Description>
@@ -650,7 +624,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/GxhEvknH</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="28" heading="Flying Enemies" headingZH="飞行敌人">
         <Description>As a player, I would like to see flying enemies, so that the vertical gaps are not too empty.</Description>
@@ -674,7 +647,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/UvgshZqQ</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="29" heading="Bonus Level" headingZH="奖励关卡">
         <Description>As a player, I hope this game has Bonus Levels, so that I can relax after fightings.</Description>
@@ -699,7 +671,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/F74J3A6V</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="30" heading="Volume Control" headingZH="音量控制">
         <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
@@ -723,7 +694,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/s14F0BNM</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="31" heading="Puzzle" headingZH="谜题解密">
         <Description>As a player, I would like the game to include Puzzle elements, so that I could enjoy solving them.</Description>
@@ -748,7 +718,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/aiVIuJMf</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="32" heading="Hint" headingZH="提示">
         <Description>As a player, I would like to receive Information(Hint) about any events in game, so that I'll be able to monitor my status.</Description>
@@ -772,7 +741,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/AUxBHgsQ</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="33" heading="Achievement" headingZH="成就系统">
         <Description>As a player, I would like to see an achievement system, so that I could gain satisfaction upon completing objectives.</Description>
@@ -796,7 +764,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/9FxcUIkk</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="34" heading="EasterEgg" headingZH="彩蛋">
         <Description>As a player, I want there to be some Easter Eggs in the game, so that the process of exploring the game is more interesting.</Description>
@@ -820,7 +787,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/kmUSi6fa</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="35" heading="Tutorial" headingZH="教程">
         <Description>As a player, I want this game to include a Tutorial level, so that it can help me become familiar with the game.</Description>
@@ -844,7 +810,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/0SA4aVkU</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="36" heading="Attack" headingZH="攻击">
         <Description>As a player, I want to be able to perform an attack action, so that I can defeat enemies and progress through the game.</Description>
@@ -868,7 +833,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/CvXop06V</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="37" heading="Jump" headingZH="跳跃">
         <Description>As a player, I want to be able to Jump, so that I can improve my mobility.</Description>
@@ -892,7 +856,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/7OSeK3IK</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="38" heading="Dodge" headingZH="闪躲">
         <Description>As a player, I want to have a Dodge feature, so that I can dodge the enemy attacks.</Description>
@@ -916,7 +879,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/W0ZrOoCF</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="39" heading="Difficulties" headingZH="游戏难度">
         <Description>As a player, I would like the game to offer more than one difficulty level (perhaps three), so that it can cater to different types of players.</Description>
@@ -940,7 +902,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/uYbzhjJK</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="40" heading="Portals" headingZH="传送门">
         <Description>As a player, I would like the game to include Portals, so that I can quickly access certain areas.</Description>
@@ -964,7 +925,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/qTAMjKqn</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="41" heading="BGM" headingZH="BGM">
         <Description>As a player, I want this game to have background music, so that I can enjoy music during play time.</Description>
@@ -988,7 +948,6 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/mXgZkXqz</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="42" heading="SFX" headingZH="音效">
         <Description>As a player, I want the game to have Sound Effects when player operate game functions, so that I can have a better experience in terms of sound.</Description>
@@ -1012,7 +971,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/VTSFJgFh</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="43" heading="Bonus Levels" headingZH="奖励关卡">
         <Description>As a player, I would like there to be bonus levels in the game, so that I can relax after completing levels.</Description>
@@ -1037,7 +995,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/F74J3A6V</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="44" heading="Oneway Platform" headingZH="单向平台">
         <Description>As a player, I would like to see the addition of One-way Platforms, so that I can jump on it to quickly reach higher areas.</Description>
@@ -1061,7 +1018,6 @@
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/PH9tiQfu</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="45" heading="Run" headingZH="跑步">
         <Description>As a player, I want to have a Run feature, so that I can move faster.</Description>
@@ -1085,7 +1041,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/c7hARgrt</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="46" heading="Game Saves" headingZH="存档">
         <Description>As a player, I would like the game to have a Save feature, so that I can keep my progress even after quitting the game.</Description>
@@ -1109,7 +1064,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/SwVk78Bu</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="47" heading="Move" headingZH="移动">
         <Description>As a player, I want the player to be able to Move, so that the game is playable.</Description>
@@ -1133,7 +1087,6 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/b/YCY0DmnL</Url>
-        <Photos></Photos>
     </UserStory>
     <UserStory id="48" heading="Main Menu" headingZH="主菜单">
         <Description>As a player, I want the game to have a Main Menu, so that I can choose when to start the game.</Description>
@@ -1157,6 +1110,5 @@
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/XJ1b2tVL</Url>
-        <Photos></Photos>
     </UserStory>
 </UserStories>
