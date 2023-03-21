@@ -1,5 +1,5 @@
 <UserStory id="34" heading="EasterEgg" headingZH="彩蛋">
-        <Description>As a player, I want there to be some Easter eggs in the game, so that the process of exploring the game is more interesting.</Description>
+        <Description>As a player, I want there to be some Easter Eggs in the game, so that the process of exploring the game is more interesting.</Description>
         <DescriptionZH>彩蛋，比如强制让玩家选择 yes no 时无法选择 no</DescriptionZH>
         <INVEST>
             Independent: Yes, because an Easter Egg is typically an optional hidden feature that is not required for the main gameplay experience.

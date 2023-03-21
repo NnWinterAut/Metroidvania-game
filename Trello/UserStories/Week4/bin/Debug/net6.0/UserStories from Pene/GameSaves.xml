@@ -1,5 +1,5 @@
 <UserStory id="46" heading="GameSaves" headingZH="存档">
-    <Description>As a player, I would like the game to have a save feature, so that I can keep my progress even after quitting the game.</Description>
+    <Description>As a player, I would like the game to have a Save feature, so that I can keep my progress even after quitting the game.</Description>
     <DescriptionZH>游戏可以进行存档，在重新进入游戏时不会丢失进度</DescriptionZH>
     <INVEST>
         Independent: No, because the implementation of game saves requires integration with other game systems such as save/load functionality, storage management, and potentially network connectivity.

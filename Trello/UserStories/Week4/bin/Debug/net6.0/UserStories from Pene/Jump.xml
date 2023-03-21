@@ -1,5 +1,5 @@
 <UserStory id="37" heading="Jump" headingZH="跳跃">
-    <Description>As a player, I want to be able to jump, so that I can improve my mobility.</Description>
+    <Description>As a player, I want to be able to Jump, so that I can improve my mobility.</Description>
     <DescriptionZH>能够跳过障碍物</DescriptionZH>
     <INVEST>
         Independent: Yes, because the ability to jump is typically a self-contained feature that does not rely on other game systems or mechanics.

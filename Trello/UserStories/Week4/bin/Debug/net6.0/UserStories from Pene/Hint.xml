@@ -1,5 +1,5 @@
 <UserStory id="32" heading="Hint" headingZH="提示">
-    <Description>As a player, I would like to receive information about any events in game, so that I'll be able to monitor my status.</Description>
+    <Description>As a player, I would like to receive Information(Hint) about any events in game, so that I'll be able to monitor my status.</Description>
     <DescriptionZH>游戏内的提示信息，比如拾取物品时的提示等</DescriptionZH>
     <INVEST>
         Independent: No, because hints typically rely on other features or systems in the game to provide guidance to the player. For example, a hint about how to defeat a boss may depend on the boss mechanics and the available weapons or items.
