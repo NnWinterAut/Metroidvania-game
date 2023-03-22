@@ -1,0 +1,49 @@
+Id,Heading,J,M,P,C,W
+1,Health Point,5,5,55,1,1
+2,Magic Point,5,13,55,2,1
+3,Health Potion,2,2,2,2,2
+4,Magic Potion,2,2,2,1,1
+5,Fire Magic,5,5,5,3,4
+6,Frozen Magic,13,13,5,5,3
+7,Lightning Magic,13,55,90,13,13
+8,Charge Attack,55,55,90,90,13
+9,Double Jump,55,21,90,13,13
+10,Armor,2,13,5,2,2
+11,Buff,90,125,125,90,90
+12,BuffIcon,13,13,21,5,13
+13,Status,55,55,55,55,55
+14,Durability,150,125,125,150,1
+15,Pickup,21,21,13,21,5
+16,Coins,5,5,3,5,3
+17,Shop,90,90,90,90,90
+18,Upgrade,13,55,21,21,13
+19,Skill Effect Combinations,125,125,90,150,13
+20,Difficulty Design,150,150,150,150,150
+21,Boss,90,90,125,55,55
+22,Elite Enemies,13,13,13,2,2
+23,Jump Attack,125,125,125,150,5
+24,Stunned State,90,90,90,90,55
+25,Cooldown,2,2,2,2,2
+26,Clearance Timer,2,13,5,1,3
+27,Clearance Score,5,13,13,5,3
+28,Flying Enemies,150,150,150,150,90
+29,Bonus Level,90,125,90,90,55
+30,Volume Control,3,1,5,1,1
+31,Puzzle,150,55,125,150,13
+32,Hint,3,1,1,5,1
+33,Achievement,150,150,150,150,90
+34,EasterEgg,55,55,125,90,5
+35,Tutorial,90,90,55,1,90
+36,Attack,13,13,13,13,13
+37,Jump,90,90,90,90,90
+38,Dodge,13,2,5,3,3
+39,Difficulties,3,21,5,3,3
+40,Portals,13,13,13,13,13
+41,BGM,2,5,1,5,1
+42,SFX,13,13,13,13,13
+43,Bonus Levels,125,125,125,125,90
+44,One Way Platform,5,13,2,5,3
+45,Run,3,13,1,2,1
+46,Game Save,150,150,150,150,55
+47,Move,13,13,13,13,13
+48,Main Menu,21,21,21,21,21
