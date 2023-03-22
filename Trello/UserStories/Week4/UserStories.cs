@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
@@ -49,11 +50,11 @@ namespace UserStories
             string descriptionZh = story.Element("DescriptionZH").Value;
 
             var invest = new UserStory.InvestStruct(story.Element("INVEST").Value);
-            var tests = story.Element("Tests").Elements("Test").Select(x => x.Value);
+            var tests = story.Element("Tests").Elements("Test").Select(x => x.Value).ToList();
             var label = UserStory.LabelConverter(story.Element("Label").Value);
             var url = story.Element("Url").Value;
 
-            return new UserStory();
+            return new UserStory(id, name, nameZh, description, descriptionZh, invest, tests, label, url);
         }
     }
     public struct UserStory
@@ -145,6 +146,25 @@ namespace UserStories
             {
                 return labelName + "\\s+-\\s+(Yes|No),\\s+(.+)\\n";
             }
+        }
+        public override string ToString()
+        {
+            var str = new StringBuilder();
+
+            // 基本信息
+            str.AppendLine($"ID = {Id,2} , {Name,10} , {NameZh}");
+            str.AppendLine();
+            str.AppendLine($"  Label = {LabelConverter(Label),11} , Url = {Url}");
+            str.AppendLine();
+            str.AppendLine($"    I ({Invest.Independent.Item2,5}) = {Invest.Independent.Item1}");
+            str.AppendLine($"    N ({Invest.Negotiable.Item2,5}) = {Invest.Negotiable.Item1}");
+            str.AppendLine($"    V ({Invest.Valuable.Item2,5}) = {Invest.Valuable.Item1}");
+            str.AppendLine($"    E ({Invest.Estimable.Item2,5}) = {Invest.Estimable.Item1}");
+            str.AppendLine($"    S ({Invest.Small.Item2,5}) = {Invest.Small.Item1}");
+            str.AppendLine($"    T ({Invest.Testable.Item2,5}) = {Invest.Testable.Item1}");
+            str.AppendLine();
+            foreach(var test in Tests) { str.AppendLine($"      Test - {test}"); }
+            return str.ToString();
         }
     }
 }
