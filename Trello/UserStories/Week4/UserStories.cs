@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -47,31 +48,27 @@ namespace UserStories
             string description = story.Element("Description").Value;
             string descriptionZh = story.Element("DescriptionZH").Value;
 
-            //var invest = ReadInvest(story.Element("INVEST").Value);
-            var tests = story.Element("Tests").Elements("Test").Select(x=>x.Value);
+            var invest = new UserStory.InvestStruct(story.Element("INVEST").Value);
+            var tests = story.Element("Tests").Elements("Test").Select(x => x.Value);
             var label = UserStory.LabelConverter(story.Element("Label").Value);
             var url = story.Element("Url").Value;
 
             return new UserStory();
         }
-        private Dictionary<string, string> ReadInvest(string str)
-        {
-            throw new NotImplementedException();
-        }
     }
-    struct UserStory
+    public struct UserStory
     {
         public int Id;
         public string Name;
         public string NameZh;
         public string Description;
         public string DescriptionZh;
-        public Dictionary<string, string> Invest;
+        public InvestStruct Invest;
         public List<string> Tests;
         public LabelType Label;
         public string Url;
 
-        public UserStory(int id, string name, string nameZh, string description, string descriptionZh, Dictionary<string, string> invest, List<string> tests, LabelType label, string url)
+        public UserStory(int id, string name, string nameZh, string description, string descriptionZh, InvestStruct invest, List<string> tests, LabelType label, string url)
         {
             Id = id;
             Name = name;
@@ -111,6 +108,43 @@ namespace UserStories
             var field = val.GetType().GetField(val.ToString());
             var customAttribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
             return customAttribute == null ? val.ToString() : ((DescriptionAttribute)customAttribute).Description;
+        }
+        public struct InvestStruct
+        {
+            public (string, bool) Independent;
+            public (string, bool) Negotiable;
+            public (string, bool) Valuable;
+            public (string, bool) Estimable;
+            public (string, bool) Small;
+            public (string, bool) Testable;
+            public InvestStruct(string str)
+            {
+                var m_independent = Regex.Match(str, LabelRegex("Independent"));
+                var m_negotiable = Regex.Match(str, LabelRegex("Negotiable"));
+                var m_valuable = Regex.Match(str, LabelRegex("Valuable"));
+                var m_estimable = Regex.Match(str, LabelRegex("Estimable"));
+                var m_small = Regex.Match(str, LabelRegex("Small"));
+                var m_testable = Regex.Match(str, LabelRegex("Testable"));
+
+                Func<Match, (string, bool)> Func_LabelToTuple = (match) =>
+                {
+                    return (
+                        match.Groups[2].Value,
+                        match.Groups[1].Value == "Yes" ? true : false
+                        );
+                };
+
+                Independent = Func_LabelToTuple(m_independent);
+                Negotiable = Func_LabelToTuple(m_negotiable);
+                Valuable = Func_LabelToTuple(m_valuable);
+                Estimable = Func_LabelToTuple(m_estimable);
+                Small = Func_LabelToTuple(m_small);
+                Testable = Func_LabelToTuple(m_testable);
+            }
+            private static string LabelRegex(string labelName)
+            {
+                return labelName + "\\s+-\\s+(Yes|No),\\s+(.+)\\n";
+            }
         }
     }
 }

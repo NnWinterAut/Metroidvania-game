@@ -1,0 +1,15 @@
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0-windows\UserStories.exe
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0-windows\UserStories.deps.json
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0-windows\UserStories.runtimeconfig.json
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0-windows\UserStories.dll
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0-windows\UserStories.pdb
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.csproj.AssemblyReference.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.AssemblyInfoInputs.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.AssemblyInfo.cs
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.csproj.CoreCompileInputs.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.dll
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\refint\UserStories.dll
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.pdb
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\UserStories.genruntimeconfig.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0-windows\ref\UserStories.dll
