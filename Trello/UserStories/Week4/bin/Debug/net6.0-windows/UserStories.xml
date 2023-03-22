@@ -593,7 +593,7 @@
 
             Small - Yes, the Clearance Timer feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
 
-            Testable - Yes, the Clearance Timer feature can be tested to ensure that it works, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Clearance Timer interacts correctly with other game features, such as player abilities or enemy AI.
+            Testable - Yes, the Clearance Timer feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Clearance Timer interacts correctly with other game features, such as player abilities or enemy AI.
         </INVEST>
         <Tests>
             <Test>Upon entering the level, verify if there is a prompt indicating the time for timing.</Test>
@@ -616,7 +616,7 @@
 
             Small - Yes, the Clearance Score feature can be broken down into smaller sub-tasks for development, such as designing and implementing the scoring system or adding the visual elements that indicate a player's score.
 
-            Testable - Yes, the Clearance Score feature can be tested to ensure that it works, including testing the scoring rules, reward system, and any associated visual or gameplay elements. Testing can also include checking that the Clearance Score feature interacts correctly with other game features, such as player abilities or enemy AI.
+            Testable - Yes, the Clearance Score feature can be tested to ensure that it works as intended, including testing the scoring rules, reward system, and any associated visual or gameplay elements. Testing can also include checking that the Clearance Score feature interacts correctly with other game features, such as player abilities or enemy AI.
         </INVEST>
         <Tests>
             <Test>After the player clears the level, the clearance score will be displayed.</Test>
@@ -639,7 +639,7 @@
 
             Small - Yes, the Flying Enemies feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual enemy behaviors or adding the visual elements that indicate a flying enemy's presence.
 
-            Testable - Yes, the Flying Enemies feature can be tested to ensure that it works, including testing enemy behaviors and interactions with other game features, such as player abilities or terrain obstacles. Testing can also include checking for any performance issues that may arise from the addition of flying enemies.
+            Testable - Yes, the Flying Enemies feature can be tested to ensure that it works as intended, including testing enemy behaviors and interactions with other game features, such as player abilities or terrain obstacles. Testing can also include checking for any performance issues that may arise from the addition of flying enemies.
         </INVEST>
         <Tests>
             <Test>Try to find flying enemies at the game level.</Test>
@@ -662,7 +662,7 @@
             
             Small - Yes, the Bonus Level feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual level objectives or adding the visual and audio elements that make up the level.
             
-            Testable - Yes, the Bonus Level feature can be tested to ensure that it works, including testing level objectives and mechanics, visual and audio elements, and difficulty level. Testing can also include checking for any performance issues that may arise from the addition of the Bonus Level.
+            Testable - Yes, the Bonus Level feature can be tested to ensure that it works as intended, including testing level objectives and mechanics, visual and audio elements, and difficulty level. Testing can also include checking for any performance issues that may arise from the addition of the Bonus Level.
         </INVEST>
         <Tests>
             <Test>Try to enter the bonus level during gameplay.</Test>
@@ -673,20 +673,20 @@
         <Url>https://trello.com/c/F74J3A6V</Url>
     </UserStory>
     <UserStory id="30" heading="Volume Control" headingZH="音量控制">
-        <Description>As a player, I want to be able to control the Volume in game, so that it fit my comfort range of volume.</Description>
+        <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
         <DescriptionZH>游戏内的音量控制，包括音效和背景乐</DescriptionZH>
         <INVEST>
-            Independent - Yes, because this feature does not rely on any other part of the game to function.
+            Independent - Yes, as the feature does not rely on any other part of the game to function.
     
-            Negotiable - Yes, because the specifics of how the volume control works can be adjusted based on user feedback or other considerations.
+            Negotiable - Yes, as the specifics of how the volume control works can be adjusted based on user feedback or other considerations.
     
-            Valuable - Yes, because the ability to adjust the volume is important to many players, especially those who may need to play with different volume levels due to personal preferences or accessibility needs.
+            Valuable - Yes, as the ability to adjust the volume is important to many players, especially those who may need to play with different volume levels due to personal preferences or accessibility needs.
     
-            Estimable - Yes, because it is possible to estimate the time and effort required to implement this feature.
+            Estimable - Yes, as it is possible to estimate the time and effort required to implement this feature.
     
-            Small - Yes, because the volume control feature can be implemented as a relatively small and focused addition to the game.
+            Small - Yes, as the volume control feature can be implemented as a relatively small and focused addition to the game.
     
-            Testable - Yes, because the volume control feature can be easily tested to ensure that it works.
+            Testable - Yes, as the volume control feature can be easily tested to ensure that it is functioning as intended.
         </INVEST>
         <Tests>
             <Test>Check if the volume bar can be displayed correctly in the options menu.</Test>
@@ -696,7 +696,7 @@
         <Url>https://trello.com/c/s14F0BNM</Url>
     </UserStory>
     <UserStory id="31" heading="Puzzle" headingZH="谜题解密">
-        <Description>As a player, I would like the game to include Puzzle events, so that I could enjoy solving them.</Description>
+        <Description>As a player, I would like the game to include Puzzle elements, so that I could enjoy solving them.</Description>
         <DescriptionZH>比如给一个简单谜题，选对了给奖励</DescriptionZH>
         <INVEST>
             Independent - No, because puzzles usually rely on other game mechanics and systems to function properly. For example, a puzzle that involves moving blocks requires the game to have a block movement mechanic.
@@ -712,7 +712,7 @@
             Testable - Yes, because the team can create test cases to ensure that the puzzles work correctly, are solvable, and do not result in unintended consequences such as blocking player progress or breaking the game.
         </INVEST>
         <Tests>
-            <Test>Find content with puzzle-solving events in the game.</Test>
+            <Test>Find content with puzzle-solving elements in the game.</Test>
             <Test>Attempt to solve the puzzle and determine if it can be completed.</Test>
             <Test>Analyze if the difficulty of the puzzle is reasonable.</Test>
         </Tests>
@@ -720,7 +720,7 @@
         <Url>https://trello.com/c/aiVIuJMf</Url>
     </UserStory>
     <UserStory id="32" heading="Hint" headingZH="提示">
-        <Description>As a player, I would like to receive information(Hint) about any events and game items, so that I'll be able to monitor the player's status.</Description>
+        <Description>As a player, I would like to receive Information(Hint) about any events in game, so that I'll be able to monitor my status.</Description>
         <DescriptionZH>游戏内的提示信息，比如拾取物品时的提示等</DescriptionZH>
         <INVEST>
             Independent - No, because hints typically rely on other features or systems in the game to provide guidance to the player. For example, a hint about how to defeat a boss may depend on the boss mechanics and the available weapons or items.
@@ -729,11 +729,11 @@
     
             Valuable - Yes, because hints can help players who may be struggling with certain aspects of the game, improving their experience and increasing engagement.
     
-            Estimable - No, because the level of effort required to implement hints depends on the complexity of the game and the desired hint mechanics. It can be difficult to estimate without detailed game-item design.
+            Estimable - No, because the level of effort required to implement hints depends on the complexity of the game and the desired hint mechanics. It can be difficult to estimate without detailed planning and design.
     
             Small - Yes, because implementing hints can be relatively straightforward and isolated, especially if the team chooses to provide hints in a text-based format.
     
-            Testable - Yes, because the team can create test cases to ensure that the hints are displayed correctly and that they provide helpful guidance to the player with providing much information.
+            Testable - Yes, because the team can create test cases to ensure that the hints are displayed correctly and that they provide helpful guidance to the player without giving away too much information.
         </INVEST>
         <Tests>
             <Test>Try to pick up an item and check if there is a prompt indicating that the item has been obtained.</Test>
@@ -743,7 +743,7 @@
         <Url>https://trello.com/c/AUxBHgsQ</Url>
     </UserStory>
     <UserStory id="33" heading="Achievement" headingZH="成就系统">
-        <Description>As a player, I would like to have an achievement system, so that I could gain satisfaction on completing objectives.</Description>
+        <Description>As a player, I would like to see an achievement system, so that I could gain satisfaction upon completing objectives.</Description>
         <DescriptionZH>比如在指定时间通关，或者死亡过多次</DescriptionZH>
         <INVEST>
             Independent - No, the Achievement feature relies on other game features and systems to determine if the achievements have been completed, such as completing a specific level or defeating a certain enemy.
@@ -789,7 +789,7 @@
         <Url>https://trello.com/c/kmUSi6fa</Url>
     </UserStory>
     <UserStory id="35" heading="Tutorial" headingZH="教程">
-        <Description>As a player, I want the game to have a Tutorial Stage, so that it can help me become familiar with the game.</Description>
+        <Description>As a player, I want this game to include a Tutorial level, so that it can help me become familiar with the game.</Description>
         <DescriptionZH>新手教程关卡</DescriptionZH>
         <INVEST>
             Independent - No, because the "Tutorial" feature often depends on other features or systems in the game to teach the player how to play. For example, a tutorial on how to use weapons would rely on the existence of weapons in the game.
@@ -800,7 +800,7 @@
             
             Estimable - Yes, because the level of effort required to create a tutorial can be estimated based on the scope and complexity of the game mechanics, the amount of content needed to cover, and the resources available.
             
-            Small - No, because creating a comprehensive and effective tutorial can be a significant effort and may require a large team's resources.
+            Small - No, because creating a comprehensive and effective tutorial can be a significant effort and may require a dedicated team or resources.
             
             Testable - Yes, because the team can create test cases to ensure that the tutorial is effective in teaching the player and providing them with the necessary guidance.
         </INVEST>
@@ -812,14 +812,14 @@
         <Url>https://trello.com/c/0SA4aVkU</Url>
     </UserStory>
     <UserStory id="36" heading="Attack" headingZH="攻击">
-        <Description>As a player, I want to have movement of attack in game, so that I can defeat enemies in game.</Description>
+        <Description>As a player, I want to be able to perform an attack action, so that I can defeat enemies and progress through the game.</Description>
         <DescriptionZH>玩家可以使用普通攻击对敌人造成伤害，如挥剑等</DescriptionZH>
         <INVEST>
             Independent - Yes, the Attack feature can be implemented independently of other game features and systems, as it only requires the player to be able to trigger an attack animation and damage enemies within a certain range.
     
             Negotiable - Yes, the specifics of the attack action, such as the animation, damage, and range, can be negotiated based on the game's design and balance requirements.
     
-            Valuable - Yes, the Attack feature is valuable to players as it is a basic movement of many games and allows them to engage in combat.
+            Valuable - Yes, the Attack feature is valuable to players as it is a fundamental mechanic of many games and allows them to engage in combat.
     
             Estimable - Yes, the effort required to implement the Attack feature can be estimated based on the specifics of the attack action, as well as the integration with other game features and systems.
     
@@ -835,14 +835,14 @@
         <Url>https://trello.com/c/CvXop06V</Url>
     </UserStory>
     <UserStory id="37" heading="Jump" headingZH="跳跃">
-        <Description>As a player, I want to be able to Jump, so that I can explore more details in game.</Description>
+        <Description>As a player, I want to be able to Jump, so that I can improve my mobility.</Description>
         <DescriptionZH>能够跳过障碍物</DescriptionZH>
         <INVEST>
-            Independent - Yes, because the ability to jump is typically a self-contained feature that does not rely on other actions.
+            Independent - Yes, because the ability to jump is typically a self-contained feature that does not rely on other game systems or mechanics.
     
-            Negotiable - Yes, because the specifics of the jump movement can be adjusted based on the team's resources and priorities. For example, the team can choose to implement a double jump or a variable height jump.
+            Negotiable - Yes, because the specifics of the jump mechanic can be adjusted based on the team's resources and priorities. For example, the team can choose to implement a double jump or a variable height jump.
     
-            Valuable - Yes, because the ability to jump is a basic movement that allows players to navigate the game world, reach new areas, and avoid obstacles.
+            Valuable - Yes, because the ability to jump is a fundamental mechanic that allows players to navigate the game world, reach new areas, and avoid obstacles.
     
             Estimable - Yes, because the level of effort required to implement the jump mechanic can be estimated based on its complexity and the resources available to the team.
     
@@ -867,24 +867,24 @@
     
             Valuable - Yes, because the "Dodge" feature can enhance the player's ability to avoid obstacles or enemy attacks, making the game more engaging and rewarding.
     
-            Estimable - Yes, because the level of effort required to implement the "Dodge" feature can be estimated based on the complexity of the game mechanics and the resources available to the team.
+            Estimable - Yes, because the level of effort required to implement the "Dodge" feature can be estimated based on the complexity of the desired mechanics and the resources available to the team.
     
-            Small - Yes, because the "Dodge" feature can be implemented as a relatively isolated and straightforward system that is not complex.
+            Small - Yes, because the "Dodge" feature can be implemented as a relatively isolated and straightforward system that is not overly complex.
     
-            Testable - Yes, because team can create the to ensure that the "Dodge" feature functions correctly and is balanced with the rest of the game mechanics.
+            Testable - Yes, because the team can create test cases to ensure that the "Dodge" feature functions correctly and is balanced with the rest of the game mechanics.
         </INVEST>
         <Tests>
-            <Test>Press the corresponding key for Dodge and check if the player performs "dodge".</Test>
+            <Test>Press the corresponding key for Dodge and check if the player performs a dodge.</Test>
             <Test>Perform a dodge during enemy attacks and check if the attack is avoided.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/W0ZrOoCF</Url>
     </UserStory>
     <UserStory id="39" heading="Difficulties" headingZH="游戏难度">
-        <Description>As a player, I would like the game to have more than two difficulty level (perhaps three), so that players have more game experience.</Description>
+        <Description>As a player, I would like the game to have more than two difficulty level (perhaps three), so that it can cater to different types of players.</Description>
         <DescriptionZH>游戏能提供不止一种（或许三种）难度级别</DescriptionZH>
         <INVEST>
-            Independent - No, because the implementation of different difficulty levels may rely on other systems or features in the game, such as enemy AI or game stage design.
+            Independent - No, because the implementation of different difficulty levels may rely on other systems or features in the game, such as enemy AI or level design.
     
             Negotiable - Yes, because the exact number and names of the difficulty levels can be adjusted based on the team's resources and priorities.
     
@@ -892,12 +892,12 @@
     
             Estimable - No, because the level of effort required to implement multiple difficulty levels depends on the complexity of the game systems and may require significant development time.
     
-            Small - No, because implementing multiple difficulty levels is a significant feature that may require a large team's resource.
+            Small - No, because implementing multiple difficulty levels is a significant feature that may require a dedicated team effort.
     
-            Testable - Yes, because the team can create test to ensure that each difficulty level offers a unique and appropriate level of challenge for players.
+            Testable - Yes, because the team can create tests to ensure that each difficulty level offers a unique and appropriate level of challenge for players.
         </INVEST>
         <Tests>
-            <Test>Test by modifying the game difficulty in the difficulty menu and checking if the game difficulties get changed.</Test>
+            <Test>Test by modifying the game difficulty in the difficulty menu and checking if the game difficulty indicator changes.</Test>
             <Test>Enter the game using different difficulty levels and check if there are any differences in the game difficulty.</Test>
         </Tests>
         <Label>Should Have</Label>
@@ -913,7 +913,7 @@
     
             Valuable - Yes, because portals can add depth and complexity to the game, providing players with new ways to navigate the game world and solve puzzles.
     
-            Estimable - Yes, as the amount of work required to implement the portal can be estimated based on the number and complexity of game levels and the resources available to the team.
+            Estimable - Yes, because the level of effort required to implement portals can be estimated based on the desired number and complexity of the portals, as well as the resources available to the team.
     
             Small - Yes, because implementing portals can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
     
@@ -927,7 +927,7 @@
         <Url>https://trello.com/c/qTAMjKqn</Url>
     </UserStory>
     <UserStory id="41" heading="BGM" headingZH="BGM">
-        <Description>As a player, I want this game to have background music, so that I can enjoy music during the play time.</Description>
+        <Description>As a player, I want this game to have background music, so that I can enjoy music during play time.</Description>
         <DescriptionZH>游戏背景音乐</DescriptionZH>
         <INVEST>
             Independent - Yes, the BGM feature can be implemented independently of other game features and systems, as it only requires the game to play audio files in the background.
@@ -963,7 +963,7 @@
     
             Small - Yes, because the "SFX" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing sound assets and mechanics.
     
-            Testable - Yes, because the team can create test to ensure that the sound effects are playing as intended and enhancing the overall gameplay experience.
+            Testable - Yes, because the team can create tests to ensure that the sound effects are playing as intended and enhancing the overall gameplay experience.
         </INVEST>
         <Tests>
             <Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
@@ -986,7 +986,7 @@
     
             Small - Yes, because implementing bonus levels can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
     
-            Testable - Yes, because the team can create test to ensure that the bonus levels work correctly, are enjoyable, and do not result in unintended consequences such as crashes or broken game mechanics.
+            Testable - Yes, because the team can create tests to ensure that the bonus levels work correctly, are enjoyable, and do not result in unintended consequences such as crashes or broken game mechanics.
         </INVEST>
         <Tests>
             <Test>Try to enter bonus level during gameplay.</Test>
@@ -1010,7 +1010,7 @@
     
             Small - Yes, because implementing one-way platforms can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
     
-            Testable - Yes, because the team can create test to ensure that the one-way platform mechanic works correctly, is reliable, and does not result in unintended consequences such as collision issues or broken gameplay.
+            Testable - Yes, because the team can create tests to ensure that the one-way platform mechanic works correctly, is reliable, and does not result in unintended consequences such as collision issues or broken gameplay.
         </INVEST>
         <Tests>
             <Test>Test if it is possible to jump from below to the top of a one-way platform.</Test>
@@ -1033,7 +1033,7 @@
     
             Small - Yes, because the "Run" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing assets and mechanics.
     
-            Testable - Yes, because the team can create test to ensure that the "Run" feature works correctly, does not result in unintended consequences, and enhances the overall gameplay experience.
+            Testable - Yes, because the team can create tests to ensure that the "Run" feature works correctly, does not result in unintended consequences, and enhances the overall gameplay experience.
         </INVEST>
         <Tests>
             <Test>After entering the game, try pressing the spint key while moving left and right to check if your movement speed has increased.</Test>
@@ -1056,7 +1056,7 @@
     
             Small - No, because implementing game saves can require a significant effort in terms of planning, design, and development, especially for larger games.
     
-            Testable - Yes, because the team can create test to ensure that the save/load functionality works correctly and does not result in any data loss or corruption.
+            Testable - Yes, because the team can create tests to ensure that the save/load functionality works correctly and does not result in any data loss or corruption.
         </INVEST>
         <Tests>
             <Test>Save the game and check if a game content archive is generated.</Test>
