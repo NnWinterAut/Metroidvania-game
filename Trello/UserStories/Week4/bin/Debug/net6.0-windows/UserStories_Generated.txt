@@ -544,7 +544,7 @@ ID = 32 ,       Hint , 提示
     S ( True) = because implementing hints can be relatively straightforward and isolated, especially if the team chooses to provide hints in a text-based format.
     T ( True) = because the team can create test cases to ensure that the hints are displayed correctly and that they provide helpful guidance to the player without giving away too much information.
 
-      Test - Try to obtain an item and check if there is a prompt indicating that the item has been obtained.
+      Test - Try to pick up an item and check if there is a prompt indicating that the item has been obtained.
       Test - Check the content of the prompt to confirm whether it matches the obtained item.
 
 
@@ -593,7 +593,7 @@ ID = 35 ,   Tutorial , 教程
     V ( True) = because a tutorial can greatly enhance the player's experience by helping them learn the mechanics of the game, understand the story or lore, and prevent frustration from confusion or lack of guidance.
     E ( True) = because the level of effort required to create a tutorial can be estimated based on the scope and complexity of the game mechanics, the amount of content needed to cover, and the resources available.
     S (False) = because creating a comprehensive and effective tutorial can be a significant effort and may require a dedicated team or resources.
-    T ( True) = because the team can create test cases to ensure that the tutorial is effective in teaching the player the game mechanics and providing them with the necessary guidance.
+    T ( True) = because the team can create test cases to ensure that the tutorial is effective in teaching the player and providing them with the necessary guidance.
 
       Test - Run the game and check whether the game starts with a tutorial or not.
       Test - Check whether the player can successfully pass the game tutorial.
@@ -607,7 +607,7 @@ ID = 36 ,     Attack , 攻击
 
     I ( True) = the Attack feature can be implemented independently of other game features and systems, as it only requires the player to be able to trigger an attack animation and damage enemies within a certain range.
     N ( True) = the specifics of the attack action, such as the animation, damage, and range, can be negotiated based on the game's design and balance requirements.
-    V ( True) = the Attack feature is valuable to players as it is a fundamental mechanic of many games and allows them to engage in combat and overcome obstacles.
+    V ( True) = the Attack feature is valuable to players as it is a fundamental mechanic of many games and allows them to engage in combat.
     E ( True) = the effort required to implement the Attack feature can be estimated based on the specifics of the attack action, as well as the integration with other game features and systems.
     S ( True) = the Attack feature can be implemented as a small addition to the game without requiring a significant amount of development time or resources.
     T ( True) = the Attack feature can be tested to ensure that the attack animation, damage, and range are working correctly, and that enemies are reacting appropriately to the attack action.
@@ -627,7 +627,7 @@ ID = 37 ,       Jump , 跳跃
     V ( True) = because the ability to jump is a fundamental mechanic that allows players to navigate the game world, reach new areas, and avoid obstacles.
     E ( True) = because the level of effort required to implement the jump mechanic can be estimated based on its complexity and the resources available to the team.
     S ( True) = because implementing the jump mechanic can be relatively straightforward and isolated, especially if the team chooses to implement a basic jump without additional features.
-    T ( True) = because the team can create test cases to ensure that the jump mechanic works correctly, is responsive and accurate, and does not result in unintended consequences such as getting stuck or falling through the game world.
+    T ( True) = because the team can create cases to ensure that the jump mechanic works correctly, is responsive and accurate, and does not result in unintended consequences such as getting stuck or falling through the game world.
 
       Test - After entering the game, try pressing the jump key while jump to check if your movement are correct.
       Test - While moving of left and right, try pressing the jump key to check for any conflicts.
@@ -661,7 +661,7 @@ ID = 39 , Difficulties , 游戏难度
     V ( True) = because offering multiple difficulty levels can increase player engagement and satisfaction by allowing players to tailor the game experience to their own skill level.
     E (False) = because the level of effort required to implement multiple difficulty levels depends on the complexity of the game systems and may require significant development time.
     S (False) = because implementing multiple difficulty levels is a significant feature that may require a dedicated team effort.
-    T ( True) = because the team can create test cases to ensure that each difficulty level offers a unique and appropriate level of challenge for players.
+    T ( True) = because the team can create tests to ensure that each difficulty level offers a unique and appropriate level of challenge for players.
 
       Test - Test by modifying the game difficulty in the difficulty menu and checking if the game difficulty indicator changes.
       Test - Enter the game using different difficulty levels and check if there are any differences in the game difficulty.
@@ -712,7 +712,7 @@ ID = 42 ,        SFX , 音效
     V ( True) = because sound effects can enhance the player's experience by providing feedback on actions or events, adding immersion to the game world, and creating a more polished game overall.
     E (False) = because the level of effort required to implement the "SFX" feature is difficult to estimate without knowing the specific sounds required and how they are implemented.
     S ( True) = because the "SFX" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing sound assets and mechanics.
-    T ( True) = because the team can create test cases to ensure that the sound effects are playing as intended and enhancing the overall gameplay experience.
+    T ( True) = because the team can create tests to ensure that the sound effects are playing as intended and enhancing the overall gameplay experience.
 
       Test - To test for corresponding sounds when characters interact with objects, use an audio playback device.
       Test - Test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.
@@ -729,7 +729,7 @@ ID = 43 , Bonus Levels , 奖励关卡
     V ( True) = because bonus levels can add replay value to the game, providing additional content for players to explore and enjoy.
     E ( True) = because the level of effort required to implement bonus levels can be estimated based on the desired number and complexity of the levels, as well as the resources available to the team.
     S ( True) = because implementing bonus levels can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
-    T ( True) = because the team can create test cases to ensure that the bonus levels work correctly, are enjoyable, and do not result in unintended consequences such as crashes or broken game mechanics.
+    T ( True) = because the team can create tests to ensure that the bonus levels work correctly, are enjoyable, and do not result in unintended consequences such as crashes or broken game mechanics.
 
       Test - Try to enter bonus level during gameplay.
       Test - Try to obtain rewards in the bonus level.
@@ -747,7 +747,7 @@ ID = 44 , Oneway Platform , 单向平台
     V ( True) = because one-way platforms can add depth and challenge to the game, providing players with new obstacles to overcome and increasing the variety of platforming mechanics.
     E ( True) = because the level of effort required to implement one-way platforms can be estimated based on the desired number and complexity of the platforms, as well as the resources available to the team.
     S ( True) = because implementing one-way platforms can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
-    T ( True) = because the team can create test cases to ensure that the one-way platform mechanic works correctly, is reliable, and does not result in unintended consequences such as collision issues or broken gameplay.
+    T ( True) = because the team can create tests to ensure that the one-way platform mechanic works correctly, is reliable, and does not result in unintended consequences such as collision issues or broken gameplay.
 
       Test - Test if it is possible to jump from below to the top of a one-way platform.
       Test - Test if player can stand on the platform without falling down.
@@ -764,7 +764,7 @@ ID = 45 ,        Run , 跑步
     V ( True) = because the "Run" feature can provide players with a faster way to traverse the game world, enhancing the overall gameplay experience.
     E ( True) = because the level of effort required to implement the "Run" feature can be estimated based on factors such as the desired speed and animation, as well as the resources available to the team.
     S ( True) = because the "Run" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing assets and mechanics.
-    T ( True) = because the team can create test cases to ensure that the "Run" feature works correctly, does not result in unintended consequences, and enhances the overall gameplay experience.
+    T ( True) = because the team can create tests to ensure that the "Run" feature works correctly, does not result in unintended consequences, and enhances the overall gameplay experience.
 
       Test - After entering the game, try pressing the spint key while moving left and right to check if your movement speed has increased.
       Test - After jumping, try pressing the sprint key to check for any conflicts with the jump. Note that pressing the sprint key after jumping may trigger air spint or no operation instead of acceleration.
@@ -781,7 +781,7 @@ ID = 46 , Game Saves , 存档
     V ( True) = because the ability to save and continue the game progress later is essential for many players, especially those who cannot complete the game in one session.
     E (False) = because the level of effort required to implement game saves depends on the complexity of the game and the desired save/load functionality. It can be difficult to estimate without detailed planning and design.
     S (False) = because implementing game saves can require a significant effort in terms of planning, design, and development, especially for larger games.
-    T ( True) = because the team can create test cases to ensure that the save/load functionality works correctly and does not result in any data loss or corruption.
+    T ( True) = because the team can create tests to ensure that the save/load functionality works correctly and does not result in any data loss or corruption.
 
       Test - Save the game and check if a game content archive is generated.
       Test - Load the game and check if all content is loaded correctly.
