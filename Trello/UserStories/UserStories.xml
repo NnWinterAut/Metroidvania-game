@@ -673,7 +673,7 @@
         <Url>https://trello.com/c/F74J3A6V</Url>
     </UserStory>
     <UserStory id="30" heading="Volume Control" headingZH="音量控制">
-        <Description>As a player, I want to be able to control the volume in-game, so that it fits my comfort range of volume.</Description>
+        <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
         <DescriptionZH>游戏内的音量控制，包括音效和背景乐</DescriptionZH>
         <INVEST>
             Independent - Yes, as the feature does not rely on any other part of the game to function.
