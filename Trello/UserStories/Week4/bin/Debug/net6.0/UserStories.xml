@@ -268,7 +268,7 @@
 
             Valuable - Yes, because a buff icon can provide players with important information about the status of their character or game progress, which can improve their gameplay experience.
 
-            Estimable - No, because the complexity of implementing the feature might vary based on how the game engine is built and the resources avaiLabel to the development team.
+            Estimable - No, because the complexity of implementing the feature might vary based on how the game engine is built and the resources available to the development team.
 
             Small - No, because the feature may require significant development effort, depending on the complexity of the buff system and how the icon is displayed.
 
@@ -379,7 +379,7 @@
         <INVEST>
             Independent - Yes, a shop feature can be developed and implemented independently of other features or systems in the game.
 
-            Negotiable - Yes, the details of the shop, such as what items are avaiLabel, pricing, and the user interface can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, the details of the shop, such as what items are available, pricing, and the user interface can be negotiated and adjusted based on the needs of the team and the game.
 
             Valuable - Yes, a shop feature can provide players with a way to spend in-game currency or real money to obtain items or upgrades, which can increase engagement and retention.
 
@@ -705,7 +705,7 @@
     
             Valuable: Yes, because puzzles can provide players with challenges and obstacles to overcome, enhancing the overall gameplay experience.
     
-            Estimable: Yes, because the level of effort required to implement puzzles can be estimated based on the desired number and complexity of the puzzles, as well as the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement puzzles can be estimated based on the desired number and complexity of the puzzles, as well as the resources available to the team.
     
             Small: Yes, because puzzles can be relatively isolated and self-contained features within the game, especially if the team reuses existing assets and mechanics.
     
@@ -723,7 +723,7 @@
         <Description>As a player, I would like to receive Information(Hint) about any events in game, so that I'll be able to monitor my status.</Description>
         <DescriptionZH>游戏内的提示信息，比如拾取物品时的提示等</DescriptionZH>
         <INVEST>
-            Independent: No, because hints typically rely on other features or systems in the game to provide guidance to the player. For example, a hint about how to defeat a boss may depend on the boss mechanics and the avaiLabel weapons or items.
+            Independent: No, because hints typically rely on other features or systems in the game to provide guidance to the player. For example, a hint about how to defeat a boss may depend on the boss mechanics and the available weapons or items.
     
             Negotiable: Yes, because the specific hints provided in the game can be adjusted based on the team's resources and priorities. For example, the team can choose to provide hints that are more or less explicit.
     
@@ -775,7 +775,7 @@
     
             Valuable: Yes, because Easter Eggs can add an extra layer of fun and surprise to the game, increasing player engagement and potentially generating positive word-of-mouth.
     
-            Estimable: Yes, because the level of effort required to implement the Easter Egg(s) can be estimated based on their complexity and the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement the Easter Egg(s) can be estimated based on their complexity and the resources available to the team.
     
             Small: Yes, because the Easter Egg(s) can be implemented as a relatively isolated and straightforward feature that does not have a significant impact on the rest of the game.
     
@@ -798,7 +798,7 @@
             
             Valuable: Yes, because a tutorial can greatly enhance the player's experience by helping them learn the mechanics of the game, understand the story or lore, and prevent frustration from confusion or lack of guidance.
             
-            Estimable: Yes, because the level of effort required to create a tutorial can be estimated based on the scope and complexity of the game mechanics, the amount of content needed to cover, and the resources avaiLabel.
+            Estimable: Yes, because the level of effort required to create a tutorial can be estimated based on the scope and complexity of the game mechanics, the amount of content needed to cover, and the resources available.
             
             Small: No, because creating a comprehensive and effective tutorial can be a significant effort and may require a dedicated team or resources.
             
@@ -844,7 +844,7 @@
     
             Valuable: Yes, because the ability to jump is a fundamental mechanic that allows players to navigate the game world, reach new areas, and avoid obstacles.
     
-            Estimable: Yes, because the level of effort required to implement the jump mechanic can be estimated based on its complexity and the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement the jump mechanic can be estimated based on its complexity and the resources available to the team.
     
             Small: Yes, because implementing the jump mechanic can be relatively straightforward and isolated, especially if the team chooses to implement a basic jump without additional features.
     
@@ -867,7 +867,7 @@
     
             Valuable: Yes, because the "Dodge" feature can enhance the player's ability to avoid obstacles or enemy attacks, making the game more engaging and rewarding.
     
-            Estimable: Yes, because the level of effort required to implement the "Dodge" feature can be estimated based on the complexity of the desired mechanics and the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement the "Dodge" feature can be estimated based on the complexity of the desired mechanics and the resources available to the team.
     
             Small: Yes, because the "Dodge" feature can be implemented as a relatively isolated and straightforward system that is not overly complex.
     
@@ -913,7 +913,7 @@
     
             Valuable: Yes, because portals can add depth and complexity to the game, providing players with new ways to navigate the game world and solve puzzles.
     
-            Estimable: Yes, because the level of effort required to implement portals can be estimated based on the desired number and complexity of the portals, as well as the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement portals can be estimated based on the desired number and complexity of the portals, as well as the resources available to the team.
     
             Small: Yes, because implementing portals can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
     
@@ -982,7 +982,7 @@
     
             Valuable: Yes, because bonus levels can add replay value to the game, providing additional content for players to explore and enjoy.
     
-            Estimable: Yes, because the level of effort required to implement bonus levels can be estimated based on the desired number and complexity of the levels, as well as the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement bonus levels can be estimated based on the desired number and complexity of the levels, as well as the resources available to the team.
     
             Small: Yes, because implementing bonus levels can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
     
@@ -1006,7 +1006,7 @@
     
             Valuable: Yes, because one-way platforms can add depth and challenge to the game, providing players with new obstacles to overcome and increasing the variety of platforming mechanics.
     
-            Estimable: Yes, because the level of effort required to implement one-way platforms can be estimated based on the desired number and complexity of the platforms, as well as the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement one-way platforms can be estimated based on the desired number and complexity of the platforms, as well as the resources available to the team.
     
             Small: Yes, because implementing one-way platforms can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
     
@@ -1029,7 +1029,7 @@
     
             Valuable: Yes, because the "Run" feature can provide players with a faster way to traverse the game world, enhancing the overall gameplay experience.
     
-            Estimable: Yes, because the level of effort required to implement the "Run" feature can be estimated based on factors such as the desired speed and animation, as well as the resources avaiLabel to the team.
+            Estimable: Yes, because the level of effort required to implement the "Run" feature can be estimated based on factors such as the desired speed and animation, as well as the resources available to the team.
     
             Small: Yes, because the "Run" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing assets and mechanics.
     
@@ -1071,7 +1071,7 @@
         <INVEST>
             Independent - Yes, the Move feature can be designed and implemented as a standalone feature, separate from other game features and systems.
 
-            Negotiable - Yes, the specifics of the Move feature, such as the types of moves avaiLabel to the player, the control scheme, and the animations and effects, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, the specifics of the Move feature, such as the types of moves available to the player, the control scheme, and the animations and effects, can be negotiated and adjusted based on the needs of the team and the game.
 
             Valuable - Yes, the Move feature is a fundamental aspect of gameplay, allowing players to navigate the game world, avoid obstacles, and engage in combat or other challenges.
 
