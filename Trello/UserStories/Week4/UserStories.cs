@@ -62,7 +62,7 @@ namespace UserStories
         /// </summary>
         /// <param name="stories">User stories</param>
         /// <returns>文本</returns>
-        public static string StoryiesToString(IEnumerable<UserStory> stories)
+        public static string StoriesToString(IEnumerable<UserStory> stories)
         {
             var str = new StringBuilder();
             foreach (var story in stories)
@@ -72,6 +72,20 @@ namespace UserStories
                 {
                     str.AppendLine("\n ---- ---- ---- ---- \n");
                 }
+            }
+            return str.ToString();
+        }
+        /// <summary>
+        /// 只获取 ID 和 Heading 的列表
+        /// </summary>
+        /// <param name="stories">User stories</param>
+        /// <returns>文本</returns>
+        public static string StoriesHeadingsOnly(IEnumerable<UserStory> stories)
+        {
+            var str = new StringBuilder();
+            foreach (var story in stories)
+            {
+                str.AppendLine($"ID = {story.Id,2} , {story.Name,20} , {story.NameZh}");
             }
             return str.ToString();
         }
@@ -182,7 +196,7 @@ namespace UserStories
             str.AppendLine($"    S ({Invest.Small.Item2,5}) = {Invest.Small.Item1}");
             str.AppendLine($"    T ({Invest.Testable.Item2,5}) = {Invest.Testable.Item1}");
             str.AppendLine();
-            foreach(var test in Tests) { str.AppendLine($"      Test - {test}"); }
+            foreach (var test in Tests) { str.AppendLine($"      Test - {test}"); }
             return str.ToString();
         }
     }
