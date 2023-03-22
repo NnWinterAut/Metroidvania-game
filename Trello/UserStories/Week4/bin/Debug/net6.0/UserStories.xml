@@ -967,7 +967,7 @@
         </INVEST>
         <Tests>
             <Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
-            <Test>test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>
+            <Test>Test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/VTSFJgFh</Url>
@@ -1086,7 +1086,7 @@
             <Test>Release the movement key in the game to see if the character stops moving.</Test>
         </Tests>
         <Label>Must Have</Label>
-        <Url>https://trello.com/b/YCY0DmnL</Url>
+        <Url>https://trello.com/c/cVuuHsnm</Url>
     </UserStory>
     <UserStory id="48" heading="Main Menu" headingZH="主菜单">
         <Description>As a player, I want the game to have a Main Menu, so that I can choose when to start the game.</Description>
