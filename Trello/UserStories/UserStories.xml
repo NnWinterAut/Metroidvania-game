@@ -492,17 +492,17 @@
         <Description>As a player, I desire to confront Elite Enemies so that the game provides a greater level of challenge.</Description>
         <DescriptionZH>精英怪，比普通的小怪更难打一点，比如血量更多，攻击方式更多，伤害更高等</DescriptionZH>
         <INVEST>
-            Independent - Yes, a Boss Fight feature can be independent of other features or systems in the game, as it can be designed as a standalone encounter.
+            Independent - Yes, because the introduction of elite enemies is a standalone feature that does not rely on other game systems or features.
 
-            Negotiable - Yes, the details of the Boss Fight, such as the boss's appearance, behavior, abilities, and the environment it takes place in can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, because the specifics of the elite enemies can be negotiated based on the needs of the game and the team's resources.
 
-            Valuable - Yes, a Boss Fight feature can provide players with a challenging and rewarding encounter that can enhance their gameplay experience, which can increase engagement and retention.
+            Valuable - Yes, because the addition of elite enemies can provide an added challenge and excitement to the gameplay, which can enhance the overall experience for the players.
 
-            Estimable - No, it may be difficult to estimate the development effort required for a Boss Fight feature, as it can involve designing and implementing many different systems in the game, such as boss AI, player abilities, and environment assets.
+            Estimable - No, because the level of effort required to implement the elite enemies feature may be difficult to estimate without additional information such as the specific abilities and behaviors of the elite enemies.
 
-            Small - No, a Boss Fight feature can be a large and complex feature, involving changes to various systems in the game, and cannot be easily broken down into smaller, more manageable sub-tasks for development.
+            Small - No, because the addition of elite enemies could involve significant changes to the game's AI and combat systems, which may not be considered small.
 
-            Testable - Yes, a Boss Fight feature can be tested to ensure that the boss behaves and responds correctly to player actions, and that the encounter is balanced and challenging. Testing can also include checking that the boss's abilities and mechanics work as intended, and that the player's abilities and items function properly during the encounter.
+            Testable - Yes, because the behavior and abilities of the elite enemies can be tested and validated through playtesting and other forms of quality assurance.
         </INVEST>
         <Tests>
             <Test>Elite monsters have higher attack power and health than normal monsters.</Test>
