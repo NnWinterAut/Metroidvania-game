@@ -56,6 +56,25 @@ namespace UserStories
 
             return new UserStory(id, name, nameZh, description, descriptionZh, invest, tests, label, url);
         }
+
+        /// <summary>
+        /// 将可迭代的 User stories 转换为连续的文本
+        /// </summary>
+        /// <param name="stories">User stories</param>
+        /// <returns>文本</returns>
+        public static string StoryiesToString(IEnumerable<UserStory> stories)
+        {
+            var str = new StringBuilder();
+            foreach (var story in stories)
+            {
+                str.AppendLine(story.ToString());
+                if (story.Id != stories.Last().Id)
+                {
+                    str.AppendLine("\n ---- ---- ---- ---- \n");
+                }
+            }
+            return str.ToString();
+        }
     }
     public struct UserStory
     {

@@ -1,6 +1,6 @@
 ﻿<UserStories>
     <UserStory id="1" heading="Health Point" headingZH="生命值">
-        <Description>As a player, I want the game has a proper health point (HP), so that health status can be sufficiently determined and monitored.</Description>
+        <Description>As a player, I want the game has a proper Health Point (HP), so that health status can be sufficiently determined and monitored.</Description>
         <DescriptionZH>血量的显示，受到伤害时的血量变化</DescriptionZH>
         <INVEST>
             Independent - Yes, because this user story does not rely on other features or systems in the game to function, although it does depend on the player's performance.
