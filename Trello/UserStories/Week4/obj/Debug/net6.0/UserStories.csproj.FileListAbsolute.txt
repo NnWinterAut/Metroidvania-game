@@ -1,0 +1,15 @@
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.csproj.AssemblyReference.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.GeneratedMSBuildEditorConfig.editorconfig
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.AssemblyInfoInputs.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.AssemblyInfo.cs
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.csproj.CoreCompileInputs.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0\UserStories.exe
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0\UserStories.deps.json
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0\UserStories.runtimeconfig.json
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0\UserStories.dll
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\bin\Debug\net6.0\UserStories.pdb
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.dll
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\refint\UserStories.dll
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.pdb
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\UserStories.genruntimeconfig.cache
+D:\Win11\Administrator\Documents\GitHub\Metroidvania-game\Trello\UserStories\Week4\obj\Debug\net6.0\ref\UserStories.dll
