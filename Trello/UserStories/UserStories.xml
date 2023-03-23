@@ -469,17 +469,17 @@
         <Description>As a player, I desire an exhilarating BOSS battle, so that I can experience a sense of accomplishment by defeating seemingly invincible opponents.</Description>
         <DescriptionZH>游戏中的Boss关卡，通常是在每一关的结尾</DescriptionZH>
         <INVEST>
-            Independent - Yes, a Boss Fight feature can be independent of other features or systems in the game, as it can be designed as a standalone encounter.
+            Independent - Yes, Because the Boss Fight feature can be independent of other features or systems in the game, it can be designed as a stand-alone encounter.
 
-            Negotiable - Yes, the details of the Boss Fight, such as the boss's appearance, behavior, abilities, and the environment it takes place in can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the details of the boss battle, such as the appearance, behavior, ability of the boss, and the environment in which it occurs, can be negotiated and adjusted according to the needs of the team and the game.
 
-            Valuable - Yes, a Boss Fight feature can provide players with a challenging and rewarding encounter that can enhance their gameplay experience, which can increase engagement and retention.
+            Valuable - Yes, Because the Boss Fight feature can provide players with challenging and rewarding encounters that enhance their gaming experience, increasing engagement and retention.
 
             Estimable - No, it may be difficult to estimate the development effort required for a Boss Fight feature, as it can involve designing and implementing many different systems in the game, such as boss AI, player abilities, and environment assets.
 
-            Small - No, a Boss Fight feature can be a large and complex feature, involving changes to various systems in the game, and cannot be easily broken down into smaller, more manageable sub-tasks for development.
+            Small - No, it may be difficult to estimate the development effort required for a Boss Fight feature, as it can involve designing and implementing many different systems in the game, such as boss AI, player abilities, and environment assets.
 
-            Testable - Yes, a Boss Fight feature can be tested to ensure that the boss behaves and responds correctly to player actions, and that the encounter is balanced and challenging. Testing can also include checking that the boss's abilities and mechanics work as intended, and that the player's abilities and items function properly during the encounter.
+            Testable - Yes, Because the Boss Fight functionality can be tested to ensure that the boss behaves and responds correctly to player actions, as well as the balance and challenge of the encounter. Testing can also include checking that boss abilities and mechanics work as intended, and that player abilities and items function properly during the encounter.
         </INVEST>
         <Tests>
             <Test>Boss monsters have stronger attack power and more HP.</Test>
@@ -492,17 +492,17 @@
         <Description>As a player, I desire to confront Elite Enemies so that the game provides a greater level of challenge.</Description>
         <DescriptionZH>精英怪，比普通的小怪更难打一点，比如血量更多，攻击方式更多，伤害更高等</DescriptionZH>
         <INVEST>
-            Independent - Yes, because the introduction of elite enemies is a standalone feature that does not rely on other game systems or features.
+            Independent - Yes, Because an elite enemies Fight feature can be independent of other features or systems in the game, as it can be designed as a standalone encounter.
 
-            Negotiable - Yes, because the specifics of the elite enemies can be negotiated based on the needs of the game and the team's resources.
+            Negotiable - Yes, Because the details of the elite enemies' Fight, such as the enemies' appearance, behavior, abilities, and the environment it takes place can be negotiated and adjusted based on the needs of the team and the game.
 
-            Valuable - Yes, because the addition of elite enemies can provide an added challenge and excitement to the gameplay, which can enhance the overall experience for the players.
+            Valuable - Yes, Because an elite enemies Fight feature can provide players with a challenging and rewarding encounter that can enhance their gameplay experience, which can increase engagement and retention.
 
-            Estimable - No, because the level of effort required to implement the elite enemies feature may be difficult to estimate without additional information such as the specific abilities and behaviors of the elite enemies.
+            Estimable - Yes, Because it is possible to estimate the development effort required for bonus-level functionality, it involves designing and implementing specific level objectives, visual and audio elements, and testing.
 
-            Small - No, because the addition of elite enemies could involve significant changes to the game's AI and combat systems, which may not be considered small.
+            Small - No, Because an elite enemies Fight feature can be a large and complex feature, involving changes to various systems in the game and cannot be easily broken down into smaller, more manageable sub-tasks for development.
 
-            Testable - Yes, because the behavior and abilities of the elite enemies can be tested and validated through playtesting and other forms of quality assurance.
+            Testable - Yes, Because a elite enemies Fight feature can be test to ensure that the elite enemies behaves and responds correctly to player actions, and that the encounter is balanced and challenging. Testing can also include checking that the elite enemies' abilities and mechanics work as intended, and that the player's abilities and items function properly during the encounter.
         </INVEST>
         <Tests>
             <Test>Elite monsters have higher attack power and health than normal monsters.</Test>
@@ -515,15 +515,15 @@
         <Description>As a player, I want Jump Attack, so that I can attack enemies above me.</Description>
         <DescriptionZH>玩家可以跳起来攻击空中敌人</DescriptionZH>
         <INVEST>
-            Independent - No, the Jump Attack feature is dependent on the Jumping and Attacking features in the game, which must be present and functioning correctly for the Jump Attack to work.
+            Independent - No, Because the Jump Attack feature depends on the Jumping and Attacking features in the game, which must be present and functioning correctly for the Jump Attack to work.
 
-            Negotiable - Yes, the specifics of the Jump Attack feature, such as the attack animation, damage dealt, and any special effects or interactions, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the specifics of the Jump Attack feature, such as the attack animation, damage dealt, and any special effects or interactions, can be negotiated and adjusted based on the needs of the team and the game.
 
-            Valuable - Yes, the Jump Attack feature can provide players with a new and exciting way to engage in combat or interact with the game environment, which can increase engagement and retention.
+            Valuable - Yes, Because the Jump Attack feature can provide players with a new and exciting way to engage in combat or with the game environment, which can increase engagement and retention.
 
-            Estimable - Yes, the development effort required for the Jump Attack feature can be estimated, as it involves designing and implementing new attack animations, damage calculations, and any associated special effects or interactions.
+            Estimable - Yes, Because it allows an estimate of the development effort required for the jump attack feature, which involves designing and implementing new attack animations, damage calculations, and any associated special effects or interactions.
 
-            Small - Yes, the Jump Attack feature can be broken down into smaller sub-tasks for development, such as designing and implementing the attack animation or adding the damage calculation.
+            Small - Yes,  Because the Jump Attack feature can be broken down into smaller subtasks for development, which can help make the development process more manageable and allow developers to focus on specific aspects of the feature.
 
             Testable - Yes, the Jump Attack feature can be tested to ensure that it works as intended, including testing the attack animation, damage calculation, and any special effects or interactions. Testing can also include checking that the Jump Attack interacts correctly with other game features, such as enemy AI or the game environment.
         </INVEST>
@@ -531,46 +531,47 @@
             <Test>Check whether the player can control the game character to jump and attack in the air.</Test>
             <Test>Check if the air attack of the game character can cause damage to the enemy.</Test>
         </Tests>
-        <Label>Sould Have</Label>
+        <Label>Should Have</Label>
         <Url>https://trello.com/c/pMVLpWXC</Url>
     </UserStory>
     <UserStory id="24" heading="Stunned State" headingZH="僵直状态">
         <Description>As a player, I desire for the enemy to enter a Stunned State upon taking damage, so that I can prevent them from inflicting continuous damage on me.</Description>
         <DescriptionZH>敌人被攻击到后会进入“僵直”状态从而无法进行攻击</DescriptionZH>
         <INVEST>
-            Independent - Yes, the Stunned State feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+            Independent - Yes, Because the Stunned State feature can be designed and implemented as a standalone feature, separate from other game features and systems.
 
-            Negotiable - Yes, the specifics of the Stunned State feature, such as the duration, visual effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the specifics of the Stunned State feature, such as the duration, visual effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
 
-            Valuable - Yes, the Stunned State feature can provide players with a new gameplay mechanic that can add variety and depth to combat or other interactions in the game.
+            Valuable - Yes, Because the Stunned State feature can provide players with a new gameplay mechanic that can add variety and depth to combat or other interactions in the game.
 
-            Estimable - Yes, the development effort required for the Stunned State feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
+            Estimable - Yes, Because the amount of development work required for a Stunned State feature can be estimated, it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
 
-            Small - Yes, the Stunned State feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
+            Small - Yes, Because the Stunned State feature can be broken down into smaller sub-tasks for development, such as designing and implementing visual effects or adding game mechanics.
 
-            Testable - Yes, the Stunned State feature can be tested to ensure that it works as intended, including testing the duration, visual effects, and any associated gameplay mechanics. Testing can also include checking that the Stunned State interacts correctly with other game features, such as enemy AI or player abilities.        </INVEST>
+            Testable - Yes, Because the Stunned State feature can be tested to ensure that it works as intended, including testing the duration, visual effects, and any associated gameplay mechanics. Testing can also include checking that the Stunned State interacts correctly with other game features, such as enemy AI or player abilities.
+        </INVEST>
         <Tests>
             <Test>Try attacking the enemy and check if the enemy enters a stiff state after being attacked.</Test>
             <Test>Try being attacked by the enemy and check if the player enters a stiff state after being attacked by the enemy.</Test>
         </Tests>
-        <Label>Sould Have</Label>
+        <Label>Should Have</Label>
         <Url>https://trello.com/c/PcEerpRo</Url>
     </UserStory>
     <UserStory id="25" heading="Cooldown" headingZH="冷却">
         <Description>As a player, I would like there to be a Cooldown between skills, so that it can prevent the character's attack frequency from being too rapid.</Description>
         <DescriptionZH>使用技能时有冷却时间，防止攻击频率过快，也包括使用物品的间隔时间</DescriptionZH>
         <INVEST>
-            Independent - Yes, the Cooldown feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+            Independent - Yes, Because the Cooldown feature can be designed and implemented as a standalone feature separate from other game features and systems.
 
-            Negotiable - Yes, the specifics of the Cooldown feature, such as the duration, effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the specifics of the Cooldown feature, such as the duration, effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
             
-            Valuable - Yes, the Cooldown feature can add a layer of strategy and decision-making to gameplay, as players must consider the cooldown times of their abilities or actions before using them.
+            Valuable - Yes, Because cooldowns can add a layer of strategy and decision-making to gameplay, players must consider the cooldown of their abilities or actions before using them.
             
-            Estimable - Yes, the development effort required for the Cooldown feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
+            Estimable - Yes, Because it is possible to estimate the development effort required for cooling features, it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
             
-            Small - Yes, the Cooldown feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
+            Small - Yes, Because the Cooldown feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
             
-            Testable - Yes, the Cooldown feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Cooldown interacts correctly with other game features, such as player abilities or enemy AI.        
+            Testable - Yes, Because the Cooldown feature can be tested to ensure that it works as intended, include testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Cooldown interacts correctly with other game features, such as player abilities or enemy AI.
         </INVEST>
         <Tests>
             <Test>Attempt to perform continuous attacks and observe if there is an interval time between each attack.</Test>
@@ -583,17 +584,17 @@
         <Description>As a player, I would like to have a Clearance Timer, so that I can challenge others or myself.</Description>
         <DescriptionZH>记录关卡的通关时间</DescriptionZH>
         <INVEST>
-            Independent - Yes, the Clearance Timer feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+            Independent - Yes, Because the Clearance Timer feature can be designed and implemented as a standalone feature, separate from other game features and systems.
 
-            Negotiable - Yes, the specifics of the Clearance Timer feature, such as the duration, effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the specifics of the Clearance Timer feature, such as the duration, effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
 
-            Valuable - Yes, the Clearance Timer feature can add a layer of urgency and challenge to gameplay, as players must complete certain actions or objectives before the timer runs out.
+            Valuable - Yes, Because the play timer feature can add a layer of urgency and challenge to gameplay, players must complete certain actions or objectives before the timer runs out.
 
-            Estimable - Yes, the development effort required for the Clearance Timer feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
+            Estimable - Yes, Because the development effort required for the play timer feature is estimable, it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
 
-            Small - Yes, the Clearance Timer feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
+            Small - Yes, Because the Clearance Timer feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
 
-            Testable - Yes, the Clearance Timer feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Clearance Timer interacts correctly with other game features, such as player abilities or enemy AI.
+            Testable - Yes, Because the Clearance Timer feature can be tested to ensure that it works as intended, includ test the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Clearance Timer interacts correctly with other game features, such as player abilities or enemy AI.
         </INVEST>
         <Tests>
             <Test>Upon entering the level, verify if there is a prompt indicating the time for timing.</Test>
@@ -606,17 +607,17 @@
         <Description>As a player, I would like to have a Clearance Score, so that I can challenge others or myself.</Description>
         <DescriptionZH>通关的分数通常是由获得的积分道具和通关时间组合而成，可以参考超级马里奥</DescriptionZH>
         <INVEST>
-            Independent - Yes, the Clearance Score feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+            Independent - Yes, Because the Clearance Score feature can be designed and implemented as a standalone feature, separate from other game features and systems.
 
-            Negotiable - Yes, the specifics of the Clearance Score feature, such as the scoring system, conditions for earning points, and any associated rewards or penalties, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the specifics of the Clearance Score feature, such as the scoring system, conditions for earning points, and any associated rewards or penalties, can be negotiated and adjusted based on the needs of the team and the game.
 
-            Valuable - Yes, the Clearance Score feature can add an additional layer of challenge and motivation to gameplay, as players can strive to earn higher scores and unlock rewards.
+            Valuable - Yes, Because the clearance score feature can add challenge and motivation to gameplay, players can strive to achieve higher scores and unlock rewards.
 
-            Estimable - Yes, the development effort required for the Clearance Score feature can be estimated, as it involves designing and implementing specific scoring rules and associated visual and gameplay elements.
+            Estimable - Yes, Because the development effort required for the Clearance Score feature can be estimated, as it involves designing and implementing specific scoring rules and associated visual and gameplay elements.
 
-            Small - Yes, the Clearance Score feature can be broken down into smaller sub-tasks for development, such as designing and implementing the scoring system or adding the visual elements that indicate a player's score.
+            Small - Yes, Because the Clearance Score feature can be broken down into smaller sub-tasks for development, such as designing and implementing the scoring system or adding the visual elements that indicate a player's score.
 
-            Testable - Yes, the Clearance Score feature can be tested to ensure that it works as intended, including testing the scoring rules, reward system, and any associated visual or gameplay elements. Testing can also include checking that the Clearance Score feature interacts correctly with other game features, such as player abilities or enemy AI.
+            Testable - Yes, Because the Clearance Score feature can be tested to ensure that it works as intended, include test the scoring rules, reward system, and any associated visual or gameplay elements. Testing can also include checking that the Clearance Score feature interacts correctly with other game features, such as player abilities or enemy AI.
         </INVEST>
         <Tests>
             <Test>After the player clears the level, the clearance score will be displayed.</Test>
@@ -625,21 +626,21 @@
         <Label>Should Have</Label>
         <Url>https://trello.com/c/GxhEvknH</Url>
     </UserStory>
-    <UserStory id="28" heading="Flying Enemies" headingZH="飞行敌人">
+     <UserStory id="28" heading="Flying Enemies" headingZH="飞行敌人">
         <Description>As a player, I would like to see flying enemies, so that the vertical gaps are not too empty.</Description>
         <DescriptionZH>有飞行的小怪可以让玩家在空中进行攻击，充分利用垂直空间，不然只有平面会比较无聊</DescriptionZH>
         <INVEST>
-            Independent - Yes, the Flying Enemies feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+            Independent - Yes, Because the Flying Enemies feature can be designed and implemented as a standalone feature, separate from other game features and systems.
 
-            Negotiable - Yes, the specifics of the Flying Enemies feature, such as the types of flying enemies, their abilities and behaviors, and how they interact with other game elements, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the specifics of Flying Enemies functionality, such as the types of flying enemies, their abilities and behaviors, and how they interact with other game elements can all be negotiated and adjusted to the needs of the team and the game.
 
-            Valuable - Yes, the Flying Enemies feature can add an additional layer of challenge and variety to gameplay, as players must adapt their strategies and abilities to fight enemies with different movement patterns and attack abilities.
+            Valuable - Yes, Because the flying enemies feature can add an extra layer of challenge and variety to the gameplay, players must adapt their strategies and abilities against enemies with different movement patterns and attack abilities.
 
-            Estimable - Yes, the development effort required for the Flying Enemies feature can be estimated, as it involves designing and implementing specific enemy behaviors and interactions, as well as any associated visual and gameplay elements.
+            Estimable - Yes, Because it is possible to estimate the development effort required for the flying enemy functionality, it involves designing and implementing specific enemy behavior and interactions, as well as any related visual and gameplay elements.
 
-            Small - Yes, the Flying Enemies feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual enemy behaviors or adding the visual elements that indicate a flying enemy's presence.
+            Small - Yes, Because the Flying Enemies feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual enemy behaviors or adding the visual elements that indicate a flying enemy's presence.
 
-            Testable - Yes, the Flying Enemies feature can be tested to ensure that it works as intended, including testing enemy behaviors and interactions with other game features, such as player abilities or terrain obstacles. Testing can also include checking for any performance issues that may arise from the addition of flying enemies.
+            Testable - Yes, Because the Flying Enemies feature can be tested to ensure that it works as intended, include test enemy behaviors and interactions with other game features, such as player abilities or terrain obstacles. Testing can also include checking for any performance issues that may arise from the addition of flying enemies.
         </INVEST>
         <Tests>
             <Test>Try to find flying enemies at the game level.</Test>
@@ -652,17 +653,17 @@
         <Description>As a player, I hope this game has Bonus Levels, so that I can relax after fightings.</Description>
         <DescriptionZH>通过关卡后的独立奖励关，让玩家在限定时间内可以获取奖励</DescriptionZH>
         <INVEST>
-            Independent - Yes, the Bonus Level feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+            Independent - Yes, because bonus levels can typically be implemented as a self-contained feature that does not rely on other game systems or mechanics.
 
-            Negotiable - Yes, the specifics of the Bonus Level feature, such as the objectives, difficulty level, and visual and audio design, can be negotiated and adjusted based on the needs of the team and the game.
+            Negotiable - Yes, Because the details of the bonus level can be adjusted according to the resources and priorities of the team, for example, the team may choose to implement bonus levels with different themes or difficulty levels.
             
-            Valuable - Yes, the Bonus Level feature can provide additional content and replay value for players, as well as a sense of accomplishment for completing a challenging level.
+            Valuable - Yes, Because bonus levels can increase the replay value of a game, providing players with additional content to explore and enjoy.
             
-            Estimable - Yes, the development effort required for the Bonus Level feature can be estimated, as it involves designing and implementing specific level objectives, visual and audio elements, and testing.
+            Estimable - Yes, Because you can estimate the workload required to achieve the reward level according to the required number and complexity of the level and the resources available to the team.
             
-            Small - Yes, the Bonus Level feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual level objectives or adding the visual and audio elements that make up the level.
+            Small - Yes, Because implementing bonus levels can be relatively straightforward and isolating, especially when teams choose to reuse existing assets and mechanics.
             
-            Testable - Yes, the Bonus Level feature can be tested to ensure that it works as intended, including testing level objectives and mechanics, visual and audio elements, and difficulty level. Testing can also include checking for any performance issues that may arise from the addition of the Bonus Level.
+            Testable - Yes, because the team can create test cases to ensure that the bonus levels work correctly, are enjoyable, and do not result in unintended consequences such as crashes or broken game mechanics.
         </INVEST>
         <Tests>
             <Test>Try to enter the bonus level during gameplay.</Test>
@@ -672,21 +673,16 @@
         <Label>Could Have</Label>
         <Url>https://trello.com/c/F74J3A6V</Url>
     </UserStory>
-    <UserStory id="30" heading="Volume Control" headingZH="音量控制">
-        <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
-        <DescriptionZH>游戏内的音量控制，包括音效和背景乐</DescriptionZH>
+    <UserStory id="30" heading="Sound" headingZH="音量控制">
+        <Description>As a player, I want to be able to control the volume in-game.</Description>
+        <DescriptionZH>一个控制背景音乐的滑块</DescriptionZH>
         <INVEST>
-            Independent - Yes, as the feature does not rely on any other part of the game to function.
-    
-            Negotiable - Yes, as the specifics of how the volume control works can be adjusted based on user feedback or other considerations.
-    
-            Valuable - Yes, as the ability to adjust the volume is important to many players, especially those who may need to play with different volume levels due to personal preferences or accessibility needs.
-    
-            Estimable - Yes, as it is possible to estimate the time and effort required to implement this feature.
-    
-            Small - Yes, as the volume control feature can be implemented as a relatively small and focused addition to the game.
-    
-            Testable - Yes, as the volume control feature can be easily tested to ensure that it is functioning as intended.
+            Independent - Yes, Because as the feature does not rely on any other part of the game to function.
+            Negotiable - Yes, Becuase as the specifics of how the volume control works can be adjusted based on user feedback or other considerations.
+            Valuable - Yes, Because as the ability to adjust the volume is important to many players, especially those who may need to play with different volume levels due to personal preferences or accessibility needs.
+            Estimable - Yes, Because as it is possible to estimate the time and effort required to implement this feature.
+            Small - Yes, Because as the volume control feature can be implemented as a relatively small and focused addition to the game.
+            Testable - Yes, Because as the volume control feature can be easily tested to ensure that it is functioning as intended.
         </INVEST>
         <Tests>
             <Test>Check if the volume bar can be displayed correctly in the options menu.</Test>
@@ -694,6 +690,7 @@
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/s14F0BNM</Url>
+        <Photos></Photos>
     </UserStory>
     <UserStory id="31" heading="Puzzle" headingZH="谜题解密">
         <Description>As a player, I would like the game to include Puzzle elements, so that I could enjoy solving them.</Description>
