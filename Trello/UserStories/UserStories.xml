@@ -236,7 +236,7 @@
         <Url>https://trello.com/c/hrxlYClT</Url>
     </UserStory>
     <UserStory id="11" heading="Buff" headingZH="Buff">
-        <Description>As a player, I would like the game to include buffs for both enemies and players, so that there can be more effects in combat.</Description>
+        <Description>As a player, I would like the game to include Buffs for both enemies and players, so that there can be more effects in combat.</Description>
         <DescriptionZH>Buff是各种加成，如增加伤害，降低伤害，减速等</DescriptionZH>
         <INVEST>
             Independent - No, because buffs often rely on other features or systems in the game to determine their effectiveness. For example, a "damage buff" would depend on the damage calculation system in the game.
@@ -259,7 +259,7 @@
         <Url>https://trello.com/c/Z9b1tPQl</Url>
     </UserStory>
     <UserStory id="12" heading="BuffIcon" headingZH="Buff标识">
-        <Description>As a player, I would like the buffs to be displayed as icons, so that I can decide my way of combat.</Description>
+        <Description>As a player, I would like the Buffs to be Displayed as icons, so that I can decide my way of combat.</Description>
         <DescriptionZH>Buff的标识，可以是小图标，也可以是颜色等，用于显示当前玩家或敌人所拥有的 buff</DescriptionZH>
         <INVEST>
             Independent - No, because the implementation of the "Buff Icon" feature might be dependent on other game systems such as the ability to apply buffs, or the rules around when buffs can be used.
