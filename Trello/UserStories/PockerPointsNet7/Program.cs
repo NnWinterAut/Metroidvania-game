@@ -1,5 +1,4 @@
 ﻿using CSVFile;
-using System.Drawing;
 using System.Text;
 
 var workspace = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.Parent;
@@ -26,6 +25,7 @@ Console.WriteLine(result);
 File.WriteAllText(
     Path.Combine(workspace.FullName, "PokerPoints_Gen.csv"),
     PokerPoint.PokerPointsToCsvStr(points));
+
 
 struct PokerPoint
 {
