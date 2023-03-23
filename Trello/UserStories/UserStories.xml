@@ -531,7 +531,7 @@
             <Test>Check whether the player can control the game character to jump and attack in the air.</Test>
             <Test>Check if the air attack of the game character can cause damage to the enemy.</Test>
         </Tests>
-        <Label>Sould Have</Label>
+        <Label>Should Have</Label>
         <Url>https://trello.com/c/pMVLpWXC</Url>
     </UserStory>
     <UserStory id="24" heading="Stunned State" headingZH="僵直状态">
@@ -553,7 +553,7 @@
             <Test>Try attacking the enemy and check if the enemy enters a stiff state after being attacked.</Test>
             <Test>Try being attacked by the enemy and check if the player enters a stiff state after being attacked by the enemy.</Test>
         </Tests>
-        <Label>Sould Have</Label>
+        <Label>Should Have</Label>
         <Url>https://trello.com/c/PcEerpRo</Url>
     </UserStory>
     <UserStory id="25" heading="Cooldown" headingZH="冷却">
@@ -676,14 +676,6 @@
         <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
         <DescriptionZH>游戏内的音量控制，包括音效和背景乐</DescriptionZH>
         <INVEST>
-<<<<<<< HEAD
-            Independent - Yes, Because as the feature does not rely on any other part of the game to function.
-            Negotiable - Yes, Because as the specifics of how the volume control works can be adjusted based on user feedback or other considerations.
-            Valuable - Yes, Because as the ability to adjust the volume is important to many players, especially those who may need to play with different volume levels due to personal preferences or accessibility needs.
-            Estimable - Yes, Because as it is possible to estimate the time and effort required to implement this feature.
-            Small - Yes, Because as the volume control feature can be implemented as a relatively small and focused addition to the game.
-            Testable - Yes, Because as the volume control feature can be easily tested to ensure that it is functioning as intended.
-=======
             Independent - Yes, as the feature does not rely on any other part of the game to function.
     
             Negotiable - Yes, as the specifics of how the volume control works can be adjusted based on user feedback or other considerations.
@@ -695,7 +687,6 @@
             Small - Yes, as the volume control feature can be implemented as a relatively small and focused addition to the game.
     
             Testable - Yes, as the volume control feature can be easily tested to ensure that it is functioning as intended.
->>>>>>> parent of 5b2299d... Update UserStories.xml
         </INVEST>
         <Tests>
             <Test>Check if the volume bar can be displayed correctly in the options menu.</Test>
