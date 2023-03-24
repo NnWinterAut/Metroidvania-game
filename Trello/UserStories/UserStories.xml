@@ -391,7 +391,7 @@
         </INVEST>
         <Tests>
             <Test>The player interacts with the shop, displaying various recovery items and some equipments.</Test>
-            <Test>After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins</Test>
+            <Test>After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/IueQzHao</Url>
@@ -548,7 +548,8 @@
 
             Small - Yes, the Stunned State feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
 
-            Testable - Yes, the Stunned State feature can be tested to ensure that it works as intended, including testing the duration, visual effects, and any associated gameplay mechanics. Testing can also include checking that the Stunned State interacts correctly with other game features, such as enemy AI or player abilities.        </INVEST>
+            Testable - Yes, the Stunned State feature can be tested to ensure that it works as intended, including testing the duration, visual effects, and any associated gameplay mechanics. Testing can also include checking that the Stunned State interacts correctly with other game features, such as enemy AI or player abilities.
+        </INVEST>
         <Tests>
             <Test>Try attacking the enemy and check if the enemy enters a stiff state after being attacked.</Test>
             <Test>Try being attacked by the enemy and check if the player enters a stiff state after being attacked by the enemy.</Test>
@@ -626,7 +627,7 @@
         <Url>https://trello.com/c/GxhEvknH</Url>
     </UserStory>
     <UserStory id="28" heading="Flying Enemies" headingZH="飞行敌人">
-        <Description>As a player, I would like to see flying enemies, so that the vertical gaps are not too empty.</Description>
+        <Description>As a player, I would like to see Flying Enemies, so that the vertical gaps are not too empty.</Description>
         <DescriptionZH>有飞行的小怪可以让玩家在空中进行攻击，充分利用垂直空间，不然只有平面会比较无聊</DescriptionZH>
         <INVEST>
             Independent - Yes, the Flying Enemies feature can be designed and implemented as a standalone feature, separate from other game features and systems.
@@ -743,7 +744,7 @@
         <Url>https://trello.com/c/AUxBHgsQ</Url>
     </UserStory>
     <UserStory id="33" heading="Achievement" headingZH="成就系统">
-        <Description>As a player, I would like to see an achievement system, so that I could gain satisfaction upon completing objectives.</Description>
+        <Description>As a player, I would like to see an Achievement system, so that I could gain satisfaction upon completing objectives.</Description>
         <DescriptionZH>比如在指定时间通关，或者死亡过多次</DescriptionZH>
         <INVEST>
             Independent - No, the Achievement feature relies on other game features and systems to determine if the achievements have been completed, such as completing a specific level or defeating a certain enemy.
@@ -812,7 +813,7 @@
         <Url>https://trello.com/c/0SA4aVkU</Url>
     </UserStory>
     <UserStory id="36" heading="Attack" headingZH="攻击">
-        <Description>As a player, I want to be able to perform an attack action, so that I can defeat enemies and progress through the game.</Description>
+        <Description>As a player, I want to be able to perform an Attack action, so that I can defeat enemies and progress through the game.</Description>
         <DescriptionZH>玩家可以使用普通攻击对敌人造成伤害，如挥剑等</DescriptionZH>
         <INVEST>
             Independent - Yes, the Attack feature can be implemented independently of other game features and systems, as it only requires the player to be able to trigger an attack animation and damage enemies within a certain range.
@@ -881,7 +882,7 @@
         <Url>https://trello.com/c/W0ZrOoCF</Url>
     </UserStory>
     <UserStory id="39" heading="Difficulties" headingZH="游戏难度">
-        <Description>As a player, I would like the game to have more than two difficulty level (perhaps three), so that it can cater to different types of players.</Description>
+        <Description>As a player, I would like the game to have more than two Difficulty level (perhaps three), so that it can cater to different types of players.</Description>
         <DescriptionZH>游戏能提供不止一种（或许三种）难度级别</DescriptionZH>
         <INVEST>
             Independent - No, because the implementation of different difficulty levels may rely on other systems or features in the game, such as enemy AI or level design.
@@ -927,7 +928,7 @@
         <Url>https://trello.com/c/qTAMjKqn</Url>
     </UserStory>
     <UserStory id="41" heading="BGM" headingZH="BGM">
-        <Description>As a player, I want this game to have background music, so that I can enjoy music during play time.</Description>
+        <Description>As a player, I want this game to have Background Music, so that I can enjoy music during play time.</Description>
         <DescriptionZH>游戏背景音乐</DescriptionZH>
         <INVEST>
             Independent - Yes, the BGM feature can be implemented independently of other game features and systems, as it only requires the game to play audio files in the background.
@@ -943,7 +944,7 @@
             Testable - Yes, the BGM feature can be tested to ensure that audio tracks are playing correctly and at the appropriate times, and that the volume and timing settings are working as intended.
         </INVEST>
         <Tests>
-            <Test>When the user starts the game, the background music is automatically turned on. </Test>
+            <Test>When the user starts the game, the background music is automatically turned on.</Test>
             <Test>Add a music button. Given that user on the main screen when user press to the music button, system will turn on and off the background music.</Test>
         </Tests>
         <Label>Should Have</Label>
@@ -973,7 +974,7 @@
         <Url>https://trello.com/c/VTSFJgFh</Url>
     </UserStory>
     <UserStory id="43" heading="Bonus Levels" headingZH="奖励关卡">
-        <Description>As a player, I would like there to be bonus levels in the game, so that I can relax after completing levels.</Description>
+        <Description>As a player, I would like there to be Bonus Levels in the game, so that I can relax after completing levels.</Description>
         <DescriptionZH>奖励关卡，在指定时间内可以获取额外的奖励</DescriptionZH>
         <INVEST>
             Independent - Yes, because bonus levels can typically be implemented as a self-contained feature that does not rely on other game systems or mechanics.
