@@ -1,0 +1,9 @@
+Id,Name,Comment
+1,P,"The increase and decreaseof blood stripes may change according to external factors, such as the difficulty of armor game level which requires some calculation."
+2,P,"The "The increase and decrease may also change according to the difficulty of the game level, ad the use value of the skill will also effect the judgment of MP."
+14,W,"A Counter is used to control the durability of an item, when the counter is 0, replace the equipment with empty."
+19,W,"There are not many combinations of elements."
+29,M,"Have no Idea how to process so far."
+35,C,"It doesn't take long."
+45,P,"Need more and fastercharater movement."
+46,W,"Game archive can be directly saved as a file by serializing game data, and there is also an open source script class library availble in unity."

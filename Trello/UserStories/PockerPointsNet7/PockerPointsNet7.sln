@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PockerPointsNet7", "PockerPointsNet7.csproj", "{E612F594-A42E-43BB-828A-BD9C245E6934}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E612F594-A42E-43BB-828A-BD9C245E6934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E612F594-A42E-43BB-828A-BD9C245E6934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E612F594-A42E-43BB-828A-BD9C245E6934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E612F594-A42E-43BB-828A-BD9C245E6934}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3519EA46-814A-469C-B714-04F94B9C5581}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1114 @@
+﻿<UserStories>
+    <UserStory id="1" heading="Health Point" headingZH="生命值">
+        <Description>As a player, I want the game has a proper Health Point (HP), so that health status can be sufficiently determined and monitored.</Description>
+        <DescriptionZH>血量的显示，受到伤害时的血量变化</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because this user story does not rely on other features or systems in the game to function, although it does depend on the player's performance.
+
+            Negotiable - Yes, because this user story is open to negotiation and can be adjusted based on stakeholder feedback or changes in project goals.
+
+            Valuable - Yes, because this feature provides valuable information to the player about their character's health status, which enhances their in-game experience and allows them to make informed decisions.
+
+            Estimable - Yes, because the time and effort required to implement this feature can be estimated by the development team, since it is a small and focused feature.
+
+            Small - Yes, because this is a small feature that can be completed within a single iteration or sprint.
+
+            Testable - Yes, because this feature can be tested and verified through gameplay to ensure that it functions correctly and provides accurate information to the player.
+        </INVEST>
+        <Tests>
+            <Test>Health Point (HP) must have color.</Test>
+            <Test>Check the value of damage taken by the player is deducted from the Health Point (HP).</Test>
+            <Test>The reduced Health Point (HP) is transparent(scene background).</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/azzQ6C8M</Url>
+    </UserStory>
+    <UserStory id="2" heading="Magic Point" headingZH="魔法值">
+        <Description>As a player, I want the game to have a Magic Point (MP), so that the usage of magic is conditioned.</Description>
+        <DescriptionZH>玩家的魔法值，在魔法值不够时无法使用法术技能(可以自动恢复)</DescriptionZH>
+        <INVEST>
+            Independent - Yes, since this is a small user story that does not depend on any other features or systems in the game to function.
+
+            Negotiable - Yes, because this user story is a placeholder for a conversation and specific details can be negotiated and confirmed later.
+
+            Valuable - Yes, because users will benefit from this feature, as it enhances their overall gaming experience.
+
+            Estimable - Yes, because the time and effort required to implement this feature can be estimated by the development team, since it is a small feature.
+
+            Small - Yes, because this is a small feature that can be easily implemented and completed within a single sprint.
+
+            Testable - Yes, because tests were created for this feature to ensure that it functions correctly and provides the intended user experience.
+        </INVEST>
+        <Tests>
+            <Test>The Magic Point(MP) must have color.</Test>
+            <Test>Check if the Magic Point(MP) is digested when using the spell.</Test>
+            <Test>Player unable to release spell skills when the MP is empty.</Test>
+            <Test>The reduced portion of Magic Point(MP) should be transparent (scene background).</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/IV9NNeem</Url>
+    </UserStory>
+    <UserStory id="3" heading="Health Potion" headingZH="生命药剂">
+        <Description>As a player, I want the game to have Health Potion, so that I can restore health point(HP).</Description>
+        <DescriptionZH>可以恢复血量的生命药剂，拾取后恢复血量的道具</DescriptionZH>
+        <INVEST>
+            Independent - No, the health potion feature depends on the player's health system and how it is implemented in the game.
+
+            Negotiable - Yes, the details of how the health potion restores health, the visual effects and animation, and the cost or availability of the potion can be negotiated.
+
+            Valuable - Yes, the health potion is valuable to players as it provides a means to recover from damage taken during gameplay and allows for a smoother and less frustrating experience.
+
+            Estimable - Yes, the effort required to implement the health potion feature can be estimated based on the complexity of the health system, the visuals, and the overall design of the game.
+
+            Small - Yes, the health potion feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the health potion feature can be tested to ensure it functions as intended, restores the appropriate amount of health, and has no unintended side effects on the player or game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Try to find consumables that can restore health in the game's drops or shop.</Test>
+            <Test>Attempt to use health-restoring consumables and check whether the health is restored.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/JJ4N4b5L</Url>
+    </UserStory>
+    <UserStory id="4" heading="Magic Potion" headingZH="魔法药剂">
+        <Description>As a player, I want the game to have a Magic Potion, so that I can restore mana(MP) during gameplay.</Description>
+        <DescriptionZH>可以恢复魔法值的药剂，拾取后恢复法力值的道具</DescriptionZH>
+        <INVEST>
+            Independent - No, the magic potion feature depends on the player's magic system and how it is implemented in the game.
+
+            Negotiable - Yes, the details of how the magic potion restores magic power, the visual effects and animation, and the cost or availability of the potion can be negotiated.
+
+            Valuable - Yes, the magic potion is valuable to players as it provides a means to recover from depletion of magic power during gameplay and allows for a smoother and less frustrating experience.
+
+            Estimable - Yes, the effort required to implement the magic potion feature can be estimated based on the complexity of the magic system, the visuals, and the overall design of the game.
+
+            Small - Yes, the magic potion feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the magic potion feature can be tested to ensure it functions as intended, restores the appropriate amount of magic power, and has no unintended side effects on the player or game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Try to find consumables that can restore mana in the game's loot drops or in the shop.</Test>
+            <Test>Use the mana-restoring consumables and check whether the mana points have been restored.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/OU6r66yU</Url>
+    </UserStory>
+    <UserStory id="5" heading="Fire Magic" headingZH="火焰魔法">
+        <Description>As a player, I want to have Fire Magic, so that I can inflict sustained damage on enemies.</Description>
+        <DescriptionZH>火焰魔法，消耗魔法值对敌人持续造成火焰伤害。会被冰冻魔法熄灭火焰</DescriptionZH>
+        <INVEST>
+            Independent - No, the fire magic feature depends on the player's magic system and the game's combat mechanics.
+
+            Negotiable - Yes, the details of how fire magic is learned, the visual effects and animation, and the damage dealt can be negotiated.
+
+            Valuable - Yes, the fire magic feature is valuable to players as it provides a means to deal damage to enemies and defeat them more efficiently, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the fire magic feature can be estimated based on the complexity of the magic system, the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the fire magic feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the fire magic feature can be tested to ensure it functions as intended, deals appropriate damage, and has no unintended side effects on the player or game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Test if the player can switch to fire magic.</Test>
+            <Test>Test if the player can cast fire magic.</Test>
+            <Test>After casting the spell, check if it inflict sustained damage on the enemy as expected.</Test>
+        </Tests>
+        <Label>Could have</Label>
+        <Url>https://trello.com/c/jGFK3JBC</Url>
+    </UserStory>
+    <UserStory id="6" heading="Frozen Magic" headingZH="冰冻魔法">
+        <Description>As a user, I want the game to have a Frozen Magic, so that I can slow down enemy.</Description>
+        <DescriptionZH>冰冻魔法，消耗魔法值对敌人造成冰冻伤害，降低敌人移动和攻击速度。会被火焰魔法消除冰冻效果</DescriptionZH>
+        <INVEST>
+            Independent - No, the frozen magic feature depends on the player's magic system and the game's combat mechanics.
+
+            Negotiable - Yes, the details of how frozen magic is learned, the visual effects and animation, the duration of the freeze, and the cooldown period can be negotiated.
+
+            Valuable - Yes, the frozen magic feature is valuable to players as it provides a means to temporarily immobilize enemies and create strategic opportunities during combat, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the frozen magic feature can be estimated based on the complexity of the magic system, the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the frozen magic feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the frozen magic feature can be tested to ensure it functions as intended, freezes enemies for the appropriate duration, has a reasonable cooldown period, and has no unintended side effects on the player or game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Test if the player can switch to frozen magic.</Test>
+            <Test>Test if the player can cast frozen magic.</Test>
+            <Test>After casting the spell, check whether it slowed down the enemy as expected.</Test>
+        </Tests>
+        <Label>Could have</Label>
+        <Url>https://trello.com/c/7c4BxDIO</Url>
+    </UserStory>
+    <UserStory id="7" heading="Lightning Magic" headingZH="雷电魔法">
+        <Description>As a user, I want the game to have Lightning Magic, so that I can attack multiple enemies.</Description>
+        <DescriptionZH>雷电魔法，可以连锁攻击多个相邻敌人，如果敌人处于冰冻状态可以增加连击范围和次数</DescriptionZH>
+        <INVEST>
+            Independent - No, the lightning magic feature depends on the player's magic system and the game's combat mechanics.
+
+            Negotiable - Yes, the details of how lightning magic is learned, the visual effects and animation, the area-of-effect radius, and the damage dealt can be negotiated.
+
+            Valuable - Yes, the lightning magic feature is valuable to players as it provides a means to deal area-of-effect damage to multiple enemies and defeat them more efficiently, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the lightning magic feature can be estimated based on the complexity of the magic system, the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the lightning magic feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the lightning magic feature can be tested to ensure it functions as intended, deals appropriate area-of-effect damage, and has no unintended side effects on the player or game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Test if the player can switch to lightning magic.</Test>
+            <Test>Test if the player can cast lightning magic.</Test>
+            <Test>After casting the spell, checked if it attacked multiple enemies in a chain.</Test>
+        </Tests>
+        <Label>Could have</Label>
+        <Url>https://trello.com/c/Uos684py</Url>
+    </UserStory>
+    <UserStory id="8" heading="Charge Attack" headingZH="蓄力攻击">
+        <Description>As a player, I want my character to use Charge Attack, so that I can have more ways to attack.</Description>
+        <DescriptionZH>蓄力攻击，可以通过蓄力的方式在释放时进行更强力的攻击，可以用于破甲，攻击精英怪等</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the charge attack feature is independent of other game mechanics and does not rely on any other features to function.
+
+            Negotiable - Yes, the details of the charge attack animation, the amount of damage dealt, and the length of time required to charge the attack can be negotiated.
+
+            Valuable - Yes, the charge attack feature is valuable to players as it provides a means to deal increased damage to enemies and adds depth and strategy to combat gameplay.
+
+            Estimable - Yes, the effort required to implement the charge attack feature can be estimated based on the complexity of the combat mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the charge attack feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the charge attack feature can be tested to ensure it functions as intended, deals increased damage, has a reasonable charge time, and has no unintended side effects on the player or game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Try holding down the attack button or using certain charged attack moves, to see if player can successfully perform the charged attack.</Test>
+            <Test>Compare the normal attack and charged attack, and determine if the charged attack has any damage or attribute improvements.</Test>
+        </Tests>
+        <Label>Could have</Label>
+        <Url>https://trello.com/c/QnmHeyxr</Url>
+    </UserStory>
+    <UserStory id="9" heading="Double Jump" headingZH="二段跳">
+        <Description>As a player, I want to be able to Double Jump off walls, so that I can reach higher places.</Description>
+        <DescriptionZH>二段跳可以让玩家在接触墙面时进行二次跳跃，每次落地时重置</DescriptionZH>
+        <INVEST>
+            Independent - No, the double jump feature depends on the jump feature to function.
+
+            Negotiable - Yes, the details of the double jump animation, the height and distance of the second jump, and the timing required to perform the double jump can be negotiated.
+
+            Valuable - Yes, the double jump feature is valuable to players as it provides a means to reach higher platforms and navigate through the game world more efficiently, adding variety and excitement to gameplay.
+
+            Estimable - Yes, the effort required to implement the double jump feature can be estimated based on the complexity of the jump mechanics, the visual effects, and the overall design of the game.
+
+            Small - Yes, the double jump feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+            Testable - Yes, the double jump feature can be tested to ensure it functions as intended, allows the player to reach higher platforms, has a reasonable timing for the double jump, and has no unintended side effects on the player or game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Try to approach and touch the wall after jumping, then press the jump key again to trigger a double jump.</Test>
+            <Test>Analyze whether the height of the double jump is reasonable and whether it affects the game's balance.</Test>
+        </Tests>
+        <Label>Could have</Label>
+        <Url>https://trello.com/c/AbsfAqXN</Url>
+    </UserStory>
+    <UserStory id="10" heading="Armor" headingZH="护甲">
+        <Description>As a player, I want the game to have Armor, so that I can take less damage from enemies.</Description>
+        <DescriptionZH>护甲可以用来降低敌方造成的伤害，如盔甲，斗篷等</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the implementation of armor should not rely on other features or systems in the game to function properly.
+
+            Negotiable - Yes, because the specific details of the armor can be adjusted or changed based on feedback or changing design requirements.
+
+            Valuable - Yes, because armor can be a valuable feature in games to increase the player's survivability and add a layer of strategy to gameplay.
+
+            Estimable - Yes, because it is possible to estimate the time and effort required to implement armor in the game.
+
+            Small - Yes, because the implementation of armor can be broken down into smaller, manageable tasks that can be completed in a reasonable amount of time.
+
+            Testable - Yes, because it is possible to test the functionality of armor in the game, such as testing its effectiveness against different types of enemies or in different scenarios.
+        </INVEST>
+        <Tests>
+            <Test>When playing, try to find equipment such as armor in dropped items or in the shop that can improve the defence.</Test>
+            <Test>Compare the difference in defense before and after equipping the armor.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/hrxlYClT</Url>
+    </UserStory>
+    <UserStory id="11" heading="Buff" headingZH="Buff">
+        <Description>As a player, I would like the game to include Buffs for both enemies and players, so that there can be more effects in combat.</Description>
+        <DescriptionZH>Buff是各种加成，如增加伤害，降低伤害，减速等</DescriptionZH>
+        <INVEST>
+            Independent - No, because buffs often rely on other features or systems in the game to determine their effectiveness. For example, a "damage buff" would depend on the damage calculation system in the game.
+
+            Negotiable - Yes, because the specifics of the buff can be adjusted to fit the needs of the game and its players.
+
+            Valuable - Yes, because buffs can add depth and strategy to gameplay, as well as provide a sense of progression and reward for the player.
+
+            Estimable - No, because the complexity and impact of a buff can vary greatly depending on the game and its mechanics.
+
+            Small - No, because buffs can have a significant impact on gameplay and may require substantial development effort.
+
+            Testable - Yes, because the effectiveness of a buff can be measured and verified through playtesting and balancing.
+        </INVEST>
+        <Tests>
+            <Test>Try to use items or attacks that can increase Buff in the game to see if the Buff appears.</Test>
+            <Test>Compare the differences between having Buff and not having Buff, and determine whether the Buff has been successfully applied.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/Z9b1tPQl</Url>
+    </UserStory>
+    <UserStory id="12" heading="BuffIcon" headingZH="Buff标识">
+        <Description>As a player, I would like the Buffs to be Displayed as icons, so that I can decide my way of combat.</Description>
+        <DescriptionZH>Buff的标识，可以是小图标，也可以是颜色等，用于显示当前玩家或敌人所拥有的 buff</DescriptionZH>
+        <INVEST>
+            Independent - No, because the implementation of the "Buff Icon" feature might be dependent on other game systems such as the ability to apply buffs, or the rules around when buffs can be used.
+
+            Negotiable - Yes, because there may be multiple ways to implement the feature, such as where the buff icon appears on the screen, how it's designed, and what buffs are included.
+
+            Valuable - Yes, because a buff icon can provide players with important information about the status of their character or game progress, which can improve their gameplay experience.
+
+            Estimable - No, because the complexity of implementing the feature might vary based on how the game engine is built and the resources available to the development team.
+
+            Small - No, because the feature may require significant development effort, depending on the complexity of the buff system and how the icon is displayed.
+
+            Testable - Yes, because the feature can be tested to ensure that it displays correctly and provides accurate information to the player.
+        </INVEST>
+        <Tests>
+            <Test>Check whether the buff icon can be displayed properly after the buff is in effect for the character.</Test>
+            <Test>Check whether the icon disappears after the buff expires.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/K4hDK7ld</Url>
+    </UserStory>
+    <UserStory id="13" heading="Status" headingZH="角色状态">
+        <Description>As a player, I wish I could view the Status of my character, so that I can understand my current situration.</Description>
+        <DescriptionZH>用于显示角色状态的面板，比如玩家的血量，伤害，等数值</DescriptionZH>
+        <INVEST>
+            Independent - No, because the "Status" feature may rely on other systems or features in the game, such as character attributes or quests, to determine the current status.
+
+            Negotiable - Yes, because the specifics of the "Status" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Status" feature can provide valuable information to the player about their progress and accomplishments within the game.
+
+            Estimable - No, because the "Status" feature may be difficult to estimate without more detailed requirements or specifications.
+
+            Small - Yes, because the "Status" feature can be implemented in small increments, such as showing the player's health or level.
+
+            Testable - Yes, because the "Status" feature can be tested to ensure that it is functioning properly and providing accurate information to the player.
+        </INVEST>
+        <Tests>
+            <Test>Press a specific key to open the character attribute panel.</Test>
+            <Test>Character attribute panel display hp, mp, damage, ect.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/wazyas4m</Url>
+    </UserStory>
+    <UserStory id="14" heading="Durability" headingZH="耐久度">
+        <Description>As a player, I wish to add Durability to equipments, so that I can pay more attention to my equipments.</Description>
+        <DescriptionZH>装备的耐久度在为0时使装备损坏</DescriptionZH>
+        <INVEST>
+            Independent - No, because the "Durability" feature may rely on other systems or features in the game, such as combat mechanics or item durability, to determine the current durability of an object or character.
+
+            Negotiable - Yes, because the specifics of the "Durability" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Durability" feature can provide valuable information to the player about the health or lifespan of an object or character within the game, and can add an element of strategy to the gameplay.
+
+            Estimable - No, because the "Durability" feature may be difficult to estimate without more detailed requirements or specifications.
+
+            Small - Yes, because the "Durability" feature can be implemented in small increments, such as adding durability to individual objects or items in the game.
+
+            Testable - Yes, because the "Durability" feature can be tested to ensure that it is functioning properly and providing accurate information to the player. Testing can involve measuring how long an object or character lasts before it breaks or loses durability.
+        </INVEST>
+        <Tests>
+            <Test>Equipment durability is displayed.</Test>
+            <Test>Equipment breaks when it has no durability.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/1S2Ka4Od</Url>
+    </UserStory>
+    <UserStory id="15" heading="Pickup" headingZH="装备拾取">
+        <Description>As a player, I wish to be able to Pickup items, so that I can pickup potions or gears.</Description>
+        <DescriptionZH>使用某个按键来拾取地图中的掉落物（金币应当是自动拾取，其它的需要手动)</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the "Pickup" feature can be developed and implemented independently of other systems or features in the game.
+
+            Negotiable - Yes, because the specifics of the "Pickup" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Pickup" feature can provide valuable items or resources to the player, which can be used to progress in the game or achieve certain goals.
+
+            Estimable - Yes, because the "Pickup" feature can be estimated and planned for, based on the number and types of items that can be picked up throughout the game.
+
+            Small - Yes, because the "Pickup" feature can be implemented in small increments, such as allowing the player to pick up a single item at a time.
+
+            Testable - Yes, because the "Pickup" feature can be tested to ensure that the player is able to pick up items as intended, and that the items are added to the player's inventory or used in the game as intended.
+        </INVEST>
+        <Tests>
+            <Test>Use the pick-up button on the object you want to pick up, and verify if there is any item change.</Test>
+            <Test>To compare the damage or defense after changing equipment, try attacking or defending to see if there is any additional benefit.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/U6JMQwbS</Url>
+    </UserStory>
+    <UserStory id="16" heading="Coins" headingZH="金币">
+        <Description>As a player, I wish to have Coins, so that I can buy equipments in the game.</Description>
+        <DescriptionZH>用于购买游戏内的商品的金币</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the "Coins" feature can be developed and implemented independently of other systems or features in the game.
+
+            Negotiable - Yes, because the specifics of the "Coins" feature can be negotiated and adjusted based on the priorities and goals of the team.
+
+            Valuable - Yes, because the "Coins" feature can provide valuable in-game currency to the player, which can be used to purchase items, upgrades, or other features within the game.
+
+            Estimable - Yes, because the "Coins" feature can be estimated and planned for, based on the number of coins needed to purchase various items or upgrades within the game.
+
+            Small - Yes, because the "Coins" feature can be implemented in small increments, such as adding a small number of coins as a reward for completing a task or mission.
+
+            Testable - Yes, because the "Coins" feature can be tested to ensure that the player is able to collect and spend the coins as intended, and that the currency system is functioning properly within the game.
+        </INVEST>
+        <Tests>
+            <Test>After attempting to defeat multiple enemies, check if any gold coins have been dropped.</Test>
+            <Test>Attempt to pick up gold coins and verify if your total amount of gold coins increases.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/WUQ6oeI9</Url>
+    </UserStory>
+    <UserStory id="17" heading="Shop" headingZH="商城">
+        <Description>As a player, I hope there is a Shop system, so that I can buy equipments in the game.</Description>
+        <DescriptionZH>在商城可以购买游戏道具如 血药 蓝药 武器升级 等</DescriptionZH>
+        <INVEST>
+            Independent - Yes, a shop feature can be developed and implemented independently of other features or systems in the game.
+
+            Negotiable - Yes, the details of the shop, such as what items are available, pricing, and the user interface can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, a shop feature can provide players with a way to spend in-game currency or real money to obtain items or upgrades, which can increase engagement and retention.
+
+            Estimable - Yes, the development effort required for a shop feature can be estimated based on the desired functionality and the technology used to implement it.
+
+            Small - No, the size of a shop feature may vary depending on the desired functionality and complexity. However, it is recommended to break down the feature into smaller, more manageable sub-tasks for development.
+
+            Testable - Yes, a shop feature can be tested to ensure it functions correctly, such as checking that items are properly added to a player's inventory and that the correct amount of currency is deducted.
+        </INVEST>
+        <Tests>
+            <Test>The player interacts with the shop, displaying various recovery items and some equipments.</Test>
+            <Test>After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/IueQzHao</Url>
+    </UserStory>
+    <UserStory id="18" heading="Upgrade" headingZH="升级">
+        <Description>As a player, I want there a Upgrade system, so that I can level up and fight stronger enemies.</Description>
+        <DescriptionZH>允许玩家或装备进行升级，可以对角色的属性进行提高，如血量上限，也可以是武器的等级(伤害)</DescriptionZH>
+        <INVEST>
+            Independent - No, because upgrades often rely on other features or systems in the game to function. For example, upgrading a weapon requires the weapon to exist and be functioning properly.
+
+            Negotiable - Yes, the details of the upgrade, such as what attributes it affects, the cost, and the level of improvement can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, an upgrade feature can provide players with a way to improve their in-game performance, which can increase engagement and retention.
+
+            Estimable - Yes, the development effort required for an upgrade feature can be estimated based on the desired functionality and the technology used to implement it.
+
+            Small - Yes, an upgrade feature can be broken down into smaller, more manageable sub-tasks for development, such as defining the different types of upgrades, implementing the upgrade UI, and creating the logic for applying the upgrades.
+
+            Testable - Yes, an upgrade feature can be tested to ensure it functions correctly, such as checking that the upgrade applies the correct attribute changes and that the cost of the upgrade is deducted properly from the player's currency.
+        </INVEST>
+        <Tests>
+            <Test>Check whether the game's equipment has a level system.</Test>
+            <Test>Approach higher-level equipment of the same type to see if it can replace lower-level equipment.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/0R2zj3Nl</Url>
+    </UserStory>
+    <UserStory id="19" heading="Skill Effect Combinations" headingZH="技能效果组合">
+        <Description>As a player, I desire varied Skill Effect Combinations so that I am motivated to utilize different skills rather than repeatedly relying on the same one.</Description>
+        <DescriptionZH>技能的效果会被其它技能影响，比如冰冻的敌人可以增加雷电的打击和跳跃范围，冰冻魔法可以熄灭火焰，火焰魔法可以解除冰冻等</DescriptionZH>
+        <INVEST>
+            Independent - No, because Skill Effect Combinations rely on other features or systems in the game, such as the skills themselves and their effects.
+
+            Negotiable - Yes, the details of the skill effect combinations, such as which skills can be combined, how they interact with each other, and the resulting effects can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, a Skill Effect Combinations feature can provide players with a way to create unique and powerful abilities that can enhance their gameplay experience, which can increase engagement and retention.
+
+            Estimable - Yes, the development effort required for a Skill Effect Combinations feature can be estimated based on the desired functionality and the technology used to implement it.
+
+            Small - Yes, a Skill Effect Combinations feature can be broken down into smaller, more manageable sub-tasks for development, such as defining the different combinations of skills and their resulting effects, implementing the skill combination UI, and creating the logic for applying the combinations.
+
+            Testable - Yes, a Skill Effect Combinations feature can be tested to ensure it functions correctly, such as checking that the correct effects are applied when skills are combined, and that the combinations do not cause any unexpected behavior or bugs in the game.
+        </INVEST>
+        <Tests>
+            <Test>Lighting magic and freezing maigc hitting the same monster will trigger the electric shock effect.</Test>
+            <Test>Fire magic hitting frozen monsters will unfreeze the monsters.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/z50RmdbJ</Url>
+    </UserStory>
+    <UserStory id="20" heading="Difficulty Design" headingZH="难度设计">
+        <Description>As a player, I desire diverse Difficulty Designs so that I can choose between enjoying the story or facing challenges.</Description>
+        <DescriptionZH>对不同的游戏难度等级设计不同难度的关卡和敌人属性，让玩家可以体验到不同难度下的游玩过程</DescriptionZH>
+        <INVEST>
+            Independent - No, because difficulty settings often affect other features or systems in the game, such as enemy behavior, player damage, and AI intelligence.
+
+            Negotiable - Yes, the details of the difficulty settings, such as the number of difficulty levels, what changes in each level, and how difficulty is presented to the player can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, a Difficulty feature can provide players with a way to adjust the challenge level of the game to their liking, which can increase engagement and retention.
+
+            Estimable - No, it may be difficult to estimate the development effort required for a Difficulty feature, as it can involve changes to many different systems in the game.
+
+            Small - No, a Difficulty feature can be a large and complex feature, involving changes to various systems in the game, and cannot be easily broken down into smaller, more manageable sub-tasks for development.
+
+            Testable - Yes, a Difficulty feature can be tested to ensure that the changes in difficulty levels are working as intended, such as enemy health and behavior changes, and the increase or decrease in difficulty feels balanced and reasonable.
+        </INVEST>
+        <Tests>
+            <Test>Try playing the game with different difficulty levels, to compare if there are differences in game difficulty.</Test>
+            <Test>Try playing the game with different standards, to determine if the difficulty setting is reasonable.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/Cp2CTzri</Url>
+    </UserStory>
+    <UserStory id="21" heading="Boss" headingZH="Boss">
+        <Description>As a player, I desire an exhilarating BOSS battle, so that I can experience a sense of accomplishment by defeating seemingly invincible opponents.</Description>
+        <DescriptionZH>游戏中的Boss关卡，通常是在每一关的结尾</DescriptionZH>
+        <INVEST>
+            Independent - Yes, a Boss Fight feature can be independent of other features or systems in the game, as it can be designed as a standalone encounter.
+
+            Negotiable - Yes, the details of the Boss Fight, such as the boss's appearance, behavior, abilities, and the environment it takes place in can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, a Boss Fight feature can provide players with a challenging and rewarding encounter that can enhance their gameplay experience, which can increase engagement and retention.
+
+            Estimable - No, it may be difficult to estimate the development effort required for a Boss Fight feature, as it can involve designing and implementing many different systems in the game, such as boss AI, player abilities, and environment assets.
+
+            Small - No, a Boss Fight feature can be a large and complex feature, involving changes to various systems in the game, and cannot be easily broken down into smaller, more manageable sub-tasks for development.
+
+            Testable - Yes, a Boss Fight feature can be tested to ensure that the boss behaves and responds correctly to player actions, and that the encounter is balanced and challenging. Testing can also include checking that the boss's abilities and mechanics work as intended, and that the player's abilities and items function properly during the encounter.
+        </INVEST>
+        <Tests>
+            <Test>Boss monsters have stronger attack power and more HP.</Test>
+            <Test>Boss monsters could release some skills to attack the player.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/CqKeS9yD</Url>
+    </UserStory>
+    <UserStory id="22" heading="Elite Enemies" headingZH="精英敌人">
+        <Description>As a player, I desire to confront Elite Enemies so that the game provides a greater level of challenge.</Description>
+        <DescriptionZH>精英怪，比普通的小怪更难打一点，比如血量更多，攻击方式更多，伤害更高等</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the introduction of elite enemies is a standalone feature that does not rely on other game systems or features.
+
+            Negotiable - Yes, because the specifics of the elite enemies can be negotiated based on the needs of the game and the team's resources.
+
+            Valuable - Yes, because the addition of elite enemies can provide an added challenge and excitement to the gameplay, which can enhance the overall experience for the players.
+
+            Estimable - No, because the level of effort required to implement the elite enemies feature may be difficult to estimate without additional information such as the specific abilities and behaviors of the elite enemies.
+
+            Small - No, because the addition of elite enemies could involve significant changes to the game's AI and combat systems, which may not be considered small.
+
+            Testable - Yes, because the behavior and abilities of the elite enemies can be tested and validated through playtesting and other forms of quality assurance.
+        </INVEST>
+        <Tests>
+            <Test>Elite monsters have higher attack power and health than normal monsters.</Test>
+            <Test>Run the game, and check whether the player can encounter elite enemies.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/w7pMKAxL</Url>
+    </UserStory>
+    <UserStory id="23" heading="Jump Attack" headingZH="跳跃攻击">
+        <Description>As a player, I want Jump Attack, so that I can attack enemies above me.</Description>
+        <DescriptionZH>玩家可以跳起来攻击空中敌人</DescriptionZH>
+        <INVEST>
+            Independent - No, the Jump Attack feature is dependent on the Jumping and Attacking features in the game, which must be present and functioning correctly for the Jump Attack to work.
+
+            Negotiable - Yes, the specifics of the Jump Attack feature, such as the attack animation, damage dealt, and any special effects or interactions, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Jump Attack feature can provide players with a new and exciting way to engage in combat or interact with the game environment, which can increase engagement and retention.
+
+            Estimable - Yes, the development effort required for the Jump Attack feature can be estimated, as it involves designing and implementing new attack animations, damage calculations, and any associated special effects or interactions.
+
+            Small - Yes, the Jump Attack feature can be broken down into smaller sub-tasks for development, such as designing and implementing the attack animation or adding the damage calculation.
+
+            Testable - Yes, the Jump Attack feature can be tested to ensure that it works as intended, including testing the attack animation, damage calculation, and any special effects or interactions. Testing can also include checking that the Jump Attack interacts correctly with other game features, such as enemy AI or the game environment.
+        </INVEST>
+        <Tests>
+            <Test>Check whether the player can control the game character to jump and attack in the air.</Test>
+            <Test>Check if the air attack of the game character can cause damage to the enemy.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/pMVLpWXC</Url>
+    </UserStory>
+    <UserStory id="24" heading="Stunned State" headingZH="僵直状态">
+        <Description>As a player, I desire for the enemy to enter a Stunned State upon taking damage, so that I can prevent them from inflicting continuous damage on me.</Description>
+        <DescriptionZH>敌人被攻击到后会进入“僵直”状态从而无法进行攻击</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Stunned State feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Stunned State feature, such as the duration, visual effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Stunned State feature can provide players with a new gameplay mechanic that can add variety and depth to combat or other interactions in the game.
+
+            Estimable - Yes, the development effort required for the Stunned State feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
+
+            Small - Yes, the Stunned State feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
+
+            Testable - Yes, the Stunned State feature can be tested to ensure that it works as intended, including testing the duration, visual effects, and any associated gameplay mechanics. Testing can also include checking that the Stunned State interacts correctly with other game features, such as enemy AI or player abilities.
+        </INVEST>
+        <Tests>
+            <Test>Try attacking the enemy and check if the enemy enters a stiff state after being attacked.</Test>
+            <Test>Try being attacked by the enemy and check if the player enters a stiff state after being attacked by the enemy.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/PcEerpRo</Url>
+    </UserStory>
+    <UserStory id="25" heading="Cooldown" headingZH="冷却">
+        <Description>As a player, I would like there to be a Cooldown between skills, so that it can prevent the character's attack frequency from being too rapid.</Description>
+        <DescriptionZH>使用技能时有冷却时间，防止攻击频率过快，也包括使用物品的间隔时间</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Cooldown feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Cooldown feature, such as the duration, effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
+            
+            Valuable - Yes, the Cooldown feature can add a layer of strategy and decision-making to gameplay, as players must consider the cooldown times of their abilities or actions before using them.
+            
+            Estimable - Yes, the development effort required for the Cooldown feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
+            
+            Small - Yes, the Cooldown feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
+            
+            Testable - Yes, the Cooldown feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Cooldown interacts correctly with other game features, such as player abilities or enemy AI.        
+        </INVEST>
+        <Tests>
+            <Test>Attempt to perform continuous attacks and observe if there is an interval time between each attack.</Test>
+            <Test>Try to pass through a level and test if the attack interval is either too long or too short.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/DqfEkXbx</Url>
+    </UserStory>
+    <UserStory id="26" heading="Clearance Timer" headingZH="通关时间">
+        <Description>As a player, I would like to have a Clearance Timer, so that I can challenge others or myself.</Description>
+        <DescriptionZH>记录关卡的通关时间</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Clearance Timer feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Clearance Timer feature, such as the duration, effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Clearance Timer feature can add a layer of urgency and challenge to gameplay, as players must complete certain actions or objectives before the timer runs out.
+
+            Estimable - Yes, the development effort required for the Clearance Timer feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
+
+            Small - Yes, the Clearance Timer feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
+
+            Testable - Yes, the Clearance Timer feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Clearance Timer interacts correctly with other game features, such as player abilities or enemy AI.
+        </INVEST>
+        <Tests>
+            <Test>Upon entering the level, verify if there is a prompt indicating the time for timing.</Test>
+            <Test>After passing the checkpoint, verify if the clearance time can be correctly recorded.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/BRwJD48f</Url>
+    </UserStory>
+    <UserStory id="27" heading="Clearance Score" headingZH="通关分数">
+        <Description>As a player, I would like to have a Clearance Score, so that I can challenge others or myself.</Description>
+        <DescriptionZH>通关的分数通常是由获得的积分道具和通关时间组合而成，可以参考超级马里奥</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Clearance Score feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Clearance Score feature, such as the scoring system, conditions for earning points, and any associated rewards or penalties, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Clearance Score feature can add an additional layer of challenge and motivation to gameplay, as players can strive to earn higher scores and unlock rewards.
+
+            Estimable - Yes, the development effort required for the Clearance Score feature can be estimated, as it involves designing and implementing specific scoring rules and associated visual and gameplay elements.
+
+            Small - Yes, the Clearance Score feature can be broken down into smaller sub-tasks for development, such as designing and implementing the scoring system or adding the visual elements that indicate a player's score.
+
+            Testable - Yes, the Clearance Score feature can be tested to ensure that it works as intended, including testing the scoring rules, reward system, and any associated visual or gameplay elements. Testing can also include checking that the Clearance Score feature interacts correctly with other game features, such as player abilities or enemy AI.
+        </INVEST>
+        <Tests>
+            <Test>After the player clears the level, the clearance score will be displayed.</Test>
+            <Test>The player's accumulated clearance score will be displayed on the game start interface.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/GxhEvknH</Url>
+    </UserStory>
+    <UserStory id="28" heading="Flying Enemies" headingZH="飞行敌人">
+        <Description>As a player, I would like to see Flying Enemies, so that the vertical gaps are not too empty.</Description>
+        <DescriptionZH>有飞行的小怪可以让玩家在空中进行攻击，充分利用垂直空间，不然只有平面会比较无聊</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Flying Enemies feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Flying Enemies feature, such as the types of flying enemies, their abilities and behaviors, and how they interact with other game elements, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Flying Enemies feature can add an additional layer of challenge and variety to gameplay, as players must adapt their strategies and abilities to fight enemies with different movement patterns and attack abilities.
+
+            Estimable - Yes, the development effort required for the Flying Enemies feature can be estimated, as it involves designing and implementing specific enemy behaviors and interactions, as well as any associated visual and gameplay elements.
+
+            Small - Yes, the Flying Enemies feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual enemy behaviors or adding the visual elements that indicate a flying enemy's presence.
+
+            Testable - Yes, the Flying Enemies feature can be tested to ensure that it works as intended, including testing enemy behaviors and interactions with other game features, such as player abilities or terrain obstacles. Testing can also include checking for any performance issues that may arise from the addition of flying enemies.
+        </INVEST>
+        <Tests>
+            <Test>Try to find flying enemies at the game level.</Test>
+            <Test>Attempt to interact with flying enemies by attacking or other means, and check if the interaction can be carried out smoothly.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/UvgshZqQ</Url>
+    </UserStory>
+    <UserStory id="29" heading="Bonus Level" headingZH="奖励关卡">
+        <Description>As a player, I hope this game has Bonus Levels, so that I can relax after fightings.</Description>
+        <DescriptionZH>通过关卡后的独立奖励关，让玩家在限定时间内可以获取奖励</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Bonus Level feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Bonus Level feature, such as the objectives, difficulty level, and visual and audio design, can be negotiated and adjusted based on the needs of the team and the game.
+            
+            Valuable - Yes, the Bonus Level feature can provide additional content and replay value for players, as well as a sense of accomplishment for completing a challenging level.
+            
+            Estimable - Yes, the development effort required for the Bonus Level feature can be estimated, as it involves designing and implementing specific level objectives, visual and audio elements, and testing.
+            
+            Small - Yes, the Bonus Level feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual level objectives or adding the visual and audio elements that make up the level.
+            
+            Testable - Yes, the Bonus Level feature can be tested to ensure that it works as intended, including testing level objectives and mechanics, visual and audio elements, and difficulty level. Testing can also include checking for any performance issues that may arise from the addition of the Bonus Level.
+        </INVEST>
+        <Tests>
+            <Test>Try to enter the bonus level during gameplay.</Test>
+            <Test>Try to obtain rewards in the bonus level.</Test>
+            <Test>Analyze whether the rewards in the bonus level are within a reasonable range.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/F74J3A6V</Url>
+    </UserStory>
+    <UserStory id="30" heading="Volume Control" headingZH="音量控制">
+        <Description>As a player, I want to be able to control the Volume in-game, so that it fit my comfort range of volume.</Description>
+        <DescriptionZH>游戏内的音量控制，包括音效和背景乐</DescriptionZH>
+        <INVEST>
+            Independent - Yes, as the feature does not rely on any other part of the game to function.
+    
+            Negotiable - Yes, as the specifics of how the volume control works can be adjusted based on user feedback or other considerations.
+    
+            Valuable - Yes, as the ability to adjust the volume is important to many players, especially those who may need to play with different volume levels due to personal preferences or accessibility needs.
+    
+            Estimable - Yes, as it is possible to estimate the time and effort required to implement this feature.
+    
+            Small - Yes, as the volume control feature can be implemented as a relatively small and focused addition to the game.
+    
+            Testable - Yes, as the volume control feature can be easily tested to ensure that it is functioning as intended.
+        </INVEST>
+        <Tests>
+            <Test>Check if the volume bar can be displayed correctly in the options menu.</Test>
+            <Test>Attemp to adjust the volume and determine if the volume has changed.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/s14F0BNM</Url>
+    </UserStory>
+    <UserStory id="31" heading="Puzzle" headingZH="谜题解密">
+        <Description>As a player, I would like the game to include Puzzle elements, so that I could enjoy solving them.</Description>
+        <DescriptionZH>比如给一个简单谜题，选对了给奖励</DescriptionZH>
+        <INVEST>
+            Independent - No, because puzzles usually rely on other game mechanics and systems to function properly. For example, a puzzle that involves moving blocks requires the game to have a block movement mechanic.
+    
+            Negotiable - Yes, because the specific type and difficulty of puzzles can be adjusted based on the team's resources and priorities.
+    
+            Valuable - Yes, because puzzles can provide players with challenges and obstacles to overcome, enhancing the overall gameplay experience.
+    
+            Estimable - Yes, because the level of effort required to implement puzzles can be estimated based on the desired number and complexity of the puzzles, as well as the resources available to the team.
+    
+            Small - Yes, because puzzles can be relatively isolated and self-contained features within the game, especially if the team reuses existing assets and mechanics.
+    
+            Testable - Yes, because the team can create test cases to ensure that the puzzles work correctly, are solvable, and do not result in unintended consequences such as blocking player progress or breaking the game.
+        </INVEST>
+        <Tests>
+            <Test>Find content with puzzle-solving elements in the game.</Test>
+            <Test>Attempt to solve the puzzle and determine if it can be completed.</Test>
+            <Test>Analyze if the difficulty of the puzzle is reasonable.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/aiVIuJMf</Url>
+    </UserStory>
+    <UserStory id="32" heading="Hint" headingZH="提示">
+        <Description>As a player, I would like to receive Information(Hint) about any events in game, so that I'll be able to monitor my status.</Description>
+        <DescriptionZH>游戏内的提示信息，比如拾取物品时的提示等</DescriptionZH>
+        <INVEST>
+            Independent - No, because hints typically rely on other features or systems in the game to provide guidance to the player. For example, a hint about how to defeat a boss may depend on the boss mechanics and the available weapons or items.
+    
+            Negotiable - Yes, because the specific hints provided in the game can be adjusted based on the team's resources and priorities. For example, the team can choose to provide hints that are more or less explicit.
+    
+            Valuable - Yes, because hints can help players who may be struggling with certain aspects of the game, improving their experience and increasing engagement.
+    
+            Estimable - No, because the level of effort required to implement hints depends on the complexity of the game and the desired hint mechanics. It can be difficult to estimate without detailed planning and design.
+    
+            Small - Yes, because implementing hints can be relatively straightforward and isolated, especially if the team chooses to provide hints in a text-based format.
+    
+            Testable - Yes, because the team can create test cases to ensure that the hints are displayed correctly and that they provide helpful guidance to the player without giving away too much information.
+        </INVEST>
+        <Tests>
+            <Test>Try to pick up an item and check if there is a prompt indicating that the item has been obtained.</Test>
+            <Test>Check the content of the prompt to confirm whether it matches the obtained item.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/AUxBHgsQ</Url>
+    </UserStory>
+    <UserStory id="33" heading="Achievement" headingZH="成就系统">
+        <Description>As a player, I would like to see an Achievement system, so that I could gain satisfaction upon completing objectives.</Description>
+        <DescriptionZH>比如在指定时间通关，或者死亡过多次</DescriptionZH>
+        <INVEST>
+            Independent - No, the Achievement feature relies on other game features and systems to determine if the achievements have been completed, such as completing a specific level or defeating a certain enemy.
+    
+            Negotiable - Yes, the objectives and milestones required to earn achievements can be negotiated, as well as the rewards and recognition for earning achievements.
+    
+            Valuable - Yes, the Achievement feature is valuable to players as it provides a sense of accomplishment and motivation to complete objectives and milestones in the game, and can also enhance the replayability and longevity of the game.
+    
+            Estimable - No, it can be difficult to estimate the effort required to implement the Achievement feature, as it depends on the number and complexity of the achievements, as well as the integration with other game features and systems.
+    
+            Small - Yes, the Achievement feature can be implemented as a small addition to the game without requiring a significant amount of development time or resources.
+    
+            Testable - Yes, the Achievement feature can be tested to ensure that achievements are earned when objectives and milestones are completed, and that the rewards and recognition for earning achievements are displayed correctly.
+        </INVEST>
+        <Tests>
+            <Test>Try to check game's achievement system and verify if it can display properly.</Test>
+            <Test>Try to accomplish the achievement conditions and check if the achievement can be completed normally.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/9FxcUIkk</Url>
+    </UserStory>
+    <UserStory id="34" heading="EasterEgg" headingZH="彩蛋">
+        <Description>As a player, I want to have Easter Eggs in the game, so that the process of exploring the game could be more interesting.</Description>
+        <DescriptionZH>彩蛋，比如强制让玩家选择 yes no 时无法选择 no</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because an Easter Egg is typically an optional hidden feature that is not required for the main gameplay experience.
+    
+            Negotiable - Yes, because the specific Easter Egg(s) implemented in the game can be adjusted based on the team's resources and priorities.
+    
+            Valuable - Yes, because Easter Eggs can add an extra layer of fun and surprise to the game, increasing player engagement and potentially generating positive word-of-mouth.
+    
+            Estimable - Yes, because the level of effort required to implement the Easter Egg(s) can be estimated based on their complexity and the resources available to the team.
+    
+            Small - Yes, because the Easter Egg(s) can be implemented as a relatively isolated and straightforward feature that does not have a significant impact on the rest of the game.
+    
+            Testable - Yes, because the team can create test cases to ensure that the Easter Egg(s) can be triggered correctly and do not interfere with the main gameplay experience.
+        </INVEST>
+        <Tests>
+            <Test>Try to find Easter eggs in the game.</Test>
+            <Test>Try to tigger the Easter eggs.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/kmUSi6fa</Url>
+    </UserStory>
+    <UserStory id="35" heading="Tutorial" headingZH="教程">
+        <Description>As a player, I want this game to include a Tutorial level, so that it can help me become familiar with the game.</Description>
+        <DescriptionZH>新手教程关卡</DescriptionZH>
+        <INVEST>
+            Independent - No, because the "Tutorial" feature often depends on other features or systems in the game to teach the player how to play. For example, a tutorial on how to use weapons would rely on the existence of weapons in the game.
+    
+            Negotiable - Yes, because the specifics of how the tutorial is implemented can be adjusted based on the team's resources and priorities, such as the amount of content, the pacing, and the format.
+            
+            Valuable - Yes, because a tutorial can greatly enhance the player's experience by helping them learn the mechanics of the game, understand the story or lore, and prevent frustration from confusion or lack of guidance.
+            
+            Estimable - Yes, because the level of effort required to create a tutorial can be estimated based on the scope and complexity of the game mechanics, the amount of content needed to cover, and the resources available.
+            
+            Small - No, because creating a comprehensive and effective tutorial can be a significant effort and may require a dedicated team or resources.
+            
+            Testable - Yes, because the team can create test cases to ensure that the tutorial is effective in teaching the player and providing them with the necessary guidance.
+        </INVEST>
+        <Tests>
+            <Test>Run the game and check whether the game starts with a tutorial or not.</Test>
+            <Test>Check whether the player can successfully pass the game tutorial.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/0SA4aVkU</Url>
+    </UserStory>
+    <UserStory id="36" heading="Attack" headingZH="攻击">
+        <Description>As a player, I want to be able to perform an Attack action, so that I can defeat enemies and progress through the game.</Description>
+        <DescriptionZH>玩家可以使用普通攻击对敌人造成伤害，如挥剑等</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Attack feature can be implemented independently of other game features and systems, as it only requires the player to be able to trigger an attack animation and damage enemies within a certain range.
+    
+            Negotiable - Yes, the specifics of the attack action, such as the animation, damage, and range, can be negotiated based on the game's design and balance requirements.
+    
+            Valuable - Yes, the Attack feature is valuable to players as it is a fundamental mechanic of many games and allows them to engage in combat.
+    
+            Estimable - Yes, the effort required to implement the Attack feature can be estimated based on the specifics of the attack action, as well as the integration with other game features and systems.
+    
+            Small - Yes, the Attack feature can be implemented as a small addition to the game without requiring a significant amount of development time or resources.
+    
+            Testable - Yes, the Attack feature can be tested to ensure that the attack animation, damage, and range are working correctly, and that enemies are reacting appropriately to the attack action.
+        </INVEST>
+        <Tests>
+            <Test>Press the attack key to see if the player can attack normally.</Test>
+            <Test>Verify if the attack can cause damage to the enemy.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/CvXop06V</Url>
+    </UserStory>
+    <UserStory id="37" heading="Jump" headingZH="跳跃">
+        <Description>As a player, I want to be able to Jump, so that I can improve my mobility.</Description>
+        <DescriptionZH>能够跳过障碍物</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the ability to jump is typically a self-contained feature that does not rely on other game systems or mechanics.
+    
+            Negotiable - Yes, because the specifics of the jump mechanic can be adjusted based on the team's resources and priorities. For example, the team can choose to implement a double jump or a variable height jump.
+    
+            Valuable - Yes, because the ability to jump is a fundamental mechanic that allows players to navigate the game world, reach new areas, and avoid obstacles.
+    
+            Estimable - Yes, because the level of effort required to implement the jump mechanic can be estimated based on its complexity and the resources available to the team.
+    
+            Small - Yes, because implementing the jump mechanic can be relatively straightforward and isolated, especially if the team chooses to implement a basic jump without additional features.
+    
+            Testable - Yes, because the team can create cases to ensure that the jump mechanic works correctly, is responsive and accurate, and does not result in unintended consequences such as getting stuck or falling through the game world.
+        </INVEST>
+        <Tests>
+            <Test>After entering the game, try pressing the jump key while jump to check if your movement are correct.</Test>
+            <Test>While moving of left and right, try pressing the jump key to check for any conflicts.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/7OSeK3IK</Url>
+    </UserStory>
+    <UserStory id="38" heading="Dodge" headingZH="闪躲">
+        <Description>As a player, I want to have a Dodge feature, so that I can dodge the enemy attacks.</Description>
+        <DescriptionZH>玩家可以躲避攻击</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because the "Dodge" feature can be implemented as a standalone system that is not dependent on other game features or systems.
+    
+            Negotiable - Yes, because the specifics of how the "Dodge" feature works (e.g. how fast the player moves, how many times they can dodge in a row, etc.) can be adjusted based on the team's resources and priorities.
+    
+            Valuable - Yes, because the "Dodge" feature can enhance the player's ability to avoid obstacles or enemy attacks, making the game more engaging and rewarding.
+    
+            Estimable - Yes, because the level of effort required to implement the "Dodge" feature can be estimated based on the complexity of the desired mechanics and the resources available to the team.
+    
+            Small - Yes, because the "Dodge" feature can be implemented as a relatively isolated and straightforward system that is not overly complex.
+    
+            Testable - Yes, because the team can create test cases to ensure that the "Dodge" feature functions correctly and is balanced with the rest of the game mechanics.
+        </INVEST>
+        <Tests>
+            <Test>Press the corresponding key for Dodge and check if the player performs a dodge.</Test>
+            <Test>Perform a dodge during enemy attacks and check if the attack is avoided.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/W0ZrOoCF</Url>
+    </UserStory>
+    <UserStory id="39" heading="Difficulties" headingZH="游戏难度">
+        <Description>As a player, I would like the game to have more than two Difficulty level (perhaps three), so that it can cater to different types of players.</Description>
+        <DescriptionZH>游戏能提供不止一种（或许三种）难度级别</DescriptionZH>
+        <INVEST>
+            Independent - No, because the implementation of different difficulty levels may rely on other systems or features in the game, such as enemy AI or level design.
+    
+            Negotiable - Yes, because the exact number and names of the difficulty levels can be adjusted based on the team's resources and priorities.
+    
+            Valuable - Yes, because offering multiple difficulty levels can increase player engagement and satisfaction by allowing players to tailor the game experience to their own skill level.
+    
+            Estimable - No, because the level of effort required to implement multiple difficulty levels depends on the complexity of the game systems and may require significant development time.
+    
+            Small - No, because implementing multiple difficulty levels is a significant feature that may require a dedicated team effort.
+    
+            Testable - Yes, because the team can create tests to ensure that each difficulty level offers a unique and appropriate level of challenge for players.
+        </INVEST>
+        <Tests>
+            <Test>Test by modifying the game difficulty in the difficulty menu and checking if the game difficulty indicator changes.</Test>
+            <Test>Enter the game using different difficulty levels and check if there are any differences in the game difficulty.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/uYbzhjJK</Url>
+    </UserStory>
+    <UserStory id="40" heading="Portals" headingZH="传送门">
+        <Description>As a player, I would like the game to include Portals, so that I can quickly access certain areas.</Description>
+        <DescriptionZH>传送门，能让玩家从一个地点快速到达另一个地点</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because portals can typically be implemented as a self-contained feature that does not rely on other game systems or mechanics.
+    
+            Negotiable - Yes, because the specifics of the portal mechanic can be adjusted based on the team's resources and priorities. For example, the team can choose to implement different types of portals that transport players to different locations or time periods.
+    
+            Valuable - Yes, because portals can add depth and complexity to the game, providing players with new ways to navigate the game world and solve puzzles.
+    
+            Estimable - Yes, because the level of effort required to implement portals can be estimated based on the desired number and complexity of the portals, as well as the resources available to the team.
+    
+            Small - Yes, because implementing portals can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
+    
+            Testable - Yes, because the team can create test cases to ensure that the portal mechanic works correctly, is reliable, and does not result in unintended consequences such as getting stuck or breaking the game.
+        </INVEST>
+        <Tests>
+            <Test>Try to find portals in the game.</Test>
+            <Test>Arrempt to use the portals to teleport to the corresponding location.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/qTAMjKqn</Url>
+    </UserStory>
+    <UserStory id="41" heading="BGM" headingZH="BGM">
+        <Description>As a player, I want this game to have Background Music, so that I can enjoy music during play time.</Description>
+        <DescriptionZH>游戏背景音乐</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the BGM feature can be implemented independently of other game features and systems, as it only requires the game to play audio files in the background.
+    
+            Negotiable - Yes, the specifics of the BGM, such as the track selection, volume, and timing, can be negotiated based on the game's design and audio requirements.
+    
+            Valuable - Yes, the BGM feature is valuable to players as it enhances the overall atmosphere and tone of the game, and can also provide cues for important events or changes in gameplay.
+    
+            Estimable - Yes, the effort required to implement the BGM feature can be estimated based on the number and complexity of audio tracks, as well as the integration with other game features and systems.
+    
+            Small - Yes, the BGM feature can be implemented as a small addition to the game without requiring a significant amount of development time or resources.
+    
+            Testable - Yes, the BGM feature can be tested to ensure that audio tracks are playing correctly and at the appropriate times, and that the volume and timing settings are working as intended.
+        </INVEST>
+        <Tests>
+            <Test>When the user starts the game, the background music is automatically turned on.</Test>
+            <Test>Add a music button. Given that user on the main screen when user press to the music button, system will turn on and off the background music.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/mXgZkXqz</Url>
+    </UserStory>
+    <UserStory id="42" heading="SFX" headingZH="音效">
+        <Description>As a player, I want the game to have Sound Effects when player operate game functions, so that I can have a better experience in terms of sound.</Description>
+        <DescriptionZH>玩家操作游戏时有不同音效</DescriptionZH>
+        <INVEST>
+            Independent - No, because the "SFX" feature is likely to depend on other features in the game, such as animations or events, to trigger the appropriate sound effects.
+    
+            Negotiable - Yes, because the specifics of which sound effects to include and how they are implemented can be adjusted based on the team's resources and priorities.
+    
+            Valuable - Yes, because sound effects can enhance the player's experience by providing feedback on actions or events, adding immersion to the game world, and creating a more polished game overall.
+    
+            Estimable - No, because the level of effort required to implement the "SFX" feature is difficult to estimate without knowing the specific sounds required and how they are implemented.
+    
+            Small - Yes, because the "SFX" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing sound assets and mechanics.
+    
+            Testable - Yes, because the team can create tests to ensure that the sound effects are playing as intended and enhancing the overall gameplay experience.
+        </INVEST>
+        <Tests>
+            <Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
+            <Test>Test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/VTSFJgFh</Url>
+    </UserStory>
+    <UserStory id="43" heading="Stages" headingZH="游戏关卡">
+        <Description>As a player, I would like to have more than three stages in the game, so that the game is not too short.</Description>
+        <DescriptionZH>游戏的 4 个关卡</DescriptionZH>
+        <INVEST>
+            Independent - No, because stages (game levels) are often dependent on other aspects of the game, such as character progression, game mechanics, and level design. They cannot be developed or implemented in isolation from the rest of the game.
+    
+            Negotiable - Yes, because stages can be modified, re-ordered, or redesigned based on the needs of the game, the feedback from playtesters, or to accommodate changes in other parts of the game. The specifics of each stage can be discussed and adjusted as needed.
+    
+            Valuable - Yes, because stages are a core component of most games, providing variety, challenge, and a sense of progression to players. Well-designed stages can greatly enhance the overall gameplay experience and keep players engaged.
+    
+            Estimable - No, because accurately estimating the time and effort required to develop a stage can be difficult due to the complex interdependencies between stages and other game elements. Unexpected issues or changes in design may arise during development, affecting the initial estimates.
+    
+            Small - No, because creating a stage usually involves multiple elements, including level design, art, sound, programming, and testing. Depending on the complexity of the game, developing a stage can be a significant undertaking and may not fit the criteria for a small user story.
+    
+            Testable - Yes, because stages can be tested for functionality, difficulty, balance, and overall enjoyment. Testing can be done through internal testing teams or by gathering feedback from players during playtesting sessions. This helps identify issues or areas for improvement before the final release of the game.
+        </INVEST>
+        <Tests>
+            <Test>Try all the ways to clear the levels and check if there are more than three stages.</Test>
+            <Test>Test whether you can complete all the stages and reach the ending.</Test>
+        </Tests>
+        <Label>Should Have</Label>
+        <Url>https://trello.com/c/ENVKoWpv</Url>
+    </UserStory>
+    <UserStory id="44" heading="Oneway Platform" headingZH="单向平台">
+        <Description>As a player, I would like to see the addition of One-way Platforms, so that I can jump on it to quickly reach higher areas.</Description>
+        <DescriptionZH>单向可跳跃平台，可以从下方穿过该平台以便快速到达上方</DescriptionZH>
+        <INVEST>
+            Independent - Yes, because one-way platforms can typically be implemented as a self-contained feature that does not rely on other game systems or mechanics.
+    
+            Negotiable - Yes, because the specifics of the one-way platform mechanic can be adjusted based on the team's resources and priorities. For example, the team can choose to implement one-way platforms with different materials, shapes, or behaviors.
+    
+            Valuable - Yes, because one-way platforms can add depth and challenge to the game, providing players with new obstacles to overcome and increasing the variety of platforming mechanics.
+    
+            Estimable - Yes, because the level of effort required to implement one-way platforms can be estimated based on the desired number and complexity of the platforms, as well as the resources available to the team.
+    
+            Small - Yes, because implementing one-way platforms can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
+    
+            Testable - Yes, because the team can create tests to ensure that the one-way platform mechanic works correctly, is reliable, and does not result in unintended consequences such as collision issues or broken gameplay.
+        </INVEST>
+        <Tests>
+            <Test>Test if it is possible to jump from below to the top of a one-way platform.</Test>
+            <Test>Test if player can stand on the platform without falling down.</Test>
+        </Tests>
+        <Label>Could Have</Label>
+        <Url>https://trello.com/c/PH9tiQfu</Url>
+    </UserStory>
+    <UserStory id="45" heading="Run" headingZH="跑步">
+        <Description>As a player, I want to have a Run feature, so that I can move faster.</Description>
+        <DescriptionZH>快速跑，其实就是在行走的基础上提高动画速度和移动速度</DescriptionZH>
+        <INVEST>
+            Independent - No, because the "Run" feature likely relies on other game mechanics and systems, such as character movement and animation.
+    
+            Negotiable - Yes, because the specifics of how the "Run" feature is implemented can be adjusted based on the team's resources and priorities.
+    
+            Valuable - Yes, because the "Run" feature can provide players with a faster way to traverse the game world, enhancing the overall gameplay experience.
+    
+            Estimable - Yes, because the level of effort required to implement the "Run" feature can be estimated based on factors such as the desired speed and animation, as well as the resources available to the team.
+    
+            Small - Yes, because the "Run" feature can be a relatively isolated and self-contained feature within the game, especially if the team reuses existing assets and mechanics.
+    
+            Testable - Yes, because the team can create tests to ensure that the "Run" feature works correctly, does not result in unintended consequences, and enhances the overall gameplay experience.
+        </INVEST>
+        <Tests>
+            <Test>After entering the game, try pressing the spint key while moving left and right to check if your movement speed has increased.</Test>
+            <Test>After jumping, try pressing the sprint key to check for any conflicts with the jump. Note that pressing the sprint key after jumping may trigger air spint or no operation instead of acceleration.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/c7hARgrt</Url>
+    </UserStory>
+    <UserStory id="46" heading="Game Saves" headingZH="存档">
+        <Description>As a player, I would like the game to have a Save feature, so that I can keep my progress even after quitting the game.</Description>
+        <DescriptionZH>游戏可以进行存档，在重新进入游戏时不会丢失进度</DescriptionZH>
+        <INVEST>
+            Independent - No, because the implementation of game saves requires integration with other game systems such as save/load functionality, storage management, and potentially network connectivity.
+    
+            Negotiable - Yes, because the specific save/load functionality can be adjusted based on the team's resources and priorities. For example, the team can choose to implement manual save points or an automatic checkpoint system.
+    
+            Valuable - Yes, because the ability to save and continue the game progress later is essential for many players, especially those who cannot complete the game in one session.
+    
+            Estimable - No, because the level of effort required to implement game saves depends on the complexity of the game and the desired save/load functionality. It can be difficult to estimate without detailed planning and design.
+    
+            Small - No, because implementing game saves can require a significant effort in terms of planning, design, and development, especially for larger games.
+    
+            Testable - Yes, because the team can create tests to ensure that the save/load functionality works correctly and does not result in any data loss or corruption.
+        </INVEST>
+        <Tests>
+            <Test>Save the game and check if a game content archive is generated.</Test>
+            <Test>Load the game and check if all content is loaded correctly.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/SwVk78Bu</Url>
+    </UserStory>
+    <UserStory id="47" heading="Move" headingZH="移动">
+        <Description>As a player, I want the player to be able to Move, so that the game is playable.</Description>
+        <DescriptionZH>玩家可以进行移动</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Move feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Move feature, such as the types of moves available to the player, the control scheme, and the animations and effects, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Move feature is a fundamental aspect of gameplay, allowing players to navigate the game world, avoid obstacles, and engage in combat or other challenges.
+
+            Estimable - Yes, the development effort required for the Move feature can be estimated, as it involves designing and implementing specific move types, animations, control schemes, and testing.
+
+            Small - Yes, the Move feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual move types or refining the control scheme.
+
+            Testable - Yes, the Move feature can be tested to ensure that it works as intended, including testing move types, animations, control scheme, and any interactions with other game features or systems. Testing can also include checking for any performance issues that may arise from the addition of the Move feature.
+        </INVEST>
+        <Tests>
+            <Test>Press the movement key in the game to see if the character can move in all directions.</Test>
+            <Test>Release the movement key in the game to see if the character stops moving.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/cVuuHsnm</Url>
+    </UserStory>
+    <UserStory id="48" heading="Main Menu" headingZH="主菜单">
+        <Description>As a player, I want the game to have a Main Menu, so that I can choose when to start the game.</Description>
+        <DescriptionZH>进入游戏时的主菜单，新游戏，加载存档，设置</DescriptionZH>
+        <INVEST>
+            Independent - Yes, the Main Menu feature can be designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the Main Menu feature, such as the layout, design, and functionality, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the Main Menu feature is an essential aspect of the game as it provides players with a way to start or continue their game, access options, settings, and game modes.
+
+            Estimable - Yes, the development effort required for the Main Menu feature can be estimated, as it involves designing and implementing a user interface, creating buttons and menus, and integrating it with the game's functionality.
+
+            Small - Yes, the Main Menu feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual menu items, refining the layout or improving the user experience.
+
+            Testable - Yes, the Main Menu feature can be tested to ensure that it works as intended, including testing menu items, button functionality, and any interactions with other game features or systems. Testing can also include checking for any performance issues that may arise from the addition of the Main Menu feature.
+        </INVEST>
+        <Tests>
+            <Test>Enter the game and check if you have entered the main menu.</Test>
+            <Test>Test if you can pause and return to the main menu.</Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/XJ1b2tVL</Url>
+    </UserStory>
+</UserStories>
