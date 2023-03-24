@@ -204,24 +204,6 @@ ID = 40 ,    Portals , 传送门
 
  ---- ---- ---- ---- 
 
-ID = 43 , Bonus Levels , 奖励关卡
-
-  Label =  Could Have , Url = https://trello.com/c/F74J3A6V
-
-    I ( True) = because bonus levels can typically be implemented as a self-contained feature that does not rely on other game systems or mechanics.
-    N ( True) = because the specifics of the bonus levels can be adjusted based on the team's resources and priorities. For example, the team can choose to implement bonus levels with different themes or difficulty levels.
-    V ( True) = because bonus levels can add replay value to the game, providing additional content for players to explore and enjoy.
-    E ( True) = because the level of effort required to implement bonus levels can be estimated based on the desired number and complexity of the levels, as well as the resources available to the team.
-    S ( True) = because implementing bonus levels can be relatively straightforward and isolated, especially if the team chooses to reuse existing assets and mechanics.
-    T ( True) = because the team can create tests to ensure that the bonus levels work correctly, are enjoyable, and do not result in unintended consequences such as crashes or broken game mechanics.
-
-      Test - Try to enter bonus level during gameplay.
-      Test - Try to obtain rewards in the bonus level.
-      Test - Analyze whether the rewards in the bonus level are within a reasonable range.
-
-
- ---- ---- ---- ---- 
-
 ID = 44 , Oneway Platform , 单向平台
 
   Label =  Could Have , Url = https://trello.com/c/PH9tiQfu

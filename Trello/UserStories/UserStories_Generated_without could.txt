@@ -237,7 +237,7 @@ ID = 17 ,       Shop , 商城
     T ( True) = a shop feature can be tested to ensure it functions correctly, such as checking that items are properly added to a player's inventory and that the correct amount of currency is deducted.
 
       Test - The player interacts with the shop, displaying various recovery items and some equipments.
-      Test - After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins
+      Test - After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins.
 
 
  ---- ---- ---- ---- 
@@ -278,7 +278,7 @@ ID = 21 ,       Boss , Boss
 
 ID = 23 , Jump Attack , 跳跃攻击
 
-  Label =        None , Url = https://trello.com/c/pMVLpWXC
+  Label = Should Have , Url = https://trello.com/c/pMVLpWXC
 
     I (False) = the Jump Attack feature is dependent on the Jumping and Attacking features in the game, which must be present and functioning correctly for the Jump Attack to work.
     N ( True) = the specifics of the Jump Attack feature, such as the attack animation, damage dealt, and any special effects or interactions, can be negotiated and adjusted based on the needs of the team and the game.
@@ -295,14 +295,14 @@ ID = 23 , Jump Attack , 跳跃攻击
 
 ID = 24 , Stunned State , 僵直状态
 
-  Label =        None , Url = https://trello.com/c/PcEerpRo
+  Label = Should Have , Url = https://trello.com/c/PcEerpRo
 
     I ( True) = the Stunned State feature can be designed and implemented as a standalone feature, separate from other game features and systems.
     N ( True) = the specifics of the Stunned State feature, such as the duration, visual effects, and any associated gameplay mechanics, can be negotiated and adjusted based on the needs of the team and the game.
     V ( True) = the Stunned State feature can provide players with a new gameplay mechanic that can add variety and depth to combat or other interactions in the game.
     E ( True) = the development effort required for the Stunned State feature can be estimated, as it involves designing and implementing specific visual and gameplay elements, as well as any associated AI or interactions.
     S ( True) = the Stunned State feature can be broken down into smaller sub-tasks for development, such as designing and implementing the visual effects or adding the gameplay mechanics.
-    T (False) = 
+    T ( True) = the Stunned State feature can be tested to ensure that it works as intended, including testing the duration, visual effects, and any associated gameplay mechanics. Testing can also include checking that the Stunned State interacts correctly with other game features, such as enemy AI or player abilities.
 
       Test - Try attacking the enemy and check if the enemy enters a stiff state after being attacked.
       Test - Try being attacked by the enemy and check if the player enters a stiff state after being attacked by the enemy.
@@ -491,7 +491,7 @@ ID = 41 ,        BGM , BGM
     S ( True) = the BGM feature can be implemented as a small addition to the game without requiring a significant amount of development time or resources.
     T ( True) = the BGM feature can be tested to ensure that audio tracks are playing correctly and at the appropriate times, and that the volume and timing settings are working as intended.
 
-      Test - When the user starts the game, the background music is automatically turned on. 
+      Test - When the user starts the game, the background music is automatically turned on.
       Test - Add a music button. Given that user on the main screen when user press to the music button, system will turn on and off the background music.
 
 
@@ -510,6 +510,23 @@ ID = 42 ,        SFX , 音效
 
       Test - To test for corresponding sounds when characters interact with objects, use an audio playback device.
       Test - Test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.
+
+
+ ---- ---- ---- ---- 
+
+ID = 43 ,     Stages , 游戏关卡
+
+  Label = Should Have , Url = https://trello.com/c/ENVKoWpv
+
+    I (False) = because stages (game levels) are often dependent on other aspects of the game, such as character progression, game mechanics, and level design. They cannot be developed or implemented in isolation from the rest of the game.
+    N ( True) = because stages can be modified, re-ordered, or redesigned based on the needs of the game, the feedback from playtesters, or to accommodate changes in other parts of the game. The specifics of each stage can be discussed and adjusted as needed.
+    V ( True) = because stages are a core component of most games, providing variety, challenge, and a sense of progression to players. Well-designed stages can greatly enhance the overall gameplay experience and keep players engaged.
+    E (False) = because accurately estimating the time and effort required to develop a stage can be difficult due to the complex interdependencies between stages and other game elements. Unexpected issues or changes in design may arise during development, affecting the initial estimates.
+    S (False) = because creating a stage usually involves multiple elements, including level design, art, sound, programming, and testing. Depending on the complexity of the game, developing a stage can be a significant undertaking and may not fit the criteria for a small user story.
+    T ( True) = because stages can be tested for functionality, difficulty, balance, and overall enjoyment. Testing can be done through internal testing teams or by gathering feedback from players during playtesting sessions. This helps identify issues or areas for improvement before the final release of the game.
+
+      Test - Try all the ways to clear the levels and check if there are more than three stages.
+      Test - Test whether you can complete all the stages and reach the ending.
 
 
  ---- ---- ---- ---- 

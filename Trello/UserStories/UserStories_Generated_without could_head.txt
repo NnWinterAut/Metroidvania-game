@@ -28,6 +28,7 @@ ID = 38 ,                Dodge , 闪躲
 ID = 39 ,         Difficulties , 游戏难度
 ID = 41 ,                  BGM , BGM
 ID = 42 ,                  SFX , 音效
+ID = 43 ,               Stages , 游戏关卡
 ID = 45 ,                  Run , 跑步
 ID = 46 ,           Game Saves , 存档
 ID = 47 ,                 Move , 移动
