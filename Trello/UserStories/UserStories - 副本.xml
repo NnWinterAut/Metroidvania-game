@@ -1,4 +1,4 @@
-<UserStories>
+﻿<UserStories>
     <UserStory id="1" heading="Health Point" headingZH="生命值">
         <Description>As a player, I want the game has a proper Health Point (HP), so that health status can be sufficiently determined and monitored.</Description>
         <DescriptionZH>血量的显示，受到伤害时的血量变化</DescriptionZH>
@@ -17,20 +17,20 @@
         </INVEST>
         <Tests>
             <Test>
-                Given the game is running,
-                When the player starts playing,
+                Given the game is running
+                When the player starts playing
                 Then the Health Point (HP) should have a color.
             </Test>
             <Test>
-                Given the player has Health Point (HP),
-                And the player is attacked by an enemy,
-                When the player takes damage,
+                Given the player has Health Point (HP)
+                And the player is attacked by an enemy
+                When the player takes damage
                 Then the value of the damage taken should be deducted from the Health Point (HP).
             </Test>
             <Test>
-                Given the player has Health Point (HP),
-                And the player takes damage,
-                When the value of damage taken is deducted from the Health Point (HP),
+                Given the player has Health Point (HP)
+                And the player takes damage
+                When the value of damage taken is deducted from the Health Point (HP)
                 Then the reduced Health Point (HP) should appear transparent on the scene background.
             </Test>
         </Tests>
@@ -55,26 +55,26 @@
         </INVEST>
         <Tests>
             <Test>
-                Given the game is running,
-                When the player starts playing,
+                Given the game is running
+                When the player starts playing
                 Then the Magic Point (MP) should have a color.
             </Test>
             <Test>
-                Given the player has Magic Point (MP),
-                And the player wants to use a spell,
-                When the spell is cast,
+                Given the player has Magic Point (MP)
+                And the player wants to use a spell
+                When the spell is cast
                 Then the value of the Magic Point (MP) should be deducted.
             </Test>
             <Test>
-                Given the player has Magic Point (MP),
-                And the Magic Point (MP) is empty,
-                When the player attempts to use a spell,
+                Given the player has Magic Point (MP)
+                And the Magic Point (MP) is empty
+                When the player attempts to use a spell
                 Then the player should be unable to use the spell skills.
             </Test>
             <Test>
-                Given the player has Magic Point (MP),
-                And the player uses a spell,
-                When the value of Magic Point (MP) is deducted,
+                Given the player has Magic Point (MP)
+                And the player uses a spell
+                When the value of Magic Point (MP) is deducted
                 Then the reduced portion of Magic Point (MP) should appear transparent on the scene background.
             </Test>
         </Tests>
@@ -99,14 +99,14 @@
         </INVEST>
         <Tests>
             <Test>
-                Given the player is exploring the game world,
-                When the player searches for drops or visits the shop,
+                Given the player is exploring the game world
+                When the player searches for drops or visits the shop
                 Then the player should be able to find consumables that can restore health.
             </Test>
             <Test>
-                Given the player has consumables that can restore health,
-                And the player has lost health,
-                When the player uses a health-restoring consumable,
+                Given the player has consumables that can restore health
+                And the player has lost health
+                When the player uses a health-restoring consumable
                 Then the player's health should be restored.
             </Test>
         </Tests>
@@ -131,14 +131,14 @@
         </INVEST>
         <Tests>
             <Test>
-                Given the player is exploring the game world,
-                When the player searches for loot drops or visits the shop,
+                Given the player is exploring the game world
+                When the player searches for loot drops or visits the shop
                 Then the player should be able to find consumables that can restore mana.
             </Test>
             <Test>
-                Given the player has consumables that can restore mana,
-                And the player has lost mana points,
-                When the player uses a mana-restoring consumable,
+                Given the player has consumables that can restore mana
+                And the player has lost mana points
+                When the player uses a mana-restoring consumable
                 Then the player's mana points should be restored.
             </Test>
         </Tests>
@@ -163,20 +163,20 @@
         </INVEST>
         <Tests>
             <Test>
-                Given the player has access to multiple magic types,
-                When the player selects fire magic,
+                Given the player has access to multiple magic types
+                When the player selects fire magic
                 Then the player should be able to switch to fire magic.
             </Test>
             <Test>
-                Given the player has selected fire magic,
-                And the player has enough mana points to cast the spell,
-                When the player casts fire magic,
+                Given the player has selected fire magic
+                And the player has enough mana points to cast the spell
+                When the player casts fire magic
                 Then the spell should be successfully cast.
             </Test>
             <Test>
-                Given the player has successfully cast fire magic,
-                And the player is targeting an enemy,
-                When the enemy is hit with fire magic,
+                Given the player has successfully cast fire magic
+                And the player is targeting an enemy
+                When the enemy is hit with fire magic
                 Then sustained damage should be inflicted on the enemy as expected.
             </Test>
         </Tests>
@@ -200,21 +200,9 @@
             Testable - Yes, the frozen magic feature can be tested to ensure it functions as intended, freezes enemies for the appropriate duration, has a reasonable cooldown period, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is in the game,
-                When the player selects the Frozen Magic Spell,
-                Then the Frozen Magic Spell is equipped.
-            </Test>
-            <Test>
-                Given the player has equipped the Frozen Magic Spell,
-                When the player casts the spell,
-                Then the spell is casted.
-            </Test>
-            <Test>
-                Given the player has cast the Frozen Magic Spell,
-                When the spell hits the enemy,
-                Then the enemy is slowed down.
-            </Test>
+            <Test>Test if the player can switch to frozen magic.</Test>
+            <Test>Test if the player can cast frozen magic.</Test>
+            <Test>After casting the spell, check whether it slowed down the enemy as expected.</Test>
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/7c4BxDIO</Url>
@@ -236,21 +224,9 @@
             Testable - Yes, the lightning magic feature can be tested to ensure it functions as intended, deals appropriate area-of-effect damage, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
-            <Test>
-                Given the game is running,
-                When the player wants to switch to lightning magic,
-                Then the player should be able to switch to lightning magic.
-            </Test>
-            <Test>
-                Given the player has switched to lightning magic,
-                When the player wants to cast lightning magic,
-                Then the player should be able to cast lightning magic.
-            </Test>
-            <Test>
-                Given the player has successfully cast lightning magic,
-                When there are multiple enemies nearby,
-                Then the lightning magic should hit multiple enemies in a chain.
-            </Test>
+            <Test>Test if the player can switch to lightning magic.</Test>
+            <Test>Test if the player can cast lightning magic.</Test>
+            <Test>After casting the spell, checked if it attacked multiple enemies in a chain.</Test>
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/Uos684py</Url>
@@ -272,16 +248,8 @@
             Testable - Yes, the charge attack feature can be tested to ensure it functions as intended, deals increased damage, has a reasonable charge time, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
-            <Test>
-                Given that the player is in the game,
-                When the player holds down the attack button or uses certain charged attack moves,
-                Then the player should successfully perform the charged attack.
-            </Test>
-            <Test>
-                Given that the player is in the game,
-                When the player performs a normal attack and a charged attack,
-                Then the damage and attribute improvements of the charged attack should be compared to the normal attack to determine if there are any improvements.
-            </Test>
+            <Test>Try holding down the attack button or using certain charged attack moves, to see if player can successfully perform the charged attack.</Test>
+            <Test>Compare the normal attack and charged attack, and determine if the charged attack has any damage or attribute improvements.</Test>
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/QnmHeyxr</Url>
@@ -303,16 +271,8 @@
             Testable - Yes, the double jump feature can be tested to ensure it functions as intended, allows the player to reach higher platforms, has a reasonable timing for the double jump, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is in the game,
-                When they approach and touch the wall after jumping,
-                Then they should be able to trigger a double jump by pressing the jump key again.
-            </Test>
-            <Test>
-                Given the player is in the game,
-                When they trigger a double jump,
-                Then the height of the double jump should be reasonable and not affect the game's balance.
-            </Test>
+            <Test>Try to approach and touch the wall after jumping, then press the jump key again to trigger a double jump.</Test>
+            <Test>Analyze whether the height of the double jump is reasonable and whether it affects the game's balance.</Test>
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/AbsfAqXN</Url>
@@ -334,17 +294,8 @@
             Testable - Yes, because it is possible to test the functionality of armor in the game, such as testing its effectiveness against different types of enemies or in different scenarios.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is exploring the game world,
-                When the player searches for loot drops or visits the shop,
-                Then the player should be able to find defensive equipment such as armor.
-            </Test>
-            <Test>
-                Given the player has equipped defensive equipment such as armor,
-                And the player has taken note of their defense value before equipping,
-                When the player equips the armor,
-                Then the player's defense value should be increased as compared to the value before equipping the armor.
-            </Test>
+            <Test>When playing, try to find equipment such as armor in dropped items or in the shop that can improve the defence.</Test>
+            <Test>Compare the difference in defense before and after equipping the armor.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/hrxlYClT</Url>
@@ -366,18 +317,8 @@
             Testable - Yes, because the effectiveness of a buff can be measured and verified through playtesting and balancing.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When the player uses specific items or attacks that can increase Buff,
-                Then the Buff should appear.
-            </Test>
-            <Test>
-                Given the player has no Buff,
-                When the player is attacked or uses an item that increases Buff,
-                Then the player's Buff should increase,
-                And the player should compare the differences between having Buff and not having Buff,
-                And determine if the Buff has been successfully applied.
-            </Test>
+            <Test>Try to use items or attacks that can increase Buff in the game to see if the Buff appears.</Test>
+            <Test>Compare the differences between having Buff and not having Buff, and determine whether the Buff has been successfully applied.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/Z9b1tPQl</Url>
@@ -399,16 +340,8 @@
             Testable - Yes, because the feature can be tested to ensure that it displays correctly and provides accurate information to the player.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player has an active buff,
-                When the buff is in effect for the character,
-                Then the buff icon should be displayed properly.
-            </Test>
-            <Test>
-                Given the player has an active buff,
-                When the buff expires,
-                Then the buff icon should disappear.
-            </Test>
+            <Test>Check whether the buff icon can be displayed properly after the buff is in effect for the character.</Test>
+            <Test>Check whether the icon disappears after the buff expires.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/K4hDK7ld</Url>
@@ -430,15 +363,8 @@
             Testable - Yes, because the "Status" feature can be tested to ensure that it is functioning properly and providing accurate information to the player.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When the player presses a specific key,
-                Then the character attribute panel should open.
-            </Test>
-            <Test>
-                Given the player has opened the character attribute panel,
-                Then the panel should display important character attributes such as hp mp damage etc.
-            </Test>
+            <Test>Press a specific key to open the character attribute panel.</Test>
+            <Test>Character attribute panel display hp, mp, damage, ect.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/wazyas4m</Url>
@@ -460,17 +386,8 @@
             Testable - Yes, because the "Durability" feature can be tested to ensure that it is functioning properly and providing accurate information to the player. Testing can involve measuring how long an object or character lasts before it breaks or loses durability.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player has equipped items,
-                When the player inspects the equipped items,
-                Then the durability of the equipment should be displayed.
-            </Test>
-            <Test>
-                Given the player has equipped items,
-                And the equipment has no durability,
-                When the player uses the equipment,
-                Then the equipment should break.
-            </Test>
+            <Test>Equipment durability is displayed.</Test>
+            <Test>Equipment breaks when it has no durability.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/1S2Ka4Od</Url>
@@ -492,19 +409,8 @@
             Testable - Yes, because the "Pickup" feature can be tested to ensure that the player is able to pick up items as intended, and that the items are added to the player's inventory or used in the game as intended.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When the player approaches an object to pick up,
-                And the player uses the pick-up button,
-                Then the player should verify if there is any item change.
-            </Test>
-            <Test>
-                Given the player has equipped items,
-                And the player has taken note of their damage or defense,
-                When the player changes their equipment,
-                Then the player should attack or defend,
-                And verify if there is any additional benefit from the new equipment.
-            </Test>
+            <Test>Use the pick-up button on the object you want to pick up, and verify if there is any item change.</Test>
+            <Test>To compare the damage or defense after changing equipment, try attacking or defending to see if there is any additional benefit.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/U6JMQwbS</Url>
@@ -526,16 +432,8 @@
             Testable - Yes, because the "Coins" feature can be tested to ensure that the player is able to collect and spend the coins as intended, and that the currency system is functioning properly within the game.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is fighting multiple enemies,
-                When the player defeats the enemies,
-                Then the player should check if any gold coins have been dropped.
-            </Test>
-            <Test>
-                Given the player has found gold coins on the ground,
-                And the player attempts to pick up the gold coins,
-                Then the player should verify if their total amount of gold coins has increased.
-            </Test>
+            <Test>After attempting to defeat multiple enemies, check if any gold coins have been dropped.</Test>
+            <Test>Attempt to pick up gold coins and verify if your total amount of gold coins increases.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/WUQ6oeI9</Url>
@@ -557,16 +455,8 @@
             Testable - Yes, a shop feature can be tested to ensure it functions correctly, such as checking that items are properly added to a player's inventory and that the correct amount of currency is deducted.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When the player interacts with the shop,
-                Then the shop should display various recovery items and some equipments.
-            </Test>
-            <Test>
-                Given the player has enough gold coins to purchase an item or equipment,
-                When the player chooses to buy the item or equipment,
-                Then the purchased item or equipment should drop on the ground in front of the shop.
-            </Test>
+            <Test>The player interacts with the shop, displaying various recovery items and some equipments.</Test>
+            <Test>After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/IueQzHao</Url>
@@ -588,16 +478,8 @@
             Testable - Yes, an upgrade feature can be tested to ensure it functions correctly, such as checking that the upgrade applies the correct attribute changes and that the cost of the upgrade is deducted properly from the player's currency.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When the player inspects their equipment,
-                Then the equipment should have a level system.
-            </Test>
-            <Test>
-                Given the player has lower-level equipment equipped,
-                And the player approaches higher-level equipment of the same type,
-                Then the player should verify if the higher-level equipment can replace the lower-level equipment.
-            </Test>
+            <Test>Check whether the game's equipment has a level system.</Test>
+            <Test>Approach higher-level equipment of the same type to see if it can replace lower-level equipment.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/0R2zj3Nl</Url>
@@ -619,17 +501,8 @@
             Testable - Yes, a Skill Effect Combinations feature can be tested to ensure it functions correctly, such as checking that the correct effects are applied when skills are combined, and that the combinations do not cause any unexpected behavior or bugs in the game.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player has access to both lighting and freezing magic,
-                And the player uses both magic types on the same monster,
-                Then the electric shock effect should be triggered.
-            </Test>
-            <Test>
-                Given the player has access to fire and freezing magic,
-                And the player uses freezing magic on a monster freezing it,
-                When the player uses fire magic on the frozen monster,
-                Then the monster should be unfrozen.
-            </Test>
+            <Test>Lighting magic and freezing maigc hitting the same monster will trigger the electric shock effect.</Test>
+            <Test>Fire magic hitting frozen monsters will unfreeze the monsters.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/z50RmdbJ</Url>
@@ -651,17 +524,8 @@
             Testable - Yes, a Difficulty feature can be tested to ensure that the changes in difficulty levels are working as intended, such as enemy health and behavior changes, and the increase or decrease in difficulty feels balanced and reasonable.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                And the player changes the difficulty level,
-                Then the player should compare if there are differences in game difficulty.
-            </Test>
-            <Test>
-                Given the player is playing the game,
-                And the player has different standards of difficulty,
-                When the player changes the difficulty level to match the different standards,
-                Then the player should determine if the difficulty setting is reasonable.
-            </Test>
+            <Test>Try playing the game with different difficulty levels, to compare if there are differences in game difficulty.</Test>
+            <Test>Try playing the game with different standards, to determine if the difficulty setting is reasonable.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/Cp2CTzri</Url>
@@ -683,15 +547,8 @@
             Testable - Yes, a Boss Fight feature can be tested to ensure that the boss behaves and responds correctly to player actions, and that the encounter is balanced and challenging. Testing can also include checking that the boss's abilities and mechanics work as intended, and that the player's abilities and items function properly during the encounter.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is facing a boss monster,
-                Then the boss monster should have stronger attack power and more HP than regular monsters.
-            </Test>
-            <Test>
-                Given the player is facing a boss monster,
-                When the boss monster is attacking,
-                Then the boss monster should be able to release skills to attack the player.
-            </Test>
+            <Test>Boss monsters have stronger attack power and more HP.</Test>
+            <Test>Boss monsters could release some skills to attack the player.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/CqKeS9yD</Url>
@@ -713,16 +570,8 @@
             Testable - Yes, because the behavior and abilities of the elite enemies can be tested and validated through playtesting and other forms of quality assurance.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                And the player encounters an elite monster,
-                Then the elite monster should have higher attack power and health than normal monsters.
-            </Test>
-            <Test>
-                Given the player is exploring the game world,
-                When the player encounters enemies,
-                Then the player should be able to encounter elite enemies.
-            </Test>
+            <Test>Elite monsters have higher attack power and health than normal monsters.</Test>
+            <Test>Run the game, and check whether the player can encounter elite enemies.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/w7pMKAxL</Url>
@@ -744,16 +593,8 @@
             Testable - Yes, the Jump Attack feature can be tested to ensure that it works as intended, including testing the attack animation, damage calculation, and any special effects or interactions. Testing can also include checking that the Jump Attack interacts correctly with other game features, such as enemy AI or the game environment.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When the player jumps and attacks in the air,
-                Then the game character should be able to perform those actions.
-            </Test>
-            <Test>
-                Given the player is attacking an enemy in the air,
-                And the game character's attack hits the enemy,
-                Then the enemy should take damage from the air attack.
-            </Test>
+            <Test>Check whether the player can control the game character to jump and attack in the air.</Test>
+            <Test>Check if the air attack of the game character can cause damage to the enemy.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/pMVLpWXC</Url>
@@ -775,16 +616,8 @@
             Testable - Yes, the Stunned State feature can be tested to ensure that it works as intended, including testing the duration, visual effects, and any associated gameplay mechanics. Testing can also include checking that the Stunned State interacts correctly with other game features, such as enemy AI or player abilities.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is attacking an enemy,
-                When the enemy is hit by the attack,
-                Then the enemy should enter a stiff state.
-            </Test>
-            <Test>
-                Given the player is being attacked by an enemy,
-                When the player is hit by the attack,
-                Then the player should enter a stiff state.
-            </Test>
+            <Test>Try attacking the enemy and check if the enemy enters a stiff state after being attacked.</Test>
+            <Test>Try being attacked by the enemy and check if the player enters a stiff state after being attacked by the enemy.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/PcEerpRo</Url>
@@ -806,16 +639,8 @@
             Testable - Yes, the Cooldown feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Cooldown interacts correctly with other game features, such as player abilities or enemy AI.        
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is attacking continuously,
-                When observing the game character's attacks,
-                Then there should be an interval time between each attack.
-            </Test>
-            <Test>
-                Given the player is passing through a level,
-                And the player is attacking enemies,
-                Then the player should test if the attack interval is reasonable not too long or too short.
-            </Test>
+            <Test>Attempt to perform continuous attacks and observe if there is an interval time between each attack.</Test>
+            <Test>Try to pass through a level and test if the attack interval is either too long or too short.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/DqfEkXbx</Url>
@@ -837,16 +662,8 @@
             Testable - Yes, the Clearance Timer feature can be tested to ensure that it works as intended, including testing the duration, effects, and any associated gameplay mechanics. Testing can also include checking that the Clearance Timer interacts correctly with other game features, such as player abilities or enemy AI.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player enters a level,
-                When the level loads,
-                Then there should be a prompt indicating the time for timing.
-            </Test>
-            <Test>
-                Given the player passes a checkpoint in a level,
-                When the player completes the level,
-                Then the clearance time should be recorded correctly.
-            </Test>
+            <Test>Upon entering the level, verify if there is a prompt indicating the time for timing.</Test>
+            <Test>After passing the checkpoint, verify if the clearance time can be correctly recorded.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/BRwJD48f</Url>
@@ -868,16 +685,8 @@
             Testable - Yes, the Clearance Score feature can be tested to ensure that it works as intended, including testing the scoring rules, reward system, and any associated visual or gameplay elements. Testing can also include checking that the Clearance Score feature interacts correctly with other game features, such as player abilities or enemy AI.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player completes a level,
-                When the level is cleared,
-                Then the clearance score should be displayed.
-            </Test>
-            <Test>
-                Given the player has accumulated clearance score from completed levels,
-                When the game is started,
-                Then the accumulated clearance score should be displayed on the game start interface.
-            </Test>
+            <Test>After the player clears the level, the clearance score will be displayed.</Test>
+            <Test>The player's accumulated clearance score will be displayed on the game start interface.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/GxhEvknH</Url>
@@ -899,16 +708,8 @@
             Testable - Yes, the Flying Enemies feature can be tested to ensure that it works as intended, including testing enemy behaviors and interactions with other game features, such as player abilities or terrain obstacles. Testing can also include checking for any performance issues that may arise from the addition of flying enemies.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When exploring a level,
-                Then the player should try to find flying enemies.
-            </Test>
-            <Test>
-                Given the player encounters flying enemies,
-                When attempting to interact with them through attacking or other means,
-                Then the interaction should be carried out smoothly.
-            </Test>
+            <Test>Try to find flying enemies at the game level.</Test>
+            <Test>Attempt to interact with flying enemies by attacking or other means, and check if the interaction can be carried out smoothly.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/UvgshZqQ</Url>
@@ -930,21 +731,9 @@
             Testable - Yes, the Bonus Level feature can be tested to ensure that it works as intended, including testing level objectives and mechanics, visual and audio elements, and difficulty level. Testing can also include checking for any performance issues that may arise from the addition of the Bonus Level.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When meeting certain conditions,
-                Then the player should be able to enter the bonus level.
-            </Test>
-            <Test>
-                Given the player is in the bonus level,
-                When completing the bonus level,
-                Then the player should be able to obtain rewards.
-            </Test>
-            <Test>
-                Given the player obtains rewards from the bonus level,
-                When analyzing the rewards,
-                Then the rewards should be within a reasonable range.
-            </Test>
+            <Test>Try to enter the bonus level during gameplay.</Test>
+            <Test>Try to obtain rewards in the bonus level.</Test>
+            <Test>Analyze whether the rewards in the bonus level are within a reasonable range.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/F74J3A6V</Url>
@@ -966,16 +755,8 @@
             Testable - Yes, as the volume control feature can be easily tested to ensure that it is functioning as intended.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player opens the options menu,
-                When viewing the audio settings,
-                Then the volume bar should be displayed correctly.
-            </Test>
-            <Test>
-                Given the player adjusts the volume in the options menu,
-                When testing the audio,
-                Then the volume should have changed accordingly.
-            </Test>
+            <Test>Check if the volume bar can be displayed correctly in the options menu.</Test>
+            <Test>Attemp to adjust the volume and determine if the volume has changed.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/s14F0BNM</Url>
@@ -997,21 +778,9 @@
             Testable - Yes, because the team can create test cases to ensure that the puzzles work correctly, are solvable, and do not result in unintended consequences such as blocking player progress or breaking the game.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When exploring levels,
-                Then the player should try to find content with puzzle-solving elements.
-            </Test>
-            <Test>
-                Given the player encounters puzzle-solving content,
-                When attempting to solve the puzzle,
-                Then the puzzle should be able to be completed.
-            </Test>
-            <Test>
-                Given the player solves puzzles in the game,
-                When analyzing the difficulty of the puzzle,
-                Then the difficulty of the puzzle should be reasonable.
-            </Test>
+            <Test>Find content with puzzle-solving elements in the game.</Test>
+            <Test>Attempt to solve the puzzle and determine if it can be completed.</Test>
+            <Test>Analyze if the difficulty of the puzzle is reasonable.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/aiVIuJMf</Url>
@@ -1033,16 +802,8 @@
             Testable - Yes, because the team can create test cases to ensure that the hints are displayed correctly and that they provide helpful guidance to the player without giving away too much information.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When picking up an item,
-                Then there should be a prompt indicating that the item has been obtained.
-            </Test>
-            <Test>
-                Given the player obtains an item in the game,
-                When checking the prompt,
-                Then the content of the prompt should match the obtained item.
-            </Test>
+            <Test>Try to pick up an item and check if there is a prompt indicating that the item has been obtained.</Test>
+            <Test>Check the content of the prompt to confirm whether it matches the obtained item.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/AUxBHgsQ</Url>
@@ -1064,16 +825,8 @@
             Testable - Yes, the Achievement feature can be tested to ensure that achievements are earned when objectives and milestones are completed, and that the rewards and recognition for earning achievements are displayed correctly.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When accessing the achievement system,
-                Then the system should display properly.
-            </Test>
-            <Test>
-                Given the player attempts to accomplish achievement conditions,
-                When the conditions are met,
-                Then the achievement should be completed normally.
-            </Test>
+            <Test>Try to check game's achievement system and verify if it can display properly.</Test>
+            <Test>Try to accomplish the achievement conditions and check if the achievement can be completed normally.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/9FxcUIkk</Url>
@@ -1095,16 +848,8 @@
             Testable - Yes, because the team can create test cases to ensure that the Easter Egg(s) can be triggered correctly and do not interfere with the main gameplay experience.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When exploring levels and game content,
-                Then the player should try to find Easter eggs.
-            </Test>
-            <Test>
-                Given the player finds an Easter egg in the game,
-                When attempting to trigger it,
-                Then the Easter egg should be activated.
-            </Test>
+            <Test>Try to find Easter eggs in the game.</Test>
+            <Test>Try to tigger the Easter eggs.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/kmUSi6fa</Url>
@@ -1126,16 +871,8 @@
             Testable - Yes, because the team can create test cases to ensure that the tutorial is effective in teaching the player and providing them with the necessary guidance.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player starts a new game,
-                When beginning the game tutorial,
-                Then the tutorial should begin.
-            </Test>
-            <Test>
-                Given the player is in the game tutorial,
-                When completing the tutorial,
-                Then the player should be able to pass the tutorial successfully.
-            </Test>
+            <Test>Run the game and check whether the game starts with a tutorial or not.</Test>
+            <Test>Check whether the player can successfully pass the game tutorial.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/0SA4aVkU</Url>
@@ -1157,16 +894,8 @@
             Testable - Yes, the Attack feature can be tested to ensure that the attack animation, damage, and range are working correctly, and that enemies are reacting appropriately to the attack action.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When pressing the attack key,
-                Then the player should be able to attack normally.
-            </Test>
-            <Test>
-                Given the player is attacking an enemy,
-                When making contact with the enemy,
-                Then the enemy should take damage from the attack.
-            </Test>
+            <Test>Press the attack key to see if the player can attack normally.</Test>
+            <Test>Verify if the attack can cause damage to the enemy.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/CvXop06V</Url>
@@ -1188,16 +917,8 @@
             Testable - Yes, because the team can create cases to ensure that the jump mechanic works correctly, is responsive and accurate, and does not result in unintended consequences such as getting stuck or falling through the game world.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When pressing the jump key while jumping,
-                Then the player's movement should be correct.
-            </Test>
-            <Test>
-                Given the player is moving left or right,
-                When pressing the jump key,
-                Then there should not be any conflicts with movement.
-            </Test>
+            <Test>After entering the game, try pressing the jump key while jump to check if your movement are correct.</Test>
+            <Test>While moving of left and right, try pressing the jump key to check for any conflicts.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/7OSeK3IK</Url>
@@ -1219,16 +940,8 @@
             Testable - Yes, because the team can create test cases to ensure that the "Dodge" feature functions correctly and is balanced with the rest of the game mechanics.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When pressing the corresponding key for dodge,
-                Then the player should perform a dodge.
-            </Test>
-            <Test>
-                Given the player is being attacked by an enemy,
-                When performing a dodge,
-                Then the player should be able to avoid the attack.
-            </Test>
+            <Test>Press the corresponding key for Dodge and check if the player performs a dodge.</Test>
+            <Test>Perform a dodge during enemy attacks and check if the attack is avoided.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/W0ZrOoCF</Url>
@@ -1250,16 +963,8 @@
             Testable - Yes, because the team can create tests to ensure that each difficulty level offers a unique and appropriate level of challenge for players.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is in the game difficulty menu,
-                When modifying the game difficulty,
-                Then the game difficulty indicator should change accordingly.
-            </Test>
-            <Test>
-                Given the player is playing the game,
-                When using different difficulty levels,
-                Then there should be differences in the game difficulty.
-            </Test>
+            <Test>Test by modifying the game difficulty in the difficulty menu and checking if the game difficulty indicator changes.</Test>
+            <Test>Enter the game using different difficulty levels and check if there are any differences in the game difficulty.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/uYbzhjJK</Url>
@@ -1281,16 +986,8 @@
             Testable - Yes, because the team can create test cases to ensure that the portal mechanic works correctly, is reliable, and does not result in unintended consequences such as getting stuck or breaking the game.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When exploring levels and game content,
-                Then the player should try to find portals.
-            </Test>
-            <Test>
-                Given the player finds a portal in the game,
-                When attempting to use the portal,
-                Then the player should be able to teleport to the corresponding location.
-            </Test>
+            <Test>Try to find portals in the game.</Test>
+            <Test>Arrempt to use the portals to teleport to the corresponding location.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/qTAMjKqn</Url>
@@ -1312,16 +1009,8 @@
             Testable - Yes, the BGM feature can be tested to ensure that audio tracks are playing correctly and at the appropriate times, and that the volume and timing settings are working as intended.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player starts the game,
-                When the game loads,
-                Then the background music should be turned on.
-            </Test>
-            <Test>
-                Given the player is on the main screen,
-                When pressing the music button,
-                Then the system should turn on/off the background music accordingly.
-            </Test>
+            <Test>When the user starts the game, the background music is automatically turned on.</Test>
+            <Test>Add a music button. Given that user on the main screen when user press to the music button, system will turn on and off the background music.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/mXgZkXqz</Url>
@@ -1343,16 +1032,8 @@
             Testable - Yes, because the team can create tests to ensure that the sound effects are playing as intended and enhancing the overall gameplay experience.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When characters interact with enemies objects that can emit sound etc,
-                Then the audio playback device should produce corresponding sounds.
-            </Test>
-            <Test>
-                Given the player is playing the game,
-                When characters attack enemies,
-                Then the audio playback device should produce corresponding sounds.
-            </Test>
+            <Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
+            <Test>Test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/VTSFJgFh</Url>
@@ -1374,16 +1055,8 @@
             Testable - Yes, because stages can be tested for functionality, difficulty, balance, and overall enjoyment. Testing can be done through internal testing teams or by gathering feedback from players during playtesting sessions. This helps identify issues or areas for improvement before the final release of the game.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When attempting to clear levels using all available methods,
-                Then the game should have more than three stages.
-            </Test>
-            <Test>
-                Given the player has completed all stages,
-                When attempting to reach the ending,
-                Then the player should be able to successfully complete the game.
-            </Test>
+            <Test>Try all the ways to clear the levels and check if there are more than three stages.</Test>
+            <Test>Test whether you can complete all the stages and reach the ending.</Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/ENVKoWpv</Url>
@@ -1405,16 +1078,8 @@
             Testable - Yes, because the team can create tests to ensure that the one-way platform mechanic works correctly, is reliable, and does not result in unintended consequences such as collision issues or broken gameplay.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When attempting to jump from below to the top of a one-way platform,
-                Then the player should be able to stand on the platform without falling down.
-            </Test>
-            <Test>
-                Given the player is standing on a one-way platform,
-                When attempting to move in any direction,
-                Then the player should remain on the platform without falling down.
-            </Test>
+            <Test>Test if it is possible to jump from below to the top of a one-way platform.</Test>
+            <Test>Test if player can stand on the platform without falling down.</Test>
         </Tests>
         <Label>Could Have</Label>
         <Url>https://trello.com/c/PH9tiQfu</Url>
@@ -1436,16 +1101,8 @@
             Testable - Yes, because the team can create tests to ensure that the "Run" feature works correctly, does not result in unintended consequences, and enhances the overall gameplay experience.
         </INVEST>
         <Tests>
-            <Test>
-                Given the player is playing the game,
-                When attempting to move left or right and then pressing the sprint key,
-                Then the player's movement speed should increase.
-            </Test>
-            <Test>
-                Given the player is in the air after jumping,
-                When attempting to press the sprint key,
-                Then the player should either trigger an air sprint or no operation instead of accelerating.
-            </Test>
+            <Test>After entering the game, try pressing the spint key while moving left and right to check if your movement speed has increased.</Test>
+            <Test>After jumping, try pressing the sprint key to check for any conflicts with the jump. Note that pressing the sprint key after jumping may trigger air spint or no operation instead of acceleration.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/c7hARgrt</Url>
@@ -1467,16 +1124,8 @@
             Testable - Yes, because the team can create tests to ensure that the save/load functionality works correctly and does not result in any data loss or corruption.
         </INVEST>
         <Tests>
-            <Test>
-                Given the game is running,
-                When the player saves the game,
-                Then a game content archive should be generated.
-            </Test>
-            <Test>
-                Given the game content archive is available,
-                When the player loads the game,
-                Then all content should be loaded correctly.
-            </Test>
+            <Test>Save the game and check if a game content archive is generated.</Test>
+            <Test>Load the game and check if all content is loaded correctly.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/SwVk78Bu</Url>
@@ -1498,16 +1147,8 @@
             Testable - Yes, the Move feature can be tested to ensure that it works as intended, including testing move types, animations, control scheme, and any interactions with other game features or systems. Testing can also include checking for any performance issues that may arise from the addition of the Move feature.
         </INVEST>
         <Tests>
-            <Test>
-                Given the game is running,
-                When the player presses the movement key,
-                Then the character should move in the corresponding direction.
-            </Test>
-            <Test>
-                Given the character is moving,
-                When the player releases the movement key,
-                Then the character should stop moving.
-            </Test>
+            <Test>Press the movement key in the game to see if the character can move in all directions.</Test>
+            <Test>Release the movement key in the game to see if the character stops moving.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/cVuuHsnm</Url>
@@ -1529,16 +1170,8 @@
             Testable - Yes, the Main Menu feature can be tested to ensure that it works as intended, including testing menu items, button functionality, and any interactions with other game features or systems. Testing can also include checking for any performance issues that may arise from the addition of the Main Menu feature.
         </INVEST>
         <Tests>
-            <Test>
-                Given the user is in the game,
-                When the user clicks on the pause button,
-                Then the game should be paused and the user should be able to see the main menu.
-            </Test>
-            <Test>
-                Given the user is in the main menu,
-                When the user clicks on the start button,
-                Then the game should start and the user should be taken to the level select screen.
-            </Test>
+            <Test>Enter the game and check if you have entered the main menu.</Test>
+            <Test>Test if you can pause and return to the main menu.</Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/XJ1b2tVL</Url>
