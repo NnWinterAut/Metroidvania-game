@@ -8,7 +8,7 @@ namespace ClassDiagram
 {
     internal class Map
     {
-        public float Diffioculty;
+        public float Difficulty;
         public object BGM;
         public object MapContent;
         public object Enemies;

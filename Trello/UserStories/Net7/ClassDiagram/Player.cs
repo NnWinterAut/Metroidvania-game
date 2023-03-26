@@ -9,9 +9,9 @@ namespace ClassDiagram
 {
     internal class Player
     {
-        public float Health_Point;
-        public float Magic_Point;
-        public float Armor_Point;
+        public float HealthPoint;
+        public float MagicPoint;
+        public float ArmorPoint;
         public float Coins;
         public Point Position;
         public float Speed;
