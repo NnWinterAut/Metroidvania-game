@@ -16,9 +16,23 @@
             Testable - Yes, because this feature can be tested and verified through gameplay to ensure that it functions correctly and provides accurate information to the player.
         </INVEST>
         <Tests>
-            <Test>Health Point (HP) must have color.</Test>
-            <Test>Check the value of damage taken by the player is deducted from the Health Point (HP).</Test>
-            <Test>The reduced Health Point (HP) is transparent(scene background).</Test>
+            <Test>
+                Given the game is running
+                When the player starts playing
+                Then the Health Point (HP) should have a color.
+            </Test>
+            <Test>
+                Given the player has Health Point (HP)
+                And the player is attacked by an enemy
+                When the player takes damage
+                Then the value of the damage taken should be deducted from the Health Point (HP).
+            </Test>
+            <Test>
+                Given the player has Health Point (HP)
+                And the player takes damage
+                When the value of damage taken is deducted from the Health Point (HP)
+                Then the reduced Health Point (HP) should appear transparent on the scene background.
+            </Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/azzQ6C8M</Url>
@@ -40,10 +54,29 @@
             Testable - Yes, because tests were created for this feature to ensure that it functions correctly and provides the intended user experience.
         </INVEST>
         <Tests>
-            <Test>The Magic Point(MP) must have color.</Test>
-            <Test>Check if the Magic Point(MP) is digested when using the spell.</Test>
-            <Test>Player unable to release spell skills when the MP is empty.</Test>
-            <Test>The reduced portion of Magic Point(MP) should be transparent (scene background).</Test>
+            <Test>
+                Given the game is running
+                When the player starts playing
+                Then the Magic Point (MP) should have a color.
+            </Test>
+            <Test>
+                Given the player has Magic Point (MP)
+                And the player wants to use a spell
+                When the spell is cast
+                Then the value of the Magic Point (MP) should be deducted.
+            </Test>
+            <Test>
+                Given the player has Magic Point (MP)
+                And the Magic Point (MP) is empty
+                When the player attempts to use a spell
+                Then the player should be unable to use the spell skills.
+            </Test>
+            <Test>
+                Given the player has Magic Point (MP)
+                And the player uses a spell
+                When the value of Magic Point (MP) is deducted
+                Then the reduced portion of Magic Point (MP) should appear transparent on the scene background.
+            </Test>
         </Tests>
         <Label>Must Have</Label>
         <Url>https://trello.com/c/IV9NNeem</Url>
@@ -65,8 +98,17 @@
             Testable - Yes, the health potion feature can be tested to ensure it functions as intended, restores the appropriate amount of health, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
-            <Test>Try to find consumables that can restore health in the game's drops or shop.</Test>
-            <Test>Attempt to use health-restoring consumables and check whether the health is restored.</Test>
+            <Test>
+                Given the player is exploring the game world
+                When the player searches for drops or visits the shop
+                Then the player should be able to find consumables that can restore health.
+            </Test>
+            <Test>
+                Given the player has consumables that can restore health
+                And the player has lost health
+                When the player uses a health-restoring consumable
+                Then the player's health should be restored.
+            </Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/JJ4N4b5L</Url>
@@ -88,8 +130,17 @@
             Testable - Yes, the magic potion feature can be tested to ensure it functions as intended, restores the appropriate amount of magic power, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
-            <Test>Try to find consumables that can restore mana in the game's loot drops or in the shop.</Test>
-            <Test>Use the mana-restoring consumables and check whether the mana points have been restored.</Test>
+            <Test>
+                Given the player is exploring the game world
+                When the player searches for loot drops or visits the shop
+                Then the player should be able to find consumables that can restore mana.
+            </Test>
+            <Test>
+                Given the player has consumables that can restore mana
+                And the player has lost mana points
+                When the player uses a mana-restoring consumable
+                Then the player's mana points should be restored.
+            </Test>
         </Tests>
         <Label>Should Have</Label>
         <Url>https://trello.com/c/OU6r66yU</Url>
@@ -111,9 +162,23 @@
             Testable - Yes, the fire magic feature can be tested to ensure it functions as intended, deals appropriate damage, and has no unintended side effects on the player or game mechanics.
         </INVEST>
         <Tests>
-            <Test>Test if the player can switch to fire magic.</Test>
-            <Test>Test if the player can cast fire magic.</Test>
-            <Test>After casting the spell, check if it inflict sustained damage on the enemy as expected.</Test>
+            <Test>
+                Given the player has access to multiple magic types
+                When the player selects fire magic
+                Then the player should be able to switch to fire magic.
+            </Test>
+            <Test>
+                Given the player has selected fire magic
+                And the player has enough mana points to cast the spell
+                When the player casts fire magic
+                Then the spell should be successfully cast.
+            </Test>
+            <Test>
+                Given the player has successfully cast fire magic
+                And the player is targeting an enemy
+                When the enemy is hit with fire magic
+                Then sustained damage should be inflicted on the enemy as expected.
+            </Test>
         </Tests>
         <Label>Could have</Label>
         <Url>https://trello.com/c/jGFK3JBC</Url>

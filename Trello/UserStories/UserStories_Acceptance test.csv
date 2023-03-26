@@ -1,0 +1,34 @@
+﻿Id,Origin,Replacement
+10,"<Test>When playing, try to find equipment such as armor in dropped items or in the shop that can improve the defence.</Test>
+            <Test>Compare the difference in defense before and after equipping the armor.</Test>","Scenario: Finding defensive equipment
+Given the player is exploring the game world
+When the player searches for loot drops or visits the shop
+Then the player should be able to find defensive equipment such as armor
+
+Scenario: Comparing defense before and after equipping armor
+Given the player has equipped defensive equipment such as armor
+And the player has taken note of their defense value before equipping
+When the player equips the armor
+Then the player's defense value should be increased as compared to the value before equipping the armor."
+11,"<Test>Try to use items or attacks that can increase Buff in the game to see if the Buff appears.</Test>
+            <Test>Compare the differences between having Buff and not having Buff, and determine whether the Buff has been successfully applied.</Test>","Scenario: Using items or attacks to increase Buff
+Given the player is playing the game
+When the player uses specific items or attacks that can increase Buff
+Then the Buff should appear
+
+Scenario: Comparing differences with and without Buff
+Given the player has no Buff
+When the player is attacked or uses an item that increases Buff
+Then the player's Buff should increase
+And the player should compare the differences between having Buff and not having Buff
+And determine if the Buff has been successfully applied"
+12,"<Test>Check whether the buff icon can be displayed properly after the buff is in effect for the character.</Test>
+            <Test>Check whether the icon disappears after the buff expires.</Test>","Scenario: Displaying buff icon
+Given the player has an active buff
+When the buff is in effect for the character
+Then the buff icon should be displayed properly
+
+Scenario: Icon disappearing after buff expires
+Given the player has an active buff
+When the buff expires
+Then the buff icon should disappear"
