@@ -1,4 +1,49 @@
 ﻿Id,Origin,Replacement
+6,"<Test>Test if the player can switch to frozen magic.</Test>
+            <Test>Test if the player can cast frozen magic.</Test>
+            <Test>After casting the spell, check whether it slowed down the enemy as expected.</Test>","Scenario: Switching to Frozen Magic Spell
+Given the player is in the game
+When the player selects the Frozen Magic Spell
+Then the Frozen Magic Spell is equipped
+
+Scenario: Casting Frozen Magic Spell
+Given the player has equipped the Frozen Magic Spell
+When the player casts the spell
+Then the spell is casted
+    
+Scenario: Slowing Down Enemies with Frozen Magic Spell
+Given the player has cast the Frozen Magic Spell
+When the spell hits the enemy
+Then the enemy is slowed down"
+7,"<Test>Test if the player can switch to lightning magic.</Test>
+            <Test>Test if the player can cast lightning magic.</Test>
+            <Test>After casting the spell, checked if it attacked multiple enemies in a chain.</Test>","Given the game is running
+When the player wants to switch to lightning magic
+Then the player should be able to switch to lightning magic
+
+Given the player has switched to lightning magic
+When the player wants to cast lightning magic
+Then the player should be able to cast lightning magic
+
+Given the player has successfully cast lightning magic
+When there are multiple enemies nearby
+Then the lightning magic should hit multiple enemies in a chain"
+8,"<Test>Try holding down the attack button or using certain charged attack moves, to see if player can successfully perform the charged attack.</Test>
+            <Test>Compare the normal attack and charged attack, and determine if the charged attack has any damage or attribute improvements.</Test>","Given that the player is in the game,
+When the player holds down the attack button or uses certain charged attack moves,
+Then the player should successfully perform the charged attack.
+
+Given that the player is in the game,
+When the player performs a normal attack and a charged attack,
+Then the damage and attribute improvements of the charged attack should be compared to the normal attack to determine if there are any improvements."
+9,"<Test>Try to approach and touch the wall after jumping, then press the jump key again to trigger a double jump.</Test>
+            <Test>Analyze whether the height of the double jump is reasonable and whether it affects the game's balance.</Test>","Given the player is in the game,
+When they approach and touch the wall after jumping,
+Then they should be able to trigger a double jump by pressing the jump key again.
+
+Given the player is in the game,
+When they trigger a double jump,
+Then the height of the double jump should be reasonable and not affect the game's balance."
 10,"<Test>When playing, try to find equipment such as armor in dropped items or in the shop that can improve the defence.</Test>
             <Test>Compare the difference in defense before and after equipping the armor.</Test>","Scenario: Finding defensive equipment
 Given the player is exploring the game world
@@ -32,3 +77,373 @@ Scenario: Icon disappearing after buff expires
 Given the player has an active buff
 When the buff expires
 Then the buff icon should disappear"
+13,"<Test>Press a specific key to open the character attribute panel.</Test>
+            <Test>Character attribute panel display hp, mp, damage, ect.</Test>","Scenario: Opening character attribute panel
+Given the player is playing the game
+When the player presses a specific key
+Then the character attribute panel should open
+
+Scenario: Displaying character attributes
+Given the player has opened the character attribute panel
+Then the panel should display important character attributes such as hp, mp, damage, etc."
+14,"<Test>Equipment durability is displayed.</Test>
+            <Test>Equipment breaks when it has no durability.</Test>","Scenario: Displaying equipment durability
+Given the player has equipped items
+When the player inspects the equipped items
+Then the durability of the equipment should be displayed
+
+Scenario: Equipment breaking due to no durability
+Given the player has equipped items
+And the equipment has no durability
+When the player uses the equipment
+Then the equipment should break"
+15,"<Test>Use the pick-up button on the object you want to pick up, and verify if there is any item change.</Test>
+            <Test>To compare the damage or defense after changing equipment, try attacking or defending to see if there is any additional benefit.</Test>","Scenario: Picking up items with pick-up button
+Given the player is playing the game
+When the player approaches an object to pick up
+And the player uses the pick-up button
+Then the player should verify if there is any item change
+
+Scenario: Comparing damage or defense after changing equipment
+Given the player has equipped items
+And the player has taken note of their damage or defense
+When the player changes their equipment
+Then the player should attack or defend
+And verify if there is any additional benefit from the new equipment."
+16,"<Test>After attempting to defeat multiple enemies, check if any gold coins have been dropped.</Test>
+            <Test>Attempt to pick up gold coins and verify if your total amount of gold coins increases.</Test>","Scenario: Checking for dropped gold coins
+Given the player is fighting multiple enemies
+When the player defeats the enemies
+Then the player should check if any gold coins have been dropped
+
+Scenario: Picking up gold coins and increasing total amount
+Given the player has found gold coins on the ground
+And the player attempts to pick up the gold coins
+Then the player should verify if their total amount of gold coins has increased."
+17,"<Test>The player interacts with the shop, displaying various recovery items and some equipments.</Test>
+            <Test>After the player chooses to buy, the item or equipment will drop on the ground it there are enough gold coins.</Test>","Scenario: Interacting with the shop and displaying items
+Given the player is playing the game
+When the player interacts with the shop
+Then the shop should display various recovery items and some equipments
+
+Scenario: Buying items or equipment from the shop
+Given the player has enough gold coins to purchase an item or equipment
+When the player chooses to buy the item or equipment
+Then the purchased item or equipment should drop on the ground in front of the shop."
+18,"<Test>Check whether the game's equipment has a level system.</Test>
+            <Test>Approach higher-level equipment of the same type to see if it can replace lower-level equipment.</Test>","Scenario: Checking equipment level system
+Given the player is playing the game
+When the player inspects their equipment
+Then the equipment should have a level system
+
+Scenario: Replacing lower-level equipment with higher-level equipment
+Given the player has lower-level equipment equipped
+And the player approaches higher-level equipment of the same type
+Then the player should verify if the higher-level equipment can replace the lower-level equipment."
+19,"<Test>Lighting magic and freezing maigc hitting the same monster will trigger the electric shock effect.</Test>
+            <Test>Fire magic hitting frozen monsters will unfreeze the monsters.</Test>","Scenario: Triggering electric shock effect
+Given the player has access to both lighting and freezing magic
+And the player uses both magic types on the same monster
+Then the electric shock effect should be triggered
+
+Scenario: Unfreezing monsters with fire magic
+Given the player has access to fire and freezing magic
+And the player uses freezing magic on a monster, freezing it
+When the player uses fire magic on the frozen monster
+Then the monster should be unfrozen."
+20,"<Test>Try playing the game with different difficulty levels, to compare if there are differences in game difficulty.</Test>
+            <Test>Try playing the game with different standards, to determine if the difficulty setting is reasonable.</Test>","Scenario: Comparing game difficulty with different levels
+Given the player is playing the game
+And the player changes the difficulty level
+Then the player should compare if there are differences in game difficulty
+
+Scenario: Evaluating difficulty setting with different standards
+Given the player is playing the game
+And the player has different standards of difficulty
+When the player changes the difficulty level to match the different standards
+Then the player should determine if the difficulty setting is reasonable."
+21,"<Test>Boss monsters have stronger attack power and more HP.</Test>
+            <Test>Boss monsters could release some skills to attack the player.</Test>","Scenario: Boss monster attack power and HP
+Given the player is facing a boss monster
+Then the boss monster should have stronger attack power and more HP than regular monsters
+
+Scenario: Boss monster releasing skills to attack the player
+Given the player is facing a boss monster
+When the boss monster is attacking
+Then the boss monster should be able to release skills to attack the player."
+22,"<Test>Elite monsters have higher attack power and health than normal monsters.</Test>
+            <Test>Run the game, and check whether the player can encounter elite enemies.</Test>","Scenario: Elite monster attack power and health
+Given the player is playing the game
+And the player encounters an elite monster
+Then the elite monster should have higher attack power and health than normal monsters
+
+Scenario: Encountering elite enemies
+Given the player is exploring the game world
+When the player encounters enemies
+Then the player should be able to encounter elite enemies."
+23,"<Test>Check whether the player can control the game character to jump and attack in the air.</Test>
+            <Test>Check if the air attack of the game character can cause damage to the enemy.</Test>","Scenario: Controlling character to jump and attack in the air
+Given the player is playing the game
+When the player jumps and attacks in the air
+Then the game character should be able to perform those actions
+
+Scenario: Air attack causing damage to enemies
+Given the player is attacking an enemy in the air
+And the game character's attack hits the enemy
+Then the enemy should take damage from the air attack."
+24,"<Test>Try attacking the enemy and check if the enemy enters a stiff state after being attacked.</Test>
+            <Test>Try being attacked by the enemy and check if the player enters a stiff state after being attacked by the enemy.</Test>","Scenario: Enemy entering stiff state after being attacked
+Given the player is attacking an enemy
+When the enemy is hit by the attack
+Then the enemy should enter a stiff state
+
+Scenario: Player entering stiff state after being attacked by enemy
+Given the player is being attacked by an enemy
+When the player is hit by the attack
+Then the player should enter a stiff state."
+25,"<Test>Attempt to perform continuous attacks and observe if there is an interval time between each attack.</Test>
+            <Test>Try to pass through a level and test if the attack interval is either too long or too short.</Test>","Scenario: Observing interval time between continuous attacks
+Given the player is attacking continuously
+When observing the game character's attacks
+Then there should be an interval time between each attack
+
+Scenario: Testing attack interval during level passage
+Given the player is passing through a level
+And the player is attacking enemies
+Then the player should test if the attack interval is reasonable, not too long or too short."
+26,"<Test>Upon entering the level, verify if there is a prompt indicating the time for timing.</Test>
+            <Test>After passing the checkpoint, verify if the clearance time can be correctly recorded.</Test>","Scenario: Prompt indicating timing at level entry
+Given the player enters a level
+When the level loads
+Then there should be a prompt indicating the time for timing
+
+Scenario: Clearance time recording after passing checkpoint
+Given the player passes a checkpoint in a level
+When the player completes the level
+Then the clearance time should be recorded correctly."
+27,"<Test>After the player clears the level, the clearance score will be displayed.</Test>
+            <Test>The player's accumulated clearance score will be displayed on the game start interface.</Test>","Scenario: Displaying clearance score after level completion
+Given the player completes a level
+When the level is cleared
+Then the clearance score should be displayed
+
+Scenario: Displaying accumulated clearance score on game start interface
+Given the player has accumulated clearance score from completed levels
+When the game is started
+Then the accumulated clearance score should be displayed on the game start interface."
+28,"<Test>Try to find flying enemies at the game level.</Test>
+            <Test>Attempt to interact with flying enemies by attacking or other means, and check if the interaction can be carried out smoothly.</Test>","Scenario: Finding flying enemies in level
+Given the player is playing the game
+When exploring a level
+Then the player should try to find flying enemies
+
+Scenario: Interacting with flying enemies
+Given the player encounters flying enemies
+When attempting to interact with them through attacking or other means
+Then the interaction should be carried out smoothly."
+29,"<Test>Try to enter the bonus level during gameplay.</Test>
+            <Test>Try to obtain rewards in the bonus level.</Test>
+            <Test>Analyze whether the rewards in the bonus level are within a reasonable range.</Test>","Scenario: Entering bonus level during gameplay
+Given the player is playing the game
+When meeting certain conditions
+Then the player should be able to enter the bonus level
+
+Scenario: Obtaining rewards in bonus level
+Given the player is in the bonus level
+When completing the bonus level
+Then the player should be able to obtain rewards
+
+Scenario: Analyzing rewards in bonus level
+Given the player obtains rewards from the bonus level
+When analyzing the rewards
+Then the rewards should be within a reasonable range."
+30,"<Test>Check if the volume bar can be displayed correctly in the options menu.</Test>
+            <Test>Attemp to adjust the volume and determine if the volume has changed.</Test>","Scenario: Displaying volume bar in options menu
+Given the player opens the options menu
+When viewing the audio settings
+Then the volume bar should be displayed correctly
+
+Scenario: Adjusting volume in options menu
+Given the player adjusts the volume in the options menu
+When testing the audio
+Then the volume should have changed accordingly."
+31,"<Test>Find content with puzzle-solving elements in the game.</Test>
+            <Test>Attempt to solve the puzzle and determine if it can be completed.</Test>
+            <Test>Analyze if the difficulty of the puzzle is reasonable.</Test>","Scenario: Finding puzzle-solving content
+Given the player is playing the game
+When exploring levels
+Then the player should try to find content with puzzle-solving elements
+
+Scenario: Solving puzzles in game
+Given the player encounters puzzle-solving content
+When attempting to solve the puzzle
+Then the puzzle should be able to be completed
+
+Scenario: Analyzing puzzle difficulty
+Given the player solves puzzles in the game
+When analyzing the difficulty of the puzzle
+Then the difficulty of the puzzle should be reasonable."
+32,"<Test>Try to pick up an item and check if there is a prompt indicating that the item has been obtained.</Test>
+            <Test>Check the content of the prompt to confirm whether it matches the obtained item.</Test>","Scenario: Prompt indicating item pickup
+Given the player is playing the game
+When picking up an item
+Then there should be a prompt indicating that the item has been obtained
+
+Scenario: Confirming prompt matches obtained item
+Given the player obtains an item in the game
+When checking the prompt
+Then the content of the prompt should match the obtained item."
+33,"<Test>Try to check game's achievement system and verify if it can display properly.</Test>
+            <Test>Try to accomplish the achievement conditions and check if the achievement can be completed normally.</Test>","Scenario: Checking game's achievement system
+Given the player is playing the game
+When accessing the achievement system
+Then the system should display properly
+
+Scenario: Accomplishing achievement conditions
+Given the player attempts to accomplish achievement conditions
+When the conditions are met
+Then the achievement should be completed normally."
+34,"<Test>Try to find Easter eggs in the game.</Test>
+            <Test>Try to tigger the Easter eggs.</Test>","Scenario: Finding Easter eggs in game
+Given the player is playing the game
+When exploring levels and game content
+Then the player should try to find Easter eggs
+
+Scenario: Triggering Easter eggs
+Given the player finds an Easter egg in the game
+When attempting to trigger it
+Then the Easter egg should be activated."
+35,"<Test>Run the game and check whether the game starts with a tutorial or not.</Test>
+            <Test>Check whether the player can successfully pass the game tutorial.</Test>","Scenario: Checking game tutorial
+Given the player starts a new game
+When beginning the game tutorial
+Then the tutorial should begin
+
+Scenario: Completing game tutorial
+Given the player is in the game tutorial
+When completing the tutorial
+Then the player should be able to pass the tutorial successfully."
+36,"<Test>Press the attack key to see if the player can attack normally.</Test>
+            <Test>Verify if the attack can cause damage to the enemy.</Test>","Scenario: Normal attack function
+Given the player is playing the game
+When pressing the attack key
+Then the player should be able to attack normally
+
+Scenario: Attack causing damage to enemy
+Given the player is attacking an enemy
+When making contact with the enemy
+Then the enemy should take damage from the attack."
+37,"<Test>After entering the game, try pressing the jump key while jump to check if your movement are correct.</Test>
+            <Test>While moving of left and right, try pressing the jump key to check for any conflicts.</Test>","Scenario: Checking jump function while jumping
+Given the player is playing the game
+When pressing the jump key while jumping
+Then the player's movement should be correct
+
+Scenario: Checking jump function while moving
+Given the player is moving left or right
+When pressing the jump key
+Then there should not be any conflicts with movement."
+38,"<Test>Press the corresponding key for Dodge and check if the player performs a dodge.</Test>
+            <Test>Perform a dodge during enemy attacks and check if the attack is avoided.</Test>","Scenario: Performing dodge function
+Given the player is playing the game
+When pressing the corresponding key for dodge
+Then the player should perform a dodge
+
+Scenario: Avoiding attacks with dodge
+Given the player is being attacked by an enemy
+When performing a dodge
+Then the player should be able to avoid the attack."
+39,"<Test>Test by modifying the game difficulty in the difficulty menu and checking if the game difficulty indicator changes.</Test>
+            <Test>Enter the game using different difficulty levels and check if there are any differences in the game difficulty.</Test>","Scenario: Testing game difficulty modification
+Given the player is in the game difficulty menu
+When modifying the game difficulty
+Then the game difficulty indicator should change accordingly
+
+Scenario: Testing different game difficulties
+Given the player is playing the game
+When using different difficulty levels
+Then there should be differences in the game difficulty."
+40,"<Test>Try to find portals in the game.</Test>
+            <Test>Arrempt to use the portals to teleport to the corresponding location.</Test>","Scenario: Finding portals in the game
+Given the player is playing the game
+When exploring levels and game content
+Then the player should try to find portals
+
+Scenario: Using portals to teleport
+Given the player finds a portal in the game
+When attempting to use the portal
+Then the player should be able to teleport to the corresponding location."
+41,"<Test>When the user starts the game, the background music is automatically turned on.</Test>
+            <Test>Add a music button. Given that user on the main screen when user press to the music button, system will turn on and off the background music.</Test>","Scenario: Background music turned on by default
+Given the player starts the game
+When the game loads
+Then the background music should be turned on
+
+Scenario: Turning on/off background music
+Given the player is on the main screen
+When pressing the music button
+Then the system should turn on/off the background music accordingly."
+42,"<Test>To test for corresponding sounds when characters interact with objects, use an audio playback device.</Test>
+            <Test>Test whether the corresponding sound is heard in the audio playback device when characters attack enemies, objects that can emit sound, and so on.</Test>","Scenario: Testing sounds for character-object interactions
+Given the player is playing the game
+When characters interact with enemies, objects that can emit sound, etc.
+Then the audio playback device should produce corresponding sounds
+
+Scenario: Testing sound for character attacks
+Given the player is playing the game
+When characters attack enemies
+Then the audio playback device should produce corresponding sounds."
+43,"<Test>Try all the ways to clear the levels and check if there are more than three stages.</Test>
+            <Test>Test whether you can complete all the stages and reach the ending.</Test>","Scenario: Testing level progression
+Given the player is playing the game
+When attempting to clear levels using all available methods
+Then the game should have more than three stages
+
+Scenario: Testing completion of all stages
+Given the player has completed all stages
+When attempting to reach the ending
+Then the player should be able to successfully complete the game."
+44,"<Test>Test if it is possible to jump from below to the top of a one-way platform.</Test>
+            <Test>Test if player can stand on the platform without falling down.</Test>","Scenario: Testing one-way platform mechanics
+Given the player is playing the game
+When attempting to jump from below to the top of a one-way platform
+Then the player should be able to stand on the platform without falling down
+
+Scenario: Testing player movement on one-way platform
+Given the player is standing on a one-way platform
+When attempting to move in any direction
+Then the player should remain on the platform without falling down."
+45,"<Test>After entering the game, try pressing the spint key while moving left and right to check if your movement speed has increased.</Test>
+            <Test>After jumping, try pressing the sprint key to check for any conflicts with the jump. Note that pressing the sprint key after jumping may trigger air spint or no operation instead of acceleration.</Test>","Scenario: Testing sprint mechanic on ground
+Given the player is playing the game
+When attempting to move left or right and then pressing the sprint key
+Then the player's movement speed should increase
+
+Scenario: Testing sprint mechanic while jumping
+Given the player is in the air after jumping
+When attempting to press the sprint key
+Then the player should either trigger an air sprint or no operation instead of accelerating."
+46,"<Test>Save the game and check if a game content archive is generated.</Test>
+            <Test>Load the game and check if all content is loaded correctly.</Test>","Given the game is running,
+When the player saves the game,
+Then a game content archive should be generated.
+
+Given the game content archive is available,
+When the player loads the game,
+Then all content should be loaded correctly."
+47,"<Test>Press the movement key in the game to see if the character can move in all directions.</Test>
+            <Test>Release the movement key in the game to see if the character stops moving.</Test>","Given the game is running,
+When the player presses the movement key,
+Then the character should move in the corresponding direction.
+
+Given the character is moving,
+When the player releases the movement key,
+Then the character should stop moving."
+48,"<Test>Enter the game and check if you have entered the main menu.</Test>
+            <Test>Test if you can pause and return to the main menu.</Test>","Given the user is in the game,
+When the user clicks on the pause button,
+Then the game should be paused and the user should be able to see the main menu.
+
+Given the user is in the main menu,
+When the user clicks on the start button,
+Then the game should start and the user should be taken to the level select screen."
