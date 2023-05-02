@@ -7,15 +7,17 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
 {
     public PlayerInputControl inputControl; // ./settings/PlayerInputControl
     public Vector2 inputDirection;  //x, y vector 2D
-    public Rigidbody2D rb; // unity.Rigidbody2D
-    //private Rigidbody2D rb;
+    private Rigidbody2D rb;
+
+    [Header("人物基本参数: ")]
+    public float jumpForce;
     public float speed;
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         inputControl = new PlayerInputControl();
-
-        //rb = GetComponent<Rigidbody2D>();
+        inputControl.Player.Jump.started += Jump; //单次执行函数时使用started, 使用+=添加函数Jump
     }
     
     private void OnEnable()
@@ -30,13 +32,13 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
     
     }
 
-    private void Update() //Update()函数就是说，在每刷新一帧的时候，该做些什么 --- 周期函数
+    private void Update() //Update()函数就是说，在每刷新一帧的时候，该做些什么 --- 周期函数 Update runs once per frame.
     {
         inputDirection = inputControl.Player.Move.ReadValue<Vector2>();
     
     }
 
-    private void FixedUpdate() //周期函数
+    private void FixedUpdate() //周期函数, FixedUpdate can run once, zero, or several times per frame, 
     {
         Move();
     
@@ -60,5 +62,11 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
 
         //人物翻转 Scale = 1人物面部朝向右, Scale = -1人物面部朝向左
         transform.localScale = new Vector3(faceDir, 1, 1); //调用transform组件
+    }
+
+    private void Jump(InputAction.CallbackContext obj) //callbackContext传输用户输入事件
+    {
+        //Debug.Log("JUMP");
+        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //代码手册, 脚本APIrigidbody2d, Rigidbody2D AddForce()
     }
 }
