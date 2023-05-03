@@ -7,14 +7,19 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
 {
     public PlayerInputControl inputControl; // ./settings/PlayerInputControl, 
     public Vector2 inputDirection;  //./settings/PlayerInputControl中Player的Action值 x, y  vector 2D
+    
     private PhysicsCheck physicsCheck; //调用PhysicsCheck
     private Rigidbody2D rb;
+    private CapsuleCollider2D coll; //调用CapsuleCollider2D
 
     [Header("人物基本参数: ")]
     public float jumpForce;
     public float speed;
     private float runSpeed => speed * 2f;
     private float walkSpeed;
+    public bool isCrouch;
+    private Vector2 originalOffset;
+    private Vector2 originalSize;
 
     private void Awake()
     {
@@ -24,7 +29,11 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
         inputControl.Player.Jump.started += Jump; //Jump是瞬间执行的动作, 单次执行函数时使用started, 使用+=添加事件函数Jump
         
         physicsCheck = GetComponent<PhysicsCheck>(); //获取所有PhysicsCheck的public变量
+        coll = GetComponent<CapsuleCollider2D>();
 
+        originalOffset = coll.offset;
+        originalSize = coll.size;
+        
         #region 走路和跑步切换
         walkSpeed = speed;
 
@@ -66,7 +75,10 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
 
     private void Move()
     {
-        rb.velocity = new Vector2(inputDirection.x * speed * Time.deltaTime, rb.velocity.y); //人物速度, vector的x, y向量
+        //人物移动
+        if (isCrouch == false) {
+            rb.velocity = new Vector2(inputDirection.x * speed * Time.deltaTime, rb.velocity.y); //人物速度, vector的x, y向量
+        }
 
         int faceDir = (int)transform.localScale.x; //调用transform组件 x的值, 锚点位置决定localScale的翻转, 原地
 
@@ -81,12 +93,29 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
         }
 
         //人物翻转 Scale = 1人物面部朝向右, Scale = -1人物面部朝向左
-        transform.localScale = new Vector3(faceDir, 1, 1); //调用transform组件
+        transform.localScale = new Vector3(faceDir, 1, 1); //调用transform Scale组件
+
+        //人物下蹲
+        isCrouch = inputDirection.y < -0.5f && physicsCheck.isGround;
+
+        if (isCrouch)
+        {
+            //修改碰撞体大小
+            coll.offset = new Vector2(-0.09956f, 0.62427f);
+            coll.size = new Vector2(1.049f, 1.2485f);
+
+
+        }
+        else {
+            //还原碰撞体
+            coll.size = originalSize;
+            coll.offset = originalOffset;
+        
+        }
     }
 
     private void Jump(InputAction.CallbackContext obj) //callbackContext传输用户输入事件
     {
-        //Debug.Log("JUMP");
         if (physicsCheck.isGround) { 
            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //代码手册, 脚本APIrigidbody2d, Rigidbody2D AddForce()
         }
