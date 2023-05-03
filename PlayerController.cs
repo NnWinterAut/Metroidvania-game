@@ -1,25 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; //调用InputSystem相关内容
 
 public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有Unity 脚本都默认派生自该类。 当您从Unity 的项目窗口创建一个C# 脚本时，它会自动继承MonoBehaviour，并为您提供模板脚本。
 {
-    public PlayerInputControl inputControl; // ./settings/PlayerInputControl
-    public Vector2 inputDirection;  //x, y vector 2D
+    public PlayerInputControl inputControl; // ./settings/PlayerInputControl, 
+    public Vector2 inputDirection;  //./settings/PlayerInputControl中Player的Action值 x, y  vector 2D
+    private PhysicsCheck physicsCheck; //调用PhysicsCheck
     private Rigidbody2D rb;
 
     [Header("人物基本参数: ")]
     public float jumpForce;
     public float speed;
+    private float runSpeed => speed * 2f;
+    private float walkSpeed;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        inputControl = new PlayerInputControl();
-        inputControl.Player.Jump.started += Jump; //单次执行函数时使用started, 使用+=添加函数Jump
+       
+        inputControl = new PlayerInputControl(); //调用Unity的input system
+        inputControl.Player.Jump.started += Jump; //Jump是瞬间执行的动作, 单次执行函数时使用started, 使用+=添加事件函数Jump
+        
+        physicsCheck = GetComponent<PhysicsCheck>(); //获取所有PhysicsCheck的public变量
+
+        #region 走路和跑步切换
+        walkSpeed = speed;
+
+        inputControl.Player.RunButton.performed += ctx =>
+        {
+            if (physicsCheck.isGround) {speed = runSpeed;}
+        };
+
+        inputControl.Player.RunButton.canceled += ctx =>
+        {
+            if (physicsCheck.isGround) {speed = walkSpeed;};
+        };
+        #endregion
     }
-    
+
     private void OnEnable()
     {
         inputControl.Enable();
@@ -34,7 +54,7 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
 
     private void Update() //Update()函数就是说，在每刷新一帧的时候，该做些什么 --- 周期函数 Update runs once per frame.
     {
-        inputDirection = inputControl.Player.Move.ReadValue<Vector2>();
+        inputDirection = inputControl.Player.Move.ReadValue<Vector2>(); //读取键盘输入
     
     }
 
@@ -67,6 +87,8 @@ public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有
     private void Jump(InputAction.CallbackContext obj) //callbackContext传输用户输入事件
     {
         //Debug.Log("JUMP");
-        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //代码手册, 脚本APIrigidbody2d, Rigidbody2D AddForce()
+        if (physicsCheck.isGround) { 
+           rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //代码手册, 脚本APIrigidbody2d, Rigidbody2D AddForce()
+        }
     }
 }
