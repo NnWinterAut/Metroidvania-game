@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
             canJump = false;
             isJumping = true;
-            
+
             rigi.AddForce(new Vector2(0, jumpForces), ForceMode2D.Force);
 
             animator.SetTrigger("jump");
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         if (exitState)
         {
             if (col.gameObject.layer == LayerMask.NameToLayer("Terrain"))
-            Onground = false;
+                Onground = false;
         }
         else
         {
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
     private float runDoubleInterval = RUN_DOUBLE_INTERVAL;
     public int run_state = 0;
     public float run_x = 0;
-    
+
     private void Run()
     {
         if (!Onground) { run_state = 0; }
@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         // 加速
-        if(run_mux > 0 && run_state == 1)
+        if (run_mux > 0 && run_state == 1)
         {
             run_state = 2; return;
         }
@@ -195,30 +195,30 @@ public class PlayerController : MonoBehaviour
             run_state = 3; return;
         }
 
-        if(run_mux > 0 && run_state == 3)
+        if (run_mux > 0 && run_state == 3)
         {
             run_state = 4;
         }
 
-        if(run_state == 4)
+        if (run_state == 4)
         {
-            if(run_mux >= 0) { run = 1; }
-            else 
+            if (run_mux >= 0) { run = 1; }
+            else
             {
                 run = 0;
                 run_mux = 0;
                 run_state = 0; runDoubleInterval = RUN_DOUBLE_INTERVAL;
             }
         }
-        
+
         animator.SetInteger("run", run);
     }
 
     public int run_mux = 0;
     private void RunMux()
     {
-        if(run_x > Math.Abs(moveX) && run_mux < 1) { run_mux = -1; run_x = Math.Abs(moveX); return; }
-        if(run_x < Math.Abs(moveX) && run_mux > -1) { run_mux = 1; run_x = Math.Abs(moveX); return; }
+        if (run_x > Math.Abs(moveX) && run_mux < 1) { run_mux = -1; run_x = Math.Abs(moveX); return; }
+        if (run_x < Math.Abs(moveX) && run_mux > -1) { run_mux = 1; run_x = Math.Abs(moveX); return; }
         run_mux = 0;
     }
 }
