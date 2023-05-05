@@ -1,30 +1,23 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Update is called once per frame
+    void Update()
+    {
+        Movement();
+        Walk();
+        Jump();
+        Run();
+    }
 
+    #region ---- Animator by Penelope & Winter ----
     private Rigidbody2D rigi;
     private Animator animator;
-
-    float moveSpeed = 2.0f;
-    float jumpForces = 10.0f;
-    bool facingRight = true;
-
-    bool Onground;
-
-    int moveChangeAni;
-    int run = 0;
-
-    public float moveX;
-    float moveY;
-
-    bool canJump = true;
-    bool isJumping = false;
-    const float JUMPDURATION = 0.2f;
-    private float jumpDuration = JUMPDURATION;
 
     // Start is called before the first frame update
     private void Awake()
@@ -32,80 +25,33 @@ public class PlayerController : MonoBehaviour
         rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
+    #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        Movement();
-        Direction();
-        Jump();
-
-        RunMux();
-        Run();
-    }
+    #region ---- Movement by Penelope & Winter ----
+    public float moveSpeed = 2.0f;
+    Vector2 move = new (0, 0);
+    bool Onground;
+    int movement_state = 0;
+    bool facingRight = true;
     private void Movement()
     {
-        moveX = Input.GetAxis("Horizontal");
-        moveY = Input.GetAxisRaw("Vertical");
+        // Get the input of the player
+        move = new Vector2(Input.GetAxis("Horizontal"), 0);
 
-        rigi.velocity = new Vector2(moveX * moveSpeed * (run > 0 ? 5f : 1), rigi.velocity.y);
+        // Move the character
+        rigi.velocity = new Vector2(move.x * moveSpeed * (movement_state == 2 ? runSpeedMul : 1), rigi.velocity.y);
 
-        if (moveX > 0)
+        // Adjust the direction of the character
+        if (move.x > 0 && !facingRight || move.x < 0 && facingRight)
         {
-            moveChangeAni = 1;
-        }
-        else if (moveX < 0)
-        {
-            moveChangeAni = -1;
-        }
-        else
-        {
-            moveChangeAni = 0;
-        }
-
-        animator.SetInteger("movement", moveChangeAni);
-    }
-
-    private void Direction()
-    {
-        if (moveX > 0 && !facingRight)
-        {
-            FlipCharacter();
-        }
-        else if (moveX < 0 && facingRight)
-        {
-            FlipCharacter();
+            // Inverse facing direction
+            facingRight = !facingRight; 
+            transform.Rotate(0f, 180f, 0f);
         }
     }
+    #endregion
 
-    private void FlipCharacter()
-    {
-        facingRight = !facingRight; //Inverse.bool
-        transform.Rotate(0f, 180f, 0f);
-    }
-
-    private void Jump()
-    {
-        if (Input.GetKey(KeyCode.Space) && (canJump || isJumping))
-        {
-            if (!isJumping) { rigi.velocity.Set(rigi.velocity.x, 0); }
-
-            canJump = false;
-            isJumping = true;
-            
-            rigi.AddForce(new Vector2(0, jumpForces), ForceMode2D.Force);
-
-            animator.SetTrigger("jump");
-
-            jumpDuration -= Time.deltaTime;
-            if (jumpDuration <= 0) { isJumping = false; }
-        }
-        else
-        {
-            isJumping = false;
-        }
-    }
-
+    #region ---- Grounding by Penelope & Winter ----
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Grouding(collision, false);
@@ -124,7 +70,7 @@ public class PlayerController : MonoBehaviour
         if (exitState)
         {
             if (col.gameObject.layer == LayerMask.NameToLayer("Terrain"))
-            Onground = false;
+                Onground = false;
         }
         else
         {
@@ -132,93 +78,131 @@ public class PlayerController : MonoBehaviour
             if (col.gameObject.layer == LayerMask.NameToLayer("Terrain") && !Onground && col.contacts[0].normal == Vector2.up)
             {
                 Onground = true;
-                ResetJump();
-                JumpCancle();
             }
             // 检查跳跃是否触碰物体
             else if (col.gameObject.layer == LayerMask.NameToLayer("Terrain") && !Onground && col.contacts[0].normal == Vector2.up)
             {
-                // Double Jump
-                ResetJump();
-                JumpCancle();
+
             }
             // 侧面碰墙
             else if (col.gameObject.layer == LayerMask.NameToLayer("Terrain") && !Onground && (col.contacts[0].normal == Vector2.left || col.contacts[0].normal == Vector2.right))
             {
+
             }
         }
 
-        animator.SetBool("onground", Onground);
+        animator.SetBool("Grounded", Onground);
     }
+    #endregion
 
-    private void JumpCancle()
+    #region ---- Walk function by Minqi ----
+    private void Walk()
     {
-        animator.ResetTrigger("jump");
+        // From Idle to Walk
+        if (move.x != 0 && Onground && movement_state == 0)
+        {
+            animator.SetInteger("AnimState", 1);
+            movement_state = 1;
+        }
+        // From Walk to Idle
+        else if (move.x == 0 && Onground && movement_state == 1)
+        {
+            animator.SetInteger("AnimState", 0);
+            movement_state = 0;
+        }
+        // Cut-off if in mid-air
+        if (!Onground) { movement_state = 0; }
     }
-    private void ResetJump()
-    {
-        canJump = true;
-        jumpDuration = JUMPDURATION;
-    }
+    #endregion
 
-    const float RUN_DOUBLE_INTERVAL = 0.5f;
-    private float runDoubleInterval = RUN_DOUBLE_INTERVAL;
-    public int run_state = 0;
-    public float run_x = 0;
-    
+    #region ---- Run function by Minqi ----
+    public float runSpeedMul = 1.5f;
     private void Run()
     {
-        if (!Onground) { run_state = 0; }
-        // 速度稳定
-        if (run_mux == 0 && run_state == 0)
+        // From Walk to Run
+        if (movement_state == 1)
         {
-            run_state = 1;
-            runDoubleInterval = RUN_DOUBLE_INTERVAL;
-            return;
-        }
-        // 加速
-        if(run_mux > 0 && run_state == 1)
-        {
-            run_state = 2; return;
-        }
-        // 减速
-
-        if (run_state >= 2 && run != 1)
-        {
-            runDoubleInterval -= Time.deltaTime;
-            if (runDoubleInterval <= 0) { run_state = 0; runDoubleInterval = RUN_DOUBLE_INTERVAL; }
-        }
-
-
-        if (run_mux < 0 && run_state == 2)
-        {
-            run_state = 3; return;
-        }
-
-        if(run_mux > 0 && run_state == 3)
-        {
-            run_state = 4;
-        }
-
-        if(run_state == 4)
-        {
-            if(run_mux >= 0) { run = 1; }
-            else 
+            if (Input.GetKey(KeyCode.V))
             {
-                run = 0;
-                run_mux = 0;
-                run_state = 0; runDoubleInterval = RUN_DOUBLE_INTERVAL;
+                animator.SetInteger("AnimState", 2);
+                movement_state = 2;
             }
         }
-        
-        animator.SetInteger("run", run);
+        // From Run to Walk
+        else if (movement_state == 2)
+        {
+            if (!Input.GetKey(KeyCode.V))
+            {
+                animator.SetInteger("AnimState", 1);
+                movement_state = 1;
+            }
+        }
+        // Cut-off if in mid-air
+        if (!Onground) { movement_state = 0; }
     }
+    #endregion
 
-    public int run_mux = 0;
-    private void RunMux()
+    #region ---- Jump function by Minqi ----
+
+    public float jumpForces = 10.0f;
+    public float jumpDuration = 0.2f;
+
+    public bool canJump = true;
+    public bool isJumping = false;
+    DateTime? jumpEndTime = null;
+    private void Jump()
     {
-        if(run_x > Math.Abs(moveX) && run_mux < 1) { run_mux = -1; run_x = Math.Abs(moveX); return; }
-        if(run_x < Math.Abs(moveX) && run_mux > -1) { run_mux = 1; run_x = Math.Abs(moveX); return; }
-        run_mux = 0;
+        // Attach to Animator
+        animator.SetFloat("AirSpeedY", rigi.velocity.y);
+
+        // Jump if can jump
+        if (canJump)
+        {
+            // Jump
+            if(Input.GetKey(KeyCode.Space)) 
+            {
+                // Start jumping
+                canJump = false;
+                isJumping = true;
+
+                // Set end time
+                jumpEndTime = DateTime.Now.AddSeconds(jumpDuration);
+
+                // Add jump force
+                rigi.AddForce(new Vector2(0, jumpForces), ForceMode2D.Force);
+
+                // Set jump trigger
+                animator.SetTrigger("Jump");
+            }
+        }
+
+        // Continue jump if jumping
+        if (isJumping)
+        {
+            // Holding Jump
+            if (Input.GetKey(KeyCode.Space))
+            {
+                // If still can go up
+                if(DateTime.Now < jumpEndTime)
+                {
+                    // Add jump force
+                    rigi.AddForce(new Vector2(0, jumpForces), ForceMode2D.Force);
+                }
+                // If jump should end
+                else
+                {
+                    canJump = false;
+                    isJumping = false;
+                    jumpEndTime = null;
+                }
+            }
+        }
+
+        // Reset can jump if player on ground
+        if (Onground)
+        {
+            canJump = true;
+        }
     }
+    #endregion
 }
