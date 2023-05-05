@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour //控制人物动画的脚本
+public class PlayerAnimation : MonoBehaviour
 {
-    private Animator anim; 
+    private Animator anim;
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
-    private PlayerController playerController;
+    private PlayerContorller playerContorller;
 
-    private void Awake() 
+    private void Awake()
     {
-        anim = GetComponent<Animator>(); //获取Animator使用权
-        rb = GetComponent<Rigidbody2D>(); //获取刚体组件的x, y轴的速度
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         physicsCheck = GetComponent<PhysicsCheck>();
-        playerController = GetComponent<PlayerController>();
+        playerContorller = GetComponent<PlayerContorller>();
     }
 
-    public void Update() 
+    private void Update()
     {
-        SetAnimation(); //实时的动画切换, 每一帧都要执行
+        SetAnimation();
     }
 
-    public void SetAnimation() //执行每一帧的动画切换
+    public void SetAnimation()
     {
-        anim.SetFloat("velocityX", Mathf.Abs(rb.velocity.x)); //人物移动动画
-        anim.SetFloat("velocityY", rb.velocity.y);  //人物跳跃动画
-        anim.SetBool("isGround", physicsCheck.isGround); //人物周围环境检测
-        anim.SetBool("isCrouch", playerController.isCrouch); //人物下蹲动作
+        anim.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("velocityY", rb.velocity.y);
+        anim.SetBool("isGround", physicsCheck.isGround);
+        anim.SetBool("isCrouch", playerContorller.isCrouch);
     }
 }
