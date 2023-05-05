@@ -8,8 +8,6 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        //All these example loads"GamePlay"
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
     public void GoToSettingsMenu()
@@ -26,7 +24,7 @@ public class MainMenu : MonoBehaviour
     }
     public void LoadGame()
     {
-        //�浵�������
+        // Load the save data
         GameObject mainMenu = GameObject.FindGameObjectWithTag("mainMenu").transform.gameObject;
         GameObject saveDateUI = GameObject.FindGameObjectWithTag("SaveDateUI").transform.gameObject;
         saveDateUI.transform.GetChild(0).gameObject.SetActive(true);
