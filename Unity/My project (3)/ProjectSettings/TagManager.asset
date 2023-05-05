@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Currency
+  - mainUI
+  - mainMenu
+  - SaveDateUI
   layers:
   - Default
   - TransparentFX
