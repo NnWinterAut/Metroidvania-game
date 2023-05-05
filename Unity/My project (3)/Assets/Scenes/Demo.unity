@@ -249,7 +249,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 084994e447031964f8efa9c5445a6f2b, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &858069096
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   runSpeedMul: 4
-  jumpForces: 15
+  jumpForces: 3
   jumpDuration: 0.2
   canJump: 1
   isJumping: 0
