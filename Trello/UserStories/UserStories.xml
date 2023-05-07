@@ -1543,4 +1543,35 @@
         <Label>Must Have</Label>
         <Url>https://trello.com/c/XJ1b2tVL</Url>
     </UserStory>
+    <UserStory id="49" heading="Enemies" headingZH="敌人">
+        <Description>As a player, I want to see the Enemies so that it's more fun to play.</Description>
+        <DescriptionZH>游戏中的敌人</DescriptionZH>
+        <INVEST>
+            Independent - No, the enemies feature can't designed and implemented as a standalone feature, separate from other game features and systems.
+
+            Negotiable - Yes, the specifics of the enemies feature,  the control scheme, and the animations and effects, can be negotiated and adjusted based on the needs of the team and the game.
+
+            Valuable - Yes, the enemies feature is a fundamental aspect of gameplay.
+
+            Estimable - Yes, the development effort required for the enemies feature can be estimated, as it involves designing and implementing specific move types, animations, control schemes, and testing.
+
+            Small - Yes, the enemies feature can be broken down into smaller sub-tasks for development, such as designing and implementing individual move types or refining the control scheme.
+
+            Testable - Yes, the Move feature can be tested to ensure that it works as intended, including testing move types, animations, control scheme, and any interactions with other game features or systems. Testing can also include checking for any performance issues that may arise from the addition of the Move feature.
+        </INVEST>
+        <Tests>
+            <Test>
+                Given the game is running,
+                When the player starts a new game or continues an existing one,
+                Then enemies should be displayed within the game.
+            </Test>
+            <Test>
+                Given the game is running and enemies are displayed,
+                When the game is in progress,
+                Then the enemies should move within a certain range.
+            </Test>
+        </Tests>
+        <Label>Must Have</Label>
+        <Url>https://trello.com/c/wMvz92Rz</Url>
+    </UserStory>
 </UserStories>
