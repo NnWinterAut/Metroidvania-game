@@ -73,23 +73,23 @@ public class EnemyController : MonoBehaviour
             {
                 waitCount = Random.Range(waitTime * .70f, waitTime * 1.25f);
             }
-            animator.SetBool("isMoving", true);
+            animator.SetInteger("AnimState", 2);
             if (!animator.GetCurrentAnimatorStateInfo(0).IsName("En_attack"))
             {
                 Vector2 targetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
             }
         }
-        else if (waitCount > 0)
-        {
-            waitCount -= Time.deltaTime;
-            rigi.velocity = new Vector2(0f, rigi.velocity.y);
-            if (waitCount <= 0)
-            {
-                moveCount = Random.Range(moveTime * .70f, waitTime * .70f);
-            }
-            animator.SetBool("isMoving", false);
-        }
+        //else if (waitCount > 0)
+        //{
+        //    waitCount -= Time.deltaTime;
+        //    rigi.velocity = new Vector2(0f, rigi.velocity.y);
+        //    if (waitCount <= 0)
+        //    {
+        //        moveCount = Random.Range(moveTime * .70f, waitTime * .70f);
+        //    }
+        //    animator.SetInteger("AnimState", 1);
+        //}
     }
 
 
@@ -98,7 +98,7 @@ public class EnemyController : MonoBehaviour
         timer = intTimer;
         attack = true;
 
-        animator.SetBool("isMoving", false);
+        animator.SetBool("Run", false);
         animator.SetBool("Attack", true);
     }
     private void StopAttack()
@@ -126,7 +126,7 @@ public class EnemyController : MonoBehaviour
         }
         if (Range == false)
         {
-            animator.SetBool("Walk", false);
+            // animator.SetBool("Walk", false);
             StopAttack();
         }
     }
