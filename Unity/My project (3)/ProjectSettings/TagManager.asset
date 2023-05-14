@@ -8,6 +8,7 @@ TagManager:
   - mainUI
   - mainMenu
   - SaveDateUI
+  - Enemy
   layers:
   - Default
   - TransparentFX
