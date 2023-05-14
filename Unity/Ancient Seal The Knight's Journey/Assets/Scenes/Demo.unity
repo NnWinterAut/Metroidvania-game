@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   runSpeedMul: 4
-  jumpForces: 1
+  jumpForces: 0.6
   jumpDuration: 0.2
   canJump: 1
   isJumping: 0

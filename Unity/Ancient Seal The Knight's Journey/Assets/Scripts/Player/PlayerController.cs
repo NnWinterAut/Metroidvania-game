@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Jumping();
+        StaminaRegen();
     }
 
     #region ---- Animator by Penelope & Winter ----
@@ -120,11 +121,17 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region ---- Run function by Minqi ----
-    public float runSpeedMul = 1.5f;
+
+    public float runSpeedMul = 1.35f;
+    public float stamina = 100.0f;
+    public float staminaMax = 100.0f;
+    public float staminaMin = 20.0f;
+    public float staminaRegen = 10.0f;
+    public float staminaDec = 50.0f;
     private void Run()
     {
         // From Walk to Run
-        if (movement_state == 1)
+        if (movement_state == 1 && stamina > staminaMin)
         {
             if (Input.GetKey(KeyCode.V))
             {
@@ -135,20 +142,33 @@ public class PlayerController : MonoBehaviour
         // From Run to Walk
         else if (movement_state == 2)
         {
-            if (!Input.GetKey(KeyCode.V))
+            if (!Input.GetKey(KeyCode.V) || stamina <= 0f)
             {
                 animator.SetInteger("AnimState", 1);
                 movement_state = 1;
+            }
+            else 
+            {
+                stamina -= staminaDec * Time.deltaTime;
             }
         }
         // Cut-off if in mid-air
         if (!Onground) { movement_state = 0; }
     }
+    private void StaminaRegen()
+    {
+        // Regen Stamina when not running
+        if(movement_state != 2 && stamina < staminaMax)
+        {
+            var regenTo = stamina + (staminaRegen * Time.deltaTime);
+            stamina = regenTo <= staminaMax ? regenTo : staminaMax;
+        }
+    }
     #endregion
 
     #region ---- Jump function by Minqi ----
 
-    public float jumpForces = 10.0f;
+    public float jumpForces = 0.6f;
     public float jumpDuration = 0.2f;
 
     public bool canJump = true;
