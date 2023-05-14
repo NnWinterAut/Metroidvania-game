@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    public Animator animatior;
+    private Animator animatior;
     public abstract bool isAlive { get; protected set; }
 
     public abstract float health { get; protected set; }
