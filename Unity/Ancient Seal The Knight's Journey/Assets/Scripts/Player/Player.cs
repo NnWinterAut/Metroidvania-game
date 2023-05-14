@@ -17,9 +17,8 @@ public class Player : Character
     public override float manaMax { get; protected set; } = 100.0f;
     public override float manaRegen { get; protected set; } = 5.0f;
 
-    public override bool isInjuring { get; protected set; } = false;
     public override float invincibleTime { get; protected set; } = 0.5f;
-    public override float injuredTimer { get; protected set; } = 0.25f;
+    public override float injuredTimer { get; protected set; } = 0f;
 
     public override float cooldownBasic { get; protected set; } = 0.5f;
     public override float cooldown { get; protected set; } = 0.0f;
