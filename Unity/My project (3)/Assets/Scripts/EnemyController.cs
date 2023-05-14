@@ -1,41 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.SearchService;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    #region Unity variables
     private Rigidbody2D rigi;
     public SpriteRenderer sr;
     public Transform leftPoint, rigitPoint;
     private Animator animator;
     public Transform Cast;
     public LayerMask CastMask;
-    //投射范围
-    private RaycastHit2D hit;
-    private GameObject target;
 
+    private RaycastHit2D hit;
+    private Transform target;
+    #endregion
+
+    #region game variables
     public float moveSpeed;
     public float moveTime, waitTime;
     private float moveCount, waitCount;
     public float CastLength;
     public float attackDistance;
     public float timer; //cooldown of attacks
-    private bool attack;
-    private float distance; //Stroe the distance b/w enemy and player
+    private bool attackModel;
+    private float distance; //Stroe the distance between enemy and player
     private bool Range; //check if player in range
     private bool cooling;//check if Enemy is cooling after attack
     private float intTimer;
-
-    private bool movingRight;
+    #endregion
     void Start()
     {
         rigi=GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        movingRight = false;
-        moveCount = moveTime;
-
         intTimer = timer;
+        ObjectSelectorTargetInfo();
     }
 
     // Update is called once per frame
@@ -48,71 +51,47 @@ public class EnemyController : MonoBehaviour
     }
     private void move()
     {
-        if (moveCount > 0)
-        {
-            moveCount -= Time.deltaTime;
-            if (movingRight)
-            {
-                rigi.velocity = new Vector2(moveSpeed, rigi.velocity.y);
-                sr.flipX = true;
-                if (transform.position.x > rigitPoint.position.x)
-                {
-                    movingRight = false;
-                }
-            }
-            else
-            {
-                rigi.velocity = new Vector2(-moveSpeed, rigi.velocity.y);
-                sr.flipX = false;
-                if (transform.position.x < leftPoint.position.x)
-                {
-                    movingRight = true;
-                }
-            }
-            if (moveCount <= 0)
-            {
-                waitCount = Random.Range(waitTime * .70f, waitTime * 1.25f);
-            }
             animator.SetInteger("AnimState", 2);
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("En_attack"))
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
             {
                 Vector2 targetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
             }
-        }
-        //else if (waitCount > 0)
-        //{
-        //    waitCount -= Time.deltaTime;
-        //    rigi.velocity = new Vector2(0f, rigi.velocity.y);
-        //    if (waitCount <= 0)
-        //    {
-        //        moveCount = Random.Range(moveTime * .70f, waitTime * .70f);
-        //    }
-        //    animator.SetInteger("AnimState", 1);
-        //}
     }
-
 
     private void Attack()
     {
+        //Reset Timer whem player enter attack range
         timer = intTimer;
-        attack = true;
+        //Check if enemy can still attack or not
+        attackModel = true;
 
-        animator.SetBool("Run", false);
+        animator.SetBool("CanWalk", false);
         animator.SetBool("Attack", true);
     }
     private void StopAttack()
     {
         cooling = false;
-        attack = false;
+        attackModel = false;
         animator.SetBool("Attack", false);
     }
 
     private void RangeToAttack()
     {
+        //当攻击时候不可移动
+        if (!attackModel)
+        {
+            move();
+        }
+        ///当敌人超出边界斌且玩家不在范围里面并且敌人没有攻击
+        if (!InsideofLimits()&&!Range && !animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
+        {
+            ObjectSelectorTargetInfo();
+        }
         if (Range)
         {
-            hit = Physics2D.Raycast(Cast.position, Vector2.left, CastLength, CastMask);
+            //发出射线并存储
+            hit = Physics2D.Raycast(Cast.position, transform.right, CastLength, CastMask);
             CastDebugger();
         }
         //when player detected
@@ -126,25 +105,26 @@ public class EnemyController : MonoBehaviour
         }
         if (Range == false)
         {
-            // animator.SetBool("Walk", false);
             StopAttack();
         }
     }
+    //玩家是否进入触发区
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            target = collision.gameObject;
+            //存储游戏对象到变量
+            target = collision.transform;
             Range = true;
+            Flip();
         }
     }
 
     private void EnemyLogic()
     {
-        distance = Vector2.Distance(transform.position, target.transform.position);
+        distance = Vector2.Distance(transform.position, target.position);
         if (distance > attackDistance)
         {
-            move();
             StopAttack();
         }
         else if(attackDistance >= distance && cooling == false){
@@ -160,11 +140,11 @@ public class EnemyController : MonoBehaviour
     {
         if (distance > attackDistance)
         {
-            Debug.DrawRay(Cast.position, Vector2.left * CastLength, Color.red);
+            Debug.DrawRay(Cast.position, transform.right * CastLength, Color.red);
         }
         else if (attackDistance > distance)
         {
-            Debug.DrawRay(Cast.position, Vector2.left * CastLength, Color.green);
+            Debug.DrawRay(Cast.position, transform.right* CastLength, Color.green);
         }
     }
 
@@ -176,10 +156,56 @@ public class EnemyController : MonoBehaviour
     void Cooldown()
     {
         timer -= Time.deltaTime;
-        if (timer <= 0 && cooling && attack)
+        if (timer <= 0 && cooling && attackModel)
         {
             cooling = false;
             timer = intTimer;
         }
     }
+
+    //敌人是否在边界
+    private bool InsideofLimits()
+    {
+        //检查敌人的位置是否大于左边界或者小于有边界
+        return transform.position.x > leftPoint.position.x&&transform.position.x< rigitPoint.position.x;
+    }
+
+    //让敌人移动到目标
+    private void ObjectSelectorTargetInfo()
+    {
+        //计算敌人到左边界与有边界的距离
+        float distanceToLeft = Vector2.Distance(transform.position, leftPoint.position);
+        float distanceToRight = Vector2.Distance(transform.position, rigitPoint.position);
+
+        //如果左边界距离大于有边界距离，设置到左限制
+        if(distanceToLeft > distanceToRight)
+        {
+            target = leftPoint;
+        }
+        else//右限制
+        {
+            target = rigitPoint;
+        }
+        Flip();
+    }
+
+    //翻转敌人
+    private void Flip()
+    {
+        //存储翻转角度
+        Vector3 rotation = transform.localEulerAngles;
+        //检测敌人位置是否大于目标位置
+        if (transform.position.x > target.position.x)
+        {
+            rotation.y = 180f;
+        }
+        else
+        {
+            rotation.y = 0f;
+        }
+        //初始角度
+        transform.eulerAngles = rotation;
+    }
 }
+
+
