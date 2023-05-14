@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
         Jump();
         Run();
     }
+    private void FixedUpdate()
+    {
+        Jumping();
+    }
 
     #region ---- Animator by Penelope & Winter ----
     private Rigidbody2D rigi;
@@ -149,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canJump = true;
     public bool isJumping = false;
-    DateTime? jumpEndTime = null;
+    private float jumpTimer = 0.0f;
     private void Jump()
     {
         // Attach to Animator
@@ -159,42 +163,17 @@ public class PlayerController : MonoBehaviour
         if (canJump)
         {
             // Jump
-            if(Input.GetKey(KeyCode.Space)) 
+            if(Input.GetButtonDown("Jump")) 
             {
                 // Start jumping
                 canJump = false;
                 isJumping = true;
 
                 // Set end time
-                jumpEndTime = DateTime.Now.AddSeconds(jumpDuration);
-
-                // Add jump force
-                rigi.AddForce(new Vector2(0, jumpForces), ForceMode2D.Force);
+                jumpTimer = 0.0f;
 
                 // Set jump trigger
                 animator.SetTrigger("Jump");
-            }
-        }
-
-        // Continue jump if jumping
-        if (isJumping)
-        {
-            // Holding Jump
-            if (Input.GetKey(KeyCode.Space))
-            {
-                // If still can go up
-                if(DateTime.Now < jumpEndTime)
-                {
-                    // Add jump force
-                    rigi.AddForce(new Vector2(0, jumpForces), ForceMode2D.Force);
-                }
-                // If jump should end
-                else
-                {
-                    canJump = false;
-                    isJumping = false;
-                    jumpEndTime = null;
-                }
             }
         }
 
@@ -202,6 +181,33 @@ public class PlayerController : MonoBehaviour
         if (Onground)
         {
             canJump = true;
+        }
+    }
+    /// <summary>
+    /// This must be called in FixedUpdate
+    /// </summary>
+    private void Jumping()
+    {
+        // Continue jump if jumping
+        if (isJumping)
+        {
+            // Holding Jump
+            if (Input.GetButton("Jump"))
+            {
+                // If still can go up
+                if (jumpTimer < jumpDuration)
+                {
+                    // Add jump force
+                    rigi.AddForce(new Vector2(0, jumpForces), ForceMode2D.Impulse);
+                    jumpTimer += Time.deltaTime;
+                }
+                // If jump should end
+                else
+                {
+                    canJump = false;
+                    isJumping = false;
+                }
+            }
         }
     }
     #endregion
