@@ -21,16 +21,16 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerManager manager = collision.GetComponent<PlayerManager>();
-        if (manager)
-        {
-            bool pickup= manager.PickupItem(gameObject);
-            if (pickup)
-            {
-                Destroy(gameObject);
-                RemoveItem();
-            }
-        }
+        //PlayerManager manager = collision.GetComponent<PlayerManager>();
+        //if (manager)
+        //{
+        //    bool pickup= manager.PickupItem(gameObject);
+        //    if (pickup)
+        //    {
+        //        Destroy(gameObject);
+        //        RemoveItem();
+        //    }
+        //}
     }
     
     private void RemoveItem()
