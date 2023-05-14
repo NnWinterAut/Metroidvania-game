@@ -4,10 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Currency
-  - mainUI
-  - mainMenu
-  - SaveDateUI
   - Enemy
   layers:
   - Default

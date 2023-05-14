@@ -13,7 +13,10 @@ public class Enemy : MonoBehaviour
     public float magic;
     public float magic_max;
 
-    public float armor;
+    public bool isAlive = true;
+
+    public float armor_abs = 0f;
+    public Dictionary<string,float> armor_mul = new();
     public GameObject[] loots;
 
     void Start()
@@ -28,14 +31,17 @@ public class Enemy : MonoBehaviour
 
     public void TakenDamage(float damage)
     {
-        Debug.Log($"TakenDamage:{damage}");
-        health -= damage;
-        if (health < 0)
+        var taken = damage - armor_abs;
+        foreach(var armor_m in armor_mul.Values) { taken *= armor_m; }
+
+        health -= taken;
+        if (health <= 0.5f)
         {
+            isAlive = false;
             Death();
         }
     }
-    void Death()
+    protected void Death()
     {
         Destroy(gameObject);
     }
