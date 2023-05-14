@@ -10,23 +10,22 @@ public class EnemyController : MonoBehaviour
     #region Unity variables
     private Rigidbody2D rigi;
     public SpriteRenderer sr;
-    public Transform leftPoint, rigitPoint;
+    public Transform leftPoint, rightPoint;
     private Animator animator;
-    public Transform Cast;
-    public LayerMask CastMask;
+    public Transform Cast; //ray origin
+    public LayerMask CastMask; //Ray Layer Variables
 
-    private RaycastHit2D hit;
-    private Transform target;
+    private RaycastHit2D hit; //projected information variables
+    private Transform target; //Player Target Information
     #endregion
 
     #region game variables
-    public float moveSpeed;
-    public float moveTime, waitTime;
-    private float moveCount, waitCount;
-    public float CastLength;
-    public float attackDistance;
-    public float timer; //cooldown of attacks
-    private bool attackModel;
+    public float moveSpeed; // enemy movement speed
+    public float CastLength; //Ray length
+    public float attackDistance; //attack minimum distance
+    public float timer; //cooldown of enemy attacks
+
+    private bool attackModel; //Enemy enters attack mode
     private float distance; //Stroe the distance between enemy and player
     private bool Range; //check if player in range
     private bool cooling;//check if Enemy is cooling after attack
@@ -36,8 +35,8 @@ public class EnemyController : MonoBehaviour
     {
         rigi=GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
         intTimer = timer;
+
         ObjectSelectorTargetInfo();
     }
 
@@ -51,11 +50,14 @@ public class EnemyController : MonoBehaviour
     }
     private void move()
     {
-            animator.SetInteger("AnimState", 2);
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
+            animator.SetBool("CanWalk", true);
+        //Get the current animation state, make sure there is no attack animation
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
             {
-                Vector2 targetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            //storage destination
+            Vector2 targetPosition = new Vector2(target.transform.position.x, target.transform.position.y);
+            //Enemy current position, target position, movement speed
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
             }
     }
 
@@ -78,43 +80,43 @@ public class EnemyController : MonoBehaviour
 
     private void RangeToAttack()
     {
-        //当攻击时候不可移动
-        if (!attackModel)
-        {
-            move();
-        }
-        ///当敌人超出边界斌且玩家不在范围里面并且敌人没有攻击
-        if (!InsideofLimits()&&!Range && !animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
-        {
-            ObjectSelectorTargetInfo();
-        }
         if (Range)
         {
-            //发出射线并存储
+            //emit rays and store
             hit = Physics2D.Raycast(Cast.position, transform.right, CastLength, CastMask);
             CastDebugger();
-        }
-        //when player detected
-        if(hit.collider != null)
-        {
-            EnemyLogic();
-        }
-        else if(hit.collider == null)
-        {
-            Range = false;
         }
         if (Range == false)
         {
             StopAttack();
         }
-    }
-    //玩家是否进入触发区
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        //when player detected
+        //Cannot move while attacking
+        if (!attackModel)
         {
-            //存储游戏对象到变量
-            target = collision.transform;
+            move();
+        }
+        ///When the enemy is out of bounds and the player is out of range and the enemy is not attacking
+        if (!InsideofLimits() && !Range && !animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
+        {
+            ObjectSelectorTargetInfo();
+        }
+        if (hit.collider != null)
+        {
+            EnemyLogic();
+        }
+        else if (hit.collider == null)
+        {
+            Range = false;
+        }
+    }
+    //Whether the player entered the trigger zone
+    private void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "Player")
+        {
+            //Storing game objects to variables
+            target = trigger.transform;
             Range = true;
             Flip();
         }
@@ -122,26 +124,35 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyLogic()
     {
+        //Store and calculate the distance between the enemy and the player
         distance = Vector2.Distance(transform.position, target.position);
+        //If distance is greater than the attack range
         if (distance > attackDistance)
         {
             StopAttack();
         }
-        else if(attackDistance >= distance && cooling == false){
+        //Attack distance greater or equal to the distance and the attack is not on cooldown
+        else if (attackDistance >= distance && cooling == false){
             Attack();
         }
+        //stop attack animation
         if (cooling)
         {
             Cooldown();
             animator.SetBool("Attack", false);
         }
     }
+
+    //Rays seen in the scene
     private void CastDebugger()
     {
+        //Check if the enemy player distance is greater than the attack distance
         if (distance > attackDistance)
         {
+            //Draw rays, ray lengths and variables
             Debug.DrawRay(Cast.position, transform.right * CastLength, Color.red);
         }
+        //Attack distance is greater than check enemy player distance
         else if (attackDistance > distance)
         {
             Debug.DrawRay(Cast.position, transform.right* CastLength, Color.green);
@@ -163,38 +174,38 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    //敌人是否在边界
+    //the enemy on the border
     private bool InsideofLimits()
     {
-        //检查敌人的位置是否大于左边界或者小于有边界
-        return transform.position.x > leftPoint.position.x&&transform.position.x< rigitPoint.position.x;
+        //Check if the enemy's position is greater than the left border or less
+        return transform.position.x > leftPoint.position.x&&transform.position.x< rightPoint.position.x;
     }
 
-    //让敌人移动到目标
+    //Make the enemy move to the target
     private void ObjectSelectorTargetInfo()
     {
-        //计算敌人到左边界与有边界的距离
+        //Calculate the distance from the enemy to the left border and borde
         float distanceToLeft = Vector2.Distance(transform.position, leftPoint.position);
-        float distanceToRight = Vector2.Distance(transform.position, rigitPoint.position);
+        float distanceToRight = Vector2.Distance(transform.position, rightPoint.position);
 
-        //如果左边界距离大于有边界距离，设置到左限制
-        if(distanceToLeft > distanceToRight)
+        //If the left border distance greater than the bounded distance, set to the left limit
+        if (distanceToLeft > distanceToRight)
         {
             target = leftPoint;
         }
-        else//右限制
+        else//right limit
         {
-            target = rigitPoint;
+            target = rightPoint;
         }
         Flip();
     }
 
-    //翻转敌人
+    //flip enemy
     private void Flip()
     {
-        //存储翻转角度
-        Vector3 rotation = transform.localEulerAngles;
-        //检测敌人位置是否大于目标位置
+        //store flip angle
+        Vector3 rotation = transform.eulerAngles;
+        //Check if the enemy position is larger than the target position
         if (transform.position.x > target.position.x)
         {
             rotation.y = 180f;
@@ -203,7 +214,7 @@ public class EnemyController : MonoBehaviour
         {
             rotation.y = 0f;
         }
-        //初始角度
+        //initial angle
         transform.eulerAngles = rotation;
     }
 }
