@@ -4,7 +4,9 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    private Animator animatior;
+    protected Animator animatior;
+    protected Rigidbody2D rigid;
+    protected new Collider2D collider;
     public abstract bool isAlive { get; protected set; }
 
     public abstract float health { get; protected set; }
@@ -31,6 +33,8 @@ public abstract class Character : MonoBehaviour
     void Awake()
     {
         animatior = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
     }
 
     public void TakenDamage(float damage)
@@ -45,14 +49,15 @@ public abstract class Character : MonoBehaviour
 
         if (health <= 0)
         {
-            
             health = 0;
             isAlive = false;
-        }
-        // Injured
-        else
-        {
-            // 
+
+            // Start death animation
+            animatior.SetTrigger("Death");
+
+            // Disable collider and rigid to lock dead body
+            collider.enabled = false;
+            rigid.simulated = false;
         }
     }
     public void GetStunned(float duration)
@@ -65,15 +70,9 @@ public abstract class Character : MonoBehaviour
     }
     public void Death()
     {
-        
-       
-
         // When a character is dead, it will be destroyed after 3 seconds.
         if (!isAlive) 
         {
-            // Start death animation
-            animatior.SetTrigger("Death");
-
             // Destory countdown
             destoryTimer -= Time.deltaTime; 
         }

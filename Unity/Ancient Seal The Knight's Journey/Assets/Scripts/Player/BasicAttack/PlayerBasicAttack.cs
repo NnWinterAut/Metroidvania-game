@@ -68,7 +68,7 @@ public class PlayerBasicAttack : MonoBehaviour
         var y1 = y0 + range.y;
         return (new Vector2(x0,y0),new Vector2(x1,y1));
     }
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         // Debug Basic Attack range
         {
