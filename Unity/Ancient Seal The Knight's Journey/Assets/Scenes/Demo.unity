@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 858069096}
   - component: {fileID: 858069097}
   - component: {fileID: 858069098}
+  - component: {fileID: 858069099}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -319,6 +320,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   runSpeedMul: 4
+  stamina: 100
+  staminaMax: 100
+  staminaMin: 20
+  staminaRegen: 10
+  staminaDec: 50
   jumpForces: 0.6
   jumpDuration: 0.2
   canJump: 1
@@ -340,6 +346,18 @@ MonoBehaviour:
   damage: 1
   pos: {x: 0.26, y: 0.17}
   range: {x: 1.24, y: 1.06}
+--- !u!114 &858069099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858069089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b52546479bed0343a2f7771dc42fa26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &890113056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1503,6 @@ GameObject:
   - component: {fileID: 2138636251}
   - component: {fileID: 2138636256}
   - component: {fileID: 2138636255}
-  - component: {fileID: 2138636254}
   - component: {fileID: 2138636257}
   m_Layer: 0
   m_Name: Enemy1
@@ -1582,31 +1599,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2138636254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138636250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60317c218d339744bbb9936ddb2ff32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 0}
-  leftPoint: {fileID: 0}
-  rigitPoint: {fileID: 0}
-  Cast: {fileID: 0}
-  CastMask:
-    serializedVersion: 2
-    m_Bits: 0
-  moveSpeed: 1
-  moveTime: 1
-  waitTime: 1
-  CastLength: 1
-  attackDistance: 1
-  timer: 1
 --- !u!61 &2138636255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1688,14 +1680,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2138636250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c8295cfb7ffbf49a1c05fcda47ffbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a63fa3149febb54180e4f2523511b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  health: 1
-  health_max: 5
-  magic: 0
-  magic_max: 0
-  isAlive: 1
-  armor_abs: 0
-  loots: []

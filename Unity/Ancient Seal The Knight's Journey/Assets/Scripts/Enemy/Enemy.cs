@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class Enemy : Character
 {
-    public abstract GameObject[] loots { get; protected set; }
+    public abstract List<GameObject> loots { get; protected set; }
+    public abstract float visibleDistanceSphere { get; protected set; }
 }
