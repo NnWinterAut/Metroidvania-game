@@ -138,12 +138,17 @@ public class LightBandit : Enemy
     }
     IEnumerator StartAttack()
     {
-        while(true)
+        while(true && isAlive)
         {
             yield return new WaitForSeconds(attackDelay);
-            AttackAnim();
+
+            if(isAlive)
+                AttackAnim();
             yield return new WaitForSeconds(attackDelay);
-            Attack();
+
+            if(isAlive)
+                Attack();
+
             break;
         }
     }

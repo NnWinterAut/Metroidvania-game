@@ -229,6 +229,11 @@ public class PlayerController : MonoBehaviour
                     isJumping = false;
                 }
             }
+            else
+            {
+                canJump = false;
+                isJumping = false;
+            }
         }
     }
     #endregion
