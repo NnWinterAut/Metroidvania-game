@@ -29,12 +29,11 @@ public class LightBandit : Enemy
     public override float stunTimer { get; protected set; } = 0f;
 
     public override List<GameObject> loots { get; protected set; } = new();
-    public override float detectionSphere { get; protected set; } = 0f;
-    public override Sector detectionSector { get; protected set; } = new Sector(0,0);
-    public override Rect detectionRectangle { get; protected set; } = new Rect(0,0,10,10);
-    public override float speed { get; protected set; } = 2f;
+    public override float detectionSphere { get; protected set; } = 2.5f;
+    public override Rect detectionRectangle { get; protected set; } = new Rect(4,0,8,5);
+    public override Vector2 speed { get; protected set; } = new Vector2(2f,0f);
 
-    public override bool isTrackingPlayer { get; protected set; } = false;
+    public override bool isAlerted { get; protected set; } = false;
 
     #endregion
 
@@ -47,6 +46,48 @@ public class LightBandit : Enemy
     // Update is called once per frame
     void Update()
     {
-        Detector();
+        var player = DetectPlayer();
+        if(player != null)
+        {
+            isAlerted = true;
+            FollowPlayer(player);
+        }
+        else
+        {
+            isAlerted = false;
+        }
+    }
+
+    Collider2D DetectPlayer()
+    {
+        var player = PlayerDetector_Rect();
+        if(player != null) { return player; }
+
+        if (isAlerted)
+        {
+            player = PlayerDetector_Sphere();
+        }
+        return player;
+    }
+
+    void FollowPlayer(Collider2D player)
+    {
+        var pCenter = player.bounds.center;
+        var center = rigid.worldCenterOfMass;
+
+        var dir = pCenter.x < center.x;
+        var move = dir ? new Vector2(-1, 0) : new Vector2(1, 0);
+
+        if (move.x < 0 && IsFacingRight() || move.x > 0 && !IsFacingRight())
+        {
+            var rotation = transform.eulerAngles;
+            rotation.y = (rotation.y + 180f) % 360;
+            transform.eulerAngles = rotation;
+        }
+
+        if (Mathf.Abs(pCenter.x - center.x)>(col.bounds.size.x + player.bounds.size.x))
+        {
+            Move(move);
+        }
     }
 }

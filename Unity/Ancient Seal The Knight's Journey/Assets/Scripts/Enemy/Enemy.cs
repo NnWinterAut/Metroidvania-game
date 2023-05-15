@@ -9,34 +9,32 @@ public abstract class Enemy : Character
 {
     public abstract List<GameObject> loots { get; protected set; }
     public abstract float detectionSphere { get; protected set; }
-    public abstract Sector detectionSector { get; protected set; }
     public abstract Rect detectionRectangle { get; protected set; }
 
-    public abstract bool isTrackingPlayer { get; protected set; }
+    public abstract bool isAlerted { get; protected set; }
 
-    protected void Detector()
+    #region ---- Movement ----
+
+    protected void Move(Vector2 direction)
     {
-        // Sphere detection
-        {
-            var s_player = Physics2D.OverlapCircleAll(Vector2.zero, detectionSphere).Where(x => x.CompareTag("Player"));
-            if (s_player.Count() > 0) { isTrackingPlayer = true; return; }
-        }
-
-        // Rectangle detection
-        {
-            var r_detect = GetDetectorRectangle();
-            var r_player = Physics2D.OverlapAreaAll(r_detect.Item1, r_detect.Item2).Where(x=>x.CompareTag("Player"));
-            if (r_player.Count() > 0) { isTrackingPlayer = true; Debug.Log("Player!"); return; }
-            
-        }
-        //    );
-
-        // Sector detection
-        // var se_player = Physics2D.over
-
-        // isTrackingPlayer = false;
+        rigid.velocity = speed * direction;
     }
 
+    #endregion
+
+    #region ---- Detector ----
+
+    protected Collider2D PlayerDetector_Sphere()
+    {
+        var s_player = Physics2D.OverlapCircleAll(rigid.worldCenterOfMass, detectionSphere).Where(x => x.CompareTag("Player"));
+        return s_player.FirstOrDefault();
+    }
+    protected Collider2D PlayerDetector_Rect()
+    {
+        var r_detect = GetDetectorRectangle();
+        var r_player = Physics2D.OverlapAreaAll(r_detect.Item1, r_detect.Item2).Where(x => x.CompareTag("Player"));
+        return r_player.FirstOrDefault();
+    }
     (Vector2,Vector2) GetDetectorRectangle()
     {
         if (rigid.IsUnityNull()) { rigid = gameObject.GetComponent<Rigidbody2D>(); }
@@ -53,7 +51,7 @@ public abstract class Enemy : Character
                 );
 
         var shift = new Vector2(
-            IsFacingRight() ? detectionRectangle.x : -detectionRectangle.x,
+            IsFacingRight() ? detectionRectangle.x : - detectionRectangle.x,
             detectionRectangle.y
             );
 
@@ -63,14 +61,22 @@ public abstract class Enemy : Character
         return (new Vector2(p1.x, p1.y), new Vector2(p2.x, p2.y));
     }
 
+    #endregion
+
     private void OnDrawGizmosSelected()
     {
+        // ---- Detector ----
+
         Gizmos.color = Color.yellow;
         var rec = GetDetectorRectangle();
         var center = new Vector2((rec.Item1.x + rec.Item2.x) / 2, (rec.Item1.y + rec.Item2.y) / 2);
         var size = new Vector2(Mathf.Abs(rec.Item2.x - rec.Item1.x), Mathf.Abs(rec.Item2.y - rec.Item1.y));
 
         Gizmos.DrawWireCube(center, size);
+
+        Gizmos.DrawWireSphere(rigid.worldCenterOfMass, detectionSphere);
+
+        // ----
     }
 }
 

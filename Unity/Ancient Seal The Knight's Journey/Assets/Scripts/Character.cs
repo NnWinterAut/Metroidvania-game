@@ -10,7 +10,7 @@ public abstract class Character : MonoBehaviour
 
     #region ---- Movement params ----
 
-    public abstract float speed { get; protected set; }
+    public abstract Vector2 speed { get; protected set; }
 
     #endregion
 
@@ -97,6 +97,6 @@ public abstract class Character : MonoBehaviour
 
     protected bool IsFacingRight()
     {
-        return transform.rotation.y >= 0;
+        return transform.eulerAngles.y < 90f && transform.eulerAngles.y > -90f;
     }
 }

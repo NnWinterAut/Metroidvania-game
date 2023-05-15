@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         move = new Vector2(Input.GetAxis("Horizontal"), 0);
 
         // Move the character
-        rigi.velocity = new Vector2(move.x * player.speed * (movement_state == 2 ? runSpeedMul : 1), rigi.velocity.y);
+        rigi.velocity = new Vector2(move.x * player.speed.x * (movement_state == 2 ? runSpeedMul : 1), rigi.velocity.y);
 
         // Adjust the direction of the character
         if (move.x > 0 && !facingRight || move.x < 0 && facingRight)
