@@ -24,6 +24,7 @@ public class Player : Character
     public override float cooldown { get; protected set; } = 0.0f;
 
     public override float stunTimer { get; protected set; } = 0.0f;
+    public override float speed { get; protected set; } = 2.0f;
 
     void Start()
     {

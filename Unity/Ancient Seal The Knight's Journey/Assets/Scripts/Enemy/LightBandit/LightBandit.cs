@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class LightBandit : Enemy
 {
+    #region ---- Params ----
+
     public override bool isAlive { get; protected set; } = true;
 
     public override float health { get; protected set; } = 5f;
@@ -26,7 +29,14 @@ public class LightBandit : Enemy
     public override float stunTimer { get; protected set; } = 0f;
 
     public override List<GameObject> loots { get; protected set; } = new();
-    public override float visibleDistanceSphere { get; protected set; } = 20f;
+    public override float detectionSphere { get; protected set; } = 0f;
+    public override Sector detectionSector { get; protected set; } = new Sector(0,0);
+    public override Rect detectionRectangle { get; protected set; } = new Rect(0,0,10,10);
+    public override float speed { get; protected set; } = 2f;
+
+    public override bool isTrackingPlayer { get; protected set; } = false;
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +47,6 @@ public class LightBandit : Enemy
     // Update is called once per frame
     void Update()
     {
-        
+        Detector();
     }
 }

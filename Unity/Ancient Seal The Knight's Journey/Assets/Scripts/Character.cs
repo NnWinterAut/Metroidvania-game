@@ -6,7 +6,16 @@ public abstract class Character : MonoBehaviour
 {
     protected Animator animatior;
     protected Rigidbody2D rigid;
-    protected new Collider2D collider;
+    protected Collider2D col;
+
+    #region ---- Movement params ----
+
+    public abstract float speed { get; protected set; }
+
+    #endregion
+
+    #region ---- Combat params ----
+
     public abstract bool isAlive { get; protected set; }
 
     public abstract float health { get; protected set; }
@@ -30,11 +39,13 @@ public abstract class Character : MonoBehaviour
 
     public float destoryTimer { get; protected set; } = 3f;
 
+    #endregion
+
     void Awake()
     {
         animatior = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-        collider = GetComponent<Collider2D>();
+        col = GetComponent<Collider2D>();
     }
 
     public void TakenDamage(float damage)
@@ -56,7 +67,7 @@ public abstract class Character : MonoBehaviour
             animatior.SetTrigger("Death");
 
             // Disable collider and rigid to lock dead body
-            collider.enabled = false;
+            col.enabled = false;
             rigid.simulated = false;
         }
     }
@@ -64,7 +75,7 @@ public abstract class Character : MonoBehaviour
     {
         stunTimer = duration;
     }
-    public void Stun()
+    protected void Stun()
     {
         if (stunTimer > 0) { stunTimer -= Time.deltaTime; }
     }
@@ -82,5 +93,10 @@ public abstract class Character : MonoBehaviour
     {
         Stun();
         Death();
+    }
+
+    protected bool IsFacingRight()
+    {
+        return transform.rotation.y >= 0;
     }
 }

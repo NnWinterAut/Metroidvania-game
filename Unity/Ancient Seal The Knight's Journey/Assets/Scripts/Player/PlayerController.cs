@@ -23,17 +23,18 @@ public class PlayerController : MonoBehaviour
     #region ---- Animator by Penelope & Winter ----
     private Rigidbody2D rigi;
     private Animator animator;
+    private Player player;
 
     // Start is called before the first frame update
     private void Awake()
     {
         rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        player = GetComponent<Player>();
     }
     #endregion
 
     #region ---- Movement by Penelope & Winter ----
-    public float moveSpeed = 2.0f;
     Vector2 move = new (0, 0);
     bool Onground;
     int movement_state = 0;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
         move = new Vector2(Input.GetAxis("Horizontal"), 0);
 
         // Move the character
-        rigi.velocity = new Vector2(move.x * moveSpeed * (movement_state == 2 ? runSpeedMul : 1), rigi.velocity.y);
+        rigi.velocity = new Vector2(move.x * player.speed * (movement_state == 2 ? runSpeedMul : 1), rigi.velocity.y);
 
         // Adjust the direction of the character
         if (move.x > 0 && !facingRight || move.x < 0 && facingRight)
