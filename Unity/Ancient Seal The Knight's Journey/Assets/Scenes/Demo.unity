@@ -340,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6132d528a697f1d48939003e99c046a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 858069099}
   cooldown: 0.5
-  canAttack: 1
   damage: 1
   pos: {x: 0.26, y: 0.17}
   range: {x: 1.24, y: 1.06}
@@ -1578,14 +1578,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138636250}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.54, y: -0.11, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 8.66, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!61 &2138636255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1670,3 +1670,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a63fa3149febb54180e4f2523511b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: {x: 1, y: 0.3}

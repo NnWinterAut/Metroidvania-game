@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
 
 public class LightBandit : Enemy
@@ -44,7 +43,8 @@ public class LightBandit : Enemy
 
     #region ---- Local Params ----
 
-    public Vector2 attackRange = new(0.6f, 0.3f);
+    public Vector2 attackRange = new(1f, 0.3f);
+    public float attackDamage = 5f;
 
     #endregion
 
@@ -57,8 +57,11 @@ public class LightBandit : Enemy
 
     void Update()
     {
-        var player = TrackPlayer();
-        if (player != null) { AttackPlayer(player); }
+        if (isAlive)
+        {
+            var player = TrackPlayer();
+            if (player != null) { AttackPlayer(player); }
+        }
     }
 
     #region ---- Track Player ----
@@ -117,13 +120,19 @@ public class LightBandit : Enemy
     {
         if (isAlerted)
         {
-            var playerLoc = player.bounds.center;
-            var yLen = Mathf.Abs(playerLoc.y - col.bounds.center.y);
-            var xLen = Mathf.Abs(playerLoc.x - col.bounds.center.x);
-            if (yLen < attackRange.y && xLen < attackRange.x && cooldown <= 0)
+            if (cooldown <= 0)
             {
-                cooldown += 1.2f;
-                StartCoroutine(StartAttack());
+                var range = RangeToPhysicsPoints(attackRange);
+                var playerHitbox = 
+                    Physics2D.OverlapAreaAll(range.Item1, range.Item2)
+                    .Where(x=>x.CompareTag("Player"))
+                    .FirstOrDefault();
+
+                if (playerHitbox != null)
+                {
+                    cooldown += 1.2f;
+                    StartCoroutine(StartAttack());
+                }
             }
         }
     }
@@ -132,16 +141,38 @@ public class LightBandit : Enemy
         while(true)
         {
             yield return new WaitForSeconds(attackDelay);
-            Attack();
+            AttackAnim();
             yield return new WaitForSeconds(attackDelay);
+            Attack();
             break;
         }
-        
-        
     }
-    void Attack()
+    void AttackAnim()
     {
         animator.SetTrigger("Attack");
     }
+    void Attack()
+    {
+        var range = RangeToPhysicsPoints(attackRange);
+        var playerHitbox =
+            Physics2D.OverlapAreaAll(range.Item1, range.Item2)
+            .Where(x => x.CompareTag("Player"))
+            .FirstOrDefault();
+        if(playerHitbox != null)
+        {
+            playerHitbox.SendMessage("TakenDamage", attackDamage);
+        }
+    }
     #endregion
+
+    private void OnDrawGizmosSelected()
+    {
+        // Debug Basic Attack range
+        {
+            Gizmos.color = Color.yellow;
+            var pp = RangeToPhysicsPoints(attackRange);
+            var cr = PhysicsPointsToCenterRect(pp);
+            Gizmos.DrawWireCube(cr.Item1, cr.Item2);
+        }
+    }
 }

@@ -1,6 +1,8 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public abstract class Character : MonoBehaviour
 {
@@ -39,6 +41,13 @@ public abstract class Character : MonoBehaviour
     public float destoryTimer { get; protected set; } = 3f;
 
     #endregion
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+    }
 
     void FixedUpdate()
     {
@@ -105,8 +114,40 @@ public abstract class Character : MonoBehaviour
             if(cooldown < 0) { cooldown = 0; }
         }
     }
-    private void SendAttackTo(Vector2 pos, Vector2 size)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="range"></param>
+    /// <returns>(TopFar, BotClose)</returns>
+    protected (Vector2,Vector2) RangeToPhysicsPoints(Vector2 range)
     {
+        if (rigid == null) { rigid = GetComponent<Rigidbody2D>(); }
+        var center = rigid.worldCenterOfMass;
+        var isRight = IsFacingRight();
+        var halfModel = GetComponent<Collider2D>().bounds.size.x / 2;
 
+        var edge = isRight ? halfModel : -halfModel;
+        var rangex = isRight ? range.x : -range.x;
+
+        var p1 = new Vector2(center.x + edge + rangex, center.y + range.y / 2);
+
+        var p2 = new Vector2(center.x + edge, center.y - range.y / 2);
+
+        return (p1, p2);
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="points"></param>
+    /// <returns>(Center, Size)</returns>
+    protected (Vector2,Vector2) PhysicsPointsToCenterRect((Vector2, Vector2) points)
+    {
+        return (
+            new Vector2(
+            (points.Item1.x + points.Item2.x) / 2,
+            (points.Item1.y + points.Item2.y) / 2)
+            ,
+            (points.Item2 - points.Item1).Abs()
+            );
     }
 }

@@ -28,8 +28,10 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
         // Lock the camera to the player.
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
-
+        if (player != null)
+        {
+            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        }
         // Camera follow player with speed and offset
         // transform.position = Vector3.Lerp(transform.position, new Vector3(player.position.x + offset.x, player.position.y + offset.y, transform.position.z), speed * Time.deltaTime);
     }
