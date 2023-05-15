@@ -66,6 +66,15 @@ public abstract class Character : MonoBehaviour
 
         animator.SetTrigger("Hurt");
 
+        // Need to replace this to somewhere else
+        {
+            var enemy = GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.SendMessage("Alert");
+            }
+        }
+
         if (health <= 0)
         {
             health = 0;

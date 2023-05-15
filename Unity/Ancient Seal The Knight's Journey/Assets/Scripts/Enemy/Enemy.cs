@@ -79,6 +79,11 @@ public abstract class Enemy : Character
 
         // ----
     }
+
+    public void Alert()
+    {
+        isAlerted = true;
+    }
 }
 
 public struct Sector
