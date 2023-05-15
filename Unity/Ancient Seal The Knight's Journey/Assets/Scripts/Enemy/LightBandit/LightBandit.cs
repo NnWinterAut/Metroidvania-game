@@ -31,9 +31,15 @@ public class LightBandit : Enemy
     public override List<GameObject> loots { get; protected set; } = new();
     public override float detectionSphere { get; protected set; } = 2.5f;
     public override Rect detectionRectangle { get; protected set; } = new Rect(4,0,8,5);
-    public override Vector2 speed { get; protected set; } = new Vector2(2f,0f);
+    public override Vector2 speed { get; protected set; } = new Vector2(1.5f,0f);
 
     public override bool isAlerted { get; protected set; } = false;
+
+    #endregion
+
+    #region ---- Local Params ----
+
+    public Vector2 attackRange = new (0.6f, 0.3f);
 
     #endregion
 
@@ -46,18 +52,10 @@ public class LightBandit : Enemy
     // Update is called once per frame
     void Update()
     {
-        var player = DetectPlayer();
-        if(player != null)
-        {
-            isAlerted = true;
-            FollowPlayer(player);
-        }
-        else
-        {
-            isAlerted = false;
-        }
+        var player = TrackPlayer();
     }
 
+    #region ---- Track Player ----
     Collider2D DetectPlayer()
     {
         var player = PlayerDetector_Rect();
@@ -66,6 +64,20 @@ public class LightBandit : Enemy
         if (isAlerted)
         {
             player = PlayerDetector_Sphere();
+        }
+        return player;
+    }
+    Collider2D TrackPlayer()
+    {
+        var player = DetectPlayer();
+        if (player != null)
+        {
+            isAlerted = true;
+            FollowPlayer(player);
+        }
+        else
+        {
+            isAlerted = false;
         }
         return player;
     }
@@ -90,4 +102,44 @@ public class LightBandit : Enemy
             Move(move);
         }
     }
+
+    #endregion
+
+    #region ---- Attack ----
+
+    void AttackPlayer(Collider2D player)
+    {
+        if (isAlerted)
+        {
+            var playerLoc = player.bounds.center;
+            var yLen = playerLoc.y - col.bounds.center.y;
+            var xLen = playerLoc.x - col.bounds.center.x;
+            if (yLen < attackRange.y && xLen < attackRange.x)
+            {
+                StartCoroutine(StartAttack());
+            }
+        }
+    }
+    IEnumerator StartAttack()
+    {
+        while (true)
+        {
+            if (!isAttacking)
+            {
+                // 进入等待状态
+                yield return new WaitForSeconds(attackDelay);
+
+                // 开始攻击
+                isAttacking = true;
+                Attack();
+
+                // 攻击完成后退出等待状态
+                isAttacking = false;
+            }
+
+            yield return null;
+        }
+    }
+
+    #endregion
 }
