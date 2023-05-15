@@ -12,6 +12,7 @@ public abstract class Enemy : Character
     public abstract Rect detectionRectangle { get; protected set; }
 
     public abstract bool isAlerted { get; protected set; }
+    public abstract float attackDelay { get; protected set; }
 
     #region ---- Movement ----
 

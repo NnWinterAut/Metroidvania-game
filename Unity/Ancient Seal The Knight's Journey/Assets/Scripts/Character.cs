@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    protected Animator animatior;
-    protected Rigidbody2D rigid;
-    protected Collider2D col;
+    public abstract Animator animator { get; protected set; }
+    public abstract Rigidbody2D rigid { get; protected set; }
+    public abstract Collider2D col { get; protected set; }
 
     #region ---- Movement params ----
 
@@ -32,7 +32,6 @@ public abstract class Character : MonoBehaviour
     public abstract float invincibleTime { get; protected set; }
     public abstract float injuredTimer { get; protected set; }
 
-    public abstract float cooldownBasic { get; protected set; }
     public abstract float cooldown { get; protected set; }
 
     public abstract float stunTimer { get; protected set; }
@@ -41,11 +40,11 @@ public abstract class Character : MonoBehaviour
 
     #endregion
 
-    void Awake()
+    void FixedUpdate()
     {
-        animatior = GetComponent<Animator>();
-        rigid = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
+        Stun();
+        Death();
+        Cooldown();
     }
 
     public void TakenDamage(float damage)
@@ -56,7 +55,7 @@ public abstract class Character : MonoBehaviour
         takenDamage = takenDamage <= 0 ? 1 : takenDamage;
         health -= takenDamage;
 
-        animatior.SetTrigger("Hurt");
+        animator.SetTrigger("Hurt");
 
         if (health <= 0)
         {
@@ -64,14 +63,14 @@ public abstract class Character : MonoBehaviour
             isAlive = false;
 
             // Start death animation
-            animatior.SetTrigger("Death");
+            animator.SetTrigger("Death");
 
             // Disable collider and rigid to lock dead body
             col.enabled = false;
             rigid.simulated = false;
         }
     }
-    public void GetStunned(float duration)
+    public void SetStunned(float duration)
     {
         stunTimer = duration;
     }
@@ -89,14 +88,25 @@ public abstract class Character : MonoBehaviour
         }
         if (destoryTimer <= 0) { Destroy(gameObject); }
     }
-    void FixedUpdate()
-    {
-        Stun();
-        Death();
-    }
 
-    protected bool IsFacingRight()
+    public bool IsFacingRight()
     {
         return transform.eulerAngles.y < 90f && transform.eulerAngles.y > -90f;
+    }
+
+    public void AddCooldown(float cooldown)
+    {
+        this.cooldown += cooldown;
+    }
+    private void Cooldown()
+    {
+        if (cooldown >= 0) { 
+            cooldown -= Time.deltaTime;
+            if(cooldown < 0) { cooldown = 0; }
+        }
+    }
+    private void SendAttackTo(Vector2 pos, Vector2 size)
+    {
+
     }
 }

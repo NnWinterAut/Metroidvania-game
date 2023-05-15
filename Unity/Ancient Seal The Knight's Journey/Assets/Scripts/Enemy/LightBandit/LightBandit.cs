@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LightBandit : Enemy
 {
     #region ---- Params ----
+
+    public override Animator animator { get; protected set; }
+    public override Rigidbody2D rigid { get; protected set; }
+    public override Collider2D col { get; protected set; }
 
     public override bool isAlive { get; protected set; } = true;
 
@@ -23,43 +28,44 @@ public class LightBandit : Enemy
     public override float invincibleTime { get; protected set; } = 0.5f;
     public override float injuredTimer { get; protected set; } = 0f;
 
-    public override float cooldownBasic { get; protected set; } = 1.5f;
     public override float cooldown { get; protected set; } = 0f;
 
     public override float stunTimer { get; protected set; } = 0f;
 
     public override List<GameObject> loots { get; protected set; } = new();
     public override float detectionSphere { get; protected set; } = 2.5f;
-    public override Rect detectionRectangle { get; protected set; } = new Rect(4,0,8,5);
-    public override Vector2 speed { get; protected set; } = new Vector2(1.5f,0f);
+    public override Rect detectionRectangle { get; protected set; } = new Rect(4, 0, 8, 5);
+    public override Vector2 speed { get; protected set; } = new Vector2(1.5f, 0f);
 
     public override bool isAlerted { get; protected set; } = false;
+    public override float attackDelay { get; protected set; } = 0.4f;
 
     #endregion
 
     #region ---- Local Params ----
 
-    public Vector2 attackRange = new (0.6f, 0.3f);
+    public Vector2 attackRange = new(0.6f, 0.3f);
 
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        animator = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         var player = TrackPlayer();
+        if (player != null) { AttackPlayer(player); }
     }
 
     #region ---- Track Player ----
     Collider2D DetectPlayer()
     {
         var player = PlayerDetector_Rect();
-        if(player != null) { return player; }
+        if (player != null) { return player; }
 
         if (isAlerted)
         {
@@ -97,7 +103,7 @@ public class LightBandit : Enemy
             transform.eulerAngles = rotation;
         }
 
-        if (Mathf.Abs(pCenter.x - center.x)>(col.bounds.size.x + player.bounds.size.x))
+        if (Mathf.Abs(pCenter.x - center.x) > (col.bounds.size.x + player.bounds.size.x))
         {
             Move(move);
         }
@@ -112,34 +118,30 @@ public class LightBandit : Enemy
         if (isAlerted)
         {
             var playerLoc = player.bounds.center;
-            var yLen = playerLoc.y - col.bounds.center.y;
-            var xLen = playerLoc.x - col.bounds.center.x;
-            if (yLen < attackRange.y && xLen < attackRange.x)
+            var yLen = Mathf.Abs(playerLoc.y - col.bounds.center.y);
+            var xLen = Mathf.Abs(playerLoc.x - col.bounds.center.x);
+            if (yLen < attackRange.y && xLen < attackRange.x && cooldown <= 0)
             {
+                cooldown += 1.2f;
                 StartCoroutine(StartAttack());
             }
         }
     }
     IEnumerator StartAttack()
     {
-        while (true)
+        while(true)
         {
-            if (!isAttacking)
-            {
-                // 进入等待状态
-                yield return new WaitForSeconds(attackDelay);
-
-                // 开始攻击
-                isAttacking = true;
-                Attack();
-
-                // 攻击完成后退出等待状态
-                isAttacking = false;
-            }
-
-            yield return null;
+            yield return new WaitForSeconds(attackDelay);
+            Attack();
+            yield return new WaitForSeconds(attackDelay);
+            break;
         }
+        
+        
     }
-
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
+    }
     #endregion
 }

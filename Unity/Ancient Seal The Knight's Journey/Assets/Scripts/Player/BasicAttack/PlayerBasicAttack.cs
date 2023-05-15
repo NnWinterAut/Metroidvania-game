@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerBasicAttack : MonoBehaviour
 {
     private Animator animator;
-    void Start()
+    public Player player;
+
+    void Awake()
     {
         animator = GetComponent<Animator>();
+        player = GetComponent<Player>();
     }
     public float cooldown = 0.5f;
-    public bool canAttack = true;
-    private float timer = 0.0f;
     void Update()
     {
         BasicAttack();
@@ -21,22 +22,11 @@ public class PlayerBasicAttack : MonoBehaviour
     /// </summary>
     void BasicAttack()
     {
-        if (Input.GetButtonDown("BasicAttack") && canAttack)
+        if (Input.GetButtonDown("BasicAttack") && player.cooldown <= 0)
         {
+            player.SendMessage("AddCooldown", cooldown);
             animator.SetTrigger("BasicAttack");
-            canAttack = false;
             DoBasicAttack();
-        }
-        else if (!canAttack)
-        {
-            timer += Time.deltaTime;
-            // Check if cooldown ends
-            if (timer >= cooldown) 
-            {
-                // Allow player to attack and reset timer
-                canAttack = true; 
-                timer = 0.0f; 
-            }
         }
     }
     public float damage = 1.0f;
@@ -62,7 +52,7 @@ public class PlayerBasicAttack : MonoBehaviour
     {
         var p_pos = transform.position;
 
-        var x0 = p_pos.x + (transform.rotation.y >= 0 ? pos.x : -(pos.x + GetComponent<Collider2D>().bounds.size.x*2.5f));
+        var x0 = p_pos.x + (player.IsFacingRight() ? pos.x : -(pos.x + GetComponent<Collider2D>().bounds.size.x*2.5f));
         var y0 = p_pos.y + pos.y;
         var x1 = x0 + range.x;
         var y1 = y0 + range.y;
