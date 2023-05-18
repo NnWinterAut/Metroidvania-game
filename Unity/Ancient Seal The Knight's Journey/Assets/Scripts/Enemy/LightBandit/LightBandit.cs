@@ -34,7 +34,7 @@ public class LightBandit : Enemy
     public override List<GameObject> loots { get; protected set; } = new();
     public override float detectionSphere { get; protected set; } = 2.5f;
     public override Rect detectionRectangle { get; protected set; } = new Rect(4, 0, 8, 5);
-    public override Vector2 speed { get; protected set; } = new Vector2(1.5f, 0f);
+    public override Vector2 speed { get; protected set; } = new Vector2(20.5f, 0f);
 
     public override bool isAlerted { get; protected set; } = false;
     public override float attackDelay { get; protected set; } = 0.4f;
@@ -46,6 +46,7 @@ public class LightBandit : Enemy
     public GameObject dropCoin;
     public Vector2 attackRange = new(1f, 0.3f);
     public float attackDamage = 5f;
+    int scorepoint = 100;
 
     #endregion
 
@@ -67,6 +68,7 @@ public class LightBandit : Enemy
         {
             Instantiate(dropCoin,transform.position,Quaternion.identity);
             isAlive = false;
+            ScoreManager.Instance.AddScore(scorepoint);
         }
     }
 
