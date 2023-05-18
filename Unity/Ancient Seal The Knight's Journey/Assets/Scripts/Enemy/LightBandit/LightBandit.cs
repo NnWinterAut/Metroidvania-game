@@ -43,6 +43,7 @@ public class LightBandit : Enemy
 
     #region ---- Local Params ----
 
+    public GameObject dropCoin;
     public Vector2 attackRange = new(1f, 0.3f);
     public float attackDamage = 5f;
 
@@ -61,6 +62,11 @@ public class LightBandit : Enemy
         {
             var player = TrackPlayer();
             if (player != null) { AttackPlayer(player); }
+        }
+        if (health <= 0)
+        {
+            Instantiate(dropCoin,transform.position,Quaternion.identity);
+            isAlive = false;
         }
     }
 

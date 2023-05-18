@@ -14,6 +14,7 @@ public abstract class Enemy : Character
     public abstract bool isAlerted { get; protected set; }
     public abstract float attackDelay { get; protected set; }
 
+
     #region ---- Movement ----
 
     protected void Move(Vector2 direction)

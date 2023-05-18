@@ -21,6 +21,11 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Player")&&collision.GetType().ToString()=="UnityEngine.BoxCollider2D")
+        {
+            CoinUI.CurrentCoinNumber += 1;
+            Destroy(gameObject);
+        }
         //PlayerManager manager = collision.GetComponent<PlayerManager>();
         //if (manager)
         //{
