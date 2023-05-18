@@ -16420,6 +16420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd9932c9e06ae346b7c26d102453a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreTextScale: {x: 1, y: 1, z: 1}
 --- !u!4 &1407233944
 Transform:
   m_ObjectHideFlags: 0
@@ -16428,7 +16429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407233942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 196.07152, y: -4.2233496, z: -0.6937131}
+  m_LocalPosition: {x: 207.9, y: 37.6, z: -0.6937131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16678,7 +16679,7 @@ GameObject:
   - component: {fileID: 1955619794}
   - component: {fileID: 1955619795}
   m_Layer: 8
-  m_Name: USD_6x4_0
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17252,6 +17253,7 @@ GameObject:
   - component: {fileID: 2138636256}
   - component: {fileID: 2138636255}
   - component: {fileID: 2138636257}
+  - component: {fileID: 2138636258}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -17434,3 +17436,20 @@ MonoBehaviour:
   dropCoin: {fileID: 1955619788}
   attackRange: {x: 1, y: 0.3}
   attackDamage: 5
+--- !u!114 &2138636258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138636250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe191431963c9048878ccd44c2f61ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropItemPreFab: {fileID: 2841451092747920283, guid: 16b56b9771fa47c48ae0645ad400827f, type: 3}
+  LootList:
+  - {fileID: 11400000, guid: df8188c2f7dde7b48837a7f1ee93759a, type: 2}
+  - {fileID: 11400000, guid: 77dd9ec59024b964b8f3c1d6cec8bb9c, type: 2}
+  - {fileID: 11400000, guid: 4e79ae57355c4a5478b33a92c33a59ee, type: 2}

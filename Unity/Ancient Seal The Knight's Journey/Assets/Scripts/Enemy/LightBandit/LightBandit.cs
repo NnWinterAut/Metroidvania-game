@@ -66,7 +66,7 @@ public class LightBandit : Enemy
         }
         if (health <= 0)
         {
-            Instantiate(dropCoin,transform.position,Quaternion.identity);
+            GetComponent<LootBag>().InstantiateLoot(transform.position);
             isAlive = false;
             ScoreManager.Instance.AddScore(scorepoint);
         }
