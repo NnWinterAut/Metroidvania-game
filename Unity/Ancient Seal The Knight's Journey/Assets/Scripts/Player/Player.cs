@@ -29,6 +29,7 @@ public class Player : Character
     public override float stunTimer { get; protected set; } = 0.0f;
     public override Vector2 speed { get; protected set; } = new Vector2(2.0f,0f);
 
+
     void Start()
     {
 

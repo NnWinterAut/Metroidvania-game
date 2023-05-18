@@ -7,6 +7,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Update is called once per frame
+    //[SerializeField] VoidEventChannel levelClearedEventChannel;
+
+    //public bool Victory { get; private set; }
     void Update()
     {
         Movement();
@@ -33,6 +36,23 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Player>();
     }
     #endregion
+
+    //#region ---- EventChannel by Penelope ----
+    //void OnEnable()
+    //{
+    //    levelClearedEventChannel.AddListener(action: OnLevelCleared);
+    //}
+
+    //void OnDisable()
+    //{
+    //    levelClearedEventChannel.RemoveListener(action: OnLevelCleared);
+    //}
+
+    //void OnLevelCleared()
+    //{
+    //    Victory = true;
+    //}
+    //#endregion
 
     #region ---- Movement by Penelope & Winter ----
     Vector2 move = new (0, 0);
