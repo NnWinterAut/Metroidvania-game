@@ -1,40 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem; //è°ƒç”¨InputSystemç›¸å…³å†…å®¹
+using UnityEngine.InputSystem; //µ÷ÓÃInputSystemÏà¹ØÄÚÈİ
 
-public class PlayerController : MonoBehaviour //MonoBehaviour ç±»æ˜¯ä¸€ä¸ªåŸºç±»ï¼Œæ‰€æœ‰Unity è„šæœ¬éƒ½é»˜è®¤æ´¾ç”Ÿè‡ªè¯¥ç±»ã€‚ å½“æ‚¨ä»Unity çš„é¡¹ç›®çª—å£åˆ›å»ºä¸€ä¸ªC# è„šæœ¬æ—¶ï¼Œå®ƒä¼šè‡ªåŠ¨ç»§æ‰¿MonoBehaviourï¼Œå¹¶ä¸ºæ‚¨æä¾›æ¨¡æ¿è„šæœ¬ã€‚
+public class PlayerController : MonoBehaviour //MonoBehaviour ÀàÊÇÒ»¸ö»ùÀà£¬ËùÓĞUnity ½Å±¾¶¼Ä¬ÈÏÅÉÉú×Ô¸ÃÀà¡£ µ±Äú´ÓUnity µÄÏîÄ¿´°¿Ú´´½¨Ò»¸öC# ½Å±¾Ê±£¬Ëü»á×Ô¶¯¼Ì³ĞMonoBehaviour£¬²¢ÎªÄúÌá¹©Ä£°å½Å±¾¡£
 {
-    public PlayerInputControl inputControl; // ./settings/PlayerInputControl, 
-    public Vector2 inputDirection;  //./settings/PlayerInputControlä¸­Playerçš„Actionå€¼ x, y  vector 2D
+    public PlayerInputControl inputControl; // µ÷ÓÃ./settings/PlayerInputControl, 
+    public Vector2 inputDirection;  // µ÷ÓÃ./settings/PlayerInputControlÖĞPlayerµÄActionÖµ x, y  vector 2D
     
-    private PhysicsCheck physicsCheck; //è°ƒç”¨PhysicsCheck
+    private PhysicsCheck physicsCheck; //µ÷ÓÃPhysicsCheck
     private Rigidbody2D rb;
-    private CapsuleCollider2D coll; //è°ƒç”¨CapsuleCollider2D
+    private CapsuleCollider2D coll; //µ÷ÓÃCapsuleCollider2D
+    private PlayerAnimation playerAnimation;
 
-    [Header("äººç‰©åŸºæœ¬å‚æ•°: ")]
+    [Header("ÈËÎï»ù±¾²ÎÊı: ")]
     public float jumpForce;
     public float speed;
     private float runSpeed => speed * 2f;
     private float walkSpeed;
     public bool isCrouch;
-    private Vector2 originalOffset;
+    private Vector2 originalOffset; //Ô­Ê¼½ºÄÒ´óĞ¡
     private Vector2 originalSize;
+    public float hurtForce;
+
+    [Header("ÈËÎï×´Ì¬: ")]
+    public bool isHurt;
+    public bool isDead;
+    public bool isAttack;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
        
-        inputControl = new PlayerInputControl(); //è°ƒç”¨Unityçš„input system
-        inputControl.Player.Jump.started += Jump; //Jumpæ˜¯ç¬é—´æ‰§è¡Œçš„åŠ¨ä½œ, å•æ¬¡æ‰§è¡Œå‡½æ•°æ—¶ä½¿ç”¨started, ä½¿ç”¨+=æ·»åŠ äº‹ä»¶å‡½æ•°Jump
+        inputControl = new PlayerInputControl(); //µ÷ÓÃUnityµÄinput system
+        inputControl.Player.Jump.started += Jump; //JumpÊÇË²¼äÖ´ĞĞµÄ¶¯×÷, µ¥´ÎÖ´ĞĞº¯ÊıÊ±Ê¹ÓÃstarted, Ê¹ÓÃ+=Ìí¼ÓÊÂ¼şº¯ÊıJump
         
-        physicsCheck = GetComponent<PhysicsCheck>(); //è·å–æ‰€æœ‰PhysicsCheckçš„publicå˜é‡
+        physicsCheck = GetComponent<PhysicsCheck>(); //»ñÈ¡ËùÓĞPhysicsCheckµÄpublic±äÁ¿
         coll = GetComponent<CapsuleCollider2D>();
+        playerAnimation = GetComponent<PlayerAnimation>();
 
         originalOffset = coll.offset;
         originalSize = coll.size;
         
-        #region èµ°è·¯å’Œè·‘æ­¥åˆ‡æ¢
+        #region ×ßÂ·ºÍÅÜ²½ÇĞ»»
         walkSpeed = speed;
 
         inputControl.Player.RunButton.performed += ctx =>
@@ -46,6 +54,10 @@ public class PlayerController : MonoBehaviour //MonoBehaviour ç±»æ˜¯ä¸€ä¸ªåŸºç±»
         {
             if (physicsCheck.isGround) {speed = walkSpeed;};
         };
+        #endregion
+
+        #region ¹¥»÷
+        inputControl.Player.Attack.started += PlayerAttack;
         #endregion
     }
 
@@ -61,29 +73,30 @@ public class PlayerController : MonoBehaviour //MonoBehaviour ç±»æ˜¯ä¸€ä¸ªåŸºç±»
     
     }
 
-    private void Update() //Update()å‡½æ•°å°±æ˜¯è¯´ï¼Œåœ¨æ¯åˆ·æ–°ä¸€å¸§çš„æ—¶å€™ï¼Œè¯¥åšäº›ä»€ä¹ˆ --- å‘¨æœŸå‡½æ•° Update runs once per frame.
+    private void Update() //Update()º¯Êı¾ÍÊÇËµ£¬ÔÚÃ¿Ë¢ĞÂÒ»Ö¡µÄÊ±ºò£¬¸Ã×öĞ©Ê²Ã´ --- ÖÜÆÚº¯Êı Update runs once per frame.
     {
-        inputDirection = inputControl.Player.Move.ReadValue<Vector2>(); //è¯»å–é”®ç›˜è¾“å…¥
+        inputDirection = inputControl.Player.Move.ReadValue<Vector2>(); //¶ÁÈ¡¼üÅÌÊäÈë
     
     }
 
-    private void FixedUpdate() //å‘¨æœŸå‡½æ•°, FixedUpdate can run once, zero, or several times per frame, 
+    private void FixedUpdate() //ÖÜÆÚº¯Êı, FixedUpdate can run once, zero, or several times per frame, 
     {
-        Move();
-    
+        if (!isHurt && !isAttack) { 
+            Move();
+        }
     }
 
     private void Move()
     {
-        //äººç‰©ç§»åŠ¨
+        //ÈËÎïÒÆ¶¯
         if (isCrouch == false) {
-            rb.velocity = new Vector2(inputDirection.x * speed * Time.deltaTime, rb.velocity.y); //äººç‰©é€Ÿåº¦, vectorçš„x, yå‘é‡
+            rb.velocity = new Vector2(inputDirection.x * speed * Time.deltaTime, rb.velocity.y); //ÈËÎïËÙ¶È, vectorµÄx, yÏòÁ¿
         }
 
-        int faceDir = (int)transform.localScale.x; //è°ƒç”¨transformç»„ä»¶ xçš„å€¼, é”šç‚¹ä½ç½®å†³å®šlocalScaleçš„ç¿»è½¬, åŸåœ°
+        int faceDir = (int)transform.localScale.x; //µ÷ÓÃtransform×é¼ş xµÄÖµ, ÃªµãÎ»ÖÃ¾ö¶¨localScaleµÄ·­×ª, Ô­µØ
 
         if (inputDirection.x > 0) {
-            faceDir = 1; //å†³å®šäºå¼•ç‰©å°ºå¯¸, 1è¿˜æ˜¯2
+            faceDir = 1; //¾ö¶¨ÓÚÒıÎï³ß´ç, 1»¹ÊÇ2
         
         }
 
@@ -92,32 +105,55 @@ public class PlayerController : MonoBehaviour //MonoBehaviour ç±»æ˜¯ä¸€ä¸ªåŸºç±»
         
         }
 
-        //äººç‰©ç¿»è½¬ Scale = 1äººç‰©é¢éƒ¨æœå‘å³, Scale = -1äººç‰©é¢éƒ¨æœå‘å·¦
-        transform.localScale = new Vector3(faceDir, 1, 1); //è°ƒç”¨transform Scaleç»„ä»¶
+        //ÈËÎï·­×ª Scale = 1ÈËÎïÃæ²¿³¯ÏòÓÒ, Scale = -1ÈËÎïÃæ²¿³¯Ïò×ó
+        transform.localScale = new Vector3(faceDir, 1, 1); //µ÷ÓÃtransform Scale×é¼ş
 
-        //äººç‰©ä¸‹è¹²
+        //ÈËÎïÏÂ¶×
         isCrouch = inputDirection.y < -0.5f && physicsCheck.isGround;
 
         if (isCrouch)
         {
-            //ä¿®æ”¹ç¢°æ’ä½“å¤§å°
-            coll.offset = new Vector2(-0.09956f, 0.62427f);
-            coll.size = new Vector2(1.049f, 1.2485f);
-
+            //ĞŞ¸ÄÅö×²Ìå´óĞ¡
+            coll.offset = new Vector2(-0.07081f, 0.6055f);
+            coll.size = new Vector2(0.850f, 1.21109f);
 
         }
         else {
-            //è¿˜åŸç¢°æ’ä½“
+            //»¹Ô­Åö×²Ìå
             coll.size = originalSize;
             coll.offset = originalOffset;
-        
         }
     }
 
-    private void Jump(InputAction.CallbackContext obj) //callbackContextä¼ è¾“ç”¨æˆ·è¾“å…¥äº‹ä»¶
+    private void Jump(InputAction.CallbackContext obj) //callbackContext´«ÊäÓÃ»§ÊäÈëÊÂ¼ş
     {
         if (physicsCheck.isGround) { 
-           rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //ä»£ç æ‰‹å†Œ, è„šæœ¬APIrigidbody2d, Rigidbody2D AddForce()
+           rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //´úÂëÊÖ²á, ½Å±¾APIrigidbody2d, Rigidbody2D AddForce()
         }
+    }
+
+    private void PlayerAttack(InputAction.CallbackContext obj)
+    {
+        if (physicsCheck.isGround) //ÈËÎï¿ÕÖĞÎŞ·¨¹¥»÷
+        {
+            playerAnimation.PlayAttack();
+            isAttack = true;
+        }
+    }
+
+    public void GetHurt(Transform attacker) 
+    {
+        isHurt = true;
+        rb.velocity = Vector2.zero;
+        Vector2 dir = new Vector2((transform.position.x - attacker.position.x), 0).normalized;
+        rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
+    
+    }
+
+    public void PlayerDead() 
+    {
+        isDead = true;
+        inputControl.Player.Disable();
+    
     }
 }

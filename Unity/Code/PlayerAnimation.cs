@@ -2,31 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour //æ§åˆ¶äººç‰©åŠ¨ç”»çš„è„šæœ¬
+public class PlayerAnimation : MonoBehaviour //¿ØÖÆÈËÎï¶¯»­µÄ½Å±¾
 {
     private Animator anim; 
     private Rigidbody2D rb;
     private PhysicsCheck physicsCheck;
     private PlayerController playerController;
 
+
     private void Awake() 
     {
-        anim = GetComponent<Animator>(); //è·å–Animatorä½¿ç”¨æƒ
-        rb = GetComponent<Rigidbody2D>(); //è·å–åˆšä½“ç»„ä»¶çš„x, yè½´çš„é€Ÿåº¦
+        anim = GetComponent<Animator>(); //»ñÈ¡AnimatorÊ¹ÓÃÈ¨
+        rb = GetComponent<Rigidbody2D>(); //»ñÈ¡¸ÕÌå×é¼şµÄx, yÖáµÄËÙ¶È
         physicsCheck = GetComponent<PhysicsCheck>();
         playerController = GetComponent<PlayerController>();
+
     }
 
     public void Update() 
     {
-        SetAnimation(); //å®æ—¶çš„åŠ¨ç”»åˆ‡æ¢, æ¯ä¸€å¸§éƒ½è¦æ‰§è¡Œ
+        SetAnimation(); //ÊµÊ±µÄ¶¯»­ÇĞ»», Ã¿Ò»Ö¡¶¼ÒªÖ´ĞĞ
     }
 
-    public void SetAnimation() //æ‰§è¡Œæ¯ä¸€å¸§çš„åŠ¨ç”»åˆ‡æ¢
+    public void SetAnimation() //Ö´ĞĞÃ¿Ò»Ö¡µÄ¶¯»­ÇĞ»»
     {
-        anim.SetFloat("velocityX", Mathf.Abs(rb.velocity.x)); //äººç‰©ç§»åŠ¨åŠ¨ç”»
-        anim.SetFloat("velocityY", rb.velocity.y);  //äººç‰©è·³è·ƒåŠ¨ç”»
-        anim.SetBool("isGround", physicsCheck.isGround); //äººç‰©å‘¨å›´ç¯å¢ƒæ£€æµ‹
-        anim.SetBool("isCrouch", playerController.isCrouch); //äººç‰©ä¸‹è¹²åŠ¨ä½œ
+        anim.SetFloat("velocityX", Mathf.Abs(rb.velocity.x)); //ÈËÎïÒÆ¶¯¶¯»­
+        anim.SetFloat("velocityY", rb.velocity.y);  //ÈËÎïÌøÔ¾¶¯»­
+        anim.SetBool("isGround", physicsCheck.isGround); //ÈËÎïÖÜÎ§»·¾³¼ì²â
+        anim.SetBool("isCrouch", playerController.isCrouch); //ÈËÎïÏÂ¶×¶¯×÷
+        anim.SetBool("isDead", playerController.isDead); //ÈËÎïËÀÍö
+        anim.SetBool("isAttack", playerController.isAttack);
+    }
+
+    public void PlayHurt() 
+    {
+        anim.SetTrigger("hurt");       
+    }
+
+    public void PlayAttack()
+    {
+        anim.SetTrigger("attack");
+    
     }
 }
