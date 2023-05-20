@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerStatBar : MonoBehaviour
+namespace Chenhao
 {
-    public Image healthImage;
-
-    public Image healthDelayImage;
-
-    public Image MagicImage;
-
-
-    private void Update()
+    public class PlayerStatBar : MonoBehaviour
     {
-        if (healthDelayImage.fillAmount > healthImage.fillAmount)
+        public Image healthImage;
+
+        public Image healthDelayImage;
+
+        public Image MagicImage;
+
+
+        private void Update()
         {
-            healthDelayImage.fillAmount -= Time.deltaTime;
+            if (healthDelayImage.fillAmount > healthImage.fillAmount)
+            {
+                healthDelayImage.fillAmount -= Time.deltaTime;
+            }
         }
-    }
 
-    public void OnHealthChange(float persentage)
-    {
-        healthImage.fillAmount = persentage;
+        public void OnHealthChange(float persentage)
+        {
+            healthImage.fillAmount = persentage;
+        }
     }
 }

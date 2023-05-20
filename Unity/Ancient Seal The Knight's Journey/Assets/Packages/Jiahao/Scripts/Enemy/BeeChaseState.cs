@@ -2,84 +2,89 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeeChaseState : BaseState
+namespace Jiahao
 {
-    private Vector3 target;
-    private Vector3 moveDir;
-
-    private Attack attack;
-    private bool isAttack;
-    private float attackRateCounter = 0; //飞行敌人
-
-    public override void OnEnter(Enemy enemy)
+    public class BeeChaseState : BaseState
     {
-        currentEnemy = enemy;
-        currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
-        attack = enemy.GetComponent<Attack>();
+        private Vector3 target;
+        private Vector3 moveDir;
 
-        currentEnemy.lostTimeCounter = currentEnemy.lostTime;
-        currentEnemy.anim.SetBool("chase", true);
-    }
+        private Attack attack;
+        private bool isAttack;
+        private float attackRateCounter = 0; //飞行敌人
 
-    public override void LogicUpdate()
-    {
-        if (currentEnemy.lostTimeCounter <= 0)
-        { 
-            currentEnemy.SwitchState(NPCState.Patrol);      
+        public override void OnEnter(Enemy enemy)
+        {
+            currentEnemy = enemy;
+            currentEnemy.currentSpeed = currentEnemy.chaseSpeed;
+            attack = enemy.GetComponent<Attack>();
+
+            currentEnemy.lostTimeCounter = currentEnemy.lostTime;
+            currentEnemy.anim.SetBool("chase", true);
         }
 
-        //计时器
-        attackRateCounter -= Time.deltaTime;
-
-        target = new Vector3(currentEnemy.attacker.position.x, currentEnemy.attacker.position.y + 1.5f, 0); //将目标地点改为玩家位置, +1.5f为上半身判定
-
-        //判断攻击距离
-        if (Mathf.Abs(target.x - currentEnemy.transform.position.x) <= attack.attackRange && Mathf.Abs(target.y - currentEnemy.transform.position.y) <= attack.attackRange)
+        public override void LogicUpdate()
         {
-            isAttack = true;
-
-            if (!currentEnemy.isHurt) {
-
-                currentEnemy.rb.velocity = Vector2.zero;
-
+            if (currentEnemy.lostTimeCounter <= 0)
+            {
+                currentEnemy.SwitchState(NPCState.Patrol);
             }
 
-            if (attackRateCounter <= 0) {
+            //计时器
+            attackRateCounter -= Time.deltaTime;
 
-                currentEnemy.anim.SetTrigger("attack");
-                attackRateCounter = attack.attackRate;
+            target = new Vector3(currentEnemy.attacker.position.x, currentEnemy.attacker.position.y + 1.5f, 0); //将目标地点改为玩家位置, +1.5f为上半身判定
+
+            //判断攻击距离
+            if (Mathf.Abs(target.x - currentEnemy.transform.position.x) <= attack.attackRange && Mathf.Abs(target.y - currentEnemy.transform.position.y) <= attack.attackRange)
+            {
+                isAttack = true;
+
+                if (!currentEnemy.isHurt)
+                {
+
+                    currentEnemy.rb.velocity = Vector2.zero;
+
+                }
+
+                if (attackRateCounter <= 0)
+                {
+
+                    currentEnemy.anim.SetTrigger("attack");
+                    attackRateCounter = attack.attackRate;
+
+                }
+            }
+            else    //超出攻击范围
+            {
+                isAttack = false;
+            }
+
+            moveDir = (target - currentEnemy.transform.position).normalized; //敌人朝向
+
+            if (moveDir.x > 0)
+            {
+                currentEnemy.transform.localScale = new Vector3(-1, 1, 1);
 
             }
+            if (moveDir.x < 0)
+            {
+                currentEnemy.transform.localScale = new Vector3(1, 1, 1);
+            }
+
         }
-        else    //超出攻击范围
+
+        public override void PhysicsUpdate()
         {
-            isAttack = false;
+            if (!currentEnemy.isHurt && !currentEnemy.isDead && !isAttack)
+            {
+                currentEnemy.rb.velocity = moveDir * currentEnemy.currentSpeed * Time.deltaTime;
+            }
         }
-
-        moveDir = (target - currentEnemy.transform.position).normalized; //敌人朝向
-
-        if (moveDir.x > 0)
-        { 
-            currentEnemy.transform.localScale = new Vector3(-1, 1, 1);
-
-        }
-        if (moveDir.x < 0)
-        { 
-            currentEnemy.transform.localScale = new Vector3(1, 1, 1);
-        }
-
-    }
-
-    public override void PhysicsUpdate()
-    {
-        if (!currentEnemy.isHurt && !currentEnemy.isDead && !isAttack)
+        public override void OnExit()
         {
-            currentEnemy.rb.velocity = moveDir * currentEnemy.currentSpeed * Time.deltaTime;
+            currentEnemy.anim.SetBool("chase", false);
         }
-    }
-    public override void OnExit()
-    {
-        currentEnemy.anim.SetBool("chase", false);
-    }
 
+    }
 }

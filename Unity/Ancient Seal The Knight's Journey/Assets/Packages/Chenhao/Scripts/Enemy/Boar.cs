@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boar : Enemy
+namespace Chenhao
 {
-    public override void Move()
+    public class Boar : Enemy
     {
-        base.Move();
-        anim.SetBool("walk", true);
+        public override void Move()
+        {
+            base.Move();
+            anim.SetBool("walk", true);
+        }
     }
 }

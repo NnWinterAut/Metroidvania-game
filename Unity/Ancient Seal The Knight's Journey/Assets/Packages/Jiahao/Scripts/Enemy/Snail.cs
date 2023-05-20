@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snail : Enemy
+namespace Jiahao
 {
-    protected override void Awake()
+    public class Snail : Enemy
     {
-        base.Awake();
-        patrolState = new SnailPatrolState();
-        skillState = new SnailSkillState();
-    }
+        protected override void Awake()
+        {
+            base.Awake();
+            patrolState = new SnailPatrolState();
+            skillState = new SnailSkillState();
+        }
 
+    }
 }

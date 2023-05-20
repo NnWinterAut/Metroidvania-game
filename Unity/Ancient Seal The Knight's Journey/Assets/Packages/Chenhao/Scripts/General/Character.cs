@@ -3,71 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Character : MonoBehaviour
+namespace Chenhao
 {
-    [Header("Basic attributes")]
-
-    public float maxHealth;
-    public float currentHealth;
-
-    [Header("invincible")]
-    public float invulnerableDuration;
-    private float invulnerableCounter;
-    public bool invulnerable;
-
-    public UnityEvent<Character> OnHealthChange;
-    public UnityEvent<Transform> OnTakeDamage;
-    public UnityEvent OnDie;
-
-    private void Start()
+    public class Character : MonoBehaviour
     {
-        currentHealth = maxHealth;
-        OnHealthChange?.Invoke(this);
-    }
+        [Header("Basic attributes")]
 
-    private void Update()
-    {
-        if (invulnerable)
+        public float maxHealth;
+        public float currentHealth;
+
+        [Header("invincible")]
+        public float invulnerableDuration;
+        private float invulnerableCounter;
+        public bool invulnerable;
+
+        public UnityEvent<Character> OnHealthChange;
+        public UnityEvent<Transform> OnTakeDamage;
+        public UnityEvent OnDie;
+
+        private void Start()
         {
-            invulnerableCounter -= Time.deltaTime;
+            currentHealth = maxHealth;
+            OnHealthChange?.Invoke(this);
+        }
 
-            if (invulnerableCounter <= 0)
+        private void Update()
+        {
+            if (invulnerable)
             {
-                invulnerable = false;
+                invulnerableCounter -= Time.deltaTime;
+
+                if (invulnerableCounter <= 0)
+                {
+                    invulnerable = false;
+                }
             }
         }
-    }
 
-    public void TakeDamage(Attack attacker)
-    {
-        if (invulnerable)
-            return;
-
-        if (currentHealth - attacker.damage > 0)
+        public void TakeDamage(Attack attacker)
         {
-            currentHealth -= attacker.damage;
-            TriggerInvulnerable();
-            //Hurt
-            OnTakeDamage?.Invoke(attacker.transform);
+            if (invulnerable)
+                return;
+
+            if (currentHealth - attacker.damage > 0)
+            {
+                currentHealth -= attacker.damage;
+                TriggerInvulnerable();
+                //Hurt
+                OnTakeDamage?.Invoke(attacker.transform);
+
+            }
+            else
+            {
+                currentHealth = 0;
+                //Death
+                OnDie.Invoke();
+
+            }
+            OnHealthChange?.Invoke(this);
 
         }
-        else
-        {
-            currentHealth = 0;
-            //Death
-            OnDie.Invoke();
 
-        }
-        OnHealthChange?.Invoke(this);
-        
-    }
-
-    private void TriggerInvulnerable()
-    {
-        if (!invulnerable)
+        private void TriggerInvulnerable()
         {
-            invulnerable = true;
-            invulnerableCounter = invulnerableDuration;
+            if (!invulnerable)
+            {
+                invulnerable = true;
+                invulnerableCounter = invulnerableDuration;
+            }
         }
     }
 }

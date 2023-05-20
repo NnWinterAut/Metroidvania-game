@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boar : Enemy
+namespace Jiahao
 {
-    protected override void Awake()
+    public class Boar : Enemy
     {
-        base.Awake();
-        patrolState = new BoarPatrolState();
-        chaseState = new BoarChaseState();
+        protected override void Awake()
+        {
+            base.Awake();
+            patrolState = new BoarPatrolState();
+            chaseState = new BoarChaseState();
+
+        }
 
     }
-
 }

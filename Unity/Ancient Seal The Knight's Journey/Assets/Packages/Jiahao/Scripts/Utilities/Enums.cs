@@ -1,7 +1,9 @@
-//×´Ì¬EnumsÇĞ»»
+namespace Jiahao
+{
+    //×´Ì¬EnumsÇĞ»»
+    public enum NPCState
+    {
+        Patrol, Chase, Skill
 
-public enum NPCState
-{ 
-    Patrol, Chase, Skill
-
+    }
 }
