@@ -1,0 +1,24 @@
+<UserStory id="6" heading="Frozen Magic" headingZH="冰冻魔法">
+  <Description>As a user, I want the game to have a Frozen Magic, so that I can slow down enemy.</Description>
+  <DescriptionZH>冰冻魔法，消耗魔法值对敌人造成冰冻伤害，降低敌人移动和攻击速度。会被火焰魔法消除冰冻效果</DescriptionZH>
+  <INVEST>
+    Independent - No, the frozen magic feature depends on the player's magic system and the game's combat mechanics.
+
+    Negotiable - Yes, the details of how frozen magic is learned, the visual effects and animation, the duration of the freeze, and the cooldown period can be negotiated.
+
+    Valuable - Yes, the frozen magic feature is valuable to players as it provides a means to temporarily immobilize enemies and create strategic opportunities during combat, adding variety and excitement to gameplay.
+
+    Estimable - Yes, the effort required to implement the frozen magic feature can be estimated based on the complexity of the magic system, the combat mechanics, the visual effects, and the overall design of the game.
+
+    Small - Yes, the frozen magic feature can be implemented as a small and focused addition to the game without requiring a significant amount of development time or resources.
+
+    Testable - Yes, the frozen magic feature can be tested to ensure it functions as intended, freezes enemies for the appropriate duration, has a reasonable cooldown period, and has no unintended side effects on the player or game mechanics.
+  </INVEST>
+  <Tests>
+    <Test>Test if the player can switch to frozen magic.</Test>
+    <Test>Test if the player can cast frozen magic.</Test>
+    <Test>After casting the spell, check whether it slowed down the enemy as expected.</Test>
+  </Tests>
+  <Label>Could have</Label>
+  <Url>https://trello.com/c/7c4BxDIO</Url>
+</UserStory>
