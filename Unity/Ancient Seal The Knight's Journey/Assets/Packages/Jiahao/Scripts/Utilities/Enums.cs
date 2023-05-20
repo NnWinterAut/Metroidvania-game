@@ -1,0 +1,9 @@
+namespace Jiahao
+{
+    //×´Ì¬EnumsÇÐ»»
+    public enum NPCState
+    {
+        Patrol, Chase, Skill
+
+    }
+}
