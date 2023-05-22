@@ -635,7 +635,7 @@
         <Url>https://trello.com/c/z50RmdbJ</Url>
     </UserStory>
     <UserStory id="20" heading="Difficulty Design" headingZH="难度设计">
-        <Description>As a player, I desire diverse Difficulty Designs so that I can choose between enjoying the story or facing challenges.</Description>
+        <Description>As a player, I want various difficulty levels with distinct levels of challenge in level design and enemy attributes, so that different ways to play are available across the different difficulty settings.</Description>
         <DescriptionZH>对不同的游戏难度等级设计不同难度的关卡和敌人属性，让玩家可以体验到不同难度下的游玩过程</DescriptionZH>
         <INVEST>
             Independent - No, because difficulty settings often affect other features or systems in the game, such as enemy behavior, player damage, and AI intelligence.
@@ -1233,9 +1233,9 @@
         <Label>Should Have</Label>
         <Url>https://trello.com/c/W0ZrOoCF</Url>
     </UserStory>
-    <UserStory id="39" heading="Difficulties" headingZH="游戏难度">
-        <Description>As a player, I would like the game to have more than two Difficulty level (perhaps three), so that it can cater to different types of players.</Description>
-        <DescriptionZH>游戏能提供不止一种（或许三种）难度级别</DescriptionZH>
+    <UserStory id="39" heading="DifficultiesSelection" headingZH="游戏难度">
+        <Description>As a player, I would like the game to have more than two Difficulty levels to Select, so that it can cater to different types of players.</Description>
+        <DescriptionZH>游戏能提供不止一种（或许三种）难度级别的选择，这个是界面</DescriptionZH>
         <INVEST>
             Independent - No, because the implementation of different difficulty levels may rely on other systems or features in the game, such as enemy AI or level design.
     
