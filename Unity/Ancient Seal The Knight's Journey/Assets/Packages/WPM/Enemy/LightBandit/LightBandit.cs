@@ -55,6 +55,8 @@ namespace WPM
             animator = GetComponent<Animator>();
             rigid = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
+
+            
         }
 
         void Update()
