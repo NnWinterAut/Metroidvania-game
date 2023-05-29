@@ -71,5 +71,14 @@ namespace Jiahao
             }
 
         }
+
+        public void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.CompareTag("Water")) {
+
+                //¥•∑¢À¿Õˆ
+                onDie?.Invoke();
+            }
+        }
     }
 }
