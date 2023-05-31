@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events; //调用unity事件
+using Jiahao;
 
 namespace Jiahao
 {
@@ -17,12 +18,14 @@ namespace Jiahao
         public bool invulnerable;
 
         public UnityEvent<Transform> OnTakeDamage; //添加Player受伤并且后退的事件
+        public UnityEvent<Character> OnHealthChange;
         public UnityEvent onDie;
 
         private void Start()
         {
 
             currentHealth = maxHealth;
+            OnHealthChange?.Invoke(this); //maxhealth
         }
 
         private void Update()
@@ -59,9 +62,12 @@ namespace Jiahao
                 onDie?.Invoke();
             }
 
+            //传递
+            OnHealthChange?.Invoke(this);
+
         }
 
-        public void TriggerInvulnerable()
+        public void TriggerInvulnerable() // 触发受伤无敌
         {
 
             if (invulnerable == false)
