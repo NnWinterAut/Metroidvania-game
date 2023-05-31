@@ -8,9 +8,10 @@ namespace Jiahao
 
     public class Enemy : MonoBehaviour
     {
-        public Rigidbody2D rb;
-        public PhysicsCheck physicsCheck;
-        public Animator anim;
+        //隐藏
+        [HideInInspector] public Rigidbody2D rb; 
+        [HideInInspector] public PhysicsCheck physicsCheck;
+        [HideInInspector] public Animator anim;
 
         [Header("基本参数: ")]
         public float normalSpeed;//敌人速度
@@ -49,7 +50,6 @@ namespace Jiahao
             physicsCheck = GetComponent<PhysicsCheck>();
 
             currentSpeed = normalSpeed; //敌人速度
-            waitTimeCounter = waitTime;
             spwanPoint = transform.position;
         }
 
@@ -63,6 +63,7 @@ namespace Jiahao
         public void Update() //开始渲染敌人新的一帧
         {
             faceDir = new Vector3(-transform.localScale.x, 0, 0); //修改transform来改变敌人面朝方向
+
             currentState.LogicUpdate();
             TimeCounter();
         }
@@ -76,16 +77,23 @@ namespace Jiahao
             currentState.PhysicsUpdate();
         }
 
-
-
         private void OnDisable() //退出状态
         {
             currentState.OnExit();
 
         }
+        public virtual void Move() //子类Boar可进行编辑
+        {
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("snailPremove") && !anim.GetCurrentAnimatorStateInfo(0).IsName("snailRecover"))
+            {  //如果没有premove则一直移动
+                rb.velocity = new Vector2(currentSpeed * faceDir.x * Time.deltaTime, rb.velocity.y);
+            }
+
+        }
 
         public void TimeCounter() //敌人巡逻撞墙, 停滞时间, 和状态机切换时间计时
         {
+            // 计时器
             if (wait)
             {
 
@@ -106,19 +114,6 @@ namespace Jiahao
 
                 lostTimeCounter -= Time.deltaTime;
 
-            }
-            else if (FoundPlayer())    //在发现玩家的时候重置丢失时间
-            {
-                lostTimeCounter = lostTime;
-            }
-
-        }
-
-        public virtual void Move() //子类Boar可进行编辑
-        {
-            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("snailPremove") && !anim.GetCurrentAnimatorStateInfo(0).IsName("snailRecover"))
-            {  //如果没有premove则一直移动
-                rb.velocity = new Vector2(currentSpeed * faceDir.x * Time.deltaTime, rb.velocity.y);
             }
 
         }
@@ -156,8 +151,8 @@ namespace Jiahao
             isHurt = true;
             anim.SetTrigger("hurt"); //受伤动画
 
-            rb.velocity = new Vector2(0, rb.velocity.y);
             Vector2 dir = new Vector2(transform.position.x - attackTrans.position.x, 0).normalized;
+            rb.velocity = new Vector2(0, rb.velocity.y);
 
             StartCoroutine(OnHurt(dir)); //开始协成
         }
