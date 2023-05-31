@@ -27,8 +27,9 @@ namespace Jiahao
         private void OnHealthEvent(Character character) //·ÃÎÊCharacterÊıÖµ
         {
             var persentage = character.currentHealth / character.maxHealth;
-
             playerStateBar.OnHealthChange(persentage);
+
+            playerStateBar.OnPowerChange(character);
         }
     }
 }

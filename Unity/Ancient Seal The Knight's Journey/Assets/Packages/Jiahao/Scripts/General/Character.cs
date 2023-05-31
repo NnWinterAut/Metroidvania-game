@@ -11,6 +11,9 @@ namespace Jiahao
         [Header("基本属性")]
         public float maxHealth;
         public float currentHealth;
+        public float maxPower;
+        public float currentPower;
+        public float powerRecoverSpeed;
 
         [Header("无敌时间")]
         public float invulnerableDuration;
@@ -25,6 +28,7 @@ namespace Jiahao
         {
 
             currentHealth = maxHealth;
+            currentPower = maxPower;
             OnHealthChange?.Invoke(this); //maxhealth
         }
 
@@ -40,6 +44,18 @@ namespace Jiahao
                 }
             }
 
+            if (currentPower < maxPower) {
+                
+                currentPower += Time.deltaTime * powerRecoverSpeed; //恢复Power
+            
+            }
+
+        }
+
+        public void OnSlide(int cost)
+        {
+            currentPower -= cost;
+            OnHealthChange?.Invoke(this);
         }
 
         public void TakeDamage(Attack attacker) //受到伤害
@@ -83,6 +99,9 @@ namespace Jiahao
             if (other.CompareTag("Water")) {
 
                 //触发死亡
+                currentHealth = 0;
+
+                OnHealthChange?.Invoke(this);
                 onDie?.Invoke();
             }
         }

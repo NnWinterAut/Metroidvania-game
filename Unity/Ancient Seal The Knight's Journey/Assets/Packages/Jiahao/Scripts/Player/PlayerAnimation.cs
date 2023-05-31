@@ -35,6 +35,7 @@ namespace Jiahao
             anim.SetBool("isDead", playerController.isDead); //ÈËÎïËÀÍö
             anim.SetBool("isAttack", playerController.isAttack);
             anim.SetBool("onWall", physicsCheck.onWall);
+            anim.SetBool("isSlide", playerController.isSlide);
         }
 
         public void PlayHurt()

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; //调用InputSystem相关内容
+using System;
 using Jiahao;
-using System.Text;
 
 namespace Jiahao
 {
@@ -16,6 +16,7 @@ namespace Jiahao
         private Rigidbody2D rb;
         private CapsuleCollider2D coll; //调用CapsuleCollider2D
         private PlayerAnimation playerAnimation;
+        private Character character;
 
         [Header("人物基本参数: ")]
         public float jumpForce;
@@ -27,12 +28,16 @@ namespace Jiahao
         private Vector2 originalOffset; //原始胶囊大小
         private Vector2 originalSize;
         public float hurtForce;
+        public float slideDistance;
+        public float slideSpeed;
+        public int slidePowerCost;
 
         [Header("人物状态: ")]
         public bool isHurt;
         public bool isDead;
         public bool isAttack;
         public bool wallJump;
+        public bool isSlide;
 
         [Header("物理材质")]
         public PhysicsMaterial2D normal;
@@ -41,13 +46,13 @@ namespace Jiahao
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
-
-            inputControl = new PlayerInputControl(); //调用Unity的input system
-            inputControl.Player.Jump.started += Jump; //Jump是瞬间执行的动作, 单次执行函数时使用started, 使用+=添加事件函数Jump
-
+            character = GetComponent<Character>();
             physicsCheck = GetComponent<PhysicsCheck>(); //获取所有PhysicsCheck的public变量
             coll = GetComponent<CapsuleCollider2D>();
             playerAnimation = GetComponent<PlayerAnimation>();
+
+            inputControl = new PlayerInputControl(); //调用Unity的input system
+            inputControl.Player.Jump.started += Jump; //Jump是瞬间执行的动作, 单次执行函数时使用started, 使用+=添加事件函数Jump
 
             originalOffset = coll.offset;
             originalSize = coll.size;
@@ -69,6 +74,11 @@ namespace Jiahao
             #region 攻击
             inputControl.Player.Attack.started += PlayerAttack;
             #endregion
+
+            #region 滑铲
+            inputControl.Player.Slide.started += Slide;
+            #endregion
+        
         }
 
         private void OnEnable()
@@ -147,6 +157,10 @@ namespace Jiahao
             if (physicsCheck.isGround)
             {
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //代码手册, 脚本APIrigidbody2d, Rigidbody2D AddForce()
+
+                //打断滑铲携程
+                isSlide = false;
+                StopAllCoroutines();
             }
             else if (physicsCheck.onWall) {
                 //登墙跳
@@ -165,10 +179,53 @@ namespace Jiahao
             }
         }
 
+        private void Slide(InputAction.CallbackContext obj)
+        {
+            if (isSlide == false && physicsCheck.isGround && character.currentPower >= slidePowerCost)
+            {
+                isSlide = true;
+
+                var targetPos = new Vector3(transform.position.x + slideDistance * transform.localScale.x, transform.position.y);
+
+                gameObject.layer = LayerMask.NameToLayer("Enemies"); //切换Layer,躲避敌人
+                StartCoroutine(TriggerSlide(targetPos));
+
+                character.OnSlide(slidePowerCost);
+            }
+
+        }
+
+        private IEnumerator TriggerSlide(Vector3 target)
+        {
+            do
+            {
+                yield return null;
+
+                if (physicsCheck.isGround == false) { 
+                    break;
+                }
+
+                //滑铲过程中撞墙, 面朝方向撞墙
+                if (physicsCheck.touchLeftWall && transform.localScale.x < 0f || physicsCheck.touchRightWall && transform.localScale.x > 0f)
+                {
+                    isSlide = false;
+                    break;
+                }
+
+                rb.MovePosition(new Vector2(transform.position.x + transform.localScale.x * slideSpeed, transform.position.y));
+            
+            } while (MathF.Abs(target.x - transform.position.x) > 0.1f);
+
+            isSlide = false;
+            gameObject.layer = LayerMask.NameToLayer("Player");
+        }
+
         public void GetHurt(Transform attacker)
         {
             isHurt = true;
+
             rb.velocity = Vector2.zero;
+            
             Vector2 dir = new Vector2((transform.position.x - attacker.position.x), 0).normalized;
             rb.AddForce(dir * hurtForce, ForceMode2D.Impulse);
 
@@ -191,10 +248,21 @@ namespace Jiahao
             else
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
 
-            if (wallJump && rb.velocity.y < 0f) { //落地
+            if (wallJump && rb.velocity.y < 0f)
+            { //落地
 
                 wallJump = false;
             }
+
+            if (isDead || isSlide)
+            {  //滑铲时也要切换 Player 的 Layer 避免发生跟 Enemy 的碰撞
+                gameObject.layer = LayerMask.NameToLayer("Enemies");
+            }
+            else
+            {
+                gameObject.layer = LayerMask.NameToLayer("Player");
+            }
+        
         }
 
     }
