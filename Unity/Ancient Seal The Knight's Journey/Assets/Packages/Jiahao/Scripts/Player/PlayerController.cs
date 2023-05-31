@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; //调用InputSystem相关内容
+using Jiahao;
+using System.Text;
 
 namespace Jiahao
 {
@@ -17,8 +19,9 @@ namespace Jiahao
 
         [Header("人物基本参数: ")]
         public float jumpForce;
+        public float wallJumpForce;
         public float speed;
-        private float runSpeed => speed * 2f;
+        private float runSpeed => speed * 1.7f;
         private float walkSpeed;
         public bool isCrouch;
         private Vector2 originalOffset; //原始胶囊大小
@@ -29,6 +32,11 @@ namespace Jiahao
         public bool isHurt;
         public bool isDead;
         public bool isAttack;
+        public bool wallJump;
+
+        [Header("物理材质")]
+        public PhysicsMaterial2D normal;
+        public PhysicsMaterial2D wall;
 
         private void Awake()
         {
@@ -79,6 +87,8 @@ namespace Jiahao
         {
             inputDirection = inputControl.Player.Move.ReadValue<Vector2>(); //读取键盘输入
 
+            CheckState();
+
         }
 
         private void FixedUpdate() //周期函数, FixedUpdate can run once, zero, or several times per frame, 
@@ -92,7 +102,7 @@ namespace Jiahao
         private void Move()
         {
             //人物移动
-            if (isCrouch == false)
+            if (isCrouch == false && !wallJump)
             {
                 rb.velocity = new Vector2(inputDirection.x * speed * Time.deltaTime, rb.velocity.y); //人物速度, vector的x, y向量
             }
@@ -138,6 +148,12 @@ namespace Jiahao
             {
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //代码手册, 脚本APIrigidbody2d, Rigidbody2D AddForce()
             }
+            else if (physicsCheck.onWall) {
+                //登墙跳
+                wallJump = true;
+
+                rb.AddForce(new Vector2(-inputDirection.x,2f)* wallJumpForce, ForceMode2D.Impulse);
+            }
         }
 
         private void PlayerAttack(InputAction.CallbackContext obj)
@@ -164,5 +180,22 @@ namespace Jiahao
             inputControl.Player.Disable();
 
         }
+
+        private void CheckState()
+        {
+
+            coll.sharedMaterial = physicsCheck.isGround ? normal : wall;
+
+            if (physicsCheck.onWall) //如果在墙面
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2f); //改变y轴速度
+            else
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
+
+            if (wallJump && rb.velocity.y < 0f) { //落地
+
+                wallJump = false;
+            }
+        }
+
     }
 }
