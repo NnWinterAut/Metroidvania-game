@@ -40,8 +40,8 @@ namespace Jiahao
         [Header("检测")]
         public Vector2 centerOffset;
         public Vector2 checkSize;
-        public float checkDistance;
         public LayerMask attackLayer;
+        public float checkDistance;
 
         protected virtual void Awake() //为了子类获得基础组件, 尝试改为virtual写法
         {
@@ -51,6 +51,7 @@ namespace Jiahao
 
             currentSpeed = normalSpeed; //敌人速度
             spwanPoint = transform.position;
+            waitTimeCounter = waitTime;
         }
 
         private void OnEnable() //激活状态 unity状态机
@@ -60,7 +61,7 @@ namespace Jiahao
 
         }
 
-        public void Update() //开始渲染敌人新的一帧
+        private void Update() //开始渲染敌人新的一帧
         {
             faceDir = new Vector3(-transform.localScale.x, 0, 0); //修改transform来改变敌人面朝方向
 
@@ -193,7 +194,6 @@ namespace Jiahao
             currentState.OnEnter(this); //进入新状态
 
         }
-
         public virtual void OnDrawGizmosSelected() //画出检测玩家范围
         {
             Gizmos.DrawWireSphere(transform.position + (Vector3)centerOffset + new Vector3(checkDistance * -transform.localScale.x, 0), 0.2f);

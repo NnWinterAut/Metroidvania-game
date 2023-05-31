@@ -73,9 +73,9 @@ namespace Jiahao
             }
         }
 
-        public void onDrwaGizmosSelected() //»æÖÆ
+        private void OnDrawGizmosSelected() //»æÖÆ
         {
-            Gizmos.color = Color.blue;
+            Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere((Vector2)transform.position + new Vector2(bottomOffset.x * transform.localScale.x, bottomOffset.y), checkRaduis);
             Gizmos.DrawWireSphere((Vector2)transform.position + new Vector2(leftOffset.x, leftOffset.y), checkRaduis);
             Gizmos.DrawWireSphere((Vector2)transform.position + new Vector2(rightOffset.x, rightOffset.y), checkRaduis);
