@@ -51,7 +51,6 @@ namespace Jiahao
 
             currentSpeed = normalSpeed; //敌人速度
             spwanPoint = transform.position;
-            waitTimeCounter = waitTime;
         }
 
         private void OnEnable() //激活状态 unity状态机
