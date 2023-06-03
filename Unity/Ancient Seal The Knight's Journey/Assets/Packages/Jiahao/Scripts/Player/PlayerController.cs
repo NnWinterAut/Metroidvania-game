@@ -157,6 +157,8 @@ namespace Jiahao
             if (physicsCheck.isGround)
             {
                 rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse); //代码手册, 脚本APIrigidbody2d, Rigidbody2D AddForce()
+                
+                GetComponent<AudioDefination>().PlayAudioClip(); //播放音效
 
                 //打断滑铲携程
                 isSlide = false;
@@ -167,6 +169,8 @@ namespace Jiahao
                 wallJump = true;
 
                 rb.AddForce(new Vector2(-inputDirection.x,2f)* wallJumpForce, ForceMode2D.Impulse);
+                GetComponent<AudioDefination>().PlayAudioClip(); //播放音效
+
             }
         }
 
@@ -189,6 +193,8 @@ namespace Jiahao
 
                 gameObject.layer = LayerMask.NameToLayer("Enemies"); //切换Layer,躲避敌人
                 StartCoroutine(TriggerSlide(targetPos));
+
+                GetComponent<AudioDefination>().PlayAudioClip(); //播放音效
 
                 character.OnSlide(slidePowerCost);
             }
