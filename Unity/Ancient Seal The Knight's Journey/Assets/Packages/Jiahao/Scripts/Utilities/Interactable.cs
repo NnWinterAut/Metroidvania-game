@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Interactable //可互动街口
+namespace Jiahao
 {
-    void TriggerAction();
+    public interface Interactable //可互动街口
+    {
+        void TriggerAction();
 
 
 
+    }
 }

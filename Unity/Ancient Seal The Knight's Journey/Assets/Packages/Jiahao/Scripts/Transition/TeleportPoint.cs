@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportPoint : MonoBehaviour, Interactable //≥°æ∞«–ªª
+namespace Jiahao
 {
-    public Vector3 PlayerPosition;
-    public void TriggerAction()
+    public class TeleportPoint : MonoBehaviour, Interactable //≥°æ∞«–ªª
     {
-        
+        public Vector3 PlayerPosition;
+        public GameSceneSO GoToScene;
+        public SceneLoadEventSO loadEventSO;
+
+        public void TriggerAction()
+        {
+            loadEventSO.RaiseLoadRequestEvent(GoToScene, PlayerPosition, true); //∆Ù∂Øº”‘ÿ«Î«ÛEvent
+        }
     }
 }

@@ -1422,6 +1422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700d65f4b320d4c4ead506c819a7dd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadEventSO: {fileID: 11400000, guid: b557488a85b214b438cf27424ba91d08, type: 2}
+  firstLoadedScene: {fileID: 11400000, guid: a765fc6c2c2fbfa429552300ed8b77a4, type: 2}
+  fadeDuration: 0
 --- !u!4 &1203436476
 Transform:
   m_ObjectHideFlags: 0
