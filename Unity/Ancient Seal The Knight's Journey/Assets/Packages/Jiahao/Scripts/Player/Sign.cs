@@ -29,6 +29,11 @@ namespace Jiahao {
             playerInput.Player.Confirm.started += OnConfirm;
         }
 
+        private void OnDisable()
+        {
+            canPress = false;
+        }
+
         private void OnConfirm(InputAction.CallbackContext obj)
         {
             if (canPress) {
