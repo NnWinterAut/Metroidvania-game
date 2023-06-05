@@ -138,7 +138,6 @@ namespace Jiahao
             //敌人转身, 面向攻击者
             if (attackTrans.position.x - transform.position.x > 0)
             {
-
                 transform.localScale = new Vector3(-1, 1, 1);
             }
 

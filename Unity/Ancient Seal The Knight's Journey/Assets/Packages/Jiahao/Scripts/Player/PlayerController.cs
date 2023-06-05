@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; //调用InputSystem相关内容
 using System;
-using Jiahao;
 
 namespace Jiahao
 {
     public class PlayerController : MonoBehaviour //MonoBehaviour 类是一个基类，所有Unity 脚本都默认派生自该类。 当您从Unity 的项目窗口创建一个C# 脚本时，它会自动继承MonoBehaviour，并为您提供模板脚本。
     {
+        [Header("监听Event")]
+        public SceneLoadEventSO sceneLoadEvent;
+        public VoidEventSO afterSceneLoadedEvent;
+        public VoidEventSO loadDataEvent;
+        public VoidEventSO backToMenu;
         public PlayerInputControl inputControl; // 调用./settings/PlayerInputControl, 
         public Vector2 inputDirection;  // 调用./settings/PlayerInputControl中Player的Action值 x, y  vector 2D
 
@@ -57,17 +61,32 @@ namespace Jiahao
             originalOffset = coll.offset;
             originalSize = coll.size;
 
+            inputControl.Enable();
+
             #region 走路和跑步切换
             walkSpeed = speed;
 
             inputControl.Player.RunButton.performed += ctx =>
             {
-                if (physicsCheck.isGround) { speed = runSpeed; }
+                if (physicsCheck.isGround)
+                {
+                    speed = runSpeed;
+                }
+                else {
+                    speed = walkSpeed;
+                }
             };
 
             inputControl.Player.RunButton.canceled += ctx =>
             {
-                if (physicsCheck.isGround) { speed = walkSpeed; };
+                if (physicsCheck.isGround) 
+                { 
+                    speed = walkSpeed; 
+                }
+                else
+                {
+                    speed = walkSpeed;
+                }
             };
             #endregion
 
@@ -83,14 +102,35 @@ namespace Jiahao
 
         private void OnEnable()
         {
-            inputControl.Enable();
+            sceneLoadEvent.LoadRequestEvent += OnLoadEvent;
+            afterSceneLoadedEvent.OnEventRaised += OnafterSceneLoadedEvent;
+            loadDataEvent.OnEventRaised += OnLoadDataEvent;
+            backToMenu.OnEventRaised += OnLoadDataEvent;
 
         }
 
         private void OnDisable()
         {
             inputControl.Disable();
+            sceneLoadEvent.LoadRequestEvent -= OnLoadEvent;
+            afterSceneLoadedEvent.OnEventRaised -= OnafterSceneLoadedEvent;
+            loadDataEvent.OnEventRaised -= OnLoadDataEvent;
+            backToMenu.OnEventRaised -= OnLoadDataEvent;
 
+        }
+        private void OnLoadDataEvent()
+        {
+            isDead = false; //读取游戏进度
+        }
+
+        private void OnafterSceneLoadedEvent()
+        {
+            inputControl.Player.Enable(); //场景加载禁止移动
+        }
+
+        private void OnLoadEvent(GameSceneSO arg0, Vector3 arg1, bool arg2)
+        {
+            inputControl.Player.Disable(); //恢复移动
         }
 
         private void Update() //Update()函数就是说，在每刷新一帧的时候，该做些什么 --- 周期函数 Update runs once per frame.
@@ -260,8 +300,9 @@ namespace Jiahao
                 wallJump = false;
             }
 
+            //滑铲时也要切换 Player 的 Layer 避免发生跟 Enemy 的碰撞
             if (isDead || isSlide)
-            {  //滑铲时也要切换 Player 的 Layer 避免发生跟 Enemy 的碰撞
+            {  
                 gameObject.layer = LayerMask.NameToLayer("Enemies");
             }
             else

@@ -12,4 +12,9 @@ namespace Jiahao
         Loaction, Menu //场景类型
     
     }
+
+    public enum PersistentType //限制ID变化
+    {
+        ReadWrite, DoNotPersist
+    }
 }

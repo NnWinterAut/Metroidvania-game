@@ -51,7 +51,11 @@ namespace Jiahao {
                 switch (device.device)
                 {
                     case Keyboard:
-                        anim.Play("keyboard");
+                        if (anim != null)
+                        {
+                            anim.Play("keyboard");
+                        }
+                        
                         break;
                 }
             

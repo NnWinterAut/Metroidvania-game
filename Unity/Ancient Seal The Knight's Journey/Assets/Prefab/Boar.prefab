@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2505146601514963249}
   - component: {fileID: 8700683568199500682}
   - component: {fileID: 7222731091709590133}
+  - component: {fileID: 6813831763161238664}
   m_Layer: 6
   m_Name: Boar
   m_TagString: Untagged
@@ -211,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe980cfcaecb35c44aec28dcc1b77abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newGameEvent: {fileID: 11400000, guid: a603f1023004dbd4a88e79606e86a24d, type: 2}
   maxHealth: 50
   currentHealth: 50
   maxPower: 0
@@ -292,7 +294,7 @@ MonoBehaviour:
   wait: 0
   waitTime: 2
   waitTimeCounter: 0
-  lostTime: 2.5
+  lostTime: 3
   lostTimeCounter: 0
   isHurt: 0
   isDead: 0
@@ -348,3 +350,17 @@ MonoBehaviour:
   touchLeftWall: 0
   touchRightWall: 0
   onWall: 0
+--- !u!114 &6813831763161238664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5205547289784055389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72272a4e53aaee74f996c01579780b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistentType: 0
+  ID: 31739962-5dc4-4f5f-b3f7-00aa233f138b

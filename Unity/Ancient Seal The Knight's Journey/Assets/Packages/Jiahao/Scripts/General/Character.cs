@@ -6,8 +6,11 @@ using Jiahao;
 
 namespace Jiahao
 {
-    public class Character : MonoBehaviour
+    public class Character : MonoBehaviour, IsSaveable
     {
+        [Header("事件监听")]
+        public VoidEventSO newGameEvent;
+
         [Header("基本属性")]
         public float maxHealth;
         public float currentHealth;
@@ -24,12 +27,31 @@ namespace Jiahao
         public UnityEvent<Character> OnHealthChange;
         public UnityEvent onDie;
 
-        private void Start()
+        private void NewGame()
         {
-
             currentHealth = maxHealth;
             currentPower = maxPower;
-            OnHealthChange?.Invoke(this); //maxhealth
+            OnHealthChange?.Invoke(this);
+        }
+
+        private void Start()
+        {
+            currentHealth = maxHealth;
+        }
+
+        private void OnEnable()
+        {
+
+            newGameEvent.OnEventRaised += NewGame;
+            IsSaveable saveable = this;
+            saveable.RegisterSaveData();//强行执行
+        }
+
+        private void OnDisable()
+        {
+            newGameEvent.OnEventRaised -= NewGame;
+            IsSaveable saveable = this;
+            saveable.UnRegisterSaveData(); 
         }
 
         private void Update()
@@ -68,9 +90,8 @@ namespace Jiahao
             {
                 //执行受伤
                 currentHealth -= attacker.damage; //瞬间受到伤害
-                TriggerInvulnerable(); //激活触发器, 激活无敌
-
                 OnTakeDamage?.Invoke(attacker.transform); //执行受伤
+                TriggerInvulnerable(); //激活触发器, 激活无敌
             }
             else
             {
@@ -96,13 +117,49 @@ namespace Jiahao
 
         public void OnTriggerStay2D(Collider2D other)
         {
-            if (other.CompareTag("Water")) {
+            if (other.CompareTag("Water"))
+            {
+                if (currentHealth > 0)
+                {//死亡、更新血量
+                    currentHealth = 0;
+                    OnHealthChange?.Invoke(this);
+                    onDie?.Invoke();
+                }
+            }
+        }
 
-                //触发死亡
-                currentHealth = 0;
+        public DataDefination GetDataID()
+        {
+            return GetComponent<DataDefination>(); //
 
+        }
+
+        public void GetSaveData(Data data)
+        {
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                data.characterPosDict[GetDataID().ID] = new SerializeVector3(transform.position);
+                data.floatSavedData[GetDataID().ID + "health"] = this.currentHealth;
+                data.floatSavedData[GetDataID().ID + "power"] = this.currentPower;
+            }
+            else
+            {
+                data.characterPosDict.Add(GetDataID().ID, new SerializeVector3(transform.position));
+                data.floatSavedData.Add(GetDataID().ID + "health", this.currentHealth);
+                data.floatSavedData.Add(GetDataID().ID + "power", this.currentPower);
+            }
+        }
+
+        public void LoadData(Data data)
+        {
+            if (data.characterPosDict.ContainsKey(GetDataID().ID))
+            {
+                this.currentHealth = data.floatSavedData[GetDataID().ID + "health"];
+                this.currentPower = data.floatSavedData[GetDataID().ID + "power"];
+                transform.position = data.characterPosDict[GetDataID().ID].ToVector3();
+
+                //通知UI更新
                 OnHealthChange?.Invoke(this);
-                onDie?.Invoke();
             }
         }
     }

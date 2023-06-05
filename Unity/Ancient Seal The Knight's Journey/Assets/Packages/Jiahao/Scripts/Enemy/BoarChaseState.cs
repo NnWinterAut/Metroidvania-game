@@ -33,6 +33,7 @@ namespace Jiahao
 
         public override void OnExit()
         {
+            currentEnemy.lostTimeCounter = currentEnemy.lostTime;
             currentEnemy.anim.SetBool("run", false);
         }
 
