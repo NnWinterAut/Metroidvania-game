@@ -5,15 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Bound
+  - Water
+  - Interactable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - Terrain
-  - Background
+  - Enemies
+  - Ground
   - 
   - 
   - 
@@ -41,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3601185671
     locked: 0
