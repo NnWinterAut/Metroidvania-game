@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e14aaec813fa86648a3b6a8b7642d785
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - FXEvent: {fileID: 11400000, guid: bc280746720d9c04c9af06ccfc530afc, type: 2}
+  - BGMEvent: {fileID: 11400000, guid: 59be675e3e363d44cae1c9d9bc688fc0, type: 2}
+  - BGMSource: {instanceID: 0}
+  - FXSource: {instanceID: 0}
+  - mixer: {fileID: 24100000, guid: 7ca34e3fbbc217a47a128d574f6c43de, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
